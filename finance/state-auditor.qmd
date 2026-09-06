@@ -1,0 +1,34 @@
+---
+title: "California State Auditor Findings"
+subtitle: "Report 2020-803"
+---
+
+In March 2021, the California State Auditor designated El Cerrito a "high risk" local government in Report 2020-803, titled *"Excessive Spending and Insufficient Efforts to Address Its Perilous Financial Condition Jeopardize the City's Ongoing Fiscal Viability."*
+
+The audit found that El Cerrito spent more than it received in general fund revenue in eight of the eleven fiscal years from 2009–10 through 2019–20, and that its general fund reserves — built up to a peak of $2.6 million in FY2011–12 — were fully depleted by FY2016–17 and remained negative through FY2019–20. The city's own reserve policy requires a minimum of 10% of expenditures; it did not meet that threshold in any of the eleven years reviewed.
+
+| Fiscal Year | Reserves as % of Annual Expenditures |
+|---|---|
+| 2009–10 | 7.3% |
+| 2010–11 | 9.2% |
+| 2011–12 | 8.1% |
+| 2012–13 | 4.1% |
+| 2013–14 | 3.5% |
+| 2014–15 | 4.4% |
+| 2015–16 | 5.4% |
+| 2016–17 | (0.5)% |
+| 2017–18 | (6.1)% |
+| 2018–19 | (4.1)% |
+| 2019–20 | (4.4)% |
+
+::: {.source-note}
+Source: Report 2020-803, Table 1, based on the City's audited comprehensive annual financial reports, FY2009–10 through FY2019–20. GFOA's recommended minimum is 17% (two months of expenditures); El Cerrito's own policy sets a 10% minimum.
+:::
+
+The report also found the city relied on short-term loans (TRANs) every year since FY2012–13 to cover operating costs, with the loan amount growing from $5 million in FY2015–16 to a peak of $9 million in FY2019–20. The associated interest rate roughly doubled over that span, and annual interest costs more than tripled. The auditor's own comparison noted that **El Cerrito's credit rating deteriorated from an AA− rating in 2016 to a BBB− rating in 2020**, tracking the decline in reserves.
+
+Other findings included a net pension liability of $65.8 million as of June 2020 (a 67% increase from FY2014–15), and a capital/maintenance backlog of $245.4 million identified in the FY2020–21 budget, of which only $21.4 million was funded through FY2024–25 — a rate the auditor noted would take more than 50 years to address at that pace. The audit also identified budget-monitoring weaknesses, including a finding that finance department staff routinely overrode internal spending-limit alerts without director-level review.
+
+::: {.source-note}
+Source: California State Auditor, Report 2020-803, "City of El Cerrito: Excessive Spending and Insufficient Efforts to Address Its Perilous Financial Condition Jeopardize the City's Ongoing Fiscal Viability," issued March 16, 2021. [Full report](https://information.auditor.ca.gov/reports/2020-803/summary.html) | [City's posted response page](https://www.elcerrito.gov/1565/State-Auditors-Report)
+:::
