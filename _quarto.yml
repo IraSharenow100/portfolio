@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ira Sharenow"
+  description: "Data analysis, public finance, and civic research"
+  navbar:
+    left:
+      - href: index.qmd
+        text: About
+      - text: Finance
+        menu:
+          - href: finance/index.qmd
+            text: Overview
+          - href: finance/credit-rating.qmd
+            text: Credit Rating
+          - href: finance/going-concern.qmd
+            text: Going-Concern Audits
+          - href: finance/state-auditor.qmd
+            text: State Auditor Report
+          - href: finance/tran.qmd
+            text: TRAN Borrowing
+          - href: finance/tax-collections.qmd
+            text: Tax Collections
+    right:
+      - icon: github
+        href: https://github.com/IraSharenow100
+
+  page-footer:
+    center: "© Ira Sharenow"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
