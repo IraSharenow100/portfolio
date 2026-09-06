@@ -1,0 +1,19 @@
+---
+title: "Ira Sharenow"
+subtitle: "Data Analysis & Applied Research"
+---
+
+## About
+
+I'm a data analyst with an M.A. in Mathematics and an M.S. in Business from the University of Wisconsin-Madison. I work primarily in R, with growing experience in Python, SQL, Power BI, and Tableau.
+
+This site collects analytical projects using public data, built with reproducible tools: R, Quarto, and Git/GitHub.
+
+## Project Areas
+
+- **[Finance](finance/index.qmd)** — El Cerrito municipal finance: credit rating, audits, borrowing, and tax collections
+
+## Elsewhere
+
+- [Tableau Public Profile](https://public.tableau.com/app/profile/ira.sharenow/viz/ElCerritoFinancesinPictures--Tableau/Introduction)
+- [GitHub](https://github.com/IraSharenow100)
