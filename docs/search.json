@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ira Sharenow",
+    "section": "",
+    "text": "I’m a data analyst with an M.A. in Mathematics and an M.S. in Business from the University of Wisconsin-Madison. I work primarily in R, with growing experience in Python, SQL, Power BI, and Tableau.\nThis site collects analytical projects using public data, built with reproducible tools: R, Quarto, and Git/GitHub."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Ira Sharenow",
+    "section": "",
+    "text": "I’m a data analyst with an M.A. in Mathematics and an M.S. in Business from the University of Wisconsin-Madison. I work primarily in R, with growing experience in Python, SQL, Power BI, and Tableau.\nThis site collects analytical projects using public data, built with reproducible tools: R, Quarto, and Git/GitHub."
+  },
+  {
+    "objectID": "index.html#project-areas",
+    "href": "index.html#project-areas",
+    "title": "Ira Sharenow",
+    "section": "Project Areas",
+    "text": "Project Areas\n\nFinance — El Cerrito municipal finance: credit rating, audits, borrowing, and tax collections"
+  },
+  {
+    "objectID": "index.html#elsewhere",
+    "href": "index.html#elsewhere",
+    "title": "Ira Sharenow",
+    "section": "Elsewhere",
+    "text": "Elsewhere\n\nTableau Public Profile\nGitHub"
+  },
+  {
+    "objectID": "finance/tax-collections.html",
+    "href": "finance/tax-collections.html",
+    "title": "Tax Collections",
+    "section": "",
+    "text": "Voters approved the Real Property Transfer Tax in November 2018 (Measure V). The tax took effect November 27, 2018, so FY2019 is a partial (8-month) first year, not a data gap. FY2026 is the current, in-progress fiscal year, complete only through February 2026.\n\n\n\nEl Cerrito RPTT Collections by Fiscal Year\n\n\n\n\n\n\n\n\n\n\nFiscal Year\nTotal Collected\nCoverage\n\n\n\n\nFY 2019\n$1,199,988.29\nNov 2018–Jun 2019 (8 of 12 months — first, partial year)\n\n\nFY 2020\n$3,500,304.01\nComplete\n\n\nFY 2021\n$4,510,765.85\nComplete\n\n\nFY 2022\n$5,271,864.00\nComplete\n\n\nFY 2023\n$3,905,703.00\nComplete\n\n\nFY 2024\n$3,238,272.00\nComplete\n\n\nFY 2025\n$3,289,284.00\nComplete\n\n\nFY 2026\n$2,406,060.00\nJul 2025–Feb 2026 (8 of 12 months — in progress)\n\n\nTotal, all months shown\n$27,322,241.15\nNov 2018–Feb 2026\n\n\n\n\nSource: City of El Cerrito Detail General Ledger Report, G/L Account 101-00-00-40710 (Nov 2018–Jun 2020, report run by Claire Coleman, Budget Director, 8/27/2026), and the City’s monthly RPTT totals file (Jul 2020–Feb 2026). Fiscal year defined as July–June."
+  },
+  {
+    "objectID": "finance/tax-collections.html#real-property-transfer-tax-measure-v",
+    "href": "finance/tax-collections.html#real-property-transfer-tax-measure-v",
+    "title": "Tax Collections",
+    "section": "",
+    "text": "Voters approved the Real Property Transfer Tax in November 2018 (Measure V). The tax took effect November 27, 2018, so FY2019 is a partial (8-month) first year, not a data gap. FY2026 is the current, in-progress fiscal year, complete only through February 2026.\n\n\n\nEl Cerrito RPTT Collections by Fiscal Year\n\n\n\n\n\n\n\n\n\n\nFiscal Year\nTotal Collected\nCoverage\n\n\n\n\nFY 2019\n$1,199,988.29\nNov 2018–Jun 2019 (8 of 12 months — first, partial year)\n\n\nFY 2020\n$3,500,304.01\nComplete\n\n\nFY 2021\n$4,510,765.85\nComplete\n\n\nFY 2022\n$5,271,864.00\nComplete\n\n\nFY 2023\n$3,905,703.00\nComplete\n\n\nFY 2024\n$3,238,272.00\nComplete\n\n\nFY 2025\n$3,289,284.00\nComplete\n\n\nFY 2026\n$2,406,060.00\nJul 2025–Feb 2026 (8 of 12 months — in progress)\n\n\nTotal, all months shown\n$27,322,241.15\nNov 2018–Feb 2026\n\n\n\n\nSource: City of El Cerrito Detail General Ledger Report, G/L Account 101-00-00-40710 (Nov 2018–Jun 2020, report run by Claire Coleman, Budget Director, 8/27/2026), and the City’s monthly RPTT totals file (Jul 2020–Feb 2026). Fiscal year defined as July–June."
+  },
+  {
+    "objectID": "finance/tax-collections.html#other-tax-revenue",
+    "href": "finance/tax-collections.html#other-tax-revenue",
+    "title": "Tax Collections",
+    "section": "Other Tax Revenue",
+    "text": "Other Tax Revenue\nAdditional tax categories (property tax, sales tax, TOT, utility user tax) will be added here as data is confirmed."
+  },
+  {
+    "objectID": "finance/index.html",
+    "href": "finance/index.html",
+    "title": "El Cerrito Finance",
+    "section": "",
+    "text": "A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records."
+  },
+  {
+    "objectID": "finance/index.html#pages",
+    "href": "finance/index.html#pages",
+    "title": "El Cerrito Finance",
+    "section": "Pages",
+    "text": "Pages\n\nCredit Rating History — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present\nGoing-Concern Audits — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025\nState Auditor Report — Findings from California State Auditor Report 2020-803\nTRAN Borrowing — Annual short-term borrowing, FY2012–FY2022\nTax Collections — Real Property Transfer Tax and other tax revenue\n\nEach page reports documented facts without attributing responsibility to any individual."
+  },
+  {
+    "objectID": "finance/credit-rating.html",
+    "href": "finance/credit-rating.html",
+    "title": "Credit Rating History",
+    "section": "",
+    "text": "S&P Global Ratings’ underlying rating (SPUR) on El Cerrito’s certificates of participation (COPs) is the cleanest available measure of the city’s general financial health, independent of any specific bond issuance.\n\n\n\nEl Cerrito S&P Underlying Rating (COPs), Dec 2014 to present\n\n\n\n\n\n\n\n\n\n\nDate\nAction\nRating\n\n\n\n\nDec 2, 2013\nLowered (application of new local GO criteria)\nAA− → A+\n\n\nOct 1, 2018\nLowered — weakened budgetary flexibility\nA+ → A−\n\n\nNov 26, 2019\nLowered two notches — deteriorating budgetary flexibility, second consecutive going-concern audit opinion\nA− → BBB\n\n\nSept 24, 2020\nLowered — negative general fund reserves, COVID-19 impact\nBBB → BBB−\n\n\nSept 29, 2023\nRaised — resolution of going-concern opinions, restored structural balance\nBBB− → BBB\n\n\nSept 9, 2025\nRaised — sustained structural balance, robust reserves\nBBB → A− (current)\n\n\n\n\nSource: S&P Global Ratings rating action publications, each dated as shown above. Ratings shown are the underlying rating (SPUR) on El Cerrito’s certificates of participation (COPs). A related but separate instrument — El Cerrito Public Financing Authority sales tax revenue bonds — follows its own, similar rating track and reached A+ as of September 2025."
+  },
+  {
+    "objectID": "finance/going-concern.html",
+    "href": "finance/going-concern.html",
+    "title": "Going-Concern Audits",
+    "section": "",
+    "text": "A “going concern” opinion is an auditor’s formal statement of substantial doubt about a government’s ability to meet its financial obligations. El Cerrito’s CAFRs/ACFRs contain this language across a specific multi-year period, documented year by year below."
+  },
+  {
+    "objectID": "finance/going-concern.html#fy2013-and-fy2014",
+    "href": "finance/going-concern.html#fy2013-and-fy2014",
+    "title": "Going-Concern Audits",
+    "section": "FY2013 and FY2014",
+    "text": "FY2013 and FY2014\n\n“The accompanying financial statements have been prepared in conformity with accounting principles generally accepted in the United States of America, which contemplate continuation of the City as a going concern. However, as of June 30, 2014, the General Fund’s unrestricted cash balance was only $1… Although the City continues to issue Tax Revenue Anticipation Notes to supplement cash temporarily during the fiscal year, if deficit spending continues, it reduces the likelihood that the City will be able to continue as a going concern.”\n\n\nFY2014 CAFR, Independent Auditor’s Report, “Emphasis of Matters,” pages 2–3. Auditor: Maze & Associates. FY2013 CAFR contains substantially similar language (page 3); General Fund unrestricted cash represented under 5 days of expenditures that year; FY2014’s total citywide unrestricted cash was $40,384."
+  },
+  {
+    "objectID": "finance/going-concern.html#fy2015-and-fy2016",
+    "href": "finance/going-concern.html#fy2015-and-fy2016",
+    "title": "Going-Concern Audits",
+    "section": "FY2015 and FY2016",
+    "text": "FY2015 and FY2016\nNo going-concern language present in either year’s CAFR."
+  },
+  {
+    "objectID": "finance/going-concern.html#fy2017-and-fy2018",
+    "href": "finance/going-concern.html#fy2017-and-fy2018",
+    "title": "Going-Concern Audits",
+    "section": "FY2017 and FY2018",
+    "text": "FY2017 and FY2018\n\n“The accompanying financial statements have been prepared assuming that the City will continue as a going concern. As discussed in Note 21 to the financial statements, the City’s General Fund has a very limited fund balance that indicates that the City may not be able to continue as a going concern. These conditions raise substantial doubt about its ability to continue as a going concern…”\n\n\nFY2017 and FY2018 CAFRs, Independent Auditor’s Report, “Emphasis of Matter Regarding Going Concern,” referencing Note 21. Auditor: Badawi and Associates, CPAs. FY2017 available fund balance: deficit $186,227. FY2018: deficit $2,233,507."
+  },
+  {
+    "objectID": "finance/going-concern.html#fy2019",
+    "href": "finance/going-concern.html#fy2019",
+    "title": "Going-Concern Audits",
+    "section": "FY2019",
+    "text": "FY2019\n\n“The City’s unassigned fund balance in the General Fund was a deficit of $1,707,620, which represents a $525,887 improvement over… the prior fiscal year.”\n\n\nFY2019 CAFR, Independent Auditor’s Report (“Emphasis of Matter Regarding Going Concern”) and Note 20, “GOING CONCERN.” Auditor: Badawi and Associates, CPAs (report dated January 31, 2020). Note: the auditor’s letter refers to “Note 21,” but the corresponding note in this year’s financial statements is numbered Note 20 — an apparent carryover drafting error from the prior year’s template, not a discrepancy in the underlying finding."
+  },
+  {
+    "objectID": "finance/going-concern.html#fy2020",
+    "href": "finance/going-concern.html#fy2020",
+    "title": "Going-Concern Audits",
+    "section": "FY2020",
+    "text": "FY2020\n\n“The City’s unassigned fund balance in the General Fund was a deficit of $1,777,532.”\n\n\nFY2020 CAFR, Independent Auditor’s Report (“Emphasis of Matter Regarding Going Concern”) and Note 21, “GOING CONCERN.” Auditor: Badawi & Associates. The FY2020 CAFR separately states elsewhere in its narrative that the City had been “on the going concern watch list since FY 2017, the first year that the City changed auditors in about a decade” — the City’s own characterization of the period."
+  },
+  {
+    "objectID": "finance/going-concern.html#fy2021-going-concern-language-discontinued",
+    "href": "finance/going-concern.html#fy2021-going-concern-language-discontinued",
+    "title": "Going-Concern Audits",
+    "section": "FY2021 — Going-Concern Language Discontinued",
+    "text": "FY2021 — Going-Concern Language Discontinued\n\n“As a result of the fund balance at 19% of estimated expenditures and a positive trend in both revenue and expenditures, the ‘Going Concern’ designation by Badawi and Associates is no longer included in the FY 2021 ACFR.”\n\n\nFY2021 ACFR, Management’s Discussion and Analysis. Auditor: Badawi and Associates (same auditor as the prior four years; the going-concern designation ended before the subsequent auditor change)."
+  },
+  {
+    "objectID": "finance/going-concern.html#fy2022fy2025",
+    "href": "finance/going-concern.html#fy2022fy2025",
+    "title": "Going-Concern Audits",
+    "section": "FY2022–FY2025",
+    "text": "FY2022–FY2025\nNo going-concern designation or dedicated note in any of these four years. Auditor of record changed to Chavan & Associates, LLP beginning with the FY2022 ACFR. These CAFRs contain only standard, boilerplate auditor-responsibility language required under current audit standards (SAS 132) in every modern audit report — not a City-specific finding — and include no “Emphasis of Matter Regarding Going Concern” heading and no dedicated going-concern note.\n\nAll years above verified directly against primary-source CAFR/ACFR PDFs."
+  },
+  {
+    "objectID": "finance/state-auditor.html",
+    "href": "finance/state-auditor.html",
+    "title": "California State Auditor Findings",
+    "section": "",
+    "text": "In March 2021, the California State Auditor designated El Cerrito a “high risk” local government in Report 2020-803, titled “Excessive Spending and Insufficient Efforts to Address Its Perilous Financial Condition Jeopardize the City’s Ongoing Fiscal Viability.”\nThe audit found that El Cerrito spent more than it received in general fund revenue in eight of the eleven fiscal years from 2009–10 through 2019–20, and that its general fund reserves — built up to a peak of $2.6 million in FY2011–12 — were fully depleted by FY2016–17 and remained negative through FY2019–20. The city’s own reserve policy requires a minimum of 10% of expenditures; it did not meet that threshold in any of the eleven years reviewed.\n\n\n\nFiscal Year\nReserves as % of Annual Expenditures\n\n\n\n\n2009–10\n7.3%\n\n\n2010–11\n9.2%\n\n\n2011–12\n8.1%\n\n\n2012–13\n4.1%\n\n\n2013–14\n3.5%\n\n\n2014–15\n4.4%\n\n\n2015–16\n5.4%\n\n\n2016–17\n(0.5)%\n\n\n2017–18\n(6.1)%\n\n\n2018–19\n(4.1)%\n\n\n2019–20\n(4.4)%\n\n\n\n\nSource: Report 2020-803, Table 1, based on the City’s audited comprehensive annual financial reports, FY2009–10 through FY2019–20. GFOA’s recommended minimum is 17% (two months of expenditures); El Cerrito’s own policy sets a 10% minimum.\n\nThe report also found the city relied on short-term loans (TRANs) every year since FY2012–13 to cover operating costs, with the loan amount growing from $5 million in FY2015–16 to a peak of $9 million in FY2019–20. The associated interest rate roughly doubled over that span, and annual interest costs more than tripled. The auditor’s own comparison noted that El Cerrito’s credit rating deteriorated from an AA− rating in 2016 to a BBB− rating in 2020, tracking the decline in reserves.\nOther findings included a net pension liability of $65.8 million as of June 2020 (a 67% increase from FY2014–15), and a capital/maintenance backlog of $245.4 million identified in the FY2020–21 budget, of which only $21.4 million was funded through FY2024–25 — a rate the auditor noted would take more than 50 years to address at that pace. The audit also identified budget-monitoring weaknesses, including a finding that finance department staff routinely overrode internal spending-limit alerts without director-level review.\n\nSource: California State Auditor, Report 2020-803, “City of El Cerrito: Excessive Spending and Insufficient Efforts to Address Its Perilous Financial Condition Jeopardize the City’s Ongoing Fiscal Viability,” issued March 16, 2021. Full report | City’s posted response page"
+  },
+  {
+    "objectID": "finance/tran.html",
+    "href": "finance/tran.html",
+    "title": "TRAN Borrowing",
+    "section": "",
+    "text": "A Tax (and Revenue) Anticipation Note (TRAN) is short-term borrowing a city takes out to cover payroll and expenses before property tax revenue arrives. El Cerrito issued one every year for at least eleven consecutive years.\n\n\n\nEl Cerrito’s Annual TRAN Borrowing, FY2012 to FY2022\n\n\n\nSource: Notes to the City’s audited financial statements (CAFRs/ACFRs) and City Council staff reports, each fiscal year. New revenue sources shown (Real Property Transfer Tax, ARPA funds) coincide with the TRAN’s discontinuation after FY2022."
+  }
+]
