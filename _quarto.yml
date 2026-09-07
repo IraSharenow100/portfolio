@@ -23,6 +23,20 @@ website:
             text: TRAN Borrowing
           - href: finance/tax-collections.qmd
             text: Tax Collections
+      - text: Library
+        menu:
+          - href: library/index.qmd
+            text: Overview
+          - href: library/timeline.qmd
+            text: History / Timeline
+          - href: library/measure-c.qmd
+            text: Measure C
+          - href: library/task-force.qmd
+            text: Library Task Force
+          - href: library/cost-funding.qmd
+            text: Cost & Funding History
+          - href: library/key-people.qmd
+            text: Key People and Votes
     right:
       - icon: github
         href: https://github.com/IraSharenow100

@@ -19,5 +19,23 @@
   },
   "index.qmd": {
     "index.html": "117f7031"
+  },
+  "library/cost-funding.qmd": {
+    "cost-funding.html": "f0dd4481"
+  },
+  "library/index.qmd": {
+    "index.html": "86655366"
+  },
+  "library/key-people.qmd": {
+    "key-people.html": "97482a8d"
+  },
+  "library/measure-c.qmd": {
+    "measure-c.html": "d403b53d"
+  },
+  "library/task-force.qmd": {
+    "task-force.html": "25be0ab7"
+  },
+  "library/timeline.qmd": {
+    "timeline.html": "53948e97"
   }
 }

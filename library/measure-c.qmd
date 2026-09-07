@@ -1,0 +1,80 @@
+---
+title: "Measure C"
+---
+
+## What It Proposed
+
+Citizen-initiated ordinance adding Chapter 4.58 to the El Cerrito Municipal Code, authorizing an annual special parcel tax. (Impact Report, p.6)
+
+- **Maximum initial rate:** $0.17 per square foot of improvements; $100 per vacant parcel. (Impact Report, p.6; §4.58.040(A))
+- **Annual escalator:** up to the greater of Bay Area CPI or CA per-capita personal income growth, at Council's discretion (not automatic). (Impact Report, p.6; §4.58.040(B))
+- **Secondary statutory cap:** total annual levy may not exceed 115% of revenue needed for (1) construction-debt service and (2) library operating costs for the first 10 years post-construction. (Impact Report, p.6–7; §4.58.040(C))
+- **Use of funds:** planning, permitting, environmental review, construction, and furnishing of a new library, plus up to 10 years of City library operating costs. (Impact Report, p.6–7; §4.58.060(A))
+- **Duration:** 30 years from the initial issuance of bonds for the library. (Impact Report, p.11; §4.58.110)
+- **Projected gross annual revenue at maximum rates:** $3,156,019 (rounded publicly to "~$3.1M"), based on 18,458,937 taxable building sq ft + 180 vacant parcels, FY2025-26 property profile. (Impact Report, p.18)
+- **Average residential parcel:** 1,946 sq ft → ~$331 projected initial annual tax. (Impact Report, p.18)
+- **Exemptions:** owners qualifying for the state's Gonzalez-Deukmejian-Petris Senior Citizen Property Tax Assistance Law or the Senior Citizen Property Tax Postponement Law. (Impact Report, p.9–10; §4.58.030(C)(3))
+- **Oversight:** annual independent-audit review referred to a citizen oversight board (existing or new), designated by Council. (Impact Report, p.10; §4.58.080)
+- **Vote threshold:** simple majority (citizen-initiative case law), not two-thirds. (Impact Report, p.2)
+
+## Official Ballot Question (certified)
+
+> "Shall the measure to fund planning/construction/furnishing a new El Cerrito library, including a new building, and the City's library operating costs for ten years after completing construction, by authorizing an annual parcel tax of up to $0.17 per square foot of improvements ($100 per vacant parcel), subject to annual inflation adjustments, generating approximately $3,100,000 annually, expiring 30 years after the initial issuance of bonds, with independent audits/citizen oversight and senior exemptions, be adopted?"
+
+::: {.source-note}
+Source: contracostavote.gov/m9002-en, Impartial Analysis dated 3/12/2026.
+:::
+
+## Financing Structure Assumed for the TOD Scenario (Scenario 3)
+
+- Assumed bond: ~$37M, 30-year term, 5.00% interest → level annual debt service of $2,421,475. (Impact Report, p.19)
+- Current library annual operating/maintenance cost: $157,615, presently General-Fund-funded. (Impact Report, p.19)
+- Post-year-10 General Fund exposure: $187,755–$797,000/year depending on scenario, escalating thereafter. (Impact Report, p.19–20)
+- Developer's (Related California's) estimated cost to build the library shell: $8 million, per the Griffin Structures cost estimate — subject to final costs/negotiation. (Impact Report, p.31)
+- Ground lease: City pays BART $1/year, coterminous with Related's ~99-year BART ground lease. (Impact Report, p.30)
+
+## Five Scenarios Presented (Feb. 19, 2026 Impact Report)
+
+| Scenario | Project Cost | Annual Debt Service | Residual Tax for Ops (10 yrs) |
+|---|---|---|---|
+| 1 (Renovate) | $10,346,000 | $673,022 | $2,449,922 |
+| 2 (Renovate-Expand) | $35,785,000 | $2,327,866 | $795,079 |
+| 3 (TOD) | $37,224,000 | $2,421,475 | $701,470 |
+| 4 (New Site) | $47,900,000 | $3,115,964 | $6,981 |
+| 5 (New Location/Purchase) | $40,604,000 | $2,641,348 | $481,596 |
+
+## Proponents / Yes Campaign
+
+- **Committee for a Plaza Station Library (C4PSL)** — organized citizen group behind the original petition drive.
+- **Greg Lyman** — former Mayor; treasurer, Committee for a Plaza Station Library.
+- **Al (Alan C.) Miller** — President, El Cerrito Library Foundation; public comment 11/20/2023.
+- **Michael Fischer** — City-designated Library Commissioner; Chair, Contra Costa County Library Commission.
+- **Georgina Edwards** — C4PSL member.
+- **Gabe Quinto** — Mayor (2026); longtime Councilmember; associated with Yes-side messaging.
+- **Sky Woodruff** — contract City Attorney; authored the official Impartial Analysis and the Impact Report's legal interpretations.
+
+## Opponents / No Campaign
+
+- **"Neighbors For a Better El Cerrito"** — authored the official ballot argument against Measure C.
+- **"No On The Library Tax"** (nomoreforevertax.org) — cited the $80,000 election-timing cost and the $21M→$37M cost-disclosure gap.
+- **Councilmember William Ktsanes** — sole dissenting vote (2/19/2026) against placing the measure on the June ballot, on cost/fiscal-responsibility and turnout-democracy grounds.
+
+::: {.source-note}
+Op-ed by Maria Pantelia and James Porter, *East Bay Times*, published April 17, 2026, characterizing the measure as asking voters to "write a blank check."
+:::
+
+## Outcome
+
+**Measure C failed.** Certified Statement of Results, City Clerk Holly M. Charléty, dated July 21, 2026:
+
+| | Vote by Mail | Election Day | Total | Percentage |
+|---|---|---|---|---|
+| NO | 7,011 | 464 | 7,475 | 69.61% |
+| YES | 3,059 | 205 | 3,264 | 30.39% |
+| **Total votes on Measure C** | 10,070 | 669 | **10,739** | |
+
+**Turnout:** 62.77% (11,210 ballots cast in the jurisdiction out of 17,859 registered voters; 11 of 11 precincts reporting, 100%). Note that total ballots cast (11,210) exceeds total votes on Measure C (10,739) — the difference reflects voters who cast a ballot but left this specific measure blank.
+
+::: {.source-note}
+Source: Exhibit A to Resolution, Certificate of the City of El Cerrito, June 2, 2026 Special Municipal Election, certified by the City Clerk; cross-confirmed against Contra Costa County's Official Results – Final for the June 2, 2026 Statewide Direct Primary Election (page 13 of 14). This certified figure (69.61% No / 30.39% Yes) is close to, but more precise than, earlier secondary-source reporting (Contra Costa County results reporting, Richmond Confidential, and CC Spin had estimated approximately 70.62% No / 29.38% Yes on a partial count of 9,587 ballots).
+:::

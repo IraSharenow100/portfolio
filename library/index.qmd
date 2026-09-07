@@ -1,0 +1,17 @@
+---
+title: "El Cerrito Library"
+---
+
+A sourced record of the El Cerrito library issue, drawn from City agenda bills, staff reports, the February 19, 2026 §9212 Impact Report, resolutions, official election materials, and contemporaneous news coverage.
+
+## Pages
+
+- **[History / Timeline](timeline.qmd)** — chronological record from 1948 to the present
+- **[Measure C](measure-c.qmd)** — what it proposed, the campaign, and the ballot outcome
+- **[Library Task Force](task-force.qmd)** — formation, charge, and structure
+- **[Cost & Funding History](cost-funding.qmd)** — every publicly disclosed cost estimate over time
+- **[Key People and Votes](key-people.qmd)** — how Council members acted on library-related items
+
+::: {.source-note}
+Every claim on these pages is tagged with its source and, where available, an exact date and page number. Items that could not be fully verified are marked as such rather than stated as fact.
+:::

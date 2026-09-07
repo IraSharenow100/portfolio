@@ -1,0 +1,75 @@
+---
+title: "Library Task Force"
+---
+
+**Formation date:** February 17, 2026, by Resolution 2026-11. (elcerrito.gov/1768/Library-Task-Force)
+
+**Charge:** "to advise the City Council with informed recommendations related to planning for a new or updated modern, safe, accessible, and sustainable Library in El Cerrito." Advisory-only; no independent decision-making authority. Substantive areas: site feasibility analysis, projected costs, potential funding options, library design and features, public engagement process, and any other work assigned by Council.
+
+**Duration:** one year from appointment of members (through July 15, 2027, per the City's August 2026 update). The Task Force is expected to meet no less than every other month.
+
+## Appointment Chronology
+
+| Date | Action |
+|---|---|
+| February 17, 2026 | Task Force created by Resolution 2026-11. |
+| March 3, 2026 | Council gave staff direction on application structure, selection process, and interview questions. |
+| April 17, 2026, 4:00 p.m. | Application deadline. |
+| After the deadline | More than 12 applications received; Councilmembers independently reviewed and selected preferred candidates. |
+| July 14, 2026 | The ten highest-ranked candidates were interviewed by the City Council. |
+| Through July 15, 2027 | Selected members' terms run through this date. |
+
+## Voting Members
+
+| Member | Status |
+|---|---|
+| Amy Chen | Voting member |
+| Bethany Woods | Voting member |
+| Chelsi Sparti | Voting member |
+| Ian Bader | Voting member |
+| Rachel Rosekind | Voting member |
+| Tom Panas | Voting member |
+| Eden Rosekind | Youth voting member |
+
+## Non-Voting Invitees
+
+- A representative of the Contra Costa County Library Commission
+- The Contra Costa County Librarian, or designee
+- A member of the City Council serving as Council Liaison — currently **Mayor Pro Tem Rebecca Saltzman**
+
+Staff liaison: the City Clerk.
+
+## First Meeting
+
+Scheduled for **Tuesday, September 8, 2026, 6:00 p.m.**, City Council Chambers, 10890 San Pablo Avenue. As of this page's last update, that meeting had not yet occurred, so no attendance record, motions, votes, or minutes exist yet.
+
+## Did the Charge Change After Measure C Failed?
+
+No evidence that Resolution 2026-11's formal charge was amended after the June 2, 2026 election. What changed is the *framing*: the September 8, 2026 meeting materials present the Plaza TOD library as one option among five, rather than the presumed path, and note that funding is unidentified, sites for the alternatives must still be assessed, and community support for those alternatives is untested.
+
+### Five Alternatives Before the Task Force
+
+| Scenario | Size | Project Cost | Annual Debt Service |
+|---|---|---|---|
+| 1 — Renovate existing library | 6,500 sq ft | $10,346,000 | $673,022 |
+| 2 — Renovate / expand | 13,000 sq ft | $35,785,000 | $2,327,866 |
+| 3 — Plaza TOD | 20,000 sq ft | $37,224,000 | $2,421,475 |
+| 4 — New standalone site | 20,000 sq ft | $47,900,000 | $3,115,964 |
+| 5 — Renovate a purchased/new location | 20,000 sq ft | $40,604,000 | $2,641,348 |
+
+::: {.source-note}
+Source: September 8, 2026 Task Force meeting materials, Agenda Item 1.A ("Efforts to Address El Cerrito Library Facility Needs"), citing Griffin Structures (2025) and the Elections Code §9212 Impact Report.
+:::
+
+### Potential Financing Sources Discussed
+
+| Source | Assessment |
+|---|---|
+| Existing Reserves / General Fund | Very limited capacity in General Fund projections |
+| Grants | California Building Forward Library Grant currently closed; 50% match required |
+| Enhanced Infrastructure Financing District | Does not add new revenue unless an agreement is made with another agency |
+| New Revenue (parcel tax) | Voters rejected measures in both 2016 and 2026 |
+
+### City / County Responsibility Split
+
+Contra Costa County Library is responsible for operations, staffing, collections, 40 base weekly open hours, and most technology. The City is responsible for facility ownership and upkeep, utilities, landscaping, furniture and shelving, certain technology costs, and funding 6 additional weekly open hours — for a total of 46 weekly open hours.
