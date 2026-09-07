@@ -37,5 +37,23 @@
   },
   "library/timeline.qmd": {
     "timeline.html": "53948e97"
+  },
+  "transportation-update/index.qmd": {
+    "index.html": "39b08cf2"
+  },
+  "transportation-update/transportation/index.qmd": {
+    "index.html": "0a7817df"
+  },
+  "transportation-update/transportation/ohlone-greenway.qmd": {
+    "ohlone-greenway.html": "5c32a6f6"
+  },
+  "transportation-update/transportation/parking.qmd": {
+    "parking.html": "47d319c1"
+  },
+  "transportation-update/transportation/richmond-street.qmd": {
+    "richmond-street.html": "ba2bff42"
+  },
+  "transportation-update/transportation/san-pablo-specific-plan.qmd": {
+    "san-pablo-specific-plan.html": "2a913424"
   }
 }

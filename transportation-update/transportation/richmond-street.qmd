@@ -1,0 +1,84 @@
+---
+title: "Richmond Street & Complete Streets"
+---
+
+Richmond Street bike lanes have been funded, sought, and re-funded through at least three separate, overlapping efforts. This page documents each one, in order, with the most recent budget data at the end showing where things stand now.
+
+## Thread A — SS4A / CCTA "Richmond Street Complete Streets"
+
+- **Project:** ~1.85 miles, Hill Street to Fairmount Avenue (Key Blvd/Hill St/Elm St intersection to Richmond St/Fairmount Ave/Ohlone Greenway intersection)
+- **Funding as presented:** ~$11M ($8M Safe Streets for All [SS4A] federal grant + ~$3M local match)
+- **Presented to Council:** July 15, 2025 (Item 9A, study session only — no formal vote on funding)
+- At that time, the bike lane component specifically was **not funded**. A Council motion (Ktsanes) to study parking-preserving alternatives failed for lack of a second.
+- Not part of any AHSC application at the time.
+
+::: {.source-note}
+Source: July 15, 2025 Council study session materials, Item 9A.
+:::
+
+## Thread B — AHSC Round 9 "Parcel C East" (DENIED)
+
+- **Application:** Richmond St, Moeser Ln to Hill St, Class IV protected bikeway + Pierce St Class II
+- **Amount requested:** ~$42.4 million
+- **Outcome:** **Denied** by the Strategic Growth Council (SGC), December 10, 2025
+- This was the funding specifically sought for Richmond St bike lanes under this application — it failed.
+
+::: {.source-note}
+Source: SGC award notification, December 10, 2025.
+:::
+
+## Thread C — AHSC Round 8 (executed grant, redirected)
+
+- **Original grant:** Agreement No. 24-AHSC-18468, "Parcel A South" — an east-west bikeway package: Central Ave (Class IV), Lincoln Ave (Class III), San Diego St/Belmont Ave (Class III), feeding into the Ohlone Greenway.
+- **May 18, 2026:** Public Works Director Yvetteh Ortiz requested deleting the Lincoln Ave segment (1.1 lane miles) and substituting **Richmond St/Elm St** (2.0 lane miles, Class II) + Central Ave (0.1 mi).
+- **May 20, 2026, 9:28 AM:** SGC's A'shanti Coleman initially *rejected* the amendment (project scoring dropped from 4 to 1).
+- **May 20, 2026, 2:46 PM:** SGC's Marc Caswell *reversed* that rejection the same day and approved it by email, citing a "lapse in reading comprehension."
+
+**The pattern:** after Thread B (money specifically earmarked for Richmond St bike lanes) was denied in December 2025, the City used the Thread C amendment (May 2026) to redirect a *different* AHSC grant — originally committed to a unique east-west connector (Lincoln Ave) — onto the same, previously-unfunded Richmond St corridor.
+
+Richmond St runs roughly three blocks east of, and parallel to, the Ohlone Greenway (a Class I path running the full length of the city). The Richmond St segment covers only about one mile — largely redundant with that existing path.
+
+::: {.source-note}
+Source: Public Works staff correspondence with SGC, May 18–20, 2026; SGC scoring records.
+:::
+
+## Design Standard Concern
+
+The Local Road Safety Plan (Kittelson, July 2026) states that physical separation is required on corridors with speeds above 25 mph. Richmond St exceeds this threshold by the City's own data, but the project as designed uses paint-only Class II lanes, not physically separated Class IV. The LRSP explicitly excludes Richmond St from its own Backbone Bikeway analysis, deferring instead to the Complete Streets project.
+
+CEQA Notice of Exemption (signed March 19, 2026 by Ortiz, for Thread A) already used the naming "Richmond St and Elm St, Key Blvd to Fairmount Ave" — a documented geographic link between Thread A and the Thread C amendment two months later.
+
+## Current Funding Picture (FY2026-27/FY2027-28 Biennial Budget)
+
+The City's Capital Improvement Program budget (Project C3080, "Richmond Street Complete Streets Improvement") shows the following, current as of the FY2026-27/FY2027-28 biennial budget:
+
+**Project description in this budget document:** "traffic calming features including chicanes, raised intersections, speed tables, and curb bulb-outs; pedestrian safety features...; enhanced bikeways, specifically bicycle lanes in each direction north of Moeser Lane...approximately 1.85 miles along Elm Street and Richmond Street between the Key Boulevard/Hill Street/Elm Street intersection and the Richmond Street/Fairmount Avenue/Ohlone Greenway intersection." — the same 1.85-mile corridor as Thread A.
+
+**Narrative funding description (Pertinent Issues section):** "The City entered into a Cooperative Agreement with the CCTA for CCTA to lead the project given the primary funding source is a Safe Streets for All funding for projects throughout the County." — this still describes SS4A (Thread A) as the primary funding source.
+
+**Funding table (Detailed Breakdown), FY2027 requested:**
+
+| Source | Amount |
+|---|---|
+| State Grant (secured) | $2,600,600 |
+| Capital Improvement Fund (EBMUD) | $1,155,600 |
+| Measure A Street Improvement Fund | $344,730 |
+| SB1 – Road Maintenance and Rehabilitation Account | $200,000 |
+| Miscellaneous Revenue | $44,400 |
+| **Total** | **$4,345,330** |
+
+The "$2,600,600 State Grant" line is itself broken out elsewhere in the same document as **$1,800,600 from AHSC and $800,000 from SB1 LPP, per a March 2026 Council Report** — no SS4A line item appears anywhere in this funding table.
+
+::: {.source-note}
+**This is a genuine, unresolved tension in the source documents, not something I've reconciled:** the project's own narrative section still names SS4A as the "primary funding source," but the itemized funding table shows AHSC + SB1 LPP funding instead, with no SS4A line at all. One plausible explanation is that SS4A funds flow through CCTA's own budget (since CCTA is leading that portion under the Cooperative Agreement) and simply don't appear in the City's own capital budget table, while the $4.35M shown here represents a separate, City-administered slice of the same overall project. That is a plausible reading, not a confirmed one. The March 2026 Council Report cited in this budget document has not yet been pulled and reviewed directly — that document would resolve this.
+:::
+
+## Related: Nearby AHSC Round 10 Application (New)
+
+Separately, the City's Community Development Department FY2024-25/FY2025-26 accomplishments report states: "AHSC Round 10: requested approximately $3.5 million in Complete Streets improvements as part of the City's AHSC Parcel C East application. Award announcement anticipated in December 2026."
+
+This reuses the "Parcel C East" name from the denied Thread B application (which sought ~$42.4M), but for a much smaller amount (~$3.5M). Whether this is a scaled-down resubmission of Thread B, a different phase, or something else has not been confirmed.
+
+::: {.source-note}
+Source: FY2026-27/FY2027-28 Biennial Budget, Community Development Department accomplishments section.
+:::

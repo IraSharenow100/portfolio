@@ -1,0 +1,40 @@
+---
+title: "Ohlone Greenway"
+---
+
+The Ohlone Greenway is a Class I (fully separated) bicycle and pedestrian path running the full length of El Cerrito, beneath the BART tracks.
+
+## Ohlone Greenway Downtown Improvements
+
+A funded capital project in the current biennial budget:
+
+| Fiscal Year | State Grant Funding |
+|---|---|
+| FY2028 | $126,300 |
+| FY2029 | $1,053,000 |
+| **Total** | **$1,179,300** |
+
+::: {.source-note}
+Source: FY2026-27/FY2027-28 Biennial Budget, State Grant (secured) funding table.
+:::
+
+## Relevance to Richmond Street
+
+Richmond Street runs roughly three blocks east of, and parallel to, the Ohlone Greenway for most of its length. See [Richmond Street & Complete Streets](richmond-street.qmd) for the funding history of bike lanes on that separate, largely redundant corridor.
+
+## Related: Crosstown Connect
+
+A separate, newly documented project: an east-west bikeway connecting Ashbury Avenue and the San Francisco Bay Trail via Downtown and the El Cerrito Plaza BART station, planned in collaboration with Public Works.
+
+| Fiscal Year | State Grant Funding |
+|---|---|
+| FY2027 | $225,000 |
+| FY2028 | $45,000 |
+| FY2029 | $565,000 |
+| FY2030 | $565,000 |
+| FY2031 | $565,000 |
+| **Total** | **$1,965,000** |
+
+::: {.source-note}
+Source: FY2026-27/FY2027-28 Biennial Budget, State Grant (secured) funding table; Community Development Department accomplishments.
+:::

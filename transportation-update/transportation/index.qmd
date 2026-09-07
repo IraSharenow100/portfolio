@@ -1,0 +1,16 @@
+---
+title: "El Cerrito Transportation Network"
+---
+
+A sourced record of El Cerrito's major transportation and bikeway projects, their funding structures, and documented delays. Drawn from City Council staff reports, the City's biennial capital budget, CEQA documents, and correspondence with the Strategic Growth Council (SGC).
+
+## Pages
+
+- **[Richmond Street & Complete Streets](richmond-street.qmd)** — the multi-thread funding history for Richmond Street bike lanes, including a funded application that was denied and a separate grant that was redirected to the same corridor
+- **[San Pablo Avenue Specific Plan](san-pablo-specific-plan.qmd)** — the 2014 Complete Streets plan and its funding status
+- **[Ohlone Greenway](ohlone-greenway.qmd)** — the city-length Class I path and planned downtown improvements
+- **[Parking Management](parking.qmd)** — the Dixon Resources parking management contract and its delays
+
+::: {.source-note}
+Every claim on these pages is tagged with its source. Where funding sources appear to overlap or a claim can't be fully reconciled against a primary document, that is flagged explicitly rather than resolved by assumption.
+:::
