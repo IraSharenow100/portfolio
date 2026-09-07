@@ -1,0 +1,31 @@
+---
+title: "Compensation Study"
+---
+
+## Contract
+
+- **Consultant:** Koff & Associates
+- **Council approval date:** July 19, 2022
+- **Work began:** August 31, 2022
+- **Estimated completion (per March 2023 City progress report):** September 2023
+- **Actual delivery:** February 2024
+
+::: {.source-note}
+Approval and start dates: *El Cerrito CAP Progress Report, March 2023.pdf*, Executive Summary — "The City Council approved a contract with Koff and Associates for a Citywide classification/compensation study on July 19, 2022. Koff and Associates began their work as of August 31, 2022 and the study is slated to be completed in September 2023."
+:::
+
+## Methodology Gaps (documented separately, prior research)
+
+- Does not account for CalPERS Unfunded Actuarial Liability (UAL) anywhere in its total-compensation analysis — only prices normal-cost pension add-ons.
+- Comparator cities (15 total) averaged approximately 71,500 residents versus El Cerrito's approximately 25,700 — roughly 2.8–2.9 times larger on average.
+- The City Manager position was excluded entirely from the benchmark list.
+- Found base salary 7.9% below market median, but total compensation only 1.9% below median.
+- El Cerrito's 37.5-hour workweek (for Management & Confidential and SEIU 1021 employees) was not adjusted for in the comparator methodology.
+
+::: {.source-note}
+These findings are drawn from prior analysis of the Koff study itself (February 2024) and comparator-city data; page-level citations to the Koff report should be added directly from the report document when available for public citation.
+:::
+
+## Why Sequencing Matters Here
+
+This study benchmarked El Cerrito's compensation against other cities' compensation for the same positions — without any prior, independent analysis of whether those positions' duties, staffing levels, or organizational structure were appropriately scoped. That structural/duties analysis is exactly what the State Auditor's recommended sequence called for as Step 1 and Step 2, *before* any compensation benchmarking (Step 3). See the [Sequencing Case Study](sequencing-case-study.qmd) for the full comparison.

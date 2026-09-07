@@ -49,6 +49,16 @@ website:
             text: Ohlone Greenway
           - href: transportation/parking.qmd
             text: Parking Management
+      - text: Studies
+        menu:
+          - href: studies/index.qmd
+            text: Overview
+          - href: studies/sequencing-case-study.qmd
+            text: Sequencing Case Study
+          - href: studies/service-delivery-study.qmd
+            text: Service Delivery Study
+          - href: studies/compensation-study.qmd
+            text: Compensation Study
     right:
       - icon: github
         href: https://github.com/IraSharenow100

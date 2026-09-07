@@ -14,6 +14,7 @@ This site collects analytical projects using public data, built with reproducibl
 - **[Finance](finance/index.qmd)** — El Cerrito municipal finance: credit rating, audits, borrowing, and tax collections
 - **[Library](library/index.qmd)** — El Cerrito library issue: history, Measure C, Task Force, cost disclosures, and key votes
 - **[Transportation](transportation/index.qmd)** — Richmond Street bike lanes, San Pablo Avenue, Ohlone Greenway, and parking management
+- **[Studies](studies/index.qmd)** — the Service Delivery and Compensation studies, and the sequencing problem between them
 
 ## Elsewhere
 
