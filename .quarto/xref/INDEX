@@ -88,5 +88,8 @@
   },
   "elections/index.qmd": {
     "index.html": "41bae798"
+  },
+  "studies/city-manager-compensation.qmd": {
+    "city-manager-compensation.html": "cbc2e0c2"
   }
 }
