@@ -66,9 +66,21 @@ Source: El Cerrito Municipal Code §2.04.320.
 Source: Agenda Bill, Item 5(D), August 21, 2012, Jerry Bradshaw, Public Works Director/City Engineer, to City Council. Committee dispute details from Citizens Street Oversight Committee minutes, 2012–2016, and April 22, 2014 City Council minutes.
 :::
 
-## A Structural Factor Independent of the Category Dispute
+## Fund Structure: Revenue, Debt Service, and What's Left for Street Work
 
-Separate from the pavement-vs-other-uses question, a large share of Measure A revenue has never funded visible street work at all: committee minutes across multiple years describe annual bond debt service consuming roughly 60% of tax proceeds during the years following the initial bond issuance, within the ordinance's 75% legal ceiling.
+Measure A revenue flows through the Street Improvement Capital Fund (Fund 211). Per the City's own budget documents, this fund has exactly one recurring transfer out — to bond debt service — not a separate administrative overhead charge.
+
+| Component | Amount | Source |
+|---|---|---|
+| Fund 211 revenue (Measure A sales tax) | $1.8M–$2.34M/year, rising toward approximately $2.3M in FY2025-26 | FY2024-25/FY2025-26 Biennial Budget, p.79, "Street Improvement Fund Revenue" table |
+| Bond debt service transfer to Debt Service Fund 836 | Approximately $702,000–$708,000/year, fixed by the 2017 refunding bond amortization schedule (final maturity May 1, 2036) | Table 2-3, "Transfers Summary" (FY2022-23 Budget Book, p.22; FY2024-25/FY2025-26 Biennial Budget, p.37), reconciled against the bond debt footnote (Table 13-2) |
+| Remainder (personnel, street construction/maintenance, or added to fund balance) | Variable — e.g., $3,125,000 budgeted for FY2025, drawing down fund balance for Richmond Street and Del Norte projects | FY2024-25/FY2025-26 Biennial Budget, p.80, Fund 211 expenditure table |
+
+The City's own itemized transfer list (Table 2-3) separately identifies a "General Fund Cost Recovery" category applied to seven other special revenue funds (Gas Tax, NPDES, LLAD, Measure J–Return to Source, Measure J–Storm Drain, Measure H, Paratransit, Integrated Waste Management). **Fund 211 does not appear in that category.** Its only listed recurring transfer is the debt service payment above.
+
+::: {.source-note}
+Whether administrative or overhead costs are embedded within Fund 211's own Personnel or Non-Personnel line items (rather than appearing as a separate labeled transfer) has not been confirmed and would require the City's cost allocation plan methodology, which has been separately requested via a pending Public Records Act request.
+:::
 
 ## Pavement Condition Index (PCI) History
 
@@ -115,4 +127,4 @@ Two different 2008 baseline PCI figures appear in City documents: **52**, stated
 
 ## Summary
 
-Measure A's original 2008 Expenditure Plan was pavement-focused, with a defined 15% carve-out for accessibility and drainage work built in from the outset. The ordinance's legal text has not been amended since 2008. Beginning with a $100,000 diversion in August 2012 — a decision City staff explicitly acknowledged departed from the program's stated original priorities, while remaining within the ordinance's broad catch-all authorization — an increasing share of Measure A spending has gone to categories (traffic safety, neighborhood traffic management, Safe Routes to School, Complete Streets) not named in the original work plan. This shift was contested by some Citizens' Oversight Committee members through 2014, then became an established, uncontested part of the program from 2016 onward. Meanwhile, the City's pavement condition, which reached the mid-80s during the initial accelerated program, has declined to 65 as of the most recent available data (mid-2025) — below the original plan's five-year target of 70.
+Measure A's original 2008 Expenditure Plan was pavement-focused, with a defined 15% carve-out for accessibility and drainage work built in from the outset. The ordinance's legal text has not been amended since 2008. Beginning with a $100,000 diversion in August 2012 — a decision City staff explicitly acknowledged departed from the program's stated original priorities, while remaining within the ordinance's broad catch-all authorization — an increasing share of Measure A spending has gone to categories (traffic safety, neighborhood traffic management, Safe Routes to School, Complete Streets) not named in the original work plan. This shift was contested by some Citizens' Oversight Committee members through 2014, then became an established, uncontested part of the program from 2016 onward. Separately, roughly $700,000 of the fund's ~$2.3 million in annual revenue goes to bond debt service through 2036, leaving a variable remainder for actual street work. Meanwhile, the City's pavement condition, which reached the mid-80s during the initial accelerated program, has declined to 65 as of the most recent available data (mid-2025) — below the original plan's five-year target of 70.
