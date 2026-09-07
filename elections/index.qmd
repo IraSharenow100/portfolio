@@ -1,0 +1,13 @@
+---
+title: "El Cerrito Elections"
+---
+
+A voter service page: official candidate statements and information, reported without commentary.
+
+## Pages
+
+- **[November 2026 City Council Candidates](candidates-2026.qmd)** — official statements from all six candidates, transcribed from filings with the City Clerk
+
+::: {.source-note}
+This section reports candidate-submitted material as filed. It does not offer opinions, endorsements, or comparisons.
+:::

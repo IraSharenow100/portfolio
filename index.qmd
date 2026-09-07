@@ -15,6 +15,7 @@ This site collects analytical projects using public data, built with reproducibl
 - **[Library](library/index.qmd)** — El Cerrito library issue: history, Measure C, Task Force, cost disclosures, and key votes
 - **[Transportation](transportation/index.qmd)** — Richmond Street bike lanes, San Pablo Avenue, Ohlone Greenway, and parking management
 - **[Studies](studies/index.qmd)** — the Service Delivery and Compensation studies, and the sequencing problem between them
+- **[Elections](elections/index.qmd)** — official candidate statements, November 2026 City Council race
 
 ## Elsewhere
 
