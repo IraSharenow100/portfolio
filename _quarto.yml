@@ -49,6 +49,8 @@ website:
             text: Ohlone Greenway
           - href: transportation/parking.qmd
             text: Parking Management
+          - href: transportation/measure-a-street-oversight.qmd
+            text: Measure A Origin & PCI Trends
       - text: Studies
         menu:
           - href: studies/index.qmd

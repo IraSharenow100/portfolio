@@ -10,6 +10,7 @@ A sourced record of El Cerrito's major transportation and bikeway projects, thei
 - **[San Pablo Avenue Specific Plan](san-pablo-specific-plan.qmd)** — the 2014 Complete Streets plan and its funding status
 - **[Ohlone Greenway](ohlone-greenway.qmd)** — the city-length Class I path and planned downtown improvements
 - **[Parking Management](parking.qmd)** — the Dixon Resources parking management contract and its delays
+- **[Measure A Origin & PCI Trends](measure-a-street-oversight.qmd)** — the tax's original purpose, how its use evolved, and pavement condition data 2008–present
 
 ::: {.source-note}
 Every claim on these pages is tagged with its source. Where funding sources appear to overlap or a claim can't be fully reconciled against a primary document, that is flagged explicitly rather than resolved by assumption.

@@ -1,0 +1,118 @@
+---
+title: "Measure A: Origin, Governance, and Pavement Condition Trends"
+---
+
+Measure A is El Cerrito's half-cent transactions and use tax dedicated to street repair and maintenance, approved by voters on February 5, 2008. This page documents the tax's original legal purpose, how its use has evolved, and the City's pavement condition data from 2008 to the present.
+
+## Ballot Origin
+
+Voters approved Measure A on **February 5, 2008**, formally titled *"The El Cerrito Pothole Repair, Local Street Improvement and Maintenance Measure."* The tax was codified as **Ordinance 2008-3**, Municipal Code Chapter 4.60.
+
+::: {.source-note}
+Ballot title and result sourced via secondary research citing Resolution 2008-14 (City certification of election results); not yet independently verified against the resolution itself.
+:::
+
+## The Original Expenditure Plan (Exhibit 1 to Ordinance 2008-3)
+
+The ordinance requires all tax proceeds be spent according to an Expenditure Plan attached as Exhibit 1. That Plan, still in force as codified, states:
+
+> "The Expenditure Plan is a simple one, as it proposes to utilize the one-half cent transactions and use tax for street maintenance and improvement-related purposes, rather than specific capital improvement projects."
+
+The Plan's **Accelerated Work Plan** for the first five years is organized around exactly two categories, both pavement-focused:
+
+1. **Preparatory Work** — crack sealing, structural pavement repairs, leveling/rideability corrections, ADA curb ramp installation, curb/gutter/sidewalk repair, temporary striping
+2. **Finish Resurfacing** — final pavement surface and markings: overlay, micropaving, slurry seal, cape seal, striping and signage
+
+The Plan set an explicit five-year target: bring the citywide PCI "up to or near 70."
+
+**One category beyond pure pavement was built into the original Plan from the start:** approximately 15% of tax revenue was set aside for "non-vehicular mobility and accessibility (curb ramps, improved striping) and significant drainage problems." This was not a later addition — it appears in the original 2008 Exhibit 1.
+
+**Legal scope of the tax** is broader than the Accelerated Work Plan's named categories, however. Municipal Code §4.60.150(A) defines eligible spending to include an open-ended catch-all: *"other such improvements as are deemed necessary by the city council for the benefit of the residents of the city."*
+
+**Debt limit:** annual debt service may not exceed 75% of that year's projected tax proceeds.
+
+::: {.source-note}
+Source: Municipal Code Chapter 4.60, §4.60.150 and Exhibit 1 (Pavement Expenditure Plan), as codified from Ordinance 2008-3.
+:::
+
+## Governance Structure
+
+The tax created a five-member **Street Repair and Maintenance Citizens' Oversight Committee**, appointed by Council. Per Municipal Code §2.04.320, the committee's role is explicitly and narrowly defined:
+
+> "The committee is not charged with decision-making on spending priorities, schedules, project details, funding source decisions... The committee shall serve in an advisory-only role to the city council."
+
+The committee reviews whether actual expenditures match the Council-approved Expenditure Plan; it does not set priorities or select projects. City staff and the City Attorney reiterated this narrow role repeatedly between 2008 and 2016 when committee members raised concerns about spending priorities.
+
+::: {.source-note}
+Source: El Cerrito Municipal Code §2.04.320.
+:::
+
+## Movement Away From the Original Work Plan
+
+| Date | Event |
+|---|---|
+| 2008–2011 | Original Accelerated Work Plan executed: pavement rehabilitation only, per the Plan's two named categories |
+| **August 21, 2012** | City staff recommends, and Council adopts, the first diversion of Measure A funds to a non-pavement category not named in the original Plan: **$100,000** transferred from the paving project to a new "Traffic Safety and Management Program" |
+| 2012–2014 | Sustained committee dispute over whether this and subsequent non-pavement spending was consistent with voter intent |
+| **April 3, 2014** | Committee's annual report to Council approved by a formal **3-2 vote** — Al Miller, Elizabeth Ozselcuk, and Matthew Kelly voting yes; Chair Thomas Miller and Vice Chair Lynne Kessler voting no |
+| 2014–2016 | Dispute over the committee's own authority (narrow post-expenditure review vs. broader input) resolved in favor of the narrow reading; audit-note language was corrected to reflect this |
+| 2016–present | Traffic safety, Safe Routes to School, neighborhood traffic management, and "Complete Streets" projects treated as routine, established components of the broader street program; no further recorded dispute over category eligibility |
+
+**The City's own 2012 staff report is direct on this point.** It states plainly that this spending was authorized under the ordinance's broad catch-all language, while simultaneously acknowledging it fell outside the original Plan's stated priorities:
+
+> "While neighborhood traffic problems were not the first priority for Measure A funds as it was presented to the community in 2007 and 2008, the City has made such significant progress in the area of pavement improvements (the first priority for Measure A funds), that it would not be inappropriate to authorize a modest level of funding for some of the secondary aspects of the fund."
+
+::: {.source-note}
+Source: Agenda Bill, Item 5(D), August 21, 2012, Jerry Bradshaw, Public Works Director/City Engineer, to City Council. Committee dispute details from Citizens Street Oversight Committee minutes, 2012–2016, and April 22, 2014 City Council minutes.
+:::
+
+## A Structural Factor Independent of the Category Dispute
+
+Separate from the pavement-vs-other-uses question, a large share of Measure A revenue has never funded visible street work at all: committee minutes across multiple years describe annual bond debt service consuming roughly 60% of tax proceeds during the years following the initial bond issuance, within the ordinance's 75% legal ceiling.
+
+## Pavement Condition Index (PCI) History
+
+El Cerrito's PCI is tracked through two parallel data series: the City's own consultant-authored Pavement Technical Assistance Program (PTAP) reports, and the Metropolitan Transportation Commission's (MTC) independently compiled regional dataset. The two series generally align but are not always identical for the same year, reflecting different reporting cycles for the same underlying survey data.
+
+### City PTAP Consultant Reports
+
+| Year | Citywide PCI | Arterial | Collector | Residential/Local | Consultant |
+|---|---|---|---|---|---|
+| 2008 | 52 | 81 | 57 | 40 | Nichols Consulting Engineers |
+| 2012 | 84 | 80 | 88 | 85 | Nichols Consulting Engineers |
+| 2017 | 85 | 84 | 86 | 86 | AMS Consulting |
+| 2020 | 73 | 74 | 74 | 73 | Harris & Associates |
+| 2023 | 69 | 71 | 69 | 68 | Harris & Associates |
+
+::: {.source-note}
+Source: 2008 PMS Completed Report (Nichols Consulting Engineers, June 11, 2008), p.2 and Table 2; 2012 PTAP-13 Final Report (Feb. 2013), Table 1; 2017 PTAP Final Report (April 1, 2017), Table 1; PTAP-20 Final Report (April 7, 2020), Table 4; PTAP-23 Final Report (March 30, 2023), Table 4.
+:::
+
+### MTC Independent Regional Dataset
+
+| Date | Network PCI |
+|---|---|
+| 2016 | 85 |
+| 2017 | 83 |
+| 2018 | 82 |
+| 2019 | 74 |
+| 2020 | 72 |
+| 2021 | 70 |
+| 2022 | 69 |
+| 2023 | 68 |
+| Dec. 31, 2024 | 66 |
+| **July 15, 2025** | **65** |
+
+::: {.source-note}
+Source: MTC "Bay Area Jurisdiction PCI Scores," annual workbooks 2021–2023, and Bay Area PCI Summary FY25 Closeout, "MTC Regional PCIs 2022–2025" tab, row `elcerritoci`. The July 15, 2025 figure is the most recent PCI data available.
+:::
+
+**The city's PCI peaked in the mid-80s around 2011–2017**, consistent with the original Plan's five-year target of "at or near 70" being substantially exceeded during the accelerated program, before declining significantly from 2018 onward — from the low 80s down to 65 as of mid-2025.
+
+### 2008 Baseline: An Unresolved Discrepancy
+
+Two different 2008 baseline PCI figures appear in City documents: **52**, stated directly in the 2008 PMS Completed Report (the primary consultant survey, in two places) and corroborated by the 2012 PTAP-13 report; and **49**, which appears in a separate 2012 City staff retrospective summary. The primary source document (the 2008 survey itself) supports 52. The origin of the 49 figure has not been independently confirmed.
+
+## Summary
+
+Measure A's original 2008 Expenditure Plan was pavement-focused, with a defined 15% carve-out for accessibility and drainage work built in from the outset. The ordinance's legal text has not been amended since 2008. Beginning with a $100,000 diversion in August 2012 — a decision City staff explicitly acknowledged departed from the program's stated original priorities, while remaining within the ordinance's broad catch-all authorization — an increasing share of Measure A spending has gone to categories (traffic safety, neighborhood traffic management, Safe Routes to School, Complete Streets) not named in the original work plan. This shift was contested by some Citizens' Oversight Committee members through 2014, then became an established, uncontested part of the program from 2016 onward. Meanwhile, the City's pavement condition, which reached the mid-80s during the initial accelerated program, has declined to 65 as of the most recent available data (mid-2025) — below the original plan's five-year target of 70.
