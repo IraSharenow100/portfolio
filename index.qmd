@@ -12,6 +12,7 @@ This site collects analytical projects using public data, built with reproducibl
 ## Project Areas
 
 - **[Finance](finance/index.qmd)** — El Cerrito municipal finance: credit rating, audits, borrowing, and tax collections
+- **[Library](library/index.qmd)** — El Cerrito library issue: history, Measure C, Task Force, cost disclosures, and key votes
 
 ## Elsewhere
 
