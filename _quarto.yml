@@ -59,6 +59,8 @@ website:
             text: Service Delivery Study
           - href: studies/compensation-study.qmd
             text: Compensation Study
+          - href: studies/city-manager-compensation.qmd
+            text: City Manager Compensation
       - text: Elections
         menu:
           - href: elections/index.qmd
