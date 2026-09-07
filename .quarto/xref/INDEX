@@ -82,5 +82,11 @@
   },
   "studies/service-delivery-study.qmd": {
     "service-delivery-study.html": "545d36ce"
+  },
+  "elections/candidates-2026.qmd": {
+    "candidates-2026.html": "fceb74ac"
+  },
+  "elections/index.qmd": {
+    "index.html": "41bae798"
   }
 }

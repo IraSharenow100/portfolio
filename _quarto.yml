@@ -59,6 +59,12 @@ website:
             text: Service Delivery Study
           - href: studies/compensation-study.qmd
             text: Compensation Study
+      - text: Elections
+        menu:
+          - href: elections/index.qmd
+            text: Overview
+          - href: elections/candidates-2026.qmd
+            text: November 2026 Candidates
     right:
       - icon: github
         href: https://github.com/IraSharenow100
