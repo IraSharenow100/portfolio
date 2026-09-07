@@ -1,0 +1,36 @@
+---
+title: "Cost & Funding History"
+---
+
+## Chronological Disclosure of Cost Estimates
+
+| When Stated | Amount / Figure | Audience / Context | Source |
+|---|---|---|---|
+| 2007 | $18–20 million (20,000 sq ft, incl. equipment/supplies) | Public library-campaign meeting; Karen Pinkos | Patch, retrospective article |
+| 2016 (ballot) | $30 million (bond authorization amount) | Nov. 8, 2016 ballot (Measure B) | Impact Report, p.4 |
+| 2016 (critics) | "$50–60 million" total incl. interest/fees | Contra Costa Taxpayers Assoc. Pres. Jack Weir | East Bay Times editorial, 10/9/2016 |
+| June 2023 (budget) | $36,165,710 | City's own FY budget document | Ira Sharenow letter, 11/19/2023 |
+| Feb. 2023 (packet) | Debt service $1.4M/yr; Op. costs $300K/yr; avg. home $173/yr for 30 yrs | Council packet | Ira Sharenow letter, 11/19/2023 |
+| Nov. 2023 (presentation) | $21,214,000 total; debt service $1.6M/yr; op. costs $900K/yr; avg. home $300/yr "forever" | Nov. 21, 2023 Council presentation | Ira Sharenow letter, citing the presentation packet |
+| 2025 (petition) | ~$21.2 million (consistent with Nov. 2023 figure) | Figure used on circulated citizen petition | Richmond Confidential, 5/31/2026 |
+| April 29, 2025 | ~$37 million (Rough Order of Magnitude) | Internal City document; City had this figure in hand | City/Griffin Structures work product, held by the City |
+| Jan. 20, 2026 (study session) | 5 scenarios, $10M–$48M range presented live | Council study session | Impact Report, p.5; Contra Costa News, 3/10/2026 |
+| After Jan. 20 / before Feb. 19, 2026 | Griffin Structures provides finalized ROM figures, "which vary slightly" from the Jan. 20 numbers | Internal, then published in Impact Report | Impact Report, p.24 |
+| Feb. 19, 2026 (official) | Scenario 3 (TOD): $37,224,000. Full table: Scenario 1 $10,346,000; Scenario 2 $35,785,000; Scenario 3 $37,224,000; Scenario 4 $47,900,000; Scenario 5 $40,604,000 | Official §9212 Impact Report | Impact Report, p.18 |
+| 2026 campaign framing | "$21 million" (petition) vs. "$37 million" (City's known figure) | Framed by critics as known-but-undisclosed | Richmond Confidential, 5/31/2026 |
+
+## The Gap Between Internal Knowledge and Public Disclosure
+
+The Impact Report itself states that the $37,224,000 Scenario 3 figure was finalized only after the January 20, 2026 study session and was not the number presented live at that meeting (Impact Report, p.24) — meaning the most current, precise cost figure was not made public until the February 19, 2026 Impact Report, roughly one month after the January 20 session and many months after the petition (using the ~$21.2M figure) had already been circulated and signed (petition filed November 20, 2025).
+
+Whether City staff possessed a $37M-range estimate before the November 2025 petition filing is the central question in the "known but undisclosed" argument. The documented record supports: the City engaged Griffin Structures as Owner's Representative starting April 1, 2025 — before the May 6, 2025 Notice of Intent, and well before the November 20, 2025 petition filing — specifically to provide updated TOD cost information.
+
+::: {.source-note}
+**Strongest documented evidence available:** as of January 20, 2026, staff already had a $35–48M range in hand (Agenda Bill 8.B), well above the ~$21.2M petition figure. This range is dated to the Jan. 20, 2026 staff report; an earlier-dated internal document proving the City had this range specifically before the Nov. 20, 2025 petition filing has not been confirmed. Any public claim should be limited to what's provable from dated documents, pending further records request.
+:::
+
+## Other Financing Facts
+
+- **Special election cost** commonly cited at $80,000 for the consolidated June 2 date. Per the Jan. 20, 2026 agenda bill, a standalone (non-consolidated) special election would have cost $213,768–$267,210, versus $3–4.50/registered voter (roughly $53,000–$80,000) if consolidated with the June 2 statewide primary — the $80,000 figure is the high end of the consolidated-election estimate, not the standalone cost. (Agenda Bill 8.A, 1/20/2026, p.1)
+- **Tax collection start:** per the Impact Report's legal analysis, earliest realistic start was the 2026-27 tax year, with an Effective Date potentially as early as July 31, 2026 (Impact Report, p.11–12), contingent on County certification in time for the Council's July 21, 2026 regular meeting. Actual tax bills (ad valorem mechanics) go out in the fall and are due December 10 / April 10 (Impact Report, p.12).
+- **Comparable benchmark:** current library's existing annual operating/maintenance cost is $157,615 (Impact Report, p.19).
