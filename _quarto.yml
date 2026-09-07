@@ -37,6 +37,18 @@ website:
             text: Cost & Funding History
           - href: library/key-people.qmd
             text: Key People and Votes
+      - text: Transportation
+        menu:
+          - href: transportation/index.qmd
+            text: Overview
+          - href: transportation/richmond-street.qmd
+            text: Richmond Street & Complete Streets
+          - href: transportation/san-pablo-specific-plan.qmd
+            text: San Pablo Specific Plan
+          - href: transportation/ohlone-greenway.qmd
+            text: Ohlone Greenway
+          - href: transportation/parking.qmd
+            text: Parking Management
     right:
       - icon: github
         href: https://github.com/IraSharenow100

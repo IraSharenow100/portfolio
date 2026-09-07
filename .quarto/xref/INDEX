@@ -55,5 +55,20 @@
   },
   "transportation-update/transportation/san-pablo-specific-plan.qmd": {
     "san-pablo-specific-plan.html": "2a913424"
+  },
+  "transportation/index.qmd": {
+    "index.html": "e5424e6e"
+  },
+  "transportation/ohlone-greenway.qmd": {
+    "ohlone-greenway.html": "68ba026f"
+  },
+  "transportation/parking.qmd": {
+    "parking.html": "6f332d16"
+  },
+  "transportation/richmond-street.qmd": {
+    "richmond-street.html": "3da246bd"
+  },
+  "transportation/san-pablo-specific-plan.qmd": {
+    "san-pablo-specific-plan.html": "f16ca0a1"
   }
 }
