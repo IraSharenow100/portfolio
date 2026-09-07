@@ -1,0 +1,15 @@
+---
+title: "City Studies"
+---
+
+A sourced record of two consultant studies the State Auditor recommended El Cerrito undertake, in a specific order — and what the City actually did.
+
+## Pages
+
+- **[Sequencing Case Study](sequencing-case-study.qmd)** — the State Auditor's recommended order versus the City's actual order, with the resulting analytical gap
+- **[Service Delivery Study](service-delivery-study.qmd)** — the Citygate Associates contract, change order, and delay
+- **[Compensation Study](compensation-study.qmd)** — the Koff & Associates study and its methodology gaps
+
+::: {.source-note}
+Every claim on these pages is tagged with its exact source document and date.
+:::

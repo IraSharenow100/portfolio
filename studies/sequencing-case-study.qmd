@@ -1,0 +1,63 @@
+---
+title: "Case Study: Doing the Studies Out of Order"
+---
+
+## What the State Auditor Recommended
+
+The California State Auditor's High Risk Issue #4 ("Reducing Costs") set out a specific, three-step sequence for the City to follow:
+
+> "1. To identify potential savings and efficiencies, El Cerrito should perform the following tasks:
+> - By September 2021, conduct an analysis of the organizational structure of the city and assess the functions it needs to achieve its goals
+> - Based on the results of the organizational structure study, conduct an analysis of the duties and responsibilities assigned to each of the city's current staff positions to identify any overlapping areas of responsibility and inefficiencies.
+> - Using the results of its organizational structure study and its analysis of duties and responsibilities, conduct a compensation study by comparing total compensation for its staff positions with compensation paid by other cities. Based on the results of this study, implement personnel and salary changes that would result in ongoing cost reductions"
+
+::: {.source-note}
+Source: *El Cerrito Response to State Auditor PR.pdf*, High Risk Issue #4, "Administrative Response to State Auditor Recommendations." Identical language reproduced in the City's own Corrective Action Plan progress reports of March 2022 and March 2023.
+:::
+
+The logic of this sequence is explicit in the Auditor's own wording: the organizational structure study comes first, its results feed into the staffing/duties analysis, and the results of *both* of those feed into the compensation study. Compensation is the last step, not the first — because you can't meaningfully benchmark compensation for positions whose structure and duties haven't yet been analyzed and potentially changed.
+
+The City's own initial response agreed with this recommendation and estimated the combined study would cost over $100,000:
+
+> "A comprehensive study of the City's classification and compensation structure (including total compensation – not just base salaries) would be beneficial to the City. However, costs are expected to exceed $100,000... A study of this magnitude must be completed by an industry expert."
+
+::: {.source-note}
+Source: *El Cerrito Response to State Auditor PR.pdf*, same section.
+:::
+
+## What the City Actually Did
+
+The City did the opposite order — compensation first, organizational structure second, roughly three years later:
+
+| Step | State Auditor's Order | City's Actual Order | Date |
+|---|---|---|---|
+| 1 | Organizational structure study | *(not done until 2025)* | Target: September 2021 |
+| 2 | Staffing/duties analysis | *(not done until 2025, bundled into the Citygate study)* | Target: after Step 1 |
+| 3 | Compensation study | **Compensation study — done first** | Council approved contract with Koff & Associates: **July 19, 2022**. Work began **August 31, 2022**. |
+| — | — | **Service Delivery (organizational) study — done second, ~3 years later** | Contract executed with Citygate Associates: **July 29, 2025** |
+
+::: {.source-note}
+Koff contract approval and start dates: *El Cerrito CAP Progress Report, March 2023.pdf*, Executive Summary — "The City Council approved a contract with Koff and Associates for a Citywide classification/compensation study on July 19, 2022. Koff and Associates began their work as of August 31, 2022." Citygate contract date: *CITYGATE ASSOCIATES, LLC 2025.7.29-1.pdf* and *CITYGATE ASSOCIATES LLC Amendment 20260630.pdf*, Recital A — "On July 29, 2025, City and Consultant entered that certain Consulting Services Agreement..."
+:::
+
+**The gap this created:** the compensation study (delivered ~February 2024, per prior analysis) compared El Cerrito's pay to other cities' pay for positions whose duties, structure, and staffing levels had never been independently analyzed — the exact analysis the Auditor said should happen *first*, specifically so that "overlapping areas of responsibility and inefficiencies" could be identified before, not after, salaries were benchmarked against other cities.
+
+## Timing Context
+
+- The State Auditor's target date for the first step (organizational structure) was **September 2021**.
+- The City did not contract for that study until **July 29, 2025** — approximately **four years** after the Auditor's target date, and **three years** after the compensation study had already been completed.
+- The City's own March 2022 and March 2023 Corrective Action Plan updates continued to report the classification/compensation study as "in process," without independently flagging that it was proceeding out of the Auditor's recommended sequence.
+
+## The City's Later Reframing
+
+By March 2023, the City's own progress report began pushing back on the substance of Issue #4 itself, rather than addressing the sequencing:
+
+> "The City believes the criteria and recommendations in this risk area results in the City being judged for conditions that no longer exist and cannot be sustained... Unlike the original speculation by the State Auditor team that the classification and compensation study would provide areas of efficiency and cost savings, it is now understood that the study will instead highlight how far behind the market many of the City's positions are."
+
+::: {.source-note}
+Source: *El Cerrito CAP Progress Report, March 2023.pdf*, Executive Summary.
+:::
+
+This reframing — from "we agree and will follow this sequence" (2021) to "this risk area no longer applies" (2023) — happened without the organizational structure study (the Auditor's actual first-step recommendation) ever having been conducted. The City did not commission that study until more than two years after this reframing.
+
+See [Service Delivery Study](service-delivery-study.qmd) and [Compensation Study](compensation-study.qmd) for the detailed record of each individual study.

@@ -1,0 +1,54 @@
+---
+title: "Service Delivery Study"
+---
+
+## Contract
+
+- **Consultant:** Citygate Associates, LLC
+- **Original agreement executed:** July 29, 2025
+- **Signatories:** Karen Pinkos, City Manager; Chad Jackson, President, Citygate Associates
+- **Proposed schedule (Citygate's own proposal):** "approximately six to eight months from contract execution."
+
+::: {.source-note}
+Source: *CITYGATE ASSOCIATES, LLC 2025.7.29-1.pdf*, Section 5.7, "Proposed Project Schedule." Contract execution date confirmed in *CITYGATE ASSOCIATES LLC Amendment 20260630.pdf*, Recital A.
+:::
+
+## Change Order #1
+
+- **Dated:** December 11, 2025
+- **Subject:** restructuring the Mid-Project Briefing from a single consolidated presentation into a high-level Citywide overview (December 16, 2025) plus seven separate department-level briefings (Administration, Community Development, Finance, Fire, Police, Public Works, Recreation)
+- **Cost impact:** "will not exceed $4,945, inclusive of all hourly fees and our standard administration cost"
+- **Signed by:** Karen Pinkos, December 11, 2025
+
+::: {.source-note}
+Source: *Citygate Associates CHANGE ORDER 2025.12.111.pdf*, letter to Karen Pinkos dated December 11, 2025.
+:::
+
+This change order was a scope refinement (more detailed departmental briefings), not a scope expansion or cost overrun in the traditional sense — Citygate itself notes it reduced other project-team participation to help offset the added cost.
+
+## The Amendment
+
+- **Dated:** June 30, 2026 — the exact day the original contract term expired
+- **Substantive change:** one sentence — "Section 1.1 of the Agreement shall be amended such that the term of the Agreement shall be extended from June 30, 2026, to December 31, 2026."
+- **Cost change:** none stated
+- **Reason stated in the amendment:** none — the document contains no explanation for the extension beyond the single sentence changing the end date
+
+::: {.source-note}
+Source: *CITYGATE ASSOCIATES LLC Amendment 20260630.pdf*, full text of the amendment (one page).
+:::
+
+## Timeline Summary
+
+| Date | Event |
+|---|---|
+| July 29, 2025 | Original contract executed |
+| — | Proposed duration: 6–8 months (per Citygate's own proposal) |
+| Dec 11, 2025 | Change Order #1: briefing structure revised, +$4,945 |
+| June 30, 2026 | Original contract term expires — same day, amendment signed extending to Dec 31, 2026, no reason stated |
+| Dec 31, 2026 | New contract end date |
+
+From execution (July 2025) to the new end date (December 2026) is **17 months** — more than double Citygate's own original 6–8 month estimate.
+
+## Relationship to the State Auditor Recommendation
+
+This is the organizational/staffing study the State Auditor recommended the City complete **by September 2021**, as the first step before any compensation study. See the [Sequencing Case Study](sequencing-case-study.qmd) for the full comparison against the Auditor's recommended order — this contract was not executed until July 2025, nearly four years after that target date, and roughly three years after the City had already completed its compensation study.

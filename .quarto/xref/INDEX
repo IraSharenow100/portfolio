@@ -70,5 +70,17 @@
   },
   "transportation/san-pablo-specific-plan.qmd": {
     "san-pablo-specific-plan.html": "f16ca0a1"
+  },
+  "studies/compensation-study.qmd": {
+    "compensation-study.html": "4dfcc247"
+  },
+  "studies/index.qmd": {
+    "index.html": "1ab7e0e4"
+  },
+  "studies/sequencing-case-study.qmd": {
+    "sequencing-case-study.html": "02f22887"
+  },
+  "studies/service-delivery-study.qmd": {
+    "service-delivery-study.html": "545d36ce"
   }
 }
