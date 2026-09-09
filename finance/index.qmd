@@ -1,15 +1,12 @@
----
-title: "El Cerrito Finance"
----
+El Cerrito Finance
+A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records.
+Pages
 
-A sourced record of El Cerrito's financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City's audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City's own financial records.
-
-## Pages
-
-- **[Credit Rating History](credit-rating.qmd)** — S&P's underlying rating (SPUR) on the City's certificates of participation, 2013–present
-- **[Going-Concern Audits](going-concern.qmd)** — Every fiscal year the City's audited financial statements carried a going-concern designation, 2012–2025
-- **[State Auditor Report](state-auditor.qmd)** — Findings from California State Auditor Report 2020-803
-- **[TRAN Borrowing](tran.qmd)** — Annual short-term borrowing, FY2012–FY2022
-- **[Tax Collections](tax-collections.qmd)** — Real Property Transfer Tax and other tax revenue
+* [Credit Rating History](credit-rating.html) — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present
+* [Going-Concern Audits](going-concern.html) — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025
+* [State Auditor Report](state-auditor.html) — Findings from California State Auditor Report 2020-803
+* [TRAN Borrowing](tran.html) — Annual short-term borrowing, FY2012–FY2022
+* [Tax Collections](tax-collections.html) — Real Property Transfer Tax and other tax revenue
+* [RDA Dissolution](rda-dissolution.html) — What the 2011–2012 state dissolution of redevelopment agencies cost El Cerrito
 
 Each page reports documented facts without attributing responsibility to any individual.
