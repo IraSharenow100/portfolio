@@ -1,0 +1,232 @@
+---
+title: "El Cerrito and the Dissolution of Redevelopment Agencies"
+subtitle: "What Happened, What It Cost, and Whether It Was Fair"
+date: "2026-09-09"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+::: {.callout-note}
+## A Note on Sources
+This page synthesizes City of El Cerrito budget and audit documents, official California state records, and appellate case research. A California Public Records Act request has been submitted to the City Clerk to obtain several underlying documents that are currently available only secondhand (see "What Remains Unverified" below). This page will be updated if that request produces additional records.
+:::
+
+## Executive Summary
+
+California abolished redevelopment agencies (RDAs) statewide in 2011–2012 to redirect growing property tax revenue back to schools, counties, and cities' general funds, and to reduce the state's own budget obligations under Proposition 98. El Cerrito's RDA was dissolved effective February 1, 2012, along with more than 400 others statewide.
+
+Separately, El Cerrito's RDA and City government, in the window between Governor Brown's January 2011 proposal to eliminate RDAs and the law's actual passage in June 2011, moved roughly $1.98 million in cash, $400,243 in bond proceeds, and about $10.17 million in real property from the RDA to the Municipal Services Corporation (MSC), a nonprofit the City itself controls. A City staff memorandum from the time described the purpose as helping to "protect tax increment revenue."
+
+The California Department of Finance determined this transfer was not legally effective, because the MSC was financially controlled by the City. It ordered $1,981,989 in cash returned. El Cerrito fought this in court for nearly eight years and lost, with the Third District Court of Appeal affirming the state's position in March 2021.
+
+El Cerrito was not alone in attempting this kind of maneuver — Tracy, Brentwood, Big Bear Lake, and San Bernardino all did something similar and were subject to the same clawback process.
+
+Two distinct dollar figures come up in City financial records, and conflating them produces a misleading picture:
+
+- **$1,981,989** — the total amount the state Department of Finance determined El Cerrito owed, fully repaid by 2018.
+- **$1,321,189** — a separate, internal accounting balance: money the City's General Fund advanced to the Successor Agency to help make those payments, written off in FY2020-21 once it became clear it would never be repaid internally. This was not an additional payment to the state — it was General Fund cash already spent, formally acknowledged as a loss.
+
+A concrete, ongoing legacy of the dispute persists: as of a March 2024 City budget item, El Cerrito was still resolving a $350,000 obligation to the MSC — incurred in 2016 to help finance the state repayment — by directing General Fund money to a City infrastructure project.
+
+---
+
+## Part 1 — What Was a Redevelopment Agency, and Why Did Cities Want One?
+
+Starting in the 1940s, California law allowed cities to form Redevelopment Agencies (RDAs) — separate government entities dedicated to fixing up "blighted" areas: rundown commercial corridors, underused industrial land, and similar areas the city wanted to revitalize. El Cerrito's RDA project area covered 368 acres, mainly along San Pablo Avenue, and had been in place since 1977.
+
+### The core mechanism: tax increment financing
+
+RDAs were funded through a tool called tax increment financing:
+
+- When an RDA project area was created, the property tax revenue coming from that area at that moment was "frozen" as a baseline.
+- As redevelopment occurred and property values rose, the growth in property tax revenue above that baseline — the "increment" — went to the RDA, instead of being split among the normal recipients: school districts, the county, special districts, and the city's own general fund.
+- The RDA could spend that increment directly, or borrow against future increment by issuing bonds.
+
+This meant an RDA project area effectively diverted a growing share of local property tax revenue into a dedicated pot controlled by the city, for redevelopment purposes — money that, absent the RDA, would have flowed through the normal formula and given every taxing entity, including the city's own general fund, its usual proportional share of the growth.
+
+## Part 2 — Why Did the State Eliminate RDAs in 2011–2012?
+
+By 2011, California had more than 400 RDAs statewide, collectively capturing a large and steadily growing share of property tax revenue. This mattered directly to the state budget because of Proposition 98, which guarantees a minimum funding level for schools: when RDAs diverted property tax away from school districts, the state had to backfill the lost school funding from the state general fund. RDAs were, in effect, quietly costing the state billions of dollars a year in backfill obligations during a severe state budget crisis.
+
+Governor Jerry Brown proposed eliminating RDAs statewide in his January 10, 2011 budget. The Legislature passed the dissolution law, Assembly Bill 1X 26 ("ABX1 26"), on June 28, 2011. The California Supreme Court upheld the law in *California Redevelopment Association v. Matosantos* (December 2011). RDAs were formally dissolved statewide effective February 1, 2012.
+
+> The 2011 Governor's Budget Summary framed RDA elimination as redirecting property tax growth toward core public services — schools, counties, and cities — rather than a permanently growing, dedicated redevelopment pot. *(Source: Governor's Budget Summary 2011-12, Jan. 10, 2011, redevelopment discussion at p. 28.)*
+
+## Part 3 — The Transition Period: Why This Story Is Complicated
+
+The most confusing part of this history — and the part that matters most for understanding El Cerrito — is the roughly thirteen-month gap between when dissolution became a known threat (January 2011) and when it actually took legal effect (February 2012). During that window, RDAs were still fully legal entities that could sign agreements, spend money, and move assets.
+
+Many cities and their RDAs used this window to try to lock in resources before dissolution took effect — signing agreements that committed RDA funds to specific projects, or transferring RDA-owned cash, bonds, and property to other entities. This was a well-documented statewide pattern, not something unique to El Cerrito.
+
+The dissolution law anticipated this. It created a state review process — the Due Diligence Review (DDR), run by the Department of Finance, alongside a separate Asset Transfer Review by the State Controller's Office — that examined every former RDA's transactions going back to January 1, 2011. Its purpose was to identify and reverse any transfers made during the transition window that amounted to moving RDA resources beyond the reach of the dissolution law, particularly transfers to entities that were nominally independent but actually controlled by the sponsoring city.
+
+## Part 4 — What El Cerrito Did: A Documented Timeline
+
+| Date | Event |
+|---|---|
+| Jan. 10, 2011 | Governor Brown's budget proposes eliminating RDAs statewide. |
+| Feb. 7, 2011 | El Cerrito RDA and City sign a Cooperation Agreement. |
+| Feb. 22, 2011 | Agreement amended and restated. |
+| Mar. 7, 2011 | City assigns its role in the agreement to the Municipal Services Corporation (MSC), a City-controlled nonprofit. |
+| Mar. 9, 2011 | RDA transfers $950,649 cash and $400,243 in bond proceeds to the MSC. |
+| Mar. 22, 2011 | RDA transfers four properties, valued at $10,168,319, to the MSC. |
+| Jun. 28, 2011 | ABX1 26 (the dissolution law) is enacted — about 4.5 months after El Cerrito's agreement was signed. |
+| Jan. 6 & 31, 2012 | Additional cash transfers to the MSC ($631,340 and $400,000), bringing total cash transferred to $1,981,989. |
+| Feb. 1, 2012 | RDAs dissolved statewide; El Cerrito's RDA becomes a Successor Agency under state oversight. |
+| 2013 | State Due Diligence Review determines the MSC transfers were not legally effective; DOF orders $1,981,989 in cash returned and challenges the property and bond transfers. |
+| Oct. 22, 2013 | El Cerrito files suit (Sacramento County Superior Court No. 34-2013-80001671). |
+| Dec. 21, 2015 | City Council approves an installment plan to repay DOF $1,981,989 over three fiscal years, financed by RPTTF distributions, a $350,000 loan from the MSC, and proceeds from selling former RDA property. |
+| Dec. 22 & 29, 2015 | DOF issues El Cerrito's Successor Agency a Finding of Completion and approves its Long-Range Property Management Plan. |
+| 2016–2018 | Installment payments made; DOF claim fully paid by January 2018. |
+| Dec. 26, 2018 | Karen Pinkos becomes City Manager (after the transaction, lawsuit filing, and repayment plan, but before the appellate decision and write-off). |
+| Mar. 9, 2021 | Third District Court of Appeal affirms judgment against El Cerrito (*El Cerrito Redevelopment Agency Successor Agency v. Bosler*, No. C078064, unpublished). |
+| FY2020-21 | City writes off a separate $1,321,189 internal General Fund advance to the Successor Agency, formally recognizing it will not be repaid. |
+| Mar. 5, 2024 | City proposes resolving the outstanding $350,000 MSC loan by directing General Fund money to the Del Norte Complete Streets Project. |
+
+## Part 5 — Why Did El Cerrito Owe $1.98 Million?
+
+This is the single most important question to understand, and the answer is not that the state imposed a new tax, fine, or penalty. It is that the state determined El Cerrito had moved money it was not legally allowed to move, and ordered it returned.
+
+- Before dissolution, El Cerrito's RDA legitimately held cash from its tax-increment revenue.
+- In early 2011, anticipating dissolution, the RDA transferred that cash — along with bond proceeds and property — to the Municipal Services Corporation, a nonprofit the City itself created and controls.
+- The dissolution law specifically prohibited RDAs from simply handing their assets to their sponsoring city during this period; the whole point of the law was to prevent RDA resources from becoming a windfall for cities rather than flowing back to the normal, shared property-tax distribution.
+- The Department of Finance's Due Diligence Review concluded that the MSC was not a genuinely independent third party — it was financially controlled by the City — so under the law's own definitions, transferring RDA assets to the MSC was legally equivalent to transferring them to the City itself, which was not permitted.
+- DOF therefore ordered the $1,981,989 in cash returned, so it could go through the normal redistribution process (the RPTTF) that sends property tax to schools, the county, special districts, and the city in the standard shared proportions.
+
+El Cerrito disputed this determination and litigated it for nearly eight years, ultimately losing when the Court of Appeal affirmed the judgment against the city in March 2021.
+
+> "help protect tax increment revenue"
+>
+> — City staff memorandum, as quoted in the Court of Appeal opinion, *El Cerrito Redevelopment Agency Successor Agency v. Bosler*, No. C078064
+
+That contemporaneous staff language — describing the purpose of the February 2011 agreement as protecting tax increment revenue — is central to why the courts treated this as exactly the kind of transaction the dissolution law's asset-transfer rules were designed to catch.
+
+## Part 6 — Understanding the Two Numbers: $1.98 Million and $1.32 Million
+
+These two figures are frequently confused, so it is worth explaining the relationship carefully.
+
+::: {.callout-tip}
+## A Simple Analogy
+Imagine the state sends El Cerrito's Successor Agency a bill for $1.98 million, like a collection notice: "you owe this, full stop." But the Successor Agency has no independent income of its own — it only receives periodic property-tax distributions tied to already-approved obligations. So the City's General Fund — the same pot of money that pays for police, parks, and streets — stepped in and fronted cash so the state's installment payments could be made on schedule, the way a parent might front money for a grown child's debt with the expectation of eventually being paid back. Each time the General Fund fronted more money, it created and grew an internal IOU: "Successor Agency owes the City's General Fund." By 2018, once all the state installments were paid, that internal IOU had grown to $1,321,189. When the 2021 appeal failed and it became clear the Successor Agency would never have independent means to repay it, the City wrote that internal IOU off.
+:::
+
+In other words:
+
+- **$1,981,989** = the total amount owed to the State of California, fully repaid by 2018 using a combination of Successor Agency property-tax distributions, a separate $350,000 loan from the MSC, and proceeds from selling former RDA property.
+- **$1,321,189** = the portion of that repayment effort the City's General Fund personally fronted, which was never repaid internally and was formally written off as a loss in FY2020-21.
+
+The City's FY2020-21 Annual Comprehensive Financial Report (ACFR), Note 16, is explicit that the write-off "has no impact on City cash," because the cash had already left the General Fund years earlier when it was originally advanced. The write-off was not a second payment to the state — it was a formal accounting acknowledgment that an internal loan would never be collected.
+
+It would therefore be inaccurate to add these two figures together and describe El Cerrito's loss as $3.3 million. It is more accurate to say: the state recovered $1.98 million total, and of the City resources used to make that happen, $1.32 million came from the General Fund and was never recovered internally.
+
+## Part 7 — Was This Fair? Two Separate Questions
+
+"Was this fair to El Cerrito" is really two different questions with two different answers.
+
+### Question A: Was the state's general decision to abolish redevelopment fair to cities?
+
+This is a legitimate, still-debated policy question without a single correct answer.
+
+**The case that it was unfair to cities:**
+
+- Cities had built long-term development programs — for El Cerrito, San Pablo Avenue revitalization — around a financing tool the state then eliminated with about a year's notice.
+- El Cerrito's own budget documents estimate roughly $1 million per year in lost General Fund support for economic development and related City functions in the years immediately following dissolution, reflecting City functions and staff positions the RDA had previously funded.
+- The state effectively changed the rules after substantial local planning and financial commitments had already been made.
+
+**The case that it was justified:**
+
+- RDAs statewide had grown to capture an increasing, uncapped share of property tax growth, at the direct expense of schools, counties, and other public services.
+- Because of Proposition 98's school-funding guarantee, the state itself bore a growing financial burden as a result of RDA tax-increment diversion, making this a genuine state fiscal problem, not merely local politics.
+- The California Supreme Court upheld the Legislature's authority to abolish RDAs in *California Redevelopment Assn. v. Matosantos* (2011), confirming the state acted within its constitutional authority.
+
+This report does not resolve this policy debate — both sides have documented, legitimate arguments, and reasonable people disagree.
+
+### Question B: Was El Cerrito unfairly targeted in the specific $1.98 million dispute?
+
+Here, the documented record points more clearly in one direction.
+
+**The strongest argument for El Cerrito:**
+
+- When El Cerrito signed its February 2011 Cooperation Agreement, ABX1 26 had not yet been enacted (it passed in June 2011) — El Cerrito could argue it was using tools that were legally available at the time.
+- The MSC was not a private developer or anyone's personal enterprise; the money was intended to remain devoted to public redevelopment purposes.
+- Some of the dissolution law's asset-transfer rules were applied to transactions that occurred before the law itself existed — a retroactivity concern that other cities also litigated.
+
+**The strongest argument for the State's position:**
+
+- The chronology is difficult to characterize as routine business: El Cerrito's agreement was signed less than a month after Governor Brown's public proposal to eliminate RDAs, and the asset transfers followed within weeks.
+- The contemporaneous City staff memorandum explicitly described the purpose as helping to "protect tax increment revenue" — language that undercuts any claim the agreement was unrelated to the dissolution threat.
+- The recipient of the transferred assets, the MSC, was found by both the State Controller's Office and the courts to be financially controlled by the City itself, not an independent third party.
+- The Court of Appeal upheld the state's treatment of the transaction, and El Cerrito lost at every stage of litigation.
+- El Cerrito was not singled out: comparable disputes involving Tracy, Brentwood, Big Bear Lake, and San Bernardino (which used a similar nonprofit-transfer structure at a much larger scale) were litigated on similar grounds, with similar outcomes.
+
+**Assessment:** The evidence does not establish that City officials acted fraudulently or knowingly violated the law in February 2011 — no source reviewed for this page supports that conclusion. A more precise characterization is that El Cerrito aggressively attempted to preserve local redevelopment resources during a rapidly changing legal environment, using a strategy that a number of other California cities also attempted, and that the courts subsequently determined this strategy was not legally effective under the dissolution statute. That is a materially different claim from "the state unfairly targeted El Cerrito," and the documented record supports the former more than the latter.
+
+## Part 8 — Statewide Context: El Cerrito Was Not Alone
+
+Court records show El Cerrito's situation reflected a broader statewide pattern of cities and RDAs attempting to preserve redevelopment resources between January 2011 (when dissolution was proposed) and June 2011 (when it became law).
+
+| City | What Happened |
+|---|---|
+| Tracy | Entered agreements committing roughly $4.18 million in tax increment and $2.13 million in bond proceeds to the City after Brown's January 2011 proposal; paid disputed amounts from its General Fund in December 2015 to obtain a Finding of Completion. (*City of Tracy v. Cohen*, 3 Cal.App.5th 852 (2016)) |
+| Brentwood | Entered a series of agreements with its RDA during February–March 2011 while dissolution was being proposed; litigated similar retroactive clawback treatment. (*City of Brentwood v. Campbell*, 237 Cal.App.4th 488 (2015)) |
+| Big Bear Lake | Adopted a cooperation agreement on June 27, 2011 — one day before the dissolution law was signed — later subjected to the same recovery process. (*City of Big Bear Lake v. Cohen*, No. C076576 (2017)) |
+| San Bernardino | Transferred approximately $108.37 million in assets to a City-connected nonprofit (the San Bernardino Economic Development Corporation) on March 17, 2011, for the stated purpose of protecting RDA resources from elimination; the State Controller determined the transfer was unallowable and ordered it reversed. (State Controller, *City of San Bernardino Asset Transfer Review*, Mar. 6, 2013) |
+
+San Bernardino's case is the closest structural match to El Cerrito's: a transfer to a City-connected nonprofit, explicitly justified as protecting RDA resources from elimination, that state auditors determined was not legally effective. The pattern across these cases — proposed elimination, a rapid agreement locking in assets, a transfer to a City-related entity, and a subsequent state clawback — shows El Cerrito's approach was a widely attempted strategy, not an unusual or isolated maneuver.
+
+## Part 9 — The Ongoing Legacy: A 2016 Loan Still Being Resolved in 2024
+
+One concrete, continuing financial consequence of this dispute persisted more than a decade after the original transaction. To help make the DOF installment payments, the City borrowed $350,000 from the MSC at 0% interest in 2016, originally expecting repayment by around FY2020. As of a City March 5, 2024 Mid-Year Budget Update (Agenda Item 9.B), the City proposed resolving that obligation by appropriating $350,000 of unassigned General Fund balance toward the Del Norte Complete Streets Project, following a November 2023 MSC-accepted proposal to satisfy the loan this way.
+
+This shows the financial consequences of the 2011 transaction and its unwinding reached well beyond the formal 2021 court decision and 2020-21 write-off, continuing to affect General Fund allocation decisions as recently as 2024.
+
+## What Remains Unverified
+
+Consistent with a strict sourcing standard, the following items are flagged as unconfirmed rather than presented as settled fact. A California Public Records Act request addressing items 1–3 has been submitted to the City Clerk; this page will be updated if that request produces additional records.
+
+- The appellate opinion in *El Cerrito Redevelopment Agency Successor Agency v. Bosler* (No. C078064) could not be located on Google Scholar, Justia, or CourtListener. It is sourced here through CaseMine (an aggregator), cross-checked against El Cerrito's own November 17, 2015 City Council minutes (Agenda Item 5(A)) and the CDTFA litigation roster, both of which independently confirm the case number, parties, and subject matter.
+- The original February 2011 City staff report / agenda bill recommending the Cooperation Agreement has not been located online. The "protect tax increment revenue" language is sourced from the appellate opinion's description of the record, not a surviving City-hosted copy of the original staff report.
+- The December 22, 2015 Finding of Completion letter and the December 29, 2015 Long-Range Property Management Plan determination letter are confirmed to exist, with those exact dates, via a 2018 City compensation agreement's recitals — but the letters' own text has not been located online.
+- The internal accounting bridge between the $1,981,989 state payment and the $1,321,189 General Fund write-off reconciles exactly for FY2017-18, but leaves a $160 discrepancy in FY2016-17 and does not fully explain how the first FY2015-16 $675,000 installment payment relates to the General Fund receivable balance.
+- A comprehensive figure for El Cerrito's outside legal costs in the C078064 litigation has not been located and should be treated as unquantified.
+
+## Sources and References
+
+**Court Records**
+
+- *El Cerrito Redevelopment Agency Successor Agency v. Bosler*, No. C078064, Cal. Ct. App., 3d Dist., filed Mar. 9, 2021 (unpublished). Accessed via [CaseMine](https://www.casemine.com/judgement/us/605377884653d01b548f472f/amp)
+- Underlying trial court case: Sacramento County Superior Court No. 34-2013-80001671-CW-WM-GDS
+- *California Redevelopment Assn. v. Matosantos*, 53 Cal.4th 231 (2011)
+- *City of Tracy v. Cohen*, 3 Cal.App.5th 852 (2016), No. C077440
+- *City of Brentwood v. Campbell*, 237 Cal.App.4th 488 (2015), No. C076343
+- *City of Big Bear Lake v. Cohen*, No. C076576 (3d Dist. 2017)
+
+**State Records**
+
+- State of California, *Governor's Budget Summary 2011-12*, Jan. 10, 2011, redevelopment discussion at p. 28
+- California State Controller's Office, [*El Cerrito Redevelopment Agency — Asset Transfer Review*](https://sco.ca.gov/Files-EO/S14RDA975_El_Cerrito.pdf) (Jan. 1, 2011 – Jan. 31, 2012), July 2014
+- California State Controller's Office, *City of San Bernardino Asset Transfer Review*, Mar. 6, 2013
+- California Department of Tax and Fee Administration, [Litigation Roster](https://cdtfa.ca.gov/legal/litigation-roster/) (identifying C078064 and dollar amounts at issue)
+- California Department of Finance, [Former RDAs That Have Been Completely Dissolved](https://dof.ca.gov/programs/redevelopment/successor-agency-dissolution/former-RDAS-dissolved/) (lists El Cerrito)
+- California Department of Finance, [Long-Range Property Management Plan archive](https://dof.ca.gov/programs/redevelopment/long-range-property-management-plan/)
+- California Department of Finance, [El Cerrito ROPS filings and review letters](https://dof.ca.gov/programs/redevelopment/rops/) (e.g., ROPS 2025-26)
+
+**City of El Cerrito Records**
+
+- City of El Cerrito, *Annual Comprehensive Financial Report*, Fiscal Year Ended June 30, 2021, Note 16, pp. 80–84
+- City of El Cerrito, *Comprehensive Annual Financial Report*, FY2016-17, Statement of Fiduciary Net Position, p. 43
+- City of El Cerrito, *Comprehensive Annual Financial Report*, FY2017-18, Statement of Fiduciary Net Position, p. 42
+- City of El Cerrito, Audited Financial Statements, FY2010-11, Note 15, p. 71 (Cooperation Agreement dates)
+- City of El Cerrito, City Council Agenda Bill, "Approve Installment Payment Plan Agreement with the Department of Finance and Amend the FY2015-16 Budget," Dec. 21, 2015, pp. 2–3
+- City of El Cerrito, [City Council Minutes, Nov. 17, 2015, Agenda Item 5(A), p. 2](https://www.elcerrito.gov/DocumentCenter/View/5245)
+- City of El Cerrito, [City Council Agenda Bill, Agenda Item 5(A)(2)](https://www.elcerrito.gov/DocumentCenter/View/4093) (early litigation reference, v. Cohen)
+- City of El Cerrito, City Council Compensation Agreement, Agenda Item 4F, Aug. 21, 2018 (Finding of Completion / LRPMP dates)
+- City of El Cerrito, Adopted Budget, FY2012-13, "Former RDA Finances," p. 188 (tax increment revenue history; ~$1 million/year General Fund impact estimate)
+- City of El Cerrito, Redevelopment Agency Five Year Implementation Plan, FY2007/08–FY2011/12 (Seifel Consulting), Apr. 2008, p. I-2 (368-acre project area)
+- El Cerrito Municipal Services Corporation, Agenda Report Item 5(A), "Loan Agreement with City of El Cerrito," May 17, 2016 ($350,000 loan)
+- City of El Cerrito, Mid-Year Budget Update, Agenda Item 9.B, Mar. 5, 2024 ($350,000 MSC loan resolution)
+- City of El Cerrito, *News & Views*, Spring 2019, p. 2 (Karen Pinkos start date, Dec. 26, 2018)
+
+*Primary-source identification, page citations, and verbatim quotations on this page were compiled through iterative research conducted with the assistance of ChatGPT, cross-checked where possible against official California state agency websites and City of El Cerrito council records.*
