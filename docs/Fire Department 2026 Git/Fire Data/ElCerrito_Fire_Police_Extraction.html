@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>elcerrito_fire_police_extraction – Ira Sharenow</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ira Sharenow</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-finance" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Finance</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-finance">    
+        <li>
+    <a class="dropdown-item" href="../../finance/index.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../finance/credit-rating.html">
+ <span class="dropdown-text">Credit Rating</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../finance/going-concern.html">
+ <span class="dropdown-text">Going-Concern Audits</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../finance/state-auditor.html">
+ <span class="dropdown-text">State Auditor Report</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../finance/tran.html">
+ <span class="dropdown-text">TRAN Borrowing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../finance/tax-collections.html">
+ <span class="dropdown-text">Tax Collections</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../finance/rda-dissolution.html">
+ <span class="dropdown-text">RDA Dissolution</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-library" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Library</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-library">    
+        <li>
+    <a class="dropdown-item" href="../../library/index.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../library/timeline.html">
+ <span class="dropdown-text">History / Timeline</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../library/measure-c.html">
+ <span class="dropdown-text">Measure C</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../library/task-force.html">
+ <span class="dropdown-text">Library Task Force</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../library/cost-funding.html">
+ <span class="dropdown-text">Cost &amp; Funding History</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../library/key-people.html">
+ <span class="dropdown-text">Key People and Votes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-transportation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Transportation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-transportation">    
+        <li>
+    <a class="dropdown-item" href="../../transportation/index.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../transportation/richmond-street.html">
+ <span class="dropdown-text">Richmond Street &amp; Complete Streets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../transportation/san-pablo-specific-plan.html">
+ <span class="dropdown-text">San Pablo Specific Plan</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../transportation/ohlone-greenway.html">
+ <span class="dropdown-text">Ohlone Greenway</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../transportation/parking.html">
+ <span class="dropdown-text">Parking Management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../transportation/measure-a-street-oversight.html">
+ <span class="dropdown-text">Measure A Origin &amp; PCI Trends</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-studies" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Studies</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-studies">    
+        <li>
+    <a class="dropdown-item" href="../../studies/index.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../studies/sequencing-case-study.html">
+ <span class="dropdown-text">Sequencing Case Study</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../studies/service-delivery-study.html">
+ <span class="dropdown-text">Service Delivery Study</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../studies/compensation-study.html">
+ <span class="dropdown-text">Compensation Study</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../studies/city-manager-compensation.html">
+ <span class="dropdown-text">City Manager Compensation</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-elections" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Elections</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-elections">    
+        <li>
+    <a class="dropdown-item" href="../../elections/index.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../elections/candidates-2026.html">
+ <span class="dropdown-text">November 2026 Candidates</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/IraSharenow100"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="el-cerrito-fire-police-departments-extracted-data-for-portfolioaccountability-report" class="level1">
+<h1>El Cerrito Fire &amp; Police Departments — Extracted Data for Portfolio/Accountability Report</h1>
+<section id="source-key-and-a-sourcing-caveat-read-first" class="level2">
+<h2 class="anchored" data-anchor-id="source-key-and-a-sourcing-caveat-read-first">Source key and a sourcing caveat (read first)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>BB25</strong></td>
+<td><code>2025_dbb_city_of_el_cerrito_1724101498514.pdf</code> — “FY 2024-25 &amp; FY 2025-26 Biennial Budget,” <strong>Adopted</strong> 6/18/2024, last updated 8/19/24</td>
+<td>Full text available. Fire Dept pp.&nbsp;158–174; Police Dept pp.&nbsp;175–196. Most recent <strong>full</strong> budget book in the project.</td>
+</tr>
+<tr class="even">
+<td><strong>BB24</strong></td>
+<td><code>2024_dbb_city_of_el_cerrito_698075357_1698688192370.pdf</code> — “Digital Budget Book,” <strong>Adopted</strong> 6/20/2023 (i.e., the FY 2023-24 adopted budget)</td>
+<td>Full text available. Fire Dept pp.&nbsp;154–171; Police Dept pp.&nbsp;172–192.</td>
+</tr>
+<tr class="odd">
+<td><strong>BB22</strong></td>
+<td><code>FY 2022-23 Proposed Budget Book _202206032036336237(2).pdf</code></td>
+<td>Full text available.</td>
+</tr>
+<tr class="even">
+<td><strong>BB21</strong></td>
+<td><code>FY2021-22 Adopted Budget Book_202108171546232833.pdf</code></td>
+<td>Full text available.</td>
+</tr>
+<tr class="odd">
+<td><strong>BB18</strong></td>
+<td><code>Budget_FY_17_and_18.pdf</code></td>
+<td>Full text available.</td>
+</tr>
+<tr class="even">
+<td><strong>BB14</strong></td>
+<td><code>Budget_FY_14.pdf</code></td>
+<td>Full text available.</td>
+</tr>
+<tr class="odd">
+<td><strong>AB5</strong></td>
+<td><code>Agenda_Bill5.pdf</code> (FY 2026-27/27-28 budget-balancing agenda item)</td>
+<td>Full text available — real primary source for the current proposed cycle.</td>
+</tr>
+<tr class="even">
+<td><strong>AB6</strong></td>
+<td><code>Agenda_Bill6.pdf</code> (companion agenda item, same cycle)</td>
+<td>Full text available.</td>
+</tr>
+<tr class="odd">
+<td><strong>BBS-Sum</strong></td>
+<td><code>Summary_of_Proposed_Budget_Solutions1.pdf</code></td>
+<td>Full text available.</td>
+</tr>
+<tr class="even">
+<td><strong>BBS-Det</strong></td>
+<td><code>Budget_Balancing_Scenarios__Detailed2.pdf</code> / <code>__Summary_3.pdf</code></td>
+<td>Full text available.</td>
+</tr>
+<tr class="odd">
+<td><strong>Pres1/2</strong></td>
+<td><code>Presentation_1.pdf</code>, <code>Presentation2.pdf</code></td>
+<td>Full text available (slide decks for the FY26-27/28 cycle).</td>
+</tr>
+<tr class="even">
+<td><strong>CPB-frag</strong></td>
+<td><code>Council_Proposed_Budget_FY27FY281.pdf</code></td>
+<td><strong>Only 1 page</strong> of content (a Mayor/Council line-item screenshot, unrelated to Fire/Police). Not usable as a Fire/Police source despite the filename.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What I could not verify:</strong> You asked me to use “the current adopted/proposed budget document” for Fire/Police sections. The full FY 2026-27/FY 2027-28 <strong>Proposed Budget Book</strong> (the one with department-by-department staffing tables, org charts, and full GL detail — the kind of document BB25 and BB24 are for their respective cycles) is <strong>not present in this project as extractable text</strong>. The file named <code>Council_Proposed_Budget_FY27FY281.pdf</code> turned out to be a single-page image/OCR fragment unrelated to Fire/Police.</p>
+<p>Your own <code>ElCerrito_Budget_Analysis_FINAL.docx</code> cites that missing document directly (e.g., “organizational structure (page 141),” “proposed budget document (page 27),” FY27 Fire back-fill cost of $1,031,000, Fire total $17,652,133 in FY27). <strong>I have not independently re-verified those page citations against a primary PDF in this session</strong> — I can’t, because that PDF isn’t here. I’m flagging rather than repeating them as freshly verified. If you have that budget book, upload it and I’ll re-run this extraction against it directly.</p>
+<p>What I <em>did</em> verify directly, with page citations, below: - <strong>BB25</strong> (adopted FY24-25/FY25-26) — this is the most current <strong>full</strong> Fire/Police budget narrative + staffing + GL detail in the project. - <strong>AB5, AB6, BBS-Sum, BBS-Det, Pres1/2</strong> — real, current-cycle (FY26-27/28) primary documents, but they only cover the <em>budget-balancing scenario</em> line items (fire engine, SCBA, ISF contributions, recruitment cost cuts, special-fund shifts), not full department staffing/org/KPI sections.</p>
+<hr>
+</section>
+<section id="staffing-authorized-positions-by-rankclassification" class="level2">
+<h2 class="anchored" data-anchor-id="staffing-authorized-positions-by-rankclassification">1. Staffing: authorized positions by rank/classification</h2>
+<section id="fire-department" class="level3">
+<h3 class="anchored" data-anchor-id="fire-department">Fire Department</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Classification</th>
+<th>FY19-20</th>
+<th>FY20-21</th>
+<th>FY21-22</th>
+<th>FY22-23</th>
+<th>FY23-24</th>
+<th>FY24-25</th>
+<th>FY25-26</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fire Chief</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Public Safety Exec. Assistant (formerly “Executive Administrative Assistant”)</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Battalion Chief</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Battalion Chief/Training Officer</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Fire Captain (non-paramedic)</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Fire Captain/Paramedic (incl.&nbsp;FPO)</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><em>— combined FY24-25 on:</em> <strong>Fire Captain/Fire Captain-Paramedic</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Fire Engineer (non-paramedic)</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Fire Engineer/Paramedic</td>
+<td>8</td>
+<td>8</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><em>— combined FY24-25 on:</em> <strong>Fire Engineer/Fire Engineer-Paramedic</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>12</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>Firefighter (non-paramedic)</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Firefighter/Paramedic</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><em>— combined FY24-25 on:</em> <strong>Firefighter/Firefighter-Paramedic</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>Senior Program Manager (Civilian Fire Marshal)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0.5</td>
+<td>0.5</td>
+<td>0.5</td>
+</tr>
+<tr class="odd">
+<td><strong>FIRE DEPARTMENT TOTAL</strong></td>
+<td><strong>37</strong></td>
+<td><strong>37</strong></td>
+<td><strong>37</strong></td>
+<td><strong>37</strong></td>
+<td><strong>37.5</strong></td>
+<td><strong>37.5</strong></td>
+<td><strong>37.5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Sources: FY19-20–FY23-24 columns from <strong>BB24 p.157</strong>; FY21-22–FY25-26 columns (cross-check + FY24-26) from <strong>BB25 p.159</strong>. The two documents agree on every overlapping year (FY21-22 through FY23-24) once the captain/engineer/firefighter sub-classifications are summed — <strong>BB25 simply collapsed the paramedic/non-paramedic sub-lines into combined rows starting with the FY24-25 column</strong>; totals reconcile exactly (e.g., captains: 2+8=10 in BB24 both years matches 10 in BB25).</p>
+<p><strong>Notable change:</strong> the 0.5 FTE “Civilian Fire Marshal” (Senior Program Manager) position was added in <strong>FY23-24</strong>, per BB24 p.157/p.154 — this is what took the department total from 37.0 to 37.5. BB25’s narrative (p.158) states the Department “operates the two fire stations in the City and the one under contract in… Kensington,” unchanged headcount rationale given elsewhere beyond noting the civilian fire marshal hire (BB25 p.160, under FY23-24 Highlights: “Recruited and hired a certified civilian fire prevention officer to assist with inspections and code reviews”).</p>
+<p><strong>Station renaming, not a staffing change:</strong> BB25 p.158 and BB24 p.154 both note Station 71 → Station 51 (San Pablo Ave.) and Station 72 → Station 52 (Arlington Blvd.); the Kensington station is now called Station 55. No FTE change associated with this.</p>
+</section>
+<section id="police-department" class="level3">
+<h3 class="anchored" data-anchor-id="police-department">Police Department</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Classification</th>
+<th>FY19-20</th>
+<th>FY20-21</th>
+<th>FY21-22</th>
+<th>FY22-23</th>
+<th>FY23-24</th>
+<th>FY24-25</th>
+<th>FY25-26</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Police Chief</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Community Services Officer (CSO)</td>
+<td>2.4</td>
+<td>2.4</td>
+<td>2.4</td>
+<td>2.4</td>
+<td>2.4</td>
+<td>2.4</td>
+<td>2.4</td>
+</tr>
+<tr class="odd">
+<td>Police Cadet</td>
+<td>1.6</td>
+<td>1.6</td>
+<td>1.6</td>
+<td>1.6</td>
+<td>1.6</td>
+<td>1.6</td>
+<td>1.6</td>
+</tr>
+<tr class="even">
+<td>Police Captain</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Police Corporal</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Police Corporal – Detective</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Management Analyst II</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Public Safety Executive Assistant</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Police Lieutenant</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Police Officer</td>
+<td>17</td>
+<td>17</td>
+<td>13</td>
+<td>13</td>
+<td>13</td>
+<td>13</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>Police Officer – Detective</td>
+<td>4</td>
+<td>4</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>Police Officer – K9</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>Police Officer – SRO</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Police Officer – Traffic</td>
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Police Records Specialist</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Police Records Supervisor</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Police Sergeant</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Police Sergeant – Detective</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Police Sergeant – Motor</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Police Sergeant – Admin</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Property and Evidence Specialist</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Senior Police Records Specialist</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><strong>POLICE DEPARTMENT TOTAL</strong></td>
+<td><strong>58.0</strong></td>
+<td><strong>55.0</strong></td>
+<td><strong>48.0</strong></td>
+<td><strong>48.0</strong></td>
+<td><strong>48.0</strong></td>
+<td><strong>48.0</strong></td>
+<td><strong>48.0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Sources: FY19-20–FY23-24 from <strong>BB24 p.175</strong>; FY21-22–FY25-26 cross-check + FY24-26 from <strong>BB25 p.178</strong>. Fully reconciled — no discrepancies between the two documents for overlapping years.</p>
+<p><strong>Notable changes, with the document’s stated rationale:</strong> - <strong>FY 2020-21 restructuring (58.0 → 55.0 → 48.0 over FY20-21/FY21-22):</strong> BB21 pp.112–113 states the Council passed the FY2020-21 budget “with the expectation that the Police Department would create permanent savings of $595,000 ($295,000 in FY 2020-21),” achieved by eliminating the Special Operations Division and its Lieutenant position, eliminating one Police Sergeant position (pending retirement), maintaining the Captain vacancy short-term, and reallocating 2 positions to Investigations. - <strong>SRO (School Resource Officer) positions eliminated</strong> between FY19-20 and FY20-21 (2 → 0) and <strong>Traffic Officer positions eliminated</strong> FY20-21→FY21-22 (3 → 0), per the same restructuring; BB22 p.116 states this cut traffic enforcement specifically and issued citations fell 77% as a direct result. - <strong>Traffic Officer position restored, FY22-23</strong> (0 → 1): BB22 p.116 explains staff recommended returning a dedicated Traffic Officer position, citing the 77% citation drop. - <strong>Senior Police Records Specialist activated, FY22-23</strong> (0 → 1), offset by cutting Police Records Specialist (4 → 3): BB22 p.116, staff rationale given as adding supervisory/training depth in Records “off-set” by the specialist reduction. - <strong>Management Analyst II eliminated, FY20-21</strong> (1 → 0): shown in the table (BB24/BB25) but no separate rationale narrative found in the documents I have.</p>
+<hr>
+</section>
+</section>
+<section id="organizational-structure-comparable-across-fy23-24-fy24-2525-26" class="level2">
+<h2 class="anchored" data-anchor-id="organizational-structure-comparable-across-fy23-24-fy24-2525-26">2. Organizational structure (comparable across FY23-24 → FY24-25/25-26)</h2>
+<section id="fire-department-1" class="level3">
+<h3 class="anchored" data-anchor-id="fire-department-1">Fire Department</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>FY23-24 (BB24 p.155-156)</th>
+<th>FY24-25/25-26 (BB25 p.158-159)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Divisions</td>
+<td>Fire Prevention, Training, Operations/EMS, Support Services</td>
+<td>Same four divisions, identical descriptions</td>
+</tr>
+<tr class="even">
+<td>Management</td>
+<td>3 shift Battalion Chiefs (A/B/C) manage Prevention, Ops/EMS, Support Services; 1 Battalion Chief (40-hr) manages Training; Fire Chief oversees all four</td>
+<td><strong>Added a “D Shift”</strong> label to org chart (A/B/C/D Shift Training &amp; CERT) — the chart lists “Battalion Chief (4)” as one box rather than breaking out which BC manages which division by name</td>
+</tr>
+<tr class="odd">
+<td>Org chart detail</td>
+<td>Fire Chief → Executive Assistant / Battalion Chief (4) → Captain (Fire Prevention Officer) → Captain/Paramedic (9, incl.&nbsp;1 non-paramedic) → Engineer/Paramedic (7) + Engineer (5) → Firefighter/Paramedic (3) + Firefighter (6); Civilian Fire Marshal (0.5)</td>
+<td>Fire Chief → Public Safety Executive Assistant / Battalion Chief (4) → Fire Captain/Captain-Paramedic (10, incl.&nbsp;1 non-paramedic, incl.&nbsp;Fire Prevention Officer) → Fire Engineer/Engineer-Paramedic (12) → Firefighter/Firefighter-Paramedic (9); Senior Program Manager (0.5) / Civilian Fire Marshal</td>
+</tr>
+<tr class="even">
+<td>Stations</td>
+<td>Station 51 (San Pablo Ave.), Station 52 (Arlington Blvd.), Station 55 (Kensington, under contract)</td>
+<td>Same three stations, same numbering</td>
+</tr>
+</tbody>
+</table>
+<p>The two org charts describe the same structure; BB25’s chart is a relabeled/condensed version of BB24’s (combining the paramedic/non-paramedic sub-titles into single boxes), not a structural change.</p>
+</section>
+<section id="police-department-1" class="level3">
+<h3 class="anchored" data-anchor-id="police-department-1">Police Department</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>FY23-24 (BB24 p.174)</th>
+<th>FY24-25/25-26 (BB25 p.176-177)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Top structure</td>
+<td>Chief of Police → Executive Assistant / Captain → 2 Lieutenants (one per division)</td>
+<td>Chief of Police → Public Safety Executive Assistant / Captain → 2 Lieutenants (one per division) — identical</td>
+</tr>
+<tr class="even">
+<td>Field Operations Division</td>
+<td>Patrol Teams 1-4: Sergeant (4), Corporal (4), Officers (16), CSO (2.4)</td>
+<td>Identical: Sergeant (4), Corporal (4), Officers (16), CSO (2.4)</td>
+</tr>
+<tr class="odd">
+<td>Administrative &amp; Support Services Division</td>
+<td>Investigations Unit: Sergeant, Corporal, Detectives (6); Records &amp; Support Services Unit: Sergeant, Records Supervisor, Records Specialist (4), Property &amp; Evidence Specialist, Cadets (1.6)</td>
+<td>Investigations Unit: identical. Records &amp; Support Services Unit: Sergeant, Records Supervisor, <strong>Senior Records Specialist</strong> (newly labeled on the chart), Records Specialist (<strong>3</strong>, down from 4 shown on the BB24 chart), Property &amp; Evidence Specialist, Cadets (1.6)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> the BB24 org chart (p.174) shows “Records Specialist (4)” but the BB24 position-listing table on the very next page (p.175) shows Records Specialist at 3 for FY23-24 (reduced from 4 in FY22-23) — <strong>this is an internal inconsistency in BB24 itself</strong>, not something I’m introducing. BB25’s chart (p.177) is consistent with its own table (3 Records Specialists, plus a Senior Records Specialist called out separately).</p>
+<p>No prior-year org chart back further than BB24 was extracted for direct comparison against BB25 in this document type; earlier budget books (BB21, BB22, BB18, BB14) have their own org charts if you want them added — see §2 note below on scope.</p>
+<hr>
+</section>
+</section>
+<section id="budget-by-category-personnel-purchased-services-supplies-capital" class="level2">
+<h2 class="anchored" data-anchor-id="budget-by-category-personnel-purchased-services-supplies-capital">3. Budget by category (Personnel / Purchased Services &amp; Supplies / Capital)</h2>
+<p>BB25 breaks both departments out by GL expense-type category. Both departments are &gt;89% personnel-driven for Fire and ~80% for Police.</p>
+<section id="fire-department-bb25-pp.166169-all-funds-i.e.-general-fund-vehicleequip-replacement-isf" class="level3">
+<h3 class="anchored" data-anchor-id="fire-department-bb25-pp.166169-all-funds-i.e.-general-fund-vehicleequip-replacement-isf">Fire Department (BB25 pp.166–169; all-funds, i.e., General Fund + Vehicle/Equip Replacement ISF)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>FY2022 Actual</th>
+<th>FY2023 Actual</th>
+<th>FY2024 Amended</th>
+<th>FY2025 Budgeted</th>
+<th>FY2026 Budgeted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Personnel</td>
+<td>$11,741,568</td>
+<td>$11,970,153</td>
+<td>$13,103,324</td>
+<td>$13,852,787</td>
+<td>$14,455,611</td>
+</tr>
+<tr class="even">
+<td>Purchased Professional &amp; Technical Svcs</td>
+<td>$308,921</td>
+<td>$326,432</td>
+<td>$466,900</td>
+<td>$435,900</td>
+<td>$435,900</td>
+</tr>
+<tr class="odd">
+<td>Purchased Property Services</td>
+<td>$487,342</td>
+<td>$366,687</td>
+<td>$760,783</td>
+<td>$462,566</td>
+<td>$466,937</td>
+</tr>
+<tr class="even">
+<td>Other Purchased Services</td>
+<td>$120,574</td>
+<td>$168,880</td>
+<td>$203,905</td>
+<td>$148,250</td>
+<td>$148,250</td>
+</tr>
+<tr class="odd">
+<td>Supplies</td>
+<td>$151,976</td>
+<td>$201,706</td>
+<td>$212,982</td>
+<td>$196,641</td>
+<td>$201,492</td>
+</tr>
+<tr class="even">
+<td>Property &amp; Capital</td>
+<td>$82,684</td>
+<td>$43,003</td>
+<td>$123,228</td>
+<td>$30,100</td>
+<td>$30,100</td>
+</tr>
+<tr class="odd">
+<td>Financing Costs</td>
+<td>$1,234</td>
+<td>$38,278</td>
+<td>$139,091</td>
+<td>$224,090</td>
+<td>$332,625</td>
+</tr>
+<tr class="even">
+<td>Other Financing Uses</td>
+<td>$0</td>
+<td>$0</td>
+<td>$0</td>
+<td>$85,000</td>
+<td>$85,000</td>
+</tr>
+<tr class="odd">
+<td><strong>TOTAL</strong></td>
+<td><strong>$12,894,300</strong></td>
+<td><strong>$13,115,138</strong></td>
+<td><strong>$15,010,213</strong></td>
+<td><strong>$15,435,335</strong></td>
+<td><strong>$16,155,915</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Personnel is 89.7% of budgeted FY2025 spend and 89.5% of FY2026 (BB25 p.166). Within Personnel, <strong>Back Fill Costs</strong> is a new line item starting FY2025: $0 in FY2022-24, <strong>$955,000 (FY2025) and $1,087,000 (FY2026)</strong> — this is the “backfill despite full staffing” line your working docx also flagged, though at different dollar figures ($955K/$1,087K here in BB25 vs.&nbsp;the $1,031,000 FY27 figure cited in your docx, which is a different fiscal year from a document I can’t verify — see sourcing caveat above). PERS UAL nearly doubled FY2022→FY2026: $2,075,351 → $2,837,285 (BB25 p.166/171).</p>
+</section>
+<section id="police-department-bb25-pp.186188-general-fund-asset-seizure-vehicle-abatement-c.o.p.s.-grant-funds" class="level3">
+<h3 class="anchored" data-anchor-id="police-department-bb25-pp.186188-general-fund-asset-seizure-vehicle-abatement-c.o.p.s.-grant-funds">Police Department (BB25 pp.186–188; General Fund + Asset Seizure + Vehicle Abatement + C.O.P.S. Grant funds)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>FY2022 Actual</th>
+<th>FY2023 Actual</th>
+<th>FY2024 Amended</th>
+<th>FY2025 Budgeted</th>
+<th>FY2026 Budgeted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Personnel</td>
+<td>$9,604,873</td>
+<td>$9,437,441</td>
+<td>$11,168,128</td>
+<td>$12,072,009</td>
+<td>$12,853,635</td>
+</tr>
+<tr class="even">
+<td>Purchased Professional &amp; Technical Svcs</td>
+<td>$1,407,857</td>
+<td>$1,402,996</td>
+<td>$1,605,758</td>
+<td>$1,557,000</td>
+<td>$1,659,050</td>
+</tr>
+<tr class="odd">
+<td>Purchased Property Services</td>
+<td>$103,493</td>
+<td>$130,819</td>
+<td>$343,123</td>
+<td>$318,000</td>
+<td>$279,200</td>
+</tr>
+<tr class="even">
+<td>Other Purchased Services</td>
+<td>$225,314</td>
+<td>$305,827</td>
+<td>$508,971</td>
+<td>$524,600</td>
+<td>$530,840</td>
+</tr>
+<tr class="odd">
+<td>Supplies</td>
+<td>$163,823</td>
+<td>$197,225</td>
+<td>$358,061</td>
+<td>$333,000</td>
+<td>$333,000</td>
+</tr>
+<tr class="even">
+<td>Property &amp; Capital</td>
+<td>$125,860</td>
+<td>$366,601</td>
+<td>$453,769</td>
+<td>$350,000</td>
+<td>$190,000</td>
+</tr>
+<tr class="odd">
+<td>Financing Costs</td>
+<td>$1,124</td>
+<td>$945</td>
+<td>$0</td>
+<td>$1,000</td>
+<td>$1,000</td>
+</tr>
+<tr class="even">
+<td><strong>TOTAL</strong></td>
+<td><strong>$11,632,344</strong></td>
+<td><strong>$11,841,853</strong></td>
+<td><strong>$14,437,810</strong></td>
+<td><strong>$15,155,609</strong></td>
+<td><strong>$15,846,725</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Personnel is ~79.7% of FY2025 budgeted, ~81.1% of FY2026 (BB25 p.186). Salary Savings (a budgeted vacancy offset) swung from $0 in FY22-24 to <strong>-$516,634 (FY2025)</strong> and <strong>-$288,475 (FY2026)</strong> — i.e., the department is budgeting a large negative offset assuming it won’t fill all positions (BB25 p.187).</p>
+<p><strong>By function</strong> (BB25 p.169, p.189): - Fire: single function line, “Fire Administration” = total department spend (no sub-function breakout). - Police: <strong>Police Administration</strong> $5,108,925 (FY25) / $5,330,729 (FY26); <strong>Police Operations</strong> $8,488,410 / $8,893,296; <strong>Police Investigations</strong> $1,558,274 / $1,622,701.</p>
+<hr>
+</section>
+</section>
+<section id="performance-metrics-workload-indicators-as-the-department-itself-defines-them" class="level2">
+<h2 class="anchored" data-anchor-id="performance-metrics-workload-indicators-as-the-department-itself-defines-them">4. Performance metrics / workload indicators (as the department itself defines them)</h2>
+<section id="fire-department-bb25-p.162-key-performance-indicators-and-workload-statistics-data-year-2023-only-not-multi-year" class="level3">
+<h3 class="anchored" data-anchor-id="fire-department-bb25-p.162-key-performance-indicators-and-workload-statistics-data-year-2023-only-not-multi-year">Fire Department — BB25 p.162 (“Key Performance Indicators and Workload Statistics,” data year 2023 only — not multi-year)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>2023 value</th>
+<th>Definition given in document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total Training Hours</td>
+<td>11,725</td>
+<td>Not further defined</td>
+</tr>
+<tr class="even">
+<td>Property Weed Inspections</td>
+<td>1,023</td>
+<td>Not further defined</td>
+</tr>
+<tr class="odd">
+<td>Weed Abatement Actions</td>
+<td>158</td>
+<td>Not further defined</td>
+</tr>
+<tr class="even">
+<td>Business Inspections</td>
+<td>598</td>
+<td>Not further defined</td>
+</tr>
+<tr class="odd">
+<td>New Construction Inspections</td>
+<td>42</td>
+<td>Not further defined</td>
+</tr>
+<tr class="even">
+<td>Public Education Events</td>
+<td>26</td>
+<td>Not further defined</td>
+</tr>
+<tr class="odd">
+<td>CPR Courses Taught</td>
+<td>6</td>
+<td>Not further defined</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fire response times, by incident type</strong> (BB25 p.162): reported as count (#), Average Response Time, and “%&lt;=6 Min” (share of responses at or under 6 minutes). Structure Fire: 8 incidents, avg 5:50, 62.5% ≤6min. Mobile Property (Vehicle) Fire: 8, avg 5:17, 62.5%. Fire, Other: 2, avg 5:23, 50.0%. Natural Vegetation Fire (Wildland): 23, avg 7:44, 34.8%. <strong>Total: 41 incidents, avg 6:46, 46.3% ≤6min.</strong></p>
+<p><strong>All-incident response times</strong> (separate, wider table, BB25 p.162): includes False alarms, EMS, Good Intent, Fire, Public Assist, HazMat, Weather, Rupture/Explosion. Grand Total: <strong>3,893 incidents, avg response 7:19, 9% ≤4min / 36% ≤6min / 69% ≤8min, avg total duration 50:28.</strong> EMS alone was 1,379 incidents (35% of total), avg response 7:01.</p>
+<p>⚠️ <strong>This KPI table has no prior-year comparison in BB25 itself</strong> — it’s presented only for calendar year 2023. <strong>BB24 (the prior budget book) does not contain an equivalent Fire KPI table at all</strong> — I did not find one in the Fire Dept section of BB24. This appears to be a metric that was newly added/published starting with BB25, so you cannot trend it year-over-year from these two documents alone.</p>
+</section>
+<section id="police-department-bb25-p.182-key-performance-indicators-and-workload-statistics-20192023-i.e.-calendar-years" class="level3">
+<h3 class="anchored" data-anchor-id="police-department-bb25-p.182-key-performance-indicators-and-workload-statistics-20192023-i.e.-calendar-years">Police Department — BB25 p.182 (“Key Performance Indicators and Workload Statistics,” 2019–2023, i.e., calendar years)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>2019</th>
+<th>2020</th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Calls for Service</td>
+<td>25,983</td>
+<td>20,049</td>
+<td>20,826</td>
+<td>15,956</td>
+<td>22,910</td>
+</tr>
+<tr class="even">
+<td>Citations – Moving Violations</td>
+<td>3,216</td>
+<td>1,050</td>
+<td>325</td>
+<td>407</td>
+<td>1,400</td>
+</tr>
+<tr class="odd">
+<td>Citations – Parking Violations</td>
+<td>2,751</td>
+<td>1,563</td>
+<td>1,408</td>
+<td>1,087</td>
+<td>3,026</td>
+</tr>
+<tr class="even">
+<td>Part I Crime – Violent</td>
+<td>153</td>
+<td>114</td>
+<td>123</td>
+<td>121</td>
+<td>127</td>
+</tr>
+<tr class="odd">
+<td>Part I Crime – Property</td>
+<td>1,307</td>
+<td>933</td>
+<td>1,137</td>
+<td>1,096</td>
+<td>1,042</td>
+</tr>
+<tr class="even">
+<td>Part I Crime – Total</td>
+<td>1,460</td>
+<td>1,047</td>
+<td>1,260</td>
+<td>1,217</td>
+<td>1,169</td>
+</tr>
+<tr class="odd">
+<td>— Burglary</td>
+<td>167</td>
+<td>129</td>
+<td>90</td>
+<td>108</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>— Larceny</td>
+<td>1,058</td>
+<td>698</td>
+<td>928</td>
+<td>841</td>
+<td>751</td>
+</tr>
+<tr class="odd">
+<td>— Motor Vehicle Theft</td>
+<td>82</td>
+<td>106</td>
+<td>119</td>
+<td>147</td>
+<td>191</td>
+</tr>
+<tr class="even">
+<td>— Murder</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>— Rape</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>— Robbery</td>
+<td>91</td>
+<td>57</td>
+<td>59</td>
+<td>67</td>
+<td>79</td>
+</tr>
+<tr class="odd">
+<td>— Aggravated Assault</td>
+<td>57</td>
+<td>55</td>
+<td>61</td>
+<td>51</td>
+<td>41</td>
+</tr>
+</tbody>
+</table>
+<p>No explicit definition given for “Part I Crime” beyond the FBI UCR/NIBRS convention the department references elsewhere (BB25 p.174 notes the department “transitioned crime reporting from Uniform Crime Reporting (UCR) to National Incident-Based Reporting System (NIBRS)” — this happened per BB22 p.116, “FY 2021-2022 Highlights”).</p>
+<p>⚠️ <strong>BB24 does not contain this KPI table either</strong> — I searched its Police section (pp.172–192) and found no equivalent “Key Performance Indicators” table, only narrative accomplishments. <strong>This is another metric apparently first published in BB25</strong>, so — same caveat — no earlier-document trend line exists in what’s here.</p>
+<p><strong>Response-time and clearance-rate figures appear only in narrative prose, not standardized tables</strong>, and the definitions/periods shift year to year — flag this explicitly since you asked: - BB25 p.179 (FY23-24 accomplishments): “Staff solved 53% of aggravated assaults (22/41), 35% of robberies (28/79), and 50% of rapes (3/6), in 2023” — clearance rate as count solved / total reported, calendar year. - BB25 p.179: “Increased stolen vehicle recoveries by 64%”; “Patrol officers… resulting in an increase of 243% in citations issued from 2022 to 2023 (from 407 to 1,400 citations)” — matches the KPI table’s 2022→2023 moving-violation figures. - BB24 p.173 (FY22-23 narrative, different framing): “emergency responses took 2 minutes longer in 2022… an average of 6 minutes, 40 seconds. During the first four months of 2023… response times improved to 4 minutes 41 seconds” — <strong>this is a response-time metric with NO stated definition of which call types are included, and it is not the same metric as the Fire Dept’s %≤6min table.</strong> No equivalent Police response-time figure appears in BB25’s KPI table at all. - BB22 p.115-116 (FY21-22 narrative): “Police responses to emergencies took over two (2) minutes longer (or 42% slower), on average” — again narrative only, no denominator/definition given, and worded differently from the BB24 restatement of what looks like the same underlying trend.</p>
+<p><strong>Bottom line on your call to flag metric-definition instability: confirmed.</strong> Response-time and clearance-rate figures for Police appear exclusively in prose, change their framing/baseline year to year, and are never tied to the standardized KPI table format the department uses for calls-for-service/citations/crime counts.</p>
+<hr>
+</section>
+</section>
+<section id="department-goals-stated-priorities-condensed" class="level2">
+<h2 class="anchored" data-anchor-id="department-goals-stated-priorities-condensed">5. Department goals / stated priorities (condensed)</h2>
+<p><strong>Fire, FY24-25/25-26 (BB25 pp.161-162):</strong> all-risk emergency response, disaster preparedness (CERT program restart, EOC/EOP maintenance), fire prevention/code enforcement and vegetation management, EMS/training standards, facility &amp; apparatus readiness, grant writing, wellness/fitness program, public education, Kensington contract administration. FY23-24 accomplishments highlighted (BB25 p.160): auto-aid agreements with Albany/Berkeley, hired a civilian fire prevention officer, new SOGs for commercial-building/EV/mass-evacuation incidents, grant submissions for a Type 1 engine ($1.4M) and SCBA ($400K), joined Eastbay Hills Wildfire Prevention MOU, wellness program launch, hired 3 firefighters, “saved $17,801,300 in property value.”</p>
+<p><strong>Police, FY24-25/25-26 (BB25 p.174-175):</strong> core services (emergency response, investigation, traffic safety), community engagement/education, crime-reduction strategy, workplace/retention investment. FY23-24 narrative (BB25 p.174): reached full staffing briefly in Dec.&nbsp;2023 then fell to 4 vacancies by May 2024; deployed 40 license-plate-reader cameras (July 2023); notable case work (a shooting, an attempted murder, a multi-jurisdictional homicide investigation); deployed a Community Liaison Officer; planned annual town halls. FY24-25 focus: expand body-worn/in-car camera tech, drones/UAS, “drone first responder” strategy exploration, modernize parking enforcement near transit, deploy a facility dog, restore a traffic enforcement officer once staffing allows (BB25 p.175).</p>
+<hr>
+</section>
+<section id="capital-items-major-one-time-requests-fire-police-specific" class="level2">
+<h2 class="anchored" data-anchor-id="capital-items-major-one-time-requests-fire-police-specific">6. Capital items / major one-time requests (Fire &amp; Police specific)</h2>
+<p>All from the current FY26-27/FY27-28 cycle’s real, verifiable agenda/summary documents (AB5, AB6, BBS-Sum, BBS-Det, Pres2) — these are primary sources for the current cycle even though the full proposed budget book isn’t available:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Amount</th>
+<th>Detail / source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fire Engine replacement (contract signed FY25-26 per Council direction)</td>
+<td>~$301,000 (FY26-27) + ~$883,000 (FY27-28)</td>
+<td>AB6: “the City signed a contract to replace one of the City’s aging fire engines… During the period from 2019 to the present… longer-term capital costs were deferred… no dedicated fire engine replacement reserve was established.”</td>
+</tr>
+<tr class="even">
+<td>Fire Engine ISF restructuring (two “B+/C+” scenarios)</td>
+<td>~$925,000 ISF contribution FY26-27; ~$259,000–$589,000 FY27-28 (varies by scenario/document)</td>
+<td>BBS-Sum and AB5 give slightly different FY27-28 figures ($259k in BBS-Sum’s scenario table vs.&nbsp;“~$589,000… for both the Fire Engine and SCBAs” combined in AB5) — <strong>these are not the same figure and should not be treated as interchangeable; BBS-Sum’s $259k appears to be the Fire Engine ISF alone, AB5’s $589k appears to bundle Fire Engine + SCBA.</strong> Flag before using either number alone.</td>
+</tr>
+<tr class="odd">
+<td>SCBA (Self-Contained Breathing Apparatus) replacement</td>
+<td>Total ~$500,000 gross; ~$330,000 net to the City (FY27-28)</td>
+<td>AB5: “required… under federal law… One-third of that cost is reimbursed by the Kensington Fire Protection District per the existing service contract, resulting in a net budget impact of approximately $330,000.”</td>
+</tr>
+<tr class="even">
+<td>Fire Dept vehicle/equipment replacement reserve (ongoing)</td>
+<td>$50,000/year</td>
+<td>AB6, BBS-Sum, Pres2 — consistent across documents.</td>
+</tr>
+<tr class="odd">
+<td>Fire Dept small vehicle replacement (ongoing)</td>
+<td>$100,000/year</td>
+<td>AB6, BBS-Sum, Pres2 — consistent.</td>
+</tr>
+<tr class="even">
+<td>Police: drone purchase</td>
+<td>Cancelled in “Scenario B” detail (Pres2): “Reduce Police software and equipment budget, including canceling planned drone purchase ($168K FY26-27 / $143K FY27-28)”</td>
+<td>Note this $168K/$143K figure bundles the cancelled drone purchase with other software/equipment reductions — it is <strong>not</strong> a drone-only cost.</td>
+</tr>
+<tr class="odd">
+<td>Police: License Plate Reader system + digital evidence management, funding source shift</td>
+<td>Funded via COPS Grant fund balance rather than General Fund</td>
+<td>AB6/BBS-Det: “License plate reader system costs and a portion of digital evidence management system costs would be funded through the Citizens’ Option for Public Safety (COPS) grant.” Not a new cost — a funding-source reclassification.</td>
+</tr>
+<tr class="even">
+<td>Police vehicle replacement (recurring capital line)</td>
+<td>$150,000–$310,000/year (Vehicles &gt;$10K, BB25 p.187-188)</td>
+<td>From BB25’s actual department GL detail (Property &amp; Capital category), FY2022–FY2026: $100,275 (FY22) → $281,523 (FY23) → $310,000 (FY24 amended) → $310,000 (FY25 budget) → $150,000 (FY26 budget, roughly halved).</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️ Earlier accomplishments/CIP mentions found in older budget books, for context: BB18 p.87 (FY14-16) references a DHS Assistance-to-Firefighters Grant of <strong>$856,406</strong> for an aerial ladder truck replacement and a <strong>$180,000</strong> DHS grant for technical rescue training; BB14 p.95 references a <strong>$2 million</strong> DHS grant for SCBA purchase (an earlier SCBA replacement cycle than the current FY27-28 one) and a <strong>$180,000</strong> DHS Technical Rescue Training grant repeated in that document too — worth double-checking you’re not conflating the ~2012-13-era $2M SCBA grant with the current ~$500K SCBA replacement if you’re building a longitudinal capital-spending narrative.</p>
+<hr>
+</section>
+<section id="dollar-figures-not-already-in-your-gf-summary-spreadsheet" class="level2">
+<h2 class="anchored" data-anchor-id="dollar-figures-not-already-in-your-gf-summary-spreadsheet">7. Dollar figures not already in your GF Summary spreadsheet</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Figure</th>
+<th>Amount</th>
+<th>Fiscal year(s)</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Kensington Fire Protection District contract revenue</strong> (to General Fund, credited against Fire Dept expenditures)</td>
+<td>$3,716,920 (FY22 actual) / $3,967,544 (FY23 actual) / $4,278,592 (FY24 amended) / <strong>$4,394,901 (FY25 budgeted)</strong> / <strong>$4,601,543 (FY26 budgeted)</strong></td>
+<td>FY2022–FY2026</td>
+<td>BB25 p.169</td>
+</tr>
+<tr class="even">
+<td>Kensington contract, stated as % of Fire Dept budget</td>
+<td>“approximately 30% of the Fire Department’s expenditures” — consistent language across BB14, BB19-20, BB21, BB25</td>
+<td>All years</td>
+<td>BB25 p.158; BB21 p.100; BB14 p.92-93</td>
+</tr>
+<tr class="odd">
+<td>Kensington Fire District SCBA cost-share (current cycle)</td>
+<td>1/3 of ~$500,000 gross SCBA cost reimbursed by Kensington</td>
+<td>FY27-28</td>
+<td>AB5</td>
+</tr>
+<tr class="even">
+<td>Fire Dept “Back Fill Costs” (new GL line, sub-item of Personnel)</td>
+<td>$0 (FY22-24) → <strong>$955,000 (FY25 budgeted)</strong> → <strong>$1,087,000 (FY26 budgeted)</strong></td>
+<td>FY2025-26</td>
+<td>BB25 pp.166, 171</td>
+</tr>
+<tr class="odd">
+<td>Fire “OES Response” reimbursement revenue (state/federal reimbursement for mutual-aid deployments, incl.&nbsp;backfill)</td>
+<td>$860,453 (FY22) / $745,968 (FY23) / $700,000 (FY24 amended, FY25, FY26 budgeted, flat)</td>
+<td>FY2022–2026</td>
+<td>BB25 p.169</td>
+</tr>
+<tr class="even">
+<td>Police “Collect &amp; Admin Services” contract line (Richmond dispatch, animal control, E. Bay Regional Communications, fingerprint services — bundled, not broken out by vendor in BB25)</td>
+<td>$1,262,980 (FY22 actual) → $1,306,000 (FY24 budgeted, per BB24) → <strong>$1,345,000 (FY25 budgeted)</strong> → <strong>$1,466,050 (FY26 budgeted)</strong></td>
+<td>FY2022–2026</td>
+<td>BB25 p.187; itemized vendor breakdown (Richmond Communications Center $924,339, Animal Control $166,456, East Bay Regional Communications $65,000, fingerprint services $35,000) only appears in <strong>BB21 p.116</strong>, for FY2021-22 — <strong>BB25 does not re-itemize this by vendor, only gives the bundled total.</strong></td>
+</tr>
+<tr class="odd">
+<td>Police “Salary Savings” (budgeted vacancy offset)</td>
+<td>$0 (FY22-24) → <strong>-$516,634 (FY25 budgeted)</strong> → <strong>-$288,475 (FY26 budgeted)</strong></td>
+<td>FY2025-26</td>
+<td>BB25 p.187</td>
+</tr>
+<tr class="even">
+<td>Police COPS (Citizens’ Option for Public Safety) state grant revenue</td>
+<td>$226,556 (FY22 actual) → $100,000/year FY23-26 (flat)</td>
+<td>FY2022–2026</td>
+<td>BB25 p.190</td>
+</tr>
+<tr class="odd">
+<td><strong>Dixon Resources Unlimited / parking enforcement contract</strong></td>
+<td><strong>Not found.</strong></td>
+<td>—</td>
+<td>I searched every project file for “Dixon” and found only an unrelated wrongful-death liability claim (a resident named Richard Dixon who died on a sidewalk — see your <code>ElCerrito_Budget_Analysis_FINAL.docx</code>, Section 3.1). <strong>Do not conflate the two “Dixon” references</strong> — they are unrelated. No parking-enforcement-contractor line item by that name, or any comparable contractor name, appears in the Police Dept sections I extracted. If the city has such a contract, it isn’t documented in this project’s files.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="discrepancies-ambiguities-flagged-summary-all-also-noted-inline-above" class="level2">
+<h2 class="anchored" data-anchor-id="discrepancies-ambiguities-flagged-summary-all-also-noted-inline-above">Discrepancies / ambiguities flagged (summary, all also noted inline above)</h2>
+<ol type="1">
+<li><strong>The full FY26-27/FY27-28 Proposed Budget Book is not in this project as extractable text.</strong> Only budget-balancing-scenario agenda items and summaries are. Your prior docx analysis cites page numbers from that missing document — treat those citations as unverified in this session.</li>
+<li><strong>BB24’s own org chart (p.174) and staffing table (p.175) disagree</strong> on Police Records Specialist count for FY23-24 (chart says 4, table says 3). BB25’s chart and table agree with each other (3, plus a separately-labeled Senior Records Specialist).</li>
+<li><strong>Fire and Police KPI/workload-statistics tables (calls for service, response times %≤Xmin, crime counts) appear to be new to BB25</strong> — no equivalent structured table found in BB24. You can’t build a pre-2023 trend line for these specific metrics from the documents in this project.</li>
+<li><strong>Police response-time figures are narrative-only, framed differently year to year</strong> (BB22: “42% slower… average”; BB24: “6 min 40 sec… average,” “4 min 41 sec”; BB25 KPI table: no response-time metric for Police at all, only Fire). Treat any cross-year Police response-time comparison as apples-to-oranges unless you can find the underlying denominator/call-type scope for each framing.</li>
+<li><strong>Two different current-cycle documents (BBS-Sum vs.&nbsp;AB5) give different Fire Engine ISF contribution figures for FY27-28</strong> ($259K vs.&nbsp;~$589K) because one appears to isolate the Fire Engine and the other bundles it with SCBA — don’t cite one as if it supersedes the other without checking which scope you need.</li>
+<li><strong>The $1,031,000 FY27 Fire “Back Fill Costs” figure and the $17,652,133 FY27 Fire “all funds” total in your docx do not match anything I could independently verify here</strong> (BB25’s own FY26 Back Fill figure is $1,087,000, and BB25’s FY26 Fire total is $16,155,915 — different fiscal year, so not directly comparable, but flagging the gap since I can’t confirm the FY27 figures against a primary source in this project).</li>
+<li><strong>No documentation found for a Dixon Resources Unlimited parking-enforcement contract</strong> — see §7 above; don’t confuse with the unrelated Dixon liability-claim family name.</li>
+</ol>
+<hr>
+<p><em>Extraction performed from project files only; all figures above are traceable to a specific page in a specific document as cited. Nothing here has been rounded, estimated, or inferred beyond what the source documents state.</em></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© Ira Sharenow</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
