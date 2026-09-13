@@ -2,6 +2,8 @@
 title: "Budget vs. Actual"
 ---
 
+For the KPI scorecard synthesizing this data, see [Budget KPI Model](budget-kpi-model.html).
+
 Source: each fiscal year's CAFR/ACFR General Fund Budgetary Comparison Schedule (Original / Final / Actual). FY2025-26 figures are preliminary/unaudited — final audit (ACFR) expected to Council December 2026.
 
 ## Revenue vs. Expenditure

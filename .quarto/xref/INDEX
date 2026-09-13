@@ -154,5 +154,8 @@
   },
   "public-safety/police/organization.qmd": {
     "organization.html": "9d05d304"
+  },
+  "finance/budget-kpi-model.qmd": {
+    "budget-kpi-model.html": "a1fa3dfc"
   }
 }

@@ -1124,7 +1124,7 @@
     "href": "finance/index.html",
     "title": "Ira Sharenow",
     "section": "",
-    "text": "El Cerrito Finance A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records. Pages\n\nBudget vs. Actual — General Fund revenue vs. expenditure, original budget vs. actual, and the FY2025-26 Fourth Quarter Update\nCredit Rating History — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present\nGoing-Concern Audits — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025\nState Auditor Report — Findings from California State Auditor Report 2020-803\nTRAN Borrowing — Annual short-term borrowing, FY2012–FY2022\nTax Collections — Real Property Transfer Tax and other tax revenue\nRDA Dissolution — What the 2011–2012 state dissolution of redevelopment agencies cost El Cerrito\n\nEach page reports documented facts without attributing responsibility to any individual."
+    "text": "El Cerrito Finance A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records. Pages\n\nBudget KPI Model — A three-indicator scorecard testing revenue sustainability, budget discipline, and real spending growth against thirteen years of audited data\nBudget vs. Actual — General Fund revenue vs. expenditure, original budget vs. actual, and the FY2025-26 Fourth Quarter Update\nCredit Rating History — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present\nGoing-Concern Audits — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025\nState Auditor Report — Findings from California State Auditor Report 2020-803\nTRAN Borrowing — Annual short-term borrowing, FY2012–FY2022\nTax Collections — Real Property Transfer Tax and other tax revenue\nRDA Dissolution — What the 2011–2012 state dissolution of redevelopment agencies cost El Cerrito\n\nEach page reports documented facts without attributing responsibility to any individual."
   },
   {
     "objectID": "finance/credit-rating.html",
@@ -1134,18 +1134,46 @@
     "text": "S&P Global Ratings’ underlying rating (SPUR) on El Cerrito’s certificates of participation (COPs) is the cleanest available measure of the city’s general financial health, independent of any specific bond issuance.\n\n\n\nEl Cerrito S&P Underlying Rating (COPs), Dec 2014 to present\n\n\n\n\n\n\n\n\n\n\nDate\nAction\nRating\n\n\n\n\nDec 2, 2013\nLowered (application of new local GO criteria)\nAA− → A+\n\n\nOct 1, 2018\nLowered — weakened budgetary flexibility\nA+ → A−\n\n\nNov 26, 2019\nLowered two notches — deteriorating budgetary flexibility, second consecutive going-concern audit opinion\nA− → BBB\n\n\nSept 24, 2020\nLowered — negative general fund reserves, COVID-19 impact\nBBB → BBB−\n\n\nSept 29, 2023\nRaised — resolution of going-concern opinions, restored structural balance\nBBB− → BBB\n\n\nSept 9, 2025\nRaised — sustained structural balance, robust reserves\nBBB → A− (current)\n\n\n\n\nSource: S&P Global Ratings rating action publications, each dated as shown above. Ratings shown are the underlying rating (SPUR) on El Cerrito’s certificates of participation (COPs). A related but separate instrument — El Cerrito Public Financing Authority sales tax revenue bonds — follows its own, similar rating track and reached A+ as of September 2025."
   },
   {
-    "objectID": "elections/index.html",
-    "href": "elections/index.html",
-    "title": "El Cerrito Elections",
+    "objectID": "finance/budget-actual.html",
+    "href": "finance/budget-actual.html",
+    "title": "Budget vs. Actual",
     "section": "",
-    "text": "A voter service page: official candidate statements and information, reported without commentary."
+    "text": "For the KPI scorecard synthesizing this data, see Budget KPI Model.\nSource: each fiscal year’s CAFR/ACFR General Fund Budgetary Comparison Schedule (Original / Final / Actual). FY2025-26 figures are preliminary/unaudited — final audit (ACFR) expected to Council December 2026."
   },
   {
-    "objectID": "elections/index.html#pages",
-    "href": "elections/index.html#pages",
-    "title": "El Cerrito Elections",
-    "section": "Pages",
-    "text": "Pages\n\nNovember 2026 City Council Candidates — official statements from all six candidates, transcribed from filings with the City Clerk\n\n\nThis section reports candidate-submitted material as filed. It does not offer opinions, endorsements, or comparisons."
+    "objectID": "finance/budget-actual.html#revenue-vs.-expenditure",
+    "href": "finance/budget-actual.html#revenue-vs.-expenditure",
+    "title": "Budget vs. Actual",
+    "section": "Revenue vs. Expenditure",
+    "text": "Revenue vs. Expenditure"
+  },
+  {
+    "objectID": "finance/budget-actual.html#annual-surplus-deficit",
+    "href": "finance/budget-actual.html#annual-surplus-deficit",
+    "title": "Budget vs. Actual",
+    "section": "Annual Surplus / (Deficit)",
+    "text": "Annual Surplus / (Deficit)\nFY2025-26 is a preliminary $1,083,711 deficit — the first deficit year since FY2018-19."
+  },
+  {
+    "objectID": "finance/budget-actual.html#original-budget-vs.-actual-expenditures",
+    "href": "finance/budget-actual.html#original-budget-vs.-actual-expenditures",
+    "title": "Budget vs. Actual",
+    "section": "Original Budget vs. Actual Expenditures",
+    "text": "Original Budget vs. Actual Expenditures\nActual expenditures exceeded the original adopted budget in 10 of the last 13 fiscal years. FY2025-26 has the largest gap in the series: actual spending ran $2,754,945 over the original adopted budget."
+  },
+  {
+    "objectID": "finance/budget-actual.html#fy2025-26-fourth-quarter-update",
+    "href": "finance/budget-actual.html#fy2025-26-fourth-quarter-update",
+    "title": "Budget vs. Actual",
+    "section": "FY2025-26 Fourth Quarter Update",
+    "text": "FY2025-26 Fourth Quarter Update\n\n\n\n\nAmount\n\n\n\n\nActual Revenue\n$55,435,251\n\n\nActual Expenditure\n$56,518,962\n\n\nDeficit\n$1,083,711\n\n\n\nSource: City of El Cerrito FY2025-26 Q4 General Fund Budget Update (through 6/30/2026); Agenda Bill 8.A, September 15, 2026."
+  },
+  {
+    "objectID": "finance/budget-actual.html#police-vs.-fire-actual-spending",
+    "href": "finance/budget-actual.html#police-vs.-fire-actual-spending",
+    "title": "Budget vs. Actual",
+    "section": "Police vs. Fire: Actual Spending",
+    "text": "Police vs. Fire: Actual Spending\nA Police/Fire split exists only for FY2019-20, FY2020-21, and FY2024-25–FY2025-26 (budget-book basis for the latter two, not the ACFR schedule). Other years report a single combined “Public Safety” line."
   },
   {
     "objectID": "elections/candidates-2026.html",
@@ -1197,46 +1225,67 @@
     "text": "Forrest Lanning\nBallot Designation: Pending Approval Email: info@2votes4changeEC.com\n\nForrest Lanning is a Bay Area native, structural engineer, and neighbor. He earned a degree in Architectural Engineering from California Polytechnic State University (Cal Poly) and later conducted earthquake engineering research at Stanford University. A career spanning more than two decades, Forrest has dedicated his work to helping communities become safer and more resilient through practical problem-solving, and responsible stewardship of public resources.\nForrest lived and worked overseas, helping communities recover from major earthquakes and tsunamis in New Zealand, Indonesia, Kyrgyzstan, Afghanistan, Costa Rica, and Colombia. Working with organizations including USAID, the United Nations, the World Bank, and local governments, he led disaster recovery programs that rebuilt and retrofitted schools, strengthened critical infrastructure, and improved earthquake preparedness. Managing projects with limited budgets taught him the importance of prioritizing investments, eliminating waste, and finding practical solutions that deliver the greatest benefit for every dollar spent. These experiences reinforced his belief that effective leadership begins with listening to the community, evaluating the facts, and making thoughtful, practical decisions that put residents first.\nForrest and his wife, Sara, are proud to call El Cerrito home. He is committed to serving the community with integrity, common sense, and sound judgment, working collaboratively to solve problems and make thoughtful decisions that reflect the best interests of both today’s residents and future generations.\n\n\nTwo candidates (White and Nowinski) share campaign website 2votes4changeec.com. Lanning’s listed contact email (info@2votes4changeEC.com) also matches that shared campaign address, though his own candidate packet separately lists ForrestForElCerrito@gmail.com — both are reported here for completeness."
   },
   {
-    "objectID": "finance/budget-actual.html",
-    "href": "finance/budget-actual.html",
-    "title": "Budget vs. Actual",
+    "objectID": "elections/index.html",
+    "href": "elections/index.html",
+    "title": "El Cerrito Elections",
     "section": "",
-    "text": "Source: each fiscal year’s CAFR/ACFR General Fund Budgetary Comparison Schedule (Original / Final / Actual). FY2025-26 figures are preliminary/unaudited — final audit (ACFR) expected to Council December 2026."
+    "text": "A voter service page: official candidate statements and information, reported without commentary."
   },
   {
-    "objectID": "finance/budget-actual.html#revenue-vs.-expenditure",
-    "href": "finance/budget-actual.html#revenue-vs.-expenditure",
-    "title": "Budget vs. Actual",
-    "section": "Revenue vs. Expenditure",
-    "text": "Revenue vs. Expenditure"
+    "objectID": "elections/index.html#pages",
+    "href": "elections/index.html#pages",
+    "title": "El Cerrito Elections",
+    "section": "Pages",
+    "text": "Pages\n\nNovember 2026 City Council Candidates — official statements from all six candidates, transcribed from filings with the City Clerk\n\n\nThis section reports candidate-submitted material as filed. It does not offer opinions, endorsements, or comparisons."
   },
   {
-    "objectID": "finance/budget-actual.html#annual-surplus-deficit",
-    "href": "finance/budget-actual.html#annual-surplus-deficit",
-    "title": "Budget vs. Actual",
-    "section": "Annual Surplus / (Deficit)",
-    "text": "Annual Surplus / (Deficit)\nFY2025-26 is a preliminary $1,083,711 deficit — the first deficit year since FY2018-19."
+    "objectID": "finance/budget-kpi-model.html",
+    "href": "finance/budget-kpi-model.html",
+    "title": "Budget KPI Model",
+    "section": "",
+    "text": "A three-indicator model that tests whether El Cerrito’s General Fund is fiscally sustainable, using only the City’s own audited financial statements and a regional inflation benchmark. Each indicator resolves to a pass/fail test against a published number, and every figure traces to a specific document and page.\nFor the underlying revenue/expenditure charts and the FY2025-26 Fourth Quarter update, see Budget vs. Actual."
   },
   {
-    "objectID": "finance/budget-actual.html#original-budget-vs.-actual-expenditures",
-    "href": "finance/budget-actual.html#original-budget-vs.-actual-expenditures",
-    "title": "Budget vs. Actual",
-    "section": "Original Budget vs. Actual Expenditures",
-    "text": "Original Budget vs. Actual Expenditures\nActual expenditures exceeded the original adopted budget in 10 of the last 13 fiscal years. FY2025-26 has the largest gap in the series: actual spending ran $2,754,945 over the original adopted budget."
+    "objectID": "finance/budget-kpi-model.html#the-model",
+    "href": "finance/budget-kpi-model.html#the-model",
+    "title": "Budget KPI Model",
+    "section": "The Model",
+    "text": "The Model\n\n\n\n\n\n\n\n\nKPI\nTest\nWhat it measures\n\n\n\n\n1. Fiscal sustainability\nActual Revenues &gt; Actual Expenditures\nIs the General Fund living within its means in practice?\n\n\n2. Budget discipline\nOriginal Budgeted Expenditures ≥ Actual Expenditures\nDoes the adopted budget hold, or does actual spending routinely outrun the plan the city started the year with?\n\n\n3. Real spending growth\nGrowth in Actual Expenditures ≤ regional CPI growth\nIs spending growth outpacing inflation?\n\n\n\nNote on KPI 2: the benchmark is the Original (as-adopted) budget, not the Final (year-end amended) budget. Comparing Actual to Final is close to circular — cities routinely amend budgets upward mid-year to match emerging spending, so Actual will almost always track Final closely regardless of discipline. Comparing Actual to Original tests whether the plan the council adopted actually held."
   },
   {
-    "objectID": "finance/budget-actual.html#fy2025-26-fourth-quarter-update",
-    "href": "finance/budget-actual.html#fy2025-26-fourth-quarter-update",
-    "title": "Budget vs. Actual",
-    "section": "FY2025-26 Fourth Quarter Update",
-    "text": "FY2025-26 Fourth Quarter Update\n\n\n\n\nAmount\n\n\n\n\nActual Revenue\n$55,435,251\n\n\nActual Expenditure\n$56,518,962\n\n\nDeficit\n$1,083,711\n\n\n\nSource: City of El Cerrito FY2025-26 Q4 General Fund Budget Update (through 6/30/2026); Agenda Bill 8.A, September 15, 2026."
+    "objectID": "finance/budget-kpi-model.html#scorecard",
+    "href": "finance/budget-kpi-model.html#scorecard",
+    "title": "Budget KPI Model",
+    "section": "Scorecard",
+    "text": "Scorecard\n\n\n\n\n\n\n\n\nFiscal Year\nKPI 1 (Revenue &gt; Expenditure)\nKPI 2 (Original Budget ≥ Actual)\n\n\n\n\nFY 2013-14\n✗\n✗\n\n\nFY 2014-15\n✗\n✗\n\n\nFY 2015-16\n✓\n✗\n\n\nFY 2016-17\n✓\n✗\n\n\nFY 2017-18\n✗\n✗\n\n\nFY 2018-19\n✗\n✗\n\n\nFY 2019-20\n✓\n✓\n\n\nFY 2020-21\n✓\n✓\n\n\nFY 2021-22\n✓\n✗\n\n\nFY 2022-23\n✓\n✓\n\n\nFY 2023-24\n✓\n✗\n\n\nFY 2024-25\n✓\n✗\n\n\nFY 2025-26 (Prelim.)\n✗\n✗\n\n\n\nKPI 2 fails in 10 of the 13 years measured — Actual Expenditures have repeatedly exceeded the Original adopted budget, not just in the years before the State Auditor’s report but across most of the study period, including several recent years that pass KPI 1."
   },
   {
-    "objectID": "finance/budget-actual.html#police-vs.-fire-actual-spending",
-    "href": "finance/budget-actual.html#police-vs.-fire-actual-spending",
-    "title": "Budget vs. Actual",
-    "section": "Police vs. Fire: Actual Spending",
-    "text": "Police vs. Fire: Actual Spending\nA Police/Fire split exists only for FY2019-20, FY2020-21, and FY2024-25–FY2025-26 (budget-book basis for the latter two, not the ACFR schedule). Other years report a single combined “Public Safety” line."
+    "objectID": "finance/budget-kpi-model.html#kpi-1-revenue-vs.-expenditure",
+    "href": "finance/budget-kpi-model.html#kpi-1-revenue-vs.-expenditure",
+    "title": "Budget KPI Model",
+    "section": "KPI 1: Revenue vs. Expenditure",
+    "text": "KPI 1: Revenue vs. Expenditure\n\nThe General Fund ran deficits (expenditures exceeding revenues) in FY2013-14, FY2014-15, FY2017-18, and FY2018-19 — the years leading up to the period covered by the State Auditor’s fiscal-health review.\nRevenues exceeded expenditures in every year from FY2019-20 through FY2024-25, including two years with unusually large surpluses — $6.0 million in FY2020-21 and $6.8 million in FY2021-22, well above the $0.6 million high seen in the prior surplus years (FY2015-16, FY2016-17).\nThe preliminary FY2025-26 figures show a return to deficit — Actual Expenditures exceeding Actual Revenues by roughly $1.1 million, the first deficit in this dataset since FY2018-19. This figure is unaudited and may be revised.\nSource: City of El Cerrito ACFR/CAFR, General Fund Budgetary Comparison Schedules, FY2013-14–FY2024-25 (audited); FY2025-26 Q4 Budget Update & Agenda Bill 8.A, 9/15/2026 (unaudited)."
+  },
+  {
+    "objectID": "finance/budget-kpi-model.html#kpi-2-original-budget-vs.-actual-expenditures",
+    "href": "finance/budget-kpi-model.html#kpi-2-original-budget-vs.-actual-expenditures",
+    "title": "Budget KPI Model",
+    "section": "KPI 2: Original Budget vs. Actual Expenditures",
+    "text": "KPI 2: Original Budget vs. Actual Expenditures\n\nActual Expenditures exceeded the Original adopted budget in 10 of the 13 fiscal years measured — FY2013-14 through FY2018-19 without exception, then intermittently since (FY2021-22, FY2023-24, FY2024-25, and the preliminary FY2025-26). The two exceptions since FY2018-19, FY2019-20 and FY2020-21, are also the years with the largest KPI 1 surpluses.\n\nHow the gap gets closed: mid-year amendments\nThe mechanism that keeps the Final (year-end amended) budget looking disciplined, even when the Original budget was not, is the mid-year amendment process:\n\n\n\nFiscal Year\nOriginal Budget Exp.\nFinal Budget Exp.\nIncrease\n\n\n\n\nFY 2023-24\n$47,852,822\n$51,369,923\n$3,517,101\n\n\nFY 2024-25\n$50,594,164\n$52,567,070\n$1,972,906\n\n\nFY 2025-26 (Prelim.)\n$53,764,017\n$56,898,999\n$3,134,982\n\n\n3-Year Average\n\n\n$2,874,996\n\n\n\nThe budget is revised upward by an average of roughly $2.9 million between adoption and year-end in each of the last three fiscal years — which is why a KPI 2 test against the Final budget would pass in years where a test against the Original budget fails."
+  },
+  {
+    "objectID": "finance/budget-kpi-model.html#kpi-3-expenditure-growth-vs.-inflation",
+    "href": "finance/budget-kpi-model.html#kpi-3-expenditure-growth-vs.-inflation",
+    "title": "Budget KPI Model",
+    "section": "KPI 3: Expenditure Growth vs. Inflation",
+    "text": "KPI 3: Expenditure Growth vs. Inflation\n\nOver the five-year period FY2020-21 to FY2025-26 (preliminary/unaudited):\n\n\n\n\n\n\n\n\n\n\nMeasure\nFY2020-21\nFY2025-26\nTotal Change\nCAGR\n\n\n\n\nActual General Fund Expenditures\n$37,210,630\n$56,518,962\n+51.9%\n+8.7%/yr\n\n\nBay Area CPI-U (June 2021 → June 2026)\n309.497\n369.913\n+19.5%\n+3.6%/yr\n\n\n\nGeneral Fund expenditures grew at roughly 2.7 times the rate of regional inflation over this five-year window. The gap widens each year rather than closing.\nSource: U.S. Bureau of Labor Statistics, CPI-U, All Items, San Francisco-Oakland-Hayward, CA (CBSA), series CUURA422SA0, via FRED, Federal Reserve Bank of St. Louis (data through August 2026, updated September 11, 2026)."
+  },
+  {
+    "objectID": "finance/budget-kpi-model.html#notes",
+    "href": "finance/budget-kpi-model.html#notes",
+    "title": "Budget KPI Model",
+    "section": "Notes",
+    "text": "Notes\nFY2025-26 figures throughout are preliminary and unaudited; the City’s ACFR for that year is expected December 2026 and may revise these numbers. The FY2025-26 Final Budget Expenditure figure ($56,898,999) is $12,420 higher than Original Budget plus itemized amendments ($53,764,017 + $3,147,402 = $56,911,419) in the source documents; the source of this small gap was not identified during extraction. This model tests three narrow, specific indicators — it does not evaluate service levels, infrastructure condition, or capital planning."
   },
   {
     "objectID": "finance/going-concern.html",

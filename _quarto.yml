@@ -13,6 +13,8 @@ website:
         menu:
           - href: finance/index.qmd
             text: Overview
+          - href: finance/budget-kpi-model.qmd
+            text: Budget KPI Model
           - href: finance/budget-actual.qmd
             text: Budget vs. Actual
           - href: finance/credit-rating.qmd
