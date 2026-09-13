@@ -1,0 +1,40 @@
+---
+title: "Fire Department — Overview"
+---
+
+## Mission
+
+The Fire Department protects the lives and property of residents of El Cerrito and Kensington by providing fire prevention, fire suppression, and advanced emergency medical services.
+
+Source: FY2026-27/FY2027-28 Proposed Biennial Budget, p.146.
+
+## Stations
+
+| Station | Address | Serves |
+|---|---|---|
+| Station 51 | 10900 San Pablo Avenue | El Cerrito |
+| Station 52 | 1520 Arlington Boulevard | El Cerrito |
+| Station 55 | Kensington | Kensington (contract) |
+
+Station 55 is owned by the Kensington Fire Protection District and has been served by El Cerrito under contract since 1995. Kensington-related service represents approximately 30% of the Department's expenditures.
+
+Source: FY2026-27/FY2027-28 Proposed Biennial Budget, p.146; Capital Improvement Program project location listings.
+
+## Mutual Aid
+
+The Department maintains automatic aid response agreements with the City of Richmond, Contra Costa County, the City of Albany, and the City of Berkeley fire departments, and participates in the State's Master Mutual Aid Program. It also staffs one California Office of Emergency Services (OES) engine that responds statewide for major emergencies and disasters.
+
+Source: FY2026-27/FY2027-28 Proposed Biennial Budget, p.146.
+
+## Organization
+
+The Department is organized into four divisions, each managed by a Battalion Chief, with the Fire Chief overseeing all four:
+
+- **Fire Prevention** — code enforcement, plan review, inspections, vegetation management, public education
+- **Training** — certifications, apparatus/equipment training, CERT and disaster-preparedness programming
+- **Operations & Emergency Medical Services** — emergency response across all three stations, EMT/paramedic oversight
+- **Support Services** — facilities, apparatus, and equipment readiness across all three stations
+
+Source: FY2026-27/FY2027-28 Proposed Biennial Budget, p.147.
+
+See [Organization & Staffing](organization.qmd) for the full chain of command and staffing detail, and [Budget](budget.qmd) for the spending trend.

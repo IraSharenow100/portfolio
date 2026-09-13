@@ -133,5 +133,17 @@
   },
   "finance/budget-actual.qmd": {
     "budget-actual.html": "969fa7fd"
+  },
+  "public-safety/fire/budget.qmd": {
+    "budget.html": "618fd64e"
+  },
+  "public-safety/fire/index.qmd": {
+    "index.html": "feafec71"
+  },
+  "public-safety/fire/organization.qmd": {
+    "organization.html": "0c1e97c5"
+  },
+  "public-safety/index.qmd": {
+    "index.html": "3cf2ff11"
   }
 }

@@ -55,6 +55,16 @@ website:
             text: Parking Management
           - href: transportation/measure-a-street-oversight.qmd
             text: Measure A Origin & PCI Trends
+      - text: Public Safety
+        menu:
+          - href: public-safety/index.qmd
+            text: Overview
+          - href: public-safety/fire/index.qmd
+            text: "Fire: Overview"
+          - href: public-safety/fire/organization.qmd
+            text: "Fire: Organization & Staffing"
+          - href: public-safety/fire/budget.qmd
+            text: "Fire: Budget"
       - text: Studies
         menu:
           - href: studies/index.qmd
