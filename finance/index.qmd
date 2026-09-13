@@ -2,6 +2,7 @@ El Cerrito Finance
 A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records.
 Pages
 
+* [Budget KPI Model](budget-kpi-model.html) — A three-indicator scorecard testing revenue sustainability, budget discipline, and real spending growth against thirteen years of audited data
 * [Budget vs. Actual](budget-actual.html) — General Fund revenue vs. expenditure, original budget vs. actual, and the FY2025-26 Fourth Quarter Update
 * [Credit Rating History](credit-rating.html) — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present
 * [Going-Concern Audits](going-concern.html) — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025
