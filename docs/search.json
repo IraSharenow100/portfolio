@@ -889,18 +889,46 @@
     "text": "FY2022–FY2025\nNo going-concern designation or dedicated note in any of these four years. Auditor of record changed to Chavan & Associates, LLP beginning with the FY2022 ACFR. These CAFRs contain only standard, boilerplate auditor-responsibility language required under current audit standards (SAS 132) in every modern audit report — not a City-specific finding — and include no “Emphasis of Matter Regarding Going Concern” heading and no dedicated going-concern note.\n\nAll years above verified directly against primary-source CAFR/ACFR PDFs."
   },
   {
-    "objectID": "elections/index.html",
-    "href": "elections/index.html",
-    "title": "El Cerrito Elections",
+    "objectID": "finance/budget-actual.html",
+    "href": "finance/budget-actual.html",
+    "title": "Budget vs. Actual",
     "section": "",
-    "text": "A voter service page: official candidate statements and information, reported without commentary."
+    "text": "Source: each fiscal year’s CAFR/ACFR General Fund Budgetary Comparison Schedule (Original / Final / Actual). FY2025-26 figures are preliminary/unaudited — final audit (ACFR) expected to Council December 2026."
   },
   {
-    "objectID": "elections/index.html#pages",
-    "href": "elections/index.html#pages",
-    "title": "El Cerrito Elections",
-    "section": "Pages",
-    "text": "Pages\n\nNovember 2026 City Council Candidates — official statements from all six candidates, transcribed from filings with the City Clerk\n\n\nThis section reports candidate-submitted material as filed. It does not offer opinions, endorsements, or comparisons."
+    "objectID": "finance/budget-actual.html#revenue-vs.-expenditure",
+    "href": "finance/budget-actual.html#revenue-vs.-expenditure",
+    "title": "Budget vs. Actual",
+    "section": "Revenue vs. Expenditure",
+    "text": "Revenue vs. Expenditure"
+  },
+  {
+    "objectID": "finance/budget-actual.html#annual-surplus-deficit",
+    "href": "finance/budget-actual.html#annual-surplus-deficit",
+    "title": "Budget vs. Actual",
+    "section": "Annual Surplus / (Deficit)",
+    "text": "Annual Surplus / (Deficit)\nFY2025-26 is a preliminary $1,083,711 deficit — the first deficit year since FY2018-19."
+  },
+  {
+    "objectID": "finance/budget-actual.html#original-budget-vs.-actual-expenditures",
+    "href": "finance/budget-actual.html#original-budget-vs.-actual-expenditures",
+    "title": "Budget vs. Actual",
+    "section": "Original Budget vs. Actual Expenditures",
+    "text": "Original Budget vs. Actual Expenditures\nActual expenditures exceeded the original adopted budget in 10 of the last 13 fiscal years. FY2025-26 has the largest gap in the series: actual spending ran $2,754,945 over the original adopted budget."
+  },
+  {
+    "objectID": "finance/budget-actual.html#fy2025-26-fourth-quarter-update",
+    "href": "finance/budget-actual.html#fy2025-26-fourth-quarter-update",
+    "title": "Budget vs. Actual",
+    "section": "FY2025-26 Fourth Quarter Update",
+    "text": "FY2025-26 Fourth Quarter Update\n\n\n\n\nAmount\n\n\n\n\nActual Revenue\n$55,435,251\n\n\nActual Expenditure\n$56,518,962\n\n\nDeficit\n$1,083,711\n\n\n\nSource: City of El Cerrito FY2025-26 Q4 General Fund Budget Update (through 6/30/2026); Agenda Bill 8.A, September 15, 2026."
+  },
+  {
+    "objectID": "finance/budget-actual.html#police-vs.-fire-actual-spending",
+    "href": "finance/budget-actual.html#police-vs.-fire-actual-spending",
+    "title": "Budget vs. Actual",
+    "section": "Police vs. Fire: Actual Spending",
+    "text": "Police vs. Fire: Actual Spending\nA Police/Fire split exists only for FY2019-20, FY2020-21, and FY2024-25–FY2025-26 (budget-book basis for the latter two, not the ACFR schedule). Other years report a single combined “Public Safety” line."
   },
   {
     "objectID": "elections/candidates-2026.html",
@@ -952,6 +980,20 @@
     "text": "Forrest Lanning\nBallot Designation: Pending Approval Email: info@2votes4changeEC.com\n\nForrest Lanning is a Bay Area native, structural engineer, and neighbor. He earned a degree in Architectural Engineering from California Polytechnic State University (Cal Poly) and later conducted earthquake engineering research at Stanford University. A career spanning more than two decades, Forrest has dedicated his work to helping communities become safer and more resilient through practical problem-solving, and responsible stewardship of public resources.\nForrest lived and worked overseas, helping communities recover from major earthquakes and tsunamis in New Zealand, Indonesia, Kyrgyzstan, Afghanistan, Costa Rica, and Colombia. Working with organizations including USAID, the United Nations, the World Bank, and local governments, he led disaster recovery programs that rebuilt and retrofitted schools, strengthened critical infrastructure, and improved earthquake preparedness. Managing projects with limited budgets taught him the importance of prioritizing investments, eliminating waste, and finding practical solutions that deliver the greatest benefit for every dollar spent. These experiences reinforced his belief that effective leadership begins with listening to the community, evaluating the facts, and making thoughtful, practical decisions that put residents first.\nForrest and his wife, Sara, are proud to call El Cerrito home. He is committed to serving the community with integrity, common sense, and sound judgment, working collaboratively to solve problems and make thoughtful decisions that reflect the best interests of both today’s residents and future generations.\n\n\nTwo candidates (White and Nowinski) share campaign website 2votes4changeec.com. Lanning’s listed contact email (info@2votes4changeEC.com) also matches that shared campaign address, though his own candidate packet separately lists ForrestForElCerrito@gmail.com — both are reported here for completeness."
   },
   {
+    "objectID": "elections/index.html",
+    "href": "elections/index.html",
+    "title": "El Cerrito Elections",
+    "section": "",
+    "text": "A voter service page: official candidate statements and information, reported without commentary."
+  },
+  {
+    "objectID": "elections/index.html#pages",
+    "href": "elections/index.html#pages",
+    "title": "El Cerrito Elections",
+    "section": "Pages",
+    "text": "Pages\n\nNovember 2026 City Council Candidates — official statements from all six candidates, transcribed from filings with the City Clerk\n\n\nThis section reports candidate-submitted material as filed. It does not offer opinions, endorsements, or comparisons."
+  },
+  {
     "objectID": "finance/credit-rating.html",
     "href": "finance/credit-rating.html",
     "title": "Credit Rating History",
@@ -963,7 +1005,7 @@
     "href": "finance/index.html",
     "title": "Ira Sharenow",
     "section": "",
-    "text": "El Cerrito Finance A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records. Pages\n\nCredit Rating History — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present\nGoing-Concern Audits — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025\nState Auditor Report — Findings from California State Auditor Report 2020-803\nTRAN Borrowing — Annual short-term borrowing, FY2012–FY2022\nTax Collections — Real Property Transfer Tax and other tax revenue\nRDA Dissolution — What the 2011–2012 state dissolution of redevelopment agencies cost El Cerrito\n\nEach page reports documented facts without attributing responsibility to any individual."
+    "text": "El Cerrito Finance A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records. Pages\n\nBudget vs. Actual — General Fund revenue vs. expenditure, original budget vs. actual, and the FY2025-26 Fourth Quarter Update\nCredit Rating History — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present\nGoing-Concern Audits — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025\nState Auditor Report — Findings from California State Auditor Report 2020-803\nTRAN Borrowing — Annual short-term borrowing, FY2012–FY2022\nTax Collections — Real Property Transfer Tax and other tax revenue\nRDA Dissolution — What the 2011–2012 state dissolution of redevelopment agencies cost El Cerrito\n\nEach page reports documented facts without attributing responsibility to any individual."
   },
   {
     "objectID": "finance/state-auditor.html",

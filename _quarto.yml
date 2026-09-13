@@ -13,6 +13,8 @@ website:
         menu:
           - href: finance/index.qmd
             text: Overview
+          - href: finance/budget-actual.qmd
+            text: Budget vs. Actual
           - href: finance/credit-rating.qmd
             text: Credit Rating
           - href: finance/going-concern.qmd
