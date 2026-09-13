@@ -65,6 +65,12 @@ website:
             text: "Fire: Organization & Staffing"
           - href: public-safety/fire/budget.qmd
             text: "Fire: Budget"
+          - href: public-safety/police/index.qmd
+            text: "Police: Overview"
+          - href: public-safety/police/organization.qmd
+            text: "Police: Organization & Staffing"
+          - href: public-safety/police/budget.qmd
+            text: "Police: Budget"
       - text: Studies
         menu:
           - href: studies/index.qmd
