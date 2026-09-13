@@ -1,0 +1,20 @@
+---
+title: "Police Department — Overview"
+---
+
+## Facility
+
+The El Cerrito Police Department is headquartered in the Public Safety Building at 10900 San Pablo Avenue, which it shares with Fire Station 51. The building was constructed in 1960. A 2011 city-commissioned evaluation recommended replacement over retrofit, citing insufficient space for evidence, lockers, training, and staff work areas; a new Public Safety Building has been identified as a Strategic Plan goal, but no funding source has yet been identified.
+
+Source: FY2026-27/FY2027-28 Proposed Biennial Budget, Capital Improvement Program, "Public Safety Building" project sheet, p.303.
+
+## Organization
+
+Chief of Police → Public Safety Executive Assistant / Captain → two Lieutenants, one per division:
+
+- **Field Operations Division** — four Patrol Teams (Sergeant, Corporal, Officers, Community Services Officers on each team)
+- **Administrative & Support Services Division** — Investigations Unit (Sergeant, Corporal, six Detectives) and Records & Support Services Unit (Sergeant, Records Supervisor, Records staff, Property & Evidence Specialist, Cadets)
+
+Source: FY2024-25/FY2025-26 Adopted Biennial Budget, p.176-177 (organization chart).
+
+See [Organization & Staffing](organization.qmd) for the full staffing detail, and [Budget](budget.qmd) for the spending trend.

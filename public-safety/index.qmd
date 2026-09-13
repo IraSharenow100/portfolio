@@ -7,6 +7,6 @@ Police and Fire are El Cerrito's two largest General Fund departments and its mo
 ## Pages
 
 * [Fire Department](fire/index.qmd) — Mission, stations, organization, staffing, and budget trend
-* Police Department — coming soon
+* [Police Department](police/index.qmd) — Facility, organization, staffing, and budget trend
 
 Each page reports documented facts, sourced to the City's adopted and proposed budget books, without attributing responsibility to any individual.

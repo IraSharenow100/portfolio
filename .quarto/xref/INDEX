@@ -145,5 +145,14 @@
   },
   "public-safety/index.qmd": {
     "index.html": "3cf2ff11"
+  },
+  "public-safety/police/budget.qmd": {
+    "budget.html": "94fb9a1b"
+  },
+  "public-safety/police/index.qmd": {
+    "index.html": "8b385fc1"
+  },
+  "public-safety/police/organization.qmd": {
+    "organization.html": "9d05d304"
   }
 }
