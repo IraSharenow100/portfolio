@@ -1,0 +1,32 @@
+---
+title: "Public Safety Incident Data"
+subtitle: "Overview"
+---
+
+This section analyzes incident-level data logged by El Cerrito's public
+safety departments -- what gets called in, where it happens, and how
+quickly it's handled. Unlike the [Public Safety](../public-safety/index.qmd)
+section, which covers department organization, staffing, and budget, this
+section works directly from the underlying incident records themselves.
+
+## Police
+
+A full analysis of every police incident logged from January 2019 through
+June 2025 -- what officers actually spend their time on, where activity
+concentrates geographically, how it has changed over time, and how
+quickly the department responds. Includes a detailed technical appendix
+documenting how the underlying dataset was built, cleaned, and verified,
+including several real data-quality issues that were found and corrected
+along the way.
+
+[Read the full analysis &rarr;](police.qmd)
+
+A second analysis, covering July 2025 through June 2026, will be added
+once that data is available.
+
+## Fire
+
+An incident-level analysis of fire and EMS calls is planned as a
+companion to the police analysis above, following the same methodology.
+
+[Overview &rarr;](fire.qmd)

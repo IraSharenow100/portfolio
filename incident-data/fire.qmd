@@ -1,0 +1,14 @@
+---
+title: "Fire Incident Data"
+subtitle: "In Progress"
+---
+
+An incident-level analysis of El Cerrito fire and EMS calls, following
+the same methodology as the [police incident analysis](police.qmd) --
+data verification, geocoding, geographic and time-trend analysis, and
+response times -- is planned but not yet complete.
+
+This page will be updated once that analysis is available. In the
+meantime, see the [Public Safety](../public-safety/fire/index.qmd)
+section for fire department organization, staffing, and budget
+information.

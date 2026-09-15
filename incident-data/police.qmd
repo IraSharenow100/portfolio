@@ -1,0 +1,665 @@
+---
+title: "El Cerrito Police Incident Analysis, 2019--2025"
+subtitle: "What the Data Shows About Police Activity, Response, and Geography"
+author: "Ira Sharenow"
+date: last-modified
+toc: true
+toc-depth: 2
+code-tools: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                       fig.width = 7.5, fig.height = 5, fig.align = "center")
+
+library(tidyverse)
+library(readxl)
+library(readr)
+library(stringr)
+library(lubridate)
+library(geosphere)
+library(ggplot2)
+library(ggspatial)
+library(sf)
+library(ggrepel)
+library(knitr)
+library(kableExtra)
+
+source_dir <- "D:/Documents/Employment/2026 job search/GitHub/portfolio/Police Department 2026 Git/Police Data/Year Files"
+output_dir <- "D:/Documents/Employment/2026 job search/GitHub/portfolio/Police Department 2026 Git/Police Data"
+```
+
+```{r load-data}
+police <- read_excel(file.path(output_dir, "EC_police_incidents.xlsx")) %>%
+  rename_with(~ str_trim(.) %>% str_replace_all(" ", "_") %>% tolower())
+
+police_clean <- police %>%
+  filter(!is.na(event_number)) %>%
+  distinct() %>%
+  mutate(
+    address = str_squish(str_replace_all(address, "[\r\n]+", " ")),
+    call_for_service = str_squish(call_for_service),
+    dt = parse_date_time(received_date, orders = "mdy HM")
+  )
+
+incident_types_path <- "D:/Documents/Employment/2025 job search/Project 2025/el-cerrito-police-report/data/combined/types of incidents filtered.csv"
+
+incident_types <- read_csv(incident_types_path, show_col_types = FALSE)[[1]] %>%
+  str_trim() %>%
+  str_to_lower()
+
+incident_types <- c(incident_types,
+  "451 - arson", "20001 - hit and run with injury",
+  "20002 - hit and run no injury", "23152 - drunk driving", "602l - trespassing"
+)
+
+df_filtered <- police_clean %>%
+  filter(str_to_lower(call_for_service) %in% incident_types)
+
+data_start <- min(police_clean$dt, na.rm = TRUE)
+data_end <- max(police_clean$dt, na.rm = TRUE)
+```
+
+```{r load-geocoding}
+BAY_AREA_LAT_MIN <- 37.0
+BAY_AREA_LAT_MAX <- 38.5
+BAY_AREA_LONG_MIN <- -123.0
+BAY_AREA_LONG_MAX <- -121.5
+EC_CENTER_LAT <- 37.9161
+EC_CENTER_LONG <- -122.3108
+
+original_geocodes <- read_csv(file.path(output_dir, "geocode_checkpoint.csv"), show_col_types = FALSE)
+fixed_geocodes <- read_csv(file.path(output_dir, "geocode_checkpoint_v2.csv"), show_col_types = FALSE)
+
+final_geocodes <- original_geocodes %>%
+  anti_join(fixed_geocodes, by = "address") %>%
+  bind_rows(fixed_geocodes) %>%
+  mutate(
+    BAD_LATLON_FLAG = is.na(lat) |
+      lat < BAY_AREA_LAT_MIN | lat > BAY_AREA_LAT_MAX |
+      long < BAY_AREA_LONG_MIN | long > BAY_AREA_LONG_MAX
+  )
+
+police_geocoded <- police_clean %>%
+  left_join(final_geocodes %>% select(address, lat, long, BAD_LATLON_FLAG), by = "address") %>%
+  mutate(BAD_LATLON_FLAG = if_else(is.na(address), TRUE, BAD_LATLON_FLAG))
+
+incidents_for_proximity <- police_geocoded %>% filter(!BAD_LATLON_FLAG)
+
+police_total <- incidents_for_proximity %>%
+  filter(str_to_lower(call_for_service) %in% incident_types)
+
+# Second-round outlier correction (addresses that landed in the right
+# general region but far from El Cerrito itself)
+outliers_result <- read_csv(file.path(output_dir, "geocode_outliers_v3.csv"), show_col_types = FALSE)
+
+KNOWN_DISTANT_CITIES <- "SAN FRANCISCO|PIEDMONT|OAKLAND|PINOLE|STOCKTON|PETALUMA|SAN LEANDRO|CONCORD|ANTIOCH"
+
+outliers_final <- outliers_result %>%
+  mutate(
+    dist_from_ec_mi = distHaversine(cbind(long, lat), c(EC_CENTER_LONG, EC_CENTER_LAT)) / 1609.34,
+    exclusion_reason = case_when(
+      is.na(lat) ~ "unresolved - no match",
+      dist_from_ec_mi <= 5 ~ "usable",
+      str_detect(address, KNOWN_DISTANT_CITIES) ~ "confirmed different city",
+      TRUE ~ "unresolved - shorthand matched wrong location"
+    )
+  )
+
+usable_outliers <- outliers_final %>%
+  filter(exclusion_reason == "usable") %>%
+  select(address, lat, long)
+
+police_total_corrected <- police_total %>%
+  rows_update(usable_outliers, by = "address") %>%
+  mutate(dist_from_ec_mi = distHaversine(cbind(long, lat), c(EC_CENTER_LONG, EC_CENTER_LAT)) / 1609.34) %>%
+  filter(dist_from_ec_mi <= 5)
+```
+
+```{r landmarks, results='hide'}
+bay_area_extent <- paste(BAY_AREA_LONG_MIN, BAY_AREA_LAT_MIN, BAY_AREA_LONG_MAX, BAY_AREA_LAT_MAX, sep = ",")
+
+landmarks <- tribble(
+  ~landmark, ~address,
+  "El Cerrito Plaza BART", "6699 Fairmount Avenue, El Cerrito, CA 94530",
+  "El Cerrito Del Norte BART", "6400 Cutting Blvd, El Cerrito, CA 94530",
+  "Castro Park Pickleball", "1420 Norvell St, El Cerrito, CA 94530",
+  "El Cerrito Community Center", "7007 Moeser Ln, El Cerrito, CA 94530",
+  "El Cerrito High School", "540 Ashbury Ave, El Cerrito, CA 94530",
+  "Korematsu Middle School", "7125 Donal Ave, El Cerrito, CA 94530",
+  "Harding Elementary School", "7230 Fairmount Ave, El Cerrito, CA 94530",
+  "Madera Elementary School", "8500 Madera Dr, El Cerrito, CA 94530",
+  "Current Library", "6510 Stockton Ave, El Cerrito, CA 94530"
+)
+
+landmarks_geocoded <- landmarks %>%
+  tidygeocoder::geocode(address, method = "arcgis", lat = lat, long = long,
+                        custom_query = list(searchExtent = bay_area_extent),
+                        quiet = TRUE)
+
+# Korematsu: ArcGIS matches the correct address text with full confidence,
+# but its underlying reference data still points at the school's pre-2015
+# location. Hand-corrected against a coordinate read directly off a current
+# map. See the Technical Appendix for how this was caught.
+landmarks_geocoded <- landmarks_geocoded %>%
+  mutate(
+    lat = if_else(landmark == "Korematsu Middle School", 37.9208100248211, lat),
+    long = if_else(landmark == "Korematsu Middle School", -122.30584773399178, long)
+  ) %>%
+  mutate(landmark = case_when(
+    landmark == "El Cerrito Del Norte BART"   ~ "Del Norte BART",
+    landmark == "Madera Elementary School"    ~ "Madera",
+    landmark == "Korematsu Middle School"     ~ "Korematsu",
+    landmark == "El Cerrito Community Center" ~ "EC Community Center",
+    landmark == "El Cerrito High School"      ~ "ECHS",
+    landmark == "Harding Elementary School"   ~ "Harding",
+    landmark == "El Cerrito Plaza BART"       ~ "EC Plaza BART",
+    landmark == "Castro Park Pickleball"      ~ "Castro Park",
+    landmark == "Current Library"             ~ "Library",
+    TRUE ~ landmark
+  ))
+
+RADIUS_FT <- 500
+RADIUS_M <- RADIUS_FT * 0.3048
+```
+
+
+# Introduction
+
+This report analyzes every police incident logged by the El Cerrito Police
+Department from **`r format(data_start, "%B %d, %Y")` through `r format(data_end, "%B %d, %Y")`** --
+`r format(nrow(police_clean), big.mark = ",")` records in total. It looks at
+four questions residents might reasonably ask about their local police
+department: what officers actually spend their time on, where activity is
+concentrated, how the pattern has changed over time, and how quickly the
+department responds when something happens.
+
+This is not a crime-statistics report in the traditional sense. It treats
+the department's own incident log as a dataset worth understanding on its
+own terms -- most of what gets logged isn't a crime at all, and that turns
+out to be one of the most interesting findings in the whole analysis.
+
+A detailed technical appendix at the end of this report documents exactly
+how the underlying data was assembled, cleaned, and verified, including
+several real errors that were found and fixed along the way. That level of
+detail is there for anyone who wants to check the work; the sections below
+focus on what the data actually shows.
+
+
+# What Do El Cerrito Police Actually Do?
+
+```{r workload}
+workload_summary <- police_clean %>%
+  count(call_for_service, sort = TRUE) %>%
+  mutate(
+    in_crime_scope = str_to_lower(call_for_service) %in% incident_types,
+    pct_of_total = round(100 * n / sum(n), 1)
+  )
+
+crime_scope_total <- workload_summary %>%
+  summarize(total = sum(n), crime_scope = sum(n[in_crime_scope])) %>%
+  mutate(pct = round(100 * crime_scope / total, 1))
+```
+
+Before looking at where or when incidents happen, it's worth asking a more
+basic question: what does the department actually spend its time on? The
+answer is not what most people would guess.
+
+Of the `r format(crime_scope_total$total, big.mark = ",")` incidents in this
+dataset, only **`r crime_scope_total$pct`%** fall into a category most
+people would call a crime -- theft, burglary, assault, vandalism, and
+similar. The remaining `r 100 - crime_scope_total$pct`% is patrol and
+administrative work: security checks, traffic stops, alarm responses, 911
+disconnects, welfare checks, and calls that resolve before an officer
+arrives at all.
+
+```{r workload-table}
+workload_summary %>%
+  slice_head(n = 10) %>%
+  mutate(call_for_service = str_to_title(call_for_service)) %>%
+  select(`Call Type` = call_for_service, Count = n, `% of Total` = pct_of_total) %>%
+  kable(caption = "Ten most common call types, all years combined") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+```
+
+The single most common thing El Cerrito police respond to is a security
+check -- an officer proactively checking that a building or area is secure,
+not responding to a report of anything wrong. Traffic stops are second.
+Together with alarm calls, 911 disconnects, and follow-up visits, these
+few categories alone account for close to half of everything the
+department logs. This is worth keeping in mind throughout the rest of this
+report: a "hot" location on the maps that follow reflects concentrated
+*crime*, specifically, not general police presence.
+
+
+# Where Does Activity Happen?
+
+```{r general-heatmap, fig.cap="Density of crime-scope incidents, all categories, relative to nine community landmarks"}
+EC_MAP_LAT_MIN <- 37.885
+EC_MAP_LAT_MAX <- 37.94
+EC_MAP_LONG_MIN <- -122.325
+EC_MAP_LONG_MAX <- -122.275
+
+ggplot() +
+  annotation_map_tile(type = "osm", zoomin = 0) +
+  stat_density_2d(
+    data = police_total_corrected,
+    aes(x = long, y = lat, fill = after_stat(level)),
+    geom = "polygon", contour = TRUE, alpha = 0.5, bins = 25
+  ) +
+  scale_fill_gradient(low = "yellow", high = "red", breaks = range,
+                       labels = c("Fewer incidents", "More incidents")) +
+  geom_point(data = landmarks_geocoded, aes(x = long, y = lat),
+             color = "black", size = 2.5, shape = 17) +
+  geom_label_repel(data = landmarks_geocoded, aes(x = long, y = lat, label = landmark),
+                    size = 2.8, fontface = "bold", label.padding = 0.15,
+                    label.size = 0, fill = alpha("white", 0.75),
+                    min.segment.length = 0, max.overlaps = Inf) +
+  coord_sf(xlim = c(EC_MAP_LONG_MIN, EC_MAP_LONG_MAX),
+           ylim = c(EC_MAP_LAT_MIN, EC_MAP_LAT_MAX), crs = 4326) +
+  labs(title = "El Cerrito Crime-Scope Incident Density", fill = NULL) +
+  theme_minimal() +
+  theme(axis.title = element_blank())
+```
+
+Crime-scope incidents concentrate heavily along the San Pablo Avenue
+corridor, El Cerrito's main commercial spine, with the two clearest
+hotspots near El Cerrito Plaza BART and the cluster around the Library,
+El Cerrito High School, and Harding Elementary. Activity drops off sharply
+moving east into the hillside residential neighborhoods, where Madera and
+Korematsu sit.
+
+```{r landmark-table}
+landmark_counts <- landmarks_geocoded %>%
+  select(landmark, land_lat = lat, land_long = long) %>%
+  rowwise() %>%
+  mutate(n_within_500ft = sum(
+    distHaversine(cbind(incidents_for_proximity$long, incidents_for_proximity$lat),
+                  c(land_long, land_lat)) <= RADIUS_M
+  )) %>%
+  ungroup() %>%
+  arrange(desc(n_within_500ft))
+
+landmark_counts %>%
+  select(Landmark = landmark, `Incidents within 500 ft` = n_within_500ft) %>%
+  kable(caption = "All police activity within 500 feet of each landmark (all call types, not just crime-scope)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+```
+
+Table 2 counts *all* police activity, not just crime, within 500 feet of
+nine community landmarks. One entry deserves a specific caveat: El Cerrito
+Del Norte BART sits directly on the city's border with Richmond and
+includes its own dedicated BART Police substation. Incidents on BART
+property or across the Richmond city line are handled by a different
+department entirely and are not part of this dataset -- so this number
+reflects only nearby off-station activity that happened to fall on the El
+Cerrito side, not the full picture of what happens at that station.
+
+## Vehicle Crime and Dangerous Driving
+
+```{r vehicle-subsets}
+vehicle_crime_types <- c("459a - auto burglary", "10851 - motor vehicle theft",
+                          "10851r - recovered stolen vehicle", "215 - car jacking",
+                          "23110 - throwing objects at a vehicle", "10852 - vehcile parts theft")
+dangerous_driving_types <- c("20001 - hit and run with injury", "20002 - hit and run no injury",
+                              "23152 - drunk driving")
+
+police_vehicle_crime <- police_total_corrected %>%
+  filter(str_to_lower(call_for_service) %in% vehicle_crime_types)
+police_dangerous_driving <- police_total_corrected %>%
+  filter(str_to_lower(call_for_service) %in% dangerous_driving_types)
+police_other_crime <- police_total_corrected %>%
+  filter(!(str_to_lower(call_for_service) %in% c(vehicle_crime_types, dangerous_driving_types)))
+
+compute_landmark_counts <- function(incident_df, label) {
+  landmarks_geocoded %>%
+    select(landmark, land_lat = lat, land_long = long) %>%
+    rowwise() %>%
+    mutate(n_within_500ft = sum(
+      distHaversine(cbind(incident_df$long, incident_df$lat), c(land_long, land_lat)) <= RADIUS_M
+    )) %>%
+    ungroup() %>%
+    select(landmark, {{label}} := n_within_500ft)
+}
+
+landmark_comparison <- compute_landmark_counts(police_vehicle_crime, "vehicle_crime") %>%
+  left_join(compute_landmark_counts(police_dangerous_driving, "dangerous_driving"), by = "landmark") %>%
+  left_join(compute_landmark_counts(police_other_crime, "other_crime"), by = "landmark") %>%
+  mutate(total = vehicle_crime + dangerous_driving + other_crime) %>%
+  arrange(desc(total))
+```
+
+Vehicle crime (auto burglary, motor vehicle theft, carjacking) and
+dangerous driving (hit and run, drunk driving) are broken out separately
+below, since they represent genuinely different kinds of risk -- property
+crime against a parked car versus danger from a car in motion.
+
+```{r landmark-comparison-table}
+landmark_comparison %>%
+  select(Landmark = landmark, `Vehicle Crime` = vehicle_crime,
+         `Dangerous Driving` = dangerous_driving, `All Other Crime` = other_crime,
+         Total = total) %>%
+  kable(caption = "Crime-scope incidents within 500 ft, by landmark and category") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) %>%
+  footnote(general = "\"All Other Crime\" is every crime-scope category not already broken out as Vehicle Crime or Dangerous Driving -- for example assault, robbery, burglary not involving a vehicle, theft, and vandalism.",
+           general_title = "Note: ", footnote_as_chunk = TRUE)
+```
+
+```{r vehicle-heatmap, fig.cap="Density of vehicle-crime incidents specifically"}
+ggplot() +
+  annotation_map_tile(type = "osm", zoomin = 0) +
+  stat_density_2d(
+    data = police_vehicle_crime,
+    aes(x = long, y = lat, fill = after_stat(level)),
+    geom = "polygon", contour = TRUE, alpha = 0.5, bins = 15
+  ) +
+  scale_fill_gradient(low = "yellow", high = "red", breaks = range,
+                       labels = c("Fewer incidents", "More incidents")) +
+  geom_point(data = landmarks_geocoded, aes(x = long, y = lat),
+             color = "black", size = 2.5, shape = 17) +
+  geom_label_repel(data = landmarks_geocoded, aes(x = long, y = lat, label = landmark),
+                    size = 2.8, fontface = "bold", label.padding = 0.15,
+                    label.size = 0, fill = alpha("white", 0.75),
+                    min.segment.length = 0, max.overlaps = Inf) +
+  coord_sf(xlim = c(EC_MAP_LONG_MIN, EC_MAP_LONG_MAX),
+           ylim = c(EC_MAP_LAT_MIN, EC_MAP_LAT_MAX), crs = 4326) +
+  labs(title = "El Cerrito Vehicle Crime Density", fill = NULL) +
+  theme_minimal() +
+  theme(axis.title = element_blank())
+```
+
+EC Plaza BART and the Community Center lead in both vehicle crime and
+dangerous driving specifically, not just overall activity -- a consistent
+pattern, not an artifact of one dominant category.
+
+
+# When Does It Happen?
+
+```{r yearly-trend, fig.cap="Crime-scope incidents by year"}
+yearly_totals <- police_clean %>%
+  filter(str_to_lower(call_for_service) %in% incident_types) %>%
+  mutate(year = year(dt)) %>%
+  count(year, name = "incidents") %>%
+  mutate(
+    year_label = if_else(year == 2025, "2025\n(partial year)", as.character(year)),
+    bar_fill = if_else(year == 2025, "2025", "full year")
+  ) %>%
+  mutate(year_label = fct_reorder(year_label, year))
+
+ggplot(yearly_totals, aes(x = year_label, y = incidents, fill = bar_fill)) +
+  geom_col() +
+  geom_text(aes(label = incidents), vjust = -0.5, size = 3) +
+  scale_fill_manual(values = c("full year" = "steelblue", "2025" = "gray60"), guide = "none") +
+  labs(x = NULL, y = "Incidents", title = "Crime-Scope Incidents by Year") +
+  theme_minimal()
+```
+
+Incident counts dropped noticeably during 2020--2022, bottoming out in
+2022, before recovering to their highest levels of the period in 2023 and
+2024. This report does not attempt to explain *why* -- police staffing
+levels, changes in what gets reported, and actual changes in activity
+could all play a role, and disentangling them is beyond what this dataset
+can show on its own.
+
+2025 is shown through June 30 only and should not be compared directly to
+the full-year totals above. On a fair like-for-like basis -- January
+through June of every year -- 2025 is actually the **busiest first half of
+any year in this seven-year period**, continuing the recovery rather than
+reversing it.
+
+```{r monthly-trend, fig.cap="Average monthly pattern, 2019-2024 (2025 excluded as a partial year)"}
+monthly_totals <- police_clean %>%
+  filter(str_to_lower(call_for_service) %in% incident_types, year(dt) %in% 2019:2024) %>%
+  mutate(month = month(dt, label = TRUE)) %>%
+  count(month, name = "incidents")
+
+avg_month <- mean(monthly_totals$incidents)
+
+ggplot(monthly_totals, aes(x = month, y = incidents)) +
+  geom_col(fill = "steelblue") +
+  geom_hline(yintercept = avg_month, linetype = "dashed", color = "darkred") +
+  labs(x = NULL, y = "Incidents (2019-2024 total)",
+       title = "Crime-Scope Incidents by Month") +
+  theme_minimal()
+```
+
+October stands out from the rest of the year -- but not for the reason it
+might first appear. Breaking the October total down by category shows it's
+driven almost entirely by parking enforcement, not a broad rise in crime.
+Parking violations get their own section below, since they turned out to
+be one of the more striking trends in the whole dataset.
+
+
+# Parking Enforcement: A City on the Move
+
+```{r parking-yearly, fig.cap="Parking violations by year"}
+parking_yearly <- police_clean %>%
+  filter(call_for_service == "PARKER - PARKING VIOLATION") %>%
+  mutate(year = year(dt)) %>%
+  count(year, name = "parking_violations") %>%
+  mutate(
+    year_label = if_else(year == 2025, "2025\n(partial year)", as.character(year)),
+    bar_fill = if_else(year == 2025, "2025", "full year")
+  ) %>%
+  mutate(year_label = fct_reorder(year_label, year))
+
+ggplot(parking_yearly, aes(x = year_label, y = parking_violations, fill = bar_fill)) +
+  geom_col() +
+  geom_text(aes(label = parking_violations), vjust = -0.5, size = 3) +
+  scale_fill_manual(values = c("full year" = "darkorange", "2025" = "wheat3"), guide = "none") +
+  labs(x = NULL, y = "Parking Violations", title = "Parking Violations by Year") +
+  theme_minimal()
+```
+
+Parking violations more than tripled over the period covered by this
+report, from `r parking_yearly$parking_violations[parking_yearly$year == 2019]`
+in 2019 to `r parking_yearly$parking_violations[parking_yearly$year == 2024]`
+in 2024. The growth is not gradual -- it happened in two distinct jumps
+rather than a steady climb, which points to specific operational changes
+at identifiable points in time rather than organic drift. A closer look at
+the timing of those changes is a natural next step for a future update to
+this report.
+
+```{r parking-monthly, fig.cap="Average monthly parking-violation pattern, 2019-2024"}
+parking_monthly <- police_clean %>%
+  filter(call_for_service == "PARKER - PARKING VIOLATION", year(dt) %in% 2019:2024) %>%
+  mutate(month = month(dt, label = TRUE)) %>%
+  count(month, name = "parking_violations")
+
+ggplot(parking_monthly, aes(x = month, y = parking_violations)) +
+  geom_col(fill = "darkorange") +
+  labs(x = NULL, y = "Parking Violations (2019-2024 total)",
+       title = "Parking Violations by Month") +
+  theme_minimal()
+```
+
+## Is Enforcement Concentrating Near El Cerrito Plaza?
+
+```{r parking-plaza}
+ec_plaza_bart <- landmarks_geocoded %>% filter(landmark == "EC Plaza BART")
+
+parking_geocoded <- police_clean %>%
+  filter(call_for_service == "PARKER - PARKING VIOLATION") %>%
+  left_join(final_geocodes %>% select(address, lat, long, BAD_LATLON_FLAG), by = "address") %>%
+  filter(!BAD_LATLON_FLAG, !is.na(lat)) %>%
+  mutate(dist_to_plaza_ft = distHaversine(cbind(long, lat), c(ec_plaza_bart$long, ec_plaza_bart$lat)) / 0.3048)
+
+parking_plaza_by_year <- parking_geocoded %>%
+  mutate(year = year(dt), within_1000ft = dist_to_plaza_ft <= 1000) %>%
+  group_by(year) %>%
+  summarize(
+    total = n(),
+    near_plaza = sum(within_1000ft),
+    pct_near_plaza = round(100 * near_plaza / total, 1)
+  )
+```
+
+With talk locally of a parking district near El Cerrito Plaza, it's worth
+asking directly: is a growing share of citywide parking enforcement
+actually concentrating there? To check, every geocoded parking violation
+was measured against its distance from the Plaza BART station.
+
+```{r parking-plaza-table}
+parking_plaza_by_year %>%
+  select(Year = year, `Citywide Total` = total,
+         `Within 1,000 ft of Plaza` = near_plaza,
+         `% of Citywide Total` = pct_near_plaza) %>%
+  kable(caption = "Parking violations near El Cerrito Plaza, by year") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) %>%
+  footnote(general = "2025 reflects only January through June (a partial year). The percentage column is not affected by this, since both the citywide total and the near-Plaza count are equally partial.",
+           general_title = "Note: ", footnote_as_chunk = TRUE)
+```
+
+The answer is no -- at least not so far. The *share* of citywide parking
+tickets written within 1,000 feet of the Plaza has not risen over this
+period; if anything, it is somewhat lower in 2025 than it was in 2019.
+The raw number of tickets near the Plaza has grown, but that simply
+reflects the citywide tripling described above, not extra concentration
+in that specific area. Whatever is driving the parking-district
+conversation, this dataset does not show enforcement disproportionately
+shifting toward the Plaza.
+
+
+# How Fast Do Police Respond?
+
+```{r response-time}
+response_data <- police_clean %>%
+  filter(str_to_lower(call_for_service) %in% incident_types) %>%
+  mutate(
+    arrived_dt = parse_date_time(first_unit_arrived_time, orders = "mdy HM"),
+    response_min = as.numeric(difftime(arrived_dt, dt, units = "mins"))
+  ) %>%
+  filter(!is.na(response_min), response_min >= 0, response_min < 1440)
+
+response_summary <- response_data %>%
+  summarize(
+    median_min = median(response_min),
+    p90_min = round(quantile(response_min, 0.9), 1)
+  )
+
+urgent_types <- c("245 - assault with a deadly weapon", "211 - robbery",
+                   "1071 - shooting (actual victim)", "sfrmc - shots fired",
+                   "215 - car jacking")
+
+urgent_summary <- response_data %>%
+  filter(str_to_lower(call_for_service) %in% urgent_types) %>%
+  summarize(median_min = median(response_min))
+```
+
+The department's median response time across all in-scope incidents is
+**`r response_summary$median_min` minutes**, and 90% of responses arrive
+within `r response_summary$p90_min` minutes. For calls involving active,
+in-progress danger specifically -- shots fired, an armed assault, a
+robbery, a carjacking, a shooting with an actual victim -- the median
+response is **`r urgent_summary$median_min` minutes**, consistently fast
+across every one of those categories.
+
+A word of caution for anyone comparing response times across years: a
+naive year-by-year average makes it look like response times dramatically
+improved, dropping from around 7 minutes in 2019 to 2 minutes in 2025.
+That apparent improvement is misleading. It's driven almost entirely by
+the huge growth in parking enforcement described above -- writing a
+parking ticket involves no dispatch or travel time, so as parking
+violations became a larger share of everything logged, the citywide
+average mechanically dropped without response to genuine emergencies
+actually getting any faster. Looking only at incidents that involve a real
+dispatch and response, the department's response time has been
+**stable, not dramatically changing, across the entire seven-year
+period** -- a consistent, reliable finding rather than a flashy but
+misleading one.
+
+
+# Conclusion
+
+Four findings stand out from this analysis. First, most of what El
+Cerrito police do isn't crime response at all -- fewer than three calls in
+ten fall into a category most residents would call a crime; the rest is
+patrol, traffic enforcement, and administrative work. Second, crime-scope
+activity concentrates heavily along the San Pablo Avenue corridor, with
+the sharpest drop-off in the hillside residential areas -- and when a
+landmark's number looks surprisingly low, as with Del Norte BART, it's
+often because of a real jurisdictional boundary, not because nothing
+happens there. Third, parking enforcement has more than tripled citywide
+since 2019, but that growth is broad-based rather than concentrated near
+El Cerrito Plaza specifically, at least through the period this report
+covers. Fourth, the department's response to genuinely dangerous,
+in-progress incidents is fast and consistent, holding steady across the
+whole period studied, even as the overall mix of what gets logged has
+shifted substantially.
+
+This report will be updated with a second analysis covering July 2025
+through June 2026 once that data becomes available.
+
+
+# Technical Appendix
+
+This appendix summarizes how the underlying dataset was built, cleaned,
+and verified. It is intentionally more detailed than a typical report
+appendix, because several real data-quality problems were found and fixed
+during this project, and the goal here is to show that work rather than
+hide it.
+
+## Data Source
+
+Source data was 13 half-year PDF reports from the El Cerrito Police
+Department, covering `r format(data_start, "%B %d, %Y")` through
+`r format(data_end, "%B %d, %Y")`. Two extraction defects were found and
+corrected in the initial PDF-to-spreadsheet conversion: a small share of
+addresses were truncated when they wrapped across a line in the source
+PDF, and the first one or two rows on nearly every PDF page were initially
+dropped entirely. Both were caught by independently re-extracting the data
+and diffing the two versions against each other and against the raw PDF
+text directly, then verified file-by-file across all 13 source documents.
+
+After combining and deduplicating (including 376 rows that were genuine
+duplicates spanning a source-file boundary in mid-2020), the working
+dataset contains `r format(nrow(police_clean), big.mark = ",")` unique
+incidents.
+
+## Incident Categories
+
+This report distinguishes between the full incident log and a
+crime-scope subset of `r format(nrow(df_filtered), big.mark = ",")`
+incidents, built from a 52-category list of genuine crime types (excluding
+administrative categories like security checks and traffic stops, and
+also excluding financial crimes such as identity theft, since those are
+typically logged at the victim's home address rather than a crime scene
+and would distort a geographic analysis).
+
+## Geocoding
+
+Street addresses were converted to map coordinates using the ArcGIS
+World Geocoding Service. An initial geocoding pass revealed that,
+without a geographic constraint, the service would sometimes match an
+ambiguous address (an intersection referenced by a local abbreviation, or
+a generic place name) to a same-named location anywhere in the world,
+with full confidence -- one address matched the country of Panama, another
+matched a park in Australia. Adding an explicit geographic boundary to the
+geocoding request and re-processing the affected addresses resolved the
+large majority of these cases; a final distance-based check excluded any
+remaining addresses that could not be reliably placed. In total,
+`r format(nrow(incidents_for_proximity), big.mark = ",")` of
+`r format(nrow(police_clean), big.mark = ",")` incidents
+(`r round(100 * nrow(incidents_for_proximity) / nrow(police_clean), 1)`%)
+were successfully and reliably geocoded.
+
+Community landmarks used in the geographic analysis were verified by hand
+against independent sources rather than accepted on the geocoding
+service's confidence score alone. This caught one landmark (Korematsu
+Middle School) where the service returned a maximum-confidence match on
+the correct current address, but an outdated underlying coordinate that
+still pointed to the school's location prior to a relocation roughly a
+decade ago -- corrected manually after independent verification.
+
+## Limitations
+
+This dataset reflects only incidents logged by the El Cerrito Police
+Department within city jurisdiction. Activity occurring on BART property,
+across the Richmond city line, or handled by a different agency is not
+captured here, which is worth keeping in mind when interpreting any single
+landmark's numbers, particularly El Cerrito Del Norte BART. Response-time
+figures are based on the subset of incidents with complete timestamp data
+(88.3% of crime-scope incidents); a small number of long-delay outliers,
+consistent with reports made well after an incident occurred rather than
+an active emergency, were identified and are described in supporting
+project documentation.
