@@ -73,6 +73,14 @@ website:
             text: "Police: Organization & Staffing"
           - href: public-safety/police/budget.qmd
             text: "Police: Budget"
+      - text: Incident Data
+        menu:
+          - href: incident-data/index.qmd
+            text: Overview
+          - href: incident-data/police.qmd
+            text: Police
+          - href: incident-data/fire.qmd
+            text: Fire
       - text: Studies
         menu:
           - href: studies/index.qmd
