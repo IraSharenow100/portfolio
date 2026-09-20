@@ -1,0 +1,71 @@
+---
+title: "Who Pays: Funding, Consultants and Staff"
+---
+
+*Last updated September 20, 2026.*
+
+Nearly every project on these pages depends on grants from state, federal, county and regional agencies rather than the City's own funds. This page lists the main sources, the City's housing fund, and the consultants and City staff named in the documents.
+
+## How to read dollar figures
+
+- Read every figure with its date. The same project has different totals in different years.
+- An **award** is money promised, not money spent. An **allocation** (bonds, tax credits) is financing authority, not cash.
+- Do not add a project total to the grants inside it. That counts the same money twice.
+- The complete list of figures, with the document and page behind each, is in the funding ledger (download below).
+
+## Main funding sources
+
+| Source | What it is | El Cerrito example |
+|---|---|---|
+| AHSC | State grant program for affordable housing plus nearby transportation improvements | $39,141,077 for the first Plaza building (Round 8, 2024) |
+| State infill infrastructure grant | State money for streets and utilities that make housing sites buildable | $20,208,715 for El Cerrito Plaza (list dated August 3, 2023) |
+| SS4A | Federal Safe Streets and Roads for All grant, passed through the Contra Costa Transportation Authority | $8,003,010 for Richmond Street |
+| Measure A | El Cerrito's street-repair tax | $644,730 in the Richmond Street plan |
+| Measure J | Contra Costa County transportation sales tax | $100,000 in the Richmond Street plan |
+| SB 1 | State road-repair law | $1,050,000 in the Richmond Street plan |
+| Measure X | Contra Costa County sales tax | $3,000,000 for the first Plaza building |
+| MTC Transit-Oriented Communities grant | Regional planning grant | $270,000 (February 2025 award list) |
+| LEAP grant | State planning grant | $150,000 for the 2023–2031 Housing Element |
+
+Source: SGC AHSC Round 8 awards; HCD infill grant list; Agenda Bill 6.H, March 3, 2026; Housing Element Annual Progress Report 2025; MTC Attachment B (TOC awards).
+
+## The City's own housing fund
+
+At June 30, 2025 the Housing Successor fund held $6,960,307 on paper. Only $105,410 was available cash. The rest is loans and interest the fund is owed. See [El Cerrito Plaza BART Housing](plaza-tod.qmd) and [RDA Dissolution](../finance/rda-dissolution.qmd).
+
+Source: SB 341 Housing Successor Report FY2024/25 (Sections III and XII), attached to Agenda Bill 6.D, March 17, 2026.
+
+## Consultants
+
+The documents name these consultants. Amounts are shown only where a document states one. A budget line or a not-to-exceed limit is not a payment.
+
+| Consultant | Work named in the documents | Amount stated |
+|---|---|---|
+| MIG (with Fehr & Peers, BAE Urban Economics, NV5) | San Pablo Avenue Specific Plan (2014) and 2022 update | Not seen |
+| Strategic Economics | 2017 Affordable Housing Strategy; January 2025 contract; July 7, 2026 reports | Not seen |
+| California Public Policy Group | Grant-writing support | Not stated |
+| Kittelson & Associates | Transportation study for the BART master plan (February 1, 2024); Local Road Safety Plan (July 2026) | Not stated |
+| Stantec | Tribal consultation support for the BART master plan (2023) | Not stated |
+| Fehr & Peers | BECCAP (BART) | Not stated |
+| Unnamed consultants | Zoning amendments, ADU ordinance, Safety Element update, TOC grant support, interpretation services | Not stated |
+| CCTA and its consultants | Richmond Street planning and project management; consultant services; construction support | $345,531; $817,061; $1,418,846 (budget lines in the March 3, 2026 plan) |
+| City consultant | Richmond Street project administration support | $80,270 (budget line) |
+
+The Richmond Street amounts are lines in a cost estimate, not contract prices. Contract amounts for most consultants were not in the documents reviewed.
+
+Source: Housing Element Annual Progress Report 2025; PL23-0024 Approval Letter, July 3, 2024 (Kittelson, Stantec); Agenda Bill 6.H, March 3, 2026 (Project Cost Estimate, p. 6).
+
+## City staff named in the documents
+
+Roles as printed on council agendas: City Manager (Karen Pinkos); Public Works Director and City Engineer (Yvetteh Ortiz); Community Development Director; Planning Manager and Zoning Administrator (approved the BART master plan on July 3, 2024); Housing and Economic Development Manager; Sustainable Transportation Program Manager (the City's contact on the May 2026 AHSC request); Associate Engineer (contact on the March 3, 2026 Richmond Street item). No pay data is included on this page.
+
+Source: Council agendas, March 3 and March 17, 2026; PL23-0024 Approval Letter, July 3, 2024.
+
+## Download the data
+
+- [Funding ledger (Excel, with cover sheet)](data/funding_ledger.xlsx)
+- [Plans registry (Excel, with cover sheet)](data/plans_registry.xlsx)
+- [Consultants and staff (Excel, with cover sheet)](data/consultants_staff.xlsx)
+- [Document disagreements (Excel, with cover sheet)](data/conflicts_log.xlsx)
+
+© Ira Sharenow

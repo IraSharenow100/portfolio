@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ira Sharenow">
+<meta name="dcterms.date" content="2026-09-20">
 
-<title>El Cerrito Transportation Network – Ira Sharenow</title>
+<title>El Cerrito Police Incident Analysis, 2019–2025 – Ira Sharenow</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9e38429a9a27528072a85db0156d392c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,6 +75,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -324,14 +330,27 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">El Cerrito Transportation Network</h1>
+<h1 class="title">El Cerrito Police Incident Analysis, 2019–2025</h1>
+<p class="subtitle lead">What the Data Shows About Police Activity, Response, and Geography</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ira Sharenow </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 20, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -341,58 +360,418 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Last updated September 20, 2026.</em></p>
-<p>A sourced record of El Cerrito’s major transportation, bikeway and transit-oriented housing projects, their funding structures, and documented delays. Drawn from City Council staff reports and minutes, the City’s biennial capital budget, CEQA documents, agreements and correspondence with the Strategic Growth Council (SGC), and documents from state, county, regional and BART agencies.</p>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>For more than a decade, the City of El Cerrito has planned for more homes, more shops and safer streets along San Pablo Avenue and around its two BART stations. Those plans are now becoming buildings and street projects. Most of the money comes from state, federal, county and regional grants, not from the City’s own funds.</p>
-<p><strong>Decided</strong></p>
-<ul>
-<li>The San Pablo Avenue Specific Plan (adopted September 2014; environmental review for the update adopted December 6, 2022) sets the building rules for the avenue.</li>
-<li>On July 3, 2024 the City’s Zoning Administrator approved a master plan for 743 homes on BART’s parking lots at El Cerrito Plaza, under state law and without a City Council vote. 351 of the 743 homes are income-restricted.</li>
-</ul>
-<p><strong>Built or under construction</strong></p>
-<ul>
-<li>The del Norte street project had its ribbon cutting on July 13, 2026. Documents give its cost as between $12.7 million and $14.92 million.</li>
-<li>The first Plaza housing building (70 homes) has been under construction since November 2025.</li>
-</ul>
-<p><strong>Ahead</strong></p>
-<ul>
-<li>Richmond Street: cost plan $12,878,610 (March 3, 2026), up from $10,104,010 in 2023. Construction is planned for late fall 2026.</li>
-<li>The second Plaza building (84 homes): state grant not recommended December 10, 2025. A new application (total request $40.2 million) went in for Round 10, with results expected in December 2026.</li>
-<li>Measure C, the library parcel tax, failed June 2, 2026. The BART plan includes a library only if the City finds financing.</li>
-</ul>
-<p><strong>One funding change</strong></p>
-<ul>
-<li>In 2024 the state awarded an AHSC grant for the first Plaza building, part of which pays for east-west bike routes. On March 3, 2026 the council raised Richmond Street’s share of that grant from $988,000 to $1,800,600. On May 20, 2026 the state approved by email a change adding a Class II bikeway on Richmond and Elm Streets to the grant’s bikeway list. The documents reviewed do not say why the City asked, and do not say whether the same bike lanes are paid for twice. See <a href="../transportation/richmond-street.html">Richmond Street</a>.</li>
-</ul>
-<p><strong>Where the records disagree and what is not confirmed</strong></p>
-<ul>
-<li>City and agency documents disagree on numbers or dates in dozens of places. See <a href="../transportation/document-disagreements.html">Where City Documents Disagree</a>.</li>
-<li>Not confirmed: whether the state formally amended the grant after the May 20, 2026 email; whether the California Transportation Commission approved $800,000 for Richmond Street on August 20–21, 2026; and whether the council adopted the Measure C results resolution on July 21, 2026.</li>
-</ul>
+<div style="page-break-after: always;"></div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This report analyzes every police incident logged by the El Cerrito Police Department from <strong>January 01, 2019 through June 30, 2025</strong> – 137,194 records in total. It looks at four questions residents might reasonably ask about their local police department: what officers actually spend their time on, where activity is concentrated, how the pattern has changed over time, and how quickly the department responds when something happens.</p>
+<p>This is not a crime-statistics report in the traditional sense. It treats the department’s own incident log as a dataset worth understanding on its own terms – most of what gets logged isn’t a crime at all, and that turns out to be one of the most interesting findings in the whole analysis.</p>
+<p>A detailed technical appendix at the end of this report documents exactly how the underlying data was assembled, cleaned, and verified, including several real errors that were found and fixed along the way. That level of detail is there for anyone who wants to check the work; the sections below focus on what the data actually shows.</p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="pages" class="level2">
-<h2 class="anchored" data-anchor-id="pages">Pages</h2>
-<ul>
-<li><strong><a href="../transportation/richmond-street.html">Richmond Street &amp; Complete Streets</a></strong> — the multi-thread funding history for Richmond Street bike lanes, including a funded application that was denied and a separate grant that was redirected to the same corridor</li>
-<li><strong><a href="../transportation/plaza-tod.html">El Cerrito Plaza BART Housing (TOD)</a></strong> — the 743-home BART plan, its first two buildings, funding, and the library contingency</li>
-<li><strong><a href="../transportation/del-norte.html">del Norte Complete Streets</a></strong> — the built street project, its schedule and its differing cost figures</li>
-<li><strong><a href="../transportation/san-pablo-specific-plan.html">San Pablo Specific Plan</a></strong> — the 2014 plan and 2022 update, versions, results and the Midtown/Downtown street project</li>
-<li><strong><a href="../transportation/ohlone-greenway.html">Ohlone Greenway</a></strong> — the city-length Class I path and planned downtown improvements</li>
-<li><strong><a href="../transportation/parking.html">Parking Management</a></strong> — the Dixon Resources parking management contract and its delays</li>
-<li><strong><a href="../transportation/measure-a-street-oversight.html">Measure A Origin &amp; PCI Trends</a></strong> — the tax’s original purpose, how its use evolved, and pavement condition data 2008–present</li>
-<li><strong><a href="../transportation/plans-timeline.html">Plans, Timeline and Terms</a></strong> — how the plans connect, a dated timeline and a glossary</li>
-<li><strong><a href="../transportation/funding.html">Who Pays: Funding, Consultants and Staff</a></strong> — funding sources, the housing fund, consultants named in the documents</li>
-<li><strong><a href="../transportation/document-disagreements.html">Where City Documents Disagree</a></strong> — the main differences between documents, with both sources</li>
-</ul>
+<section id="what-do-el-cerrito-police-actually-do" class="level1">
+<h1>What Do El Cerrito Police Actually Do?</h1>
+<p>Before looking at where or when incidents happen, it’s worth asking a more basic question: what does the department actually spend its time on? The answer is not what most people would guess.</p>
+<p>Of the 137,194 incidents in this dataset, only <strong>27.8%</strong> fall into a category most people would call a crime – theft, burglary, assault, vandalism, and similar. The remaining 72.2% is patrol and administrative work: security checks, traffic stops, alarm responses, 911 disconnects, welfare checks, and calls that resolve before an officer arrives at all.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small">
+<caption>Ten most common call types, all years combined</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Call Type</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">% of Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1059 - Security Check</td>
+<td style="text-align: right;">23389</td>
+<td style="text-align: right;">17.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1195 - Traffic Stop</td>
+<td style="text-align: right;">18392</td>
+<td style="text-align: right;">13.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">911dis - 911 Disconnect</td>
+<td style="text-align: right;">7578</td>
+<td style="text-align: right;">5.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parker - Parking Violation</td>
+<td style="text-align: right;">7325</td>
+<td style="text-align: right;">5.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unwant - Unwanted Person</td>
+<td style="text-align: right;">6186</td>
+<td style="text-align: right;">4.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1033a - Alarm Audible</td>
+<td style="text-align: right;">5695</td>
+<td style="text-align: right;">4.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Follow - Follow Up</td>
+<td style="text-align: right;">4550</td>
+<td style="text-align: right;">3.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1154 - Suspicious Vehicle</td>
+<td style="text-align: right;">4468</td>
+<td style="text-align: right;">3.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">415 - Disturbance</td>
+<td style="text-align: right;">4160</td>
+<td style="text-align: right;">3.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Xfer - Call Transfer</td>
+<td style="text-align: right;">3994</td>
+<td style="text-align: right;">2.9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The single most common thing El Cerrito police respond to is a security check – an officer proactively checking that a building or area is secure, not responding to a report of anything wrong. Traffic stops are second. Together with alarm calls, 911 disconnects, and follow-up visits, these few categories alone account for close to half of everything the department logs. This is worth keeping in mind throughout the rest of this report: a “hot” location on the maps that follow reflects concentrated <em>crime</em>, specifically, not general police presence.</p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="how-to-read-these-pages" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-these-pages">How to read these pages</h2>
-<p>Every section ends with its source: the document, its date, and the page, slide or item where available. Where funding sources appear to overlap or a claim can’t be fully reconciled against a primary document, that is flagged explicitly rather than resolved by assumption. Dollar figures carry their dates. An award is money promised, not money spent. Do not add a project’s total to the grants inside it.</p>
-<p>© Ira Sharenow</p>
+<section id="where-does-activity-happen" class="level1">
+<h1>Where Does Activity Happen?</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="El_Cerrito_Police_Report_files/figure-html/general-heatmap-1.png" class="img-fluid figure-img" width="720"></p>
+<figcaption>Density of crime-scope incidents, all categories, relative to nine community landmarks</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Crime-scope incidents concentrate heavily along the San Pablo Avenue corridor, El Cerrito’s main commercial spine, with the two clearest hotspots near El Cerrito Plaza BART and the cluster around the Library, El Cerrito High School, and Harding Elementary. Activity drops off sharply moving east into the hillside residential neighborhoods, where Madera and Korematsu sit.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small">
+<caption>All police activity within 500 feet of each landmark (all call types, not just crime-scope)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Landmark</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Incidents within 500 ft</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EC Plaza BART</td>
+<td style="text-align: right;">2298</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EC Community Center</td>
+<td style="text-align: right;">1802</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ECHS</td>
+<td style="text-align: right;">1235</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Library</td>
+<td style="text-align: right;">1029</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Harding</td>
+<td style="text-align: right;">786</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Del Norte BART</td>
+<td style="text-align: right;">557</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Madera</td>
+<td style="text-align: right;">525</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Castro Park</td>
+<td style="text-align: right;">364</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Korematsu</td>
+<td style="text-align: right;">294</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Table 2 counts <em>all</em> police activity, not just crime, within 500 feet of nine community landmarks. One entry deserves a specific caveat: El Cerrito Del Norte BART sits directly on the city’s border with Richmond and includes its own dedicated BART Police substation. Incidents on BART property or across the Richmond city line are handled by a different department entirely and are not part of this dataset – so this number reflects only nearby off-station activity that happened to fall on the El Cerrito side, not the full picture of what happens at that station.</p>
+<section id="vehicle-crime-and-dangerous-driving" class="level2">
+<h2 class="anchored" data-anchor-id="vehicle-crime-and-dangerous-driving">Vehicle Crime and Dangerous Driving</h2>
+<p>Vehicle crime (auto burglary, motor vehicle theft, carjacking) and dangerous driving (hit and run, drunk driving) are broken out separately below, since they represent genuinely different kinds of risk – property crime against a parked car versus danger from a car in motion.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small">
+<caption>Crime-scope incidents within 500 ft, by landmark and category</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Landmark</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Vehicle Crime</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Dangerous Driving</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">All Other Crime</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EC Plaza BART</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">368</td>
+<td style="text-align: right;">411</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EC Community Center</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">337</td>
+<td style="text-align: right;">381</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ECHS</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">305</td>
+<td style="text-align: right;">324</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Library</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">270</td>
+<td style="text-align: right;">296</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Harding</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">203</td>
+<td style="text-align: right;">220</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Del Norte BART</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">178</td>
+<td style="text-align: right;">194</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Castro Park</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">89</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Korematsu</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Madera</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">63</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Note: </span> <sup></sup> "All Other Crime" is every crime-scope category not already broken out as Vehicle Crime or Dangerous Driving -- for example assault, robbery, burglary not involving a vehicle, theft, and vandalism.</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="El_Cerrito_Police_Report_files/figure-html/vehicle-heatmap-1.png" class="img-fluid figure-img" width="720"></p>
+<figcaption>Density of vehicle-crime incidents specifically</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>EC Plaza BART and the Community Center lead in both vehicle crime and dangerous driving specifically, not just overall activity – a consistent pattern, not an artifact of one dominant category.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="when-does-it-happen" class="level1">
+<h1>When Does It Happen?</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="El_Cerrito_Police_Report_files/figure-html/yearly-trend-1.png" class="img-fluid figure-img" width="720"></p>
+<figcaption>Crime-scope incidents by year</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Incident counts dropped noticeably during 2020–2022, bottoming out in 2022, before recovering to their highest levels of the period in 2023 and 2024. This report does not attempt to explain <em>why</em> – police staffing levels, changes in what gets reported, and actual changes in activity could all play a role, and disentangling them is beyond what this dataset can show on its own.</p>
+<p>2025 is shown through June 30 only and should not be compared directly to the full-year totals above. On a fair like-for-like basis – January through June of every year – 2025 is actually the <strong>busiest first half of any year in this seven-year period</strong>, continuing the recovery rather than reversing it.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="El_Cerrito_Police_Report_files/figure-html/monthly-trend-1.png" class="img-fluid figure-img" width="720"></p>
+<figcaption>Average monthly pattern, 2019-2024 (2025 excluded as a partial year)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>October stands out from the rest of the year – but not for the reason it might first appear. Breaking the October total down by category shows it’s driven almost entirely by parking enforcement, not a broad rise in crime. Parking violations get their own section below, since they turned out to be one of the more striking trends in the whole dataset.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="parking-enforcement-a-city-on-the-move" class="level1">
+<h1>Parking Enforcement: A City on the Move</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="El_Cerrito_Police_Report_files/figure-html/parking-yearly-1.png" class="img-fluid figure-img" width="720"></p>
+<figcaption>Parking violations by year</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Parking violations more than tripled over the period covered by this report, from 568 in 2019 to 1772 in 2024. The growth is not gradual – it happened in two distinct jumps rather than a steady climb, which points to specific operational changes at identifiable points in time rather than organic drift. A closer look at the timing of those changes is a natural next step for a future update to this report.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="El_Cerrito_Police_Report_files/figure-html/parking-monthly-1.png" class="img-fluid figure-img" width="720"></p>
+<figcaption>Average monthly parking-violation pattern, 2019-2024</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="is-enforcement-concentrating-near-el-cerrito-plaza" class="level2">
+<h2 class="anchored" data-anchor-id="is-enforcement-concentrating-near-el-cerrito-plaza">Is Enforcement Concentrating Near El Cerrito Plaza?</h2>
+<p>With talk locally of a parking district near El Cerrito Plaza, it’s worth asking directly: is a growing share of citywide parking enforcement actually concentrating there? To check, every geocoded parking violation was measured against its distance from the Plaza BART station.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small">
+<caption>Parking violations near El Cerrito Plaza, by year</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Year</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Citywide Total</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Within 1,000 ft of Plaza</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">% of Citywide Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">565</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">10.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">633</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">7.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">831</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">11.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">730</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">9.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">1507</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">5.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">1770</td>
+<td style="text-align: right;">148</td>
+<td style="text-align: right;">8.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">1273</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">6.7</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: right; padding: 0;"><span style="font-style: italic;">Note: </span> <sup></sup> 2025 reflects only January through June (a partial year). The percentage column is not affected by this, since both the citywide total and the near-Plaza count are equally partial.</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<p>The answer is no – at least not so far. The <em>share</em> of citywide parking tickets written within 1,000 feet of the Plaza has not risen over this period; if anything, it is somewhat lower in 2025 than it was in 2019. The raw number of tickets near the Plaza has grown, but that simply reflects the citywide tripling described above, not extra concentration in that specific area. Whatever is driving the parking-district conversation, this dataset does not show enforcement disproportionately shifting toward the Plaza.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="how-fast-do-police-respond" class="level1">
+<h1>How Fast Do Police Respond?</h1>
+<p>The department’s median response time across all in-scope incidents is <strong>5 minutes</strong>, and 90% of responses arrive within 25 minutes. For calls involving active, in-progress danger specifically – shots fired, an armed assault, a robbery, a carjacking, a shooting with an actual victim – the median response is <strong>5 minutes</strong>, consistently fast across every one of those categories.</p>
+<p>A word of caution for anyone comparing response times across years: a naive year-by-year average makes it look like response times dramatically improved, dropping from around 7 minutes in 2019 to 2 minutes in 2025. That apparent improvement is misleading. It’s driven almost entirely by the huge growth in parking enforcement described above – writing a parking ticket involves no dispatch or travel time, so as parking violations became a larger share of everything logged, the citywide average mechanically dropped without response to genuine emergencies actually getting any faster. Looking only at incidents that involve a real dispatch and response, the department’s response time has been <strong>stable, not dramatically changing, across the entire seven-year period</strong> – a consistent, reliable finding rather than a flashy but misleading one.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Four findings stand out from this analysis. First, most of what El Cerrito police do isn’t crime response at all – fewer than three calls in ten fall into a category most residents would call a crime; the rest is patrol, traffic enforcement, and administrative work. Second, crime-scope activity concentrates heavily along the San Pablo Avenue corridor, with the sharpest drop-off in the hillside residential areas – and when a landmark’s number looks surprisingly low, as with Del Norte BART, it’s often because of a real jurisdictional boundary, not because nothing happens there. Third, parking enforcement has more than tripled citywide since 2019, but that growth is broad-based rather than concentrated near El Cerrito Plaza specifically, at least through the period this report covers. Fourth, the department’s response to genuinely dangerous, in-progress incidents is fast and consistent, holding steady across the whole period studied, even as the overall mix of what gets logged has shifted substantially.</p>
+<p>This report will be updated with a second analysis covering July 2025 through June 2026 once that data becomes available.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="technical-appendix" class="level1">
+<h1>Technical Appendix</h1>
+<p>This appendix summarizes how the underlying dataset was built, cleaned, and verified. It is intentionally more detailed than a typical report appendix, because several real data-quality problems were found and fixed during this project, and the goal here is to show that work rather than hide it.</p>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p>Source data was 13 half-year PDF reports from the El Cerrito Police Department, covering January 01, 2019 through June 30, 2025. Two extraction defects were found and corrected in the initial PDF-to-spreadsheet conversion: a small share of addresses were truncated when they wrapped across a line in the source PDF, and the first one or two rows on nearly every PDF page were initially dropped entirely. Both were caught by independently re-extracting the data and diffing the two versions against each other and against the raw PDF text directly, then verified file-by-file across all 13 source documents.</p>
+<p>After combining and deduplicating (including 376 rows that were genuine duplicates spanning a source-file boundary in mid-2020), the working dataset contains 137,194 unique incidents.</p>
+</section>
+<section id="incident-categories" class="level2">
+<h2 class="anchored" data-anchor-id="incident-categories">Incident Categories</h2>
+<p>This report distinguishes between the full incident log and a crime-scope subset of 38,075 incidents, built from a 52-category list of genuine crime types (excluding administrative categories like security checks and traffic stops, and also excluding financial crimes such as identity theft, since those are typically logged at the victim’s home address rather than a crime scene and would distort a geographic analysis).</p>
+</section>
+<section id="geocoding" class="level2">
+<h2 class="anchored" data-anchor-id="geocoding">Geocoding</h2>
+<p>Street addresses were converted to map coordinates using the ArcGIS World Geocoding Service. An initial geocoding pass revealed that, without a geographic constraint, the service would sometimes match an ambiguous address (an intersection referenced by a local abbreviation, or a generic place name) to a same-named location anywhere in the world, with full confidence – one address matched the country of Panama, another matched a park in Australia. Adding an explicit geographic boundary to the geocoding request and re-processing the affected addresses resolved the large majority of these cases; a final distance-based check excluded any remaining addresses that could not be reliably placed. In total, 132,996 of 137,194 incidents (96.9%) were successfully and reliably geocoded.</p>
+<p>Community landmarks used in the geographic analysis were verified by hand against independent sources rather than accepted on the geocoding service’s confidence score alone. This caught one landmark (Korematsu Middle School) where the service returned a maximum-confidence match on the correct current address, but an outdated underlying coordinate that still pointed to the school’s location prior to a relocation roughly a decade ago – corrected manually after independent verification.</p>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>This dataset reflects only incidents logged by the El Cerrito Police Department within city jurisdiction. Activity occurring on BART property, across the Richmond city line, or handled by a different agency is not captured here, which is worth keeping in mind when interpreting any single landmark’s numbers, particularly El Cerrito Del Norte BART. Response-time figures are based on the subset of incidents with complete timestamp data (88.3% of crime-scope incidents); a small number of long-delay outliers, consistent with reports made well after an incident occurred rather than an active emergency, were identified and are described in supporting project documentation.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

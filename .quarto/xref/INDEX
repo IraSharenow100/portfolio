@@ -157,5 +157,32 @@
   },
   "finance/budget-kpi-model.qmd": {
     "budget-kpi-model.html": "a1fa3dfc"
+  },
+  "incident-data/fire.qmd": {
+    "fire.html": "bfe1df18"
+  },
+  "incident-data/index.qmd": {
+    "index.html": "5ebe8b88"
+  },
+  "incident-data/police.qmd": {
+    "police.html": "19868b54"
+  },
+  "Police Department 2026 Git/El_Cerrito_Police_Report.Rmd": {
+    "El_Cerrito_Police_Report.html": "3dee984a"
+  },
+  "transportation/del-norte.qmd": {
+    "del-norte.html": "4c4af165"
+  },
+  "transportation/document-disagreements.qmd": {
+    "document-disagreements.html": "756eb89e"
+  },
+  "transportation/funding.qmd": {
+    "funding.html": "8d22a922"
+  },
+  "transportation/plans-timeline.qmd": {
+    "plans-timeline.html": "dbd2e25c"
+  },
+  "transportation/plaza-tod.qmd": {
+    "plaza-tod.html": "fb504cb1"
   }
 }
