@@ -32,7 +32,7 @@ For more than a decade, the City of El Cerrito has planned for more homes, more 
 
 **Where the records disagree and what is not confirmed**
 
-- City and agency documents disagree on numbers or dates in dozens of places. See [Where City Documents Disagree](document-disagreements.qmd), which gives the documents, dates and pages for each.
+- City and agency documents give different numbers or dates for the same thing in 17 places. See [Where City Documents Disagree](document-disagreements.qmd), which gives the documents, dates and pages for each.
 - Not confirmed: whether the state formally amended the grant after the May 20, 2026 email; whether the California Transportation Commission approved $800,000 for Richmond Street on August 20–21, 2026; and whether the council adopted the Measure C results resolution on July 21, 2026.
 
 ## Pages

@@ -4,61 +4,213 @@ title: "Where City Documents Disagree"
 
 *Last updated September 20, 2026.*
 
-City, state and agency documents about these projects give different facts, dates or numbers for the same thing in a number of places. This page lists 32 of them. Each row gives the two documents, their dates and the page, slide or section where the statement appears, so that each can be checked. A disagreement is not a finding of error. Many come from different dates, definitions or study areas, and a note says so where a reason is visible in the documents.
+This page lists 17 places where City, state or agency documents give different facts, dates or numbers for the same thing. Each item names the two documents, their dates and the page, slide or section, so that each can be checked. The last line of each item explains the difference. A difference is not a finding of error; it shows where a document may need to be corrected or explained.
 
-Where a document is not posted online (the state agreements, the May 18, 2026 letter, the May 19-20, 2026 emails and the Round 9 application), a copy can be obtained from the City or the state as a public record. Links to every posted document are at the bottom of the page.
+The state agreements, the May 18, 2026 letter, the May 19-20, 2026 emails and the Round 9 application are not posted online. Copies can be obtained from the City or the state as public records. Links to every posted document are at the bottom of the page.
 
-## Homes, plans and rules
+## 1. Inclusionary housing threshold (the size of project that must include affordable homes)
 
-| # | Topic | One document says | Another document says |
-|---|---|---|---|
-| 1 | Homes built<br>*Note: The 464 figure is for 2019 to 2025 only; the 400 figure covers the longer period since 2014.* | 464 homes and 65,000 sq ft of commercial space finished on 7 sites, 2019 to 2025<br>*City of El Cerrito, Economic Development web page, statement on housing and commercial space completed* | "Delivered 400 market rate, affordable and mixed-use housing units" since the Specific Plan was adopted in 2014<br>*Strategic Economics, Implementation Strategy for the San Pablo Avenue Specific Plan, July 7, 2026, slide 10* |
-| 2 | Inclusionary housing threshold | 9 or more rental units and 10 or more for-sale units<br>*City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), pages 4 and 5* | Rental projects: minimum project size 10 units. For-sale projects: minimum project size 9 units<br>*Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, slide 13* |
-| 3 | Specific Plan goals | "Six goals" identified in the Plan, but the page lists five (Goals A to E)<br>*City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 5* | The 2014 plan has five goals (A to E); the 2022 update has four goals<br>*San Pablo Avenue Specific Plan Update, Chapter 1: Introduction, October 13, 2022 version, PDF pages 32 and 33* |
-| 4 | Priority Development Areas | The Specific Plan "identifies three Priority Development Areas"<br>*City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 4* | City Council and the Association of Bay Area Governments designated San Pablo Avenue as one Mixed-use Corridor PDA in 2007<br>*San Pablo Avenue Specific Plan Update, Chapter 1: Introduction, October 13, 2022 version, PDF page 9* |
-| 5 | Housing Element the plan advances | The Specific Plan was adopted in 2014 "to advance the goals of the City's 2023-2031 Housing Element"<br>*City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 4* | The Housing Element in place in 2014 and 2015 was adopted in April 2015 and certified in May 2015; the 2023-2031 element was adopted August 15, 2023 and certified August 22, 2023<br>*San Pablo Avenue Specific Plan Update, Chapter 1: Introduction, October 13, 2022 version, PDF page 4; City Council Agenda Bill, Item 6.D, General Plan Annual Progress Report, March 17, 2026, page 2* |
-| 6 | Hana Gardens | 63 units<br>*Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, slide 11* | 62 units, "successfully completed in 2018" (bill); 62 units, year built 2019 (report)<br>*City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East), page 2; City of El Cerrito, Housing Successor Annual Report for Fiscal Year 2024/2025, Attachment 3 to Agenda Item 6.D, March 17, 2026, page 8* |
-| 7 | Elm Street project | 1715 Elm Street, 16 units (2 restricted), "Outside Plan Area"<br>*Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, slide 11* | 1717 Elm Street, 14 units (2 BMR), completed Fall 2025, listed among "Projects in the Plan Area"<br>*Strategic Economics, Implementation Strategy for the San Pablo Avenue Specific Plan, July 7, 2026, slide 11* |
-| 8 | Address of the second Plaza building | 6617 Fairmount Avenue<br>*City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East), page 1* | 6671 Fairmount Avenue<br>*Draft resolution attached to Agenda Bill 9.C, May 6, 2025 (AHSC application, Parcel C East), page 1; City Council Agenda Bill, Item 9.B, May 6, 2025 (predevelopment loan, Parcel C East), page 1; City of El Cerrito, Housing Successor Annual Report for Fiscal Year 2024/2025, Attachment 3 to Agenda Item 6.D, March 17, 2026, page 7* |
-| 9 | del Norte affordable building: Mayfair or Elora<br>*Note: The same building appears to be called two different names.* | "Mayfair Affordable": a 69-unit affordable housing project that "broke ground in June 2024 and is slated for completion early 2026"<br>*City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East), pages 2 and 3* | "Elora Apartments," 69 affordable units, completed Spring 2026, listed separately from "Mayfair" (156 apartments); the March 17, 2026 bill calls the 69-unit building beside del Norte BART "Elora"<br>*Strategic Economics, Implementation Strategy for the San Pablo Avenue Specific Plan, July 7, 2026, slide 11; City Council Agenda Bill, Item 6.D, General Plan Annual Progress Report, March 17, 2026, page 3* |
-| 10 | Climate plan year | "the 2024 Climate Action and Adaptation Plan"<br>*City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 10* | "2023 Climate Action and Adaptation Plan"<br>*City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 17* |
-| 11 | Specific Plan version | The page calls the posted text the "adopted 2022 version," with edits shown in red<br>*City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 1* | Page footers of the posted chapters read "August, 2014 - Corrected"<br>*San Pablo Avenue Specific Plan Update, Chapter 1: Introduction, October 13, 2022 version, PDF pages 3 to 10; San Pablo Avenue Specific Plan Update, Chapter 3: Complete Streets, October 13, 2022 version, PDF pages 4 to 11* |
+**One document says:** 9 or more rental units and 10 or more for-sale units
 
-## Money
+*Where:* City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), pages 4 and 5
 
-| # | Topic | One document says | Another document says |
-|---|---|---|---|
-| 12 | Richmond Street total cost<br>*Note: The FAQ shows the 2024-25 plan; the March 3, 2026 bill shows the amended plan.* | "$11.092 million in funding"<br>*City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 3* | $12,878,610 for all phases, including City administration ($12,798,340 for CCTA activities)<br>*City Council Agenda Bill, Item 6.H, Amendment to Cooperative Agreement with the Contra Costa Transportation Authority for the Richmond Street Complete Streets Improvement Project, March 3, 2026, pages 4 and 5* |
-| 13 | Richmond Street funding "secured"<br>*Note: The slide says "secured"; the bill shows the funding plan. The two use different wording.* | "Secured $9 million from various sources between 2022 and 2024"<br>*City Council Study Session presentation, Active Transportation Plan and Complete Streets Policies, July 15, 2025 (Item 9.A), slide 26* | Funding plan "As of 2023": $10,104,010. "As of 2024-2025": $11,092,010<br>*City Council Agenda Bill, Item 6.H, Amendment to Cooperative Agreement with the Contra Costa Transportation Authority for the Richmond Street Complete Streets Improvement Project, March 3, 2026, page 5* |
-| 14 | Richmond Street total on the state transportation commission form | "Contribution from other sources" $10,836,000, which with the $800,000 allocation is $11,636,000 (my addition)<br>*California Transportation Commission, August 20-21, 2026 meeting, Reference 2.5s.(3), Resolution LPP-A-2627-03, project 2 (Richmond Street), project 2 entry* | Total project cost $12,798,340<br>*City Council Agenda Bill, Item 6.H, Amendment to Cooperative Agreement with the Contra Costa Transportation Authority for the Richmond Street Complete Streets Improvement Project, March 3, 2026, page 5; Exhibit A (Amendment No. 1 to Cooperative Agreement No. 665), attached to Agenda Bill 6.H, March 3, 2026, Attachment B, page 3* |
-| 15 | Richmond Street funding year<br>*Note: FY2027 is the fiscal year that began July 1, 2026.* | Construction funding "will be included as part of the Fiscal Year 2027-28 budget"<br>*City Council Agenda Bill, Item 6.H, Amendment to Cooperative Agreement with the Contra Costa Transportation Authority for the Richmond Street Complete Streets Improvement Project, March 3, 2026, page 7* | $4,345,330 shown in FY2027<br>*City of El Cerrito, Proposed FY 2026-27 and FY 2027-28 Biennial Budget, pages 417 and 418* |
-| 16 | Date of the Richmond Street cooperative agreement | Cooperative Agreement No. 665 entered into "on September 19, 2023"<br>*Resolution attached to Agenda Bill 6.H, March 3, 2026, page 2* | Cooperative Agreement No. 665 entered into "on October 19, 2023"<br>*Exhibit A (Amendment No. 1 to Cooperative Agreement No. 665), attached to Agenda Bill 6.H, March 3, 2026, page 1* |
-| 17 | BART Safe Routes to BART grant for del Norte<br>*Note: BART's 2023 memo corrects an earlier $1.5 million figure.* | $812,977<br>*BART Board memo, Safe Routes to BART Cycle 2 awards, July 31, 2023, revised chart* | $1.5 million<br>*BART Safe Routes to BART Cycle 2 fact sheet for El Cerrito del Norte, June 5, 2025, El Cerrito del Norte project entry* |
-| 18 | Grant funding for the Plaza TOD | The TOD "has cumulatively secured $95 million in grant funding"<br>*City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East), page 2* | The City brought in "over $60 million" to Elora Apartments and the El Cerrito Plaza TOD<br>*Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, slide 14* |
-| 19 | City housing fund | "only $95,000 remains" in the City's Affordable Housing Trust Fund<br>*Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, slide 15* | $105,410 available cash of a $6,960,307 balance at June 30, 2025<br>*City of El Cerrito, Housing Successor Annual Report for Fiscal Year 2024/2025, Attachment 3 to Agenda Item 6.D, March 17, 2026, pages 4 and 9* |
-| 20 | Second Plaza application: City transportation amount<br>*Note: The proposed budget also lists $3.5 million under Round 10.* | $2.9 million for the City's sidewalk, crosswalk, pedestrian and bicycle improvements<br>*City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East), page 3* | "$3.5 million for active transportation infrastructure" in the 2025 application<br>*City Council Agenda Bill, Item 6.D, General Plan Annual Progress Report, March 17, 2026, page 3* |
+**Another document says:** Rental projects: minimum size 10 units. For-sale projects: minimum size 9 units
 
-## State grant documents (AHSC)
+*Where:* Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, slide 13
 
-| # | Topic | One document says | Another document says |
-|---|---|---|---|
-| 21 | Date of the first Plaza grant agreement | Agreement entered into "on or about October 24, 2025"<br>*AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 1* | Signed 10/31/2025 (City and Related) and 11/5/2025 (HCD)<br>*State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, pages 1 and 2* |
-| 22 | Program Guidelines cited | Guidelines "dated October 31, 2019, amended December 9, 2019"<br>*AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 1* | "Round 8 Program Guidelines dated December 14, 2023"; the scoring table says "AHSC Round 7 Guidelines"<br>*State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, pages 3 and 34* |
-| 23 | Approved date printed on exhibits | "Approved Date: 04/19/2024"<br>*AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, exhibit footers, e.g. page 30* | "Approved Date: 04/11/2024"<br>*State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, exhibit footers, e.g. page 3* |
-| 24 | Timing of transportation construction | "Commencement of construction of STI. 08/01/2026"<br>*State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, page 36* | Bikeway payments scheduled August 2027 to April 2028<br>*AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 36, Exhibit D* |
-| 25 | How a scope change is approved | A revision to the STI work "shall require an amendment"; the agreement may not be amended "except in writing executed by all parties"<br>*State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, page 6, Exhibit A section 3.C; AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 24, section 31* | "this email alone can serve as approval"<br>*Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 1, May 20, 2026, 2:46 PM* |
-| 26 | Bikeway miles | "The Awarded project had a proposed 2.22 miles of bikeways"<br>*Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 3, May 20, 2026, 9:28 AM* | "Current Total (A + C): 2.4 lane miles"<br>*Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 2, May 20, 2026, 10:32 AM* |
-| 27 | Sidewalk location | "Oak Street sidewalks"<br>*State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, page 33; AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 30, Exhibit B* | Heading "Elm/Willow St Sidewalks"<br>*AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 36, Exhibit D* |
-| 28 | BART railcars in the Round 9 application | "two new BART railcars"<br>*AHSC Round 9 application narrative prompts for El Cerrito Plaza Parcel C East, footer dated March 25, 2025 (excerpt: narrative pages 3, 7, 10, 12, 14, 15), PDF page 1 (narrative page 3)* | "three new BART railcars"<br>*AHSC Round 9 application narrative prompts for El Cerrito Plaza Parcel C East, footer dated March 25, 2025 (excerpt: narrative pages 3, 7, 10, 12, 14, 15), PDF page 5 (narrative page 14)* |
+**The difference:** The two documents reverse the numbers for rental and for-sale projects.
 
-## Richmond Street design and records
+## 2. Number of Specific Plan goals
 
-| # | Topic | One document says | Another document says |
-|---|---|---|---|
-| 29 | Bike lane type on Richmond Street | "Class IV protected bikeway on Richmond Street" from Moeser Lane to Hill Street<br>*AHSC Round 9 application narrative prompts for El Cerrito Plaza Parcel C East, footer dated March 25, 2025 (excerpt: narrative pages 3, 7, 10, 12, 14, 15), PDF page 1 (narrative page 3)* | "a Class II Bikeway at Richmond Street and at Elm Street from Moeser Lane to Hill Street"; Class IV "does not appear to be a suitable treatment" north of Moeser Lane<br>*City of El Cerrito Public Works Department letter to the California Department of Housing and Community Development, May 18, 2026, page 1; City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 16* |
-| 30 | Richmond Street traffic volume | October 2024 sensor count: "ADT of 6,400"<br>*City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 8* | "about 8,400 vehicles daily" (same FAQ); "9000 AADT, 25 MPH" (state email)<br>*City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 20; Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 1, May 20, 2026, 2:46 PM* |
-| 31 | Agenda item number<br>*Note: The report is Attachment 3 to the same item.* | "Agenda Item No. 6.D."<br>*City Council Agenda Bill, Item 6.D, General Plan Annual Progress Report, March 17, 2026, page 1* | "Agenda Item No. 6.C. Attachment 3"<br>*City of El Cerrito, Housing Successor Annual Report for Fiscal Year 2024/2025, Attachment 3 to Agenda Item 6.D, March 17, 2026, page 1* |
-| 32 | Timing of the consultant's housing analysis | The analysis "is on track to be completed in Spring 2026"<br>*Housing Element Annual Progress Report 2025, Attachment 2 to Agenda Item 6.D, March 17, 2026, page 8* | Reports dated July 7, 2026<br>*Strategic Economics, Implementation Strategy for the San Pablo Avenue Specific Plan, July 7, 2026, cover, slide 1; Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, cover, slide 1* |
+**One document says:** "There are six goals identified in the Plan," followed by a list of five goals (Goals A to E)
+
+*Where:* City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 5
+
+**Another document says:** The same page then lists five goals, Goals A to E
+
+*Where:* City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 5
+
+**The difference:** The page says six goals but lists only five.
+
+## 3. Number of Priority Development Areas (PDAs)
+
+**One document says:** The Specific Plan "identifies three Priority Development Areas"
+
+*Where:* City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 4
+
+**Another document says:** City Council and the Association of Bay Area Governments designated San Pablo Avenue as one Mixed-use Corridor PDA in 2007
+
+*Where:* San Pablo Avenue Specific Plan Update, Chapter 1: Introduction, October 13, 2022 version, PDF page 9
+
+**The difference:** The web page says three PDAs; the plan chapter describes one.
+
+## 4. Which Housing Element the Specific Plan supports
+
+**One document says:** The Specific Plan was adopted in 2014 "to advance the goals of the City's 2023-2031 Housing Element"
+
+*Where:* City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy), page 4
+
+**Another document says:** The 2023-2031 Housing Element was adopted August 15, 2023. The Housing Element in place in 2014 and 2015 was certified in May 2015
+
+*Where:* City Council Agenda Bill, Item 6.D, General Plan Annual Progress Report, March 17, 2026, page 2; San Pablo Avenue Specific Plan Update, Chapter 1: Introduction, October 13, 2022 version, PDF page 4
+
+**The difference:** A plan adopted in 2014 cannot have been adopted to advance a Housing Element adopted in 2023.
+
+## 5. Homes built
+
+**One document says:** 464 homes finished on 7 sites, 2019 to 2025
+
+*Where:* City of El Cerrito, Economic Development web page, statement on housing and commercial space completed
+
+**Another document says:** "Delivered 400 market rate, affordable and mixed-use housing units" since the Specific Plan was adopted in 2014
+
+*Where:* Strategic Economics, Implementation Strategy for the San Pablo Avenue Specific Plan, July 7, 2026, slide 10
+
+**The difference:** The second figure covers a longer period (2014 to 2026) that includes the first (2019 to 2025), yet it is smaller.
+
+## 6. Hana Gardens (senior housing)
+
+**One document says:** 63 units
+
+*Where:* Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026, slide 11
+
+**Another document says:** 62 units, "successfully completed in 2018" (May 6, 2025 bill); 62 units, year built 2019 (Housing Successor report)
+
+*Where:* City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East), page 2; City of El Cerrito, Housing Successor Annual Report for Fiscal Year 2024/2025, Attachment 3 to Agenda Item 6.D, March 17, 2026, page 8
+
+**The difference:** The documents give different unit counts (63 and 62) and different completion years (2018 and 2019).
+
+## 7. Street number of the second Plaza building (Parcel C East)
+
+**One document says:** 6617 Fairmount Avenue
+
+*Where:* City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East), page 1
+
+**Another document says:** 6671 Fairmount Avenue
+
+*Where:* Draft resolution attached to Agenda Bill 9.C, May 6, 2025 (AHSC application, Parcel C East), page 1; City Council Agenda Bill, Item 9.B, May 6, 2025 (predevelopment loan, Parcel C East), page 1; City of El Cerrito, Housing Successor Annual Report for Fiscal Year 2024/2025, Attachment 3 to Agenda Item 6.D, March 17, 2026, page 7
+
+**The difference:** The same building has two different street numbers.
+
+## 8. Year of the Climate Action and Adaptation Plan
+
+**One document says:** "the 2024 Climate Action and Adaptation Plan"
+
+*Where:* City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 10
+
+**Another document says:** "2023 Climate Action and Adaptation Plan"
+
+*Where:* City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 17
+
+**The difference:** The same FAQ gives two different years for the same plan.
+
+## 9. Total cost of Richmond Street
+
+**One document says:** "$11.092 million in funding" (the City's Richmond Street FAQ, printed September 20, 2026)
+
+*Where:* City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 3
+
+**Another document says:** $12,878,610 for all phases, including City administration ($12,798,340 for CCTA activities), adopted March 3, 2026
+
+*Where:* City Council Agenda Bill, Item 6.H, Amendment to Cooperative Agreement with the Contra Costa Transportation Authority for the Richmond Street Complete Streets Improvement Project, March 3, 2026, pages 4 and 5
+
+**The difference:** The City's web page is about $1.8 million lower than the amended plan. It has not been updated.
+
+## 10. Date of the Richmond Street cooperative agreement
+
+**One document says:** Cooperative Agreement No. 665 was entered into "on September 19, 2023"
+
+*Where:* Resolution attached to Agenda Bill 6.H, March 3, 2026, page 2
+
+**Another document says:** Cooperative Agreement No. 665 was entered into "on October 19, 2023"
+
+*Where:* Exhibit A (Amendment No. 1 to Cooperative Agreement No. 665), attached to Agenda Bill 6.H, March 3, 2026, page 1
+
+**The difference:** Two documents in the same agenda item give dates one month apart for the same agreement.
+
+## 11. BART grant for del Norte
+
+**One document says:** $812,977
+
+*Where:* BART Board memo, Safe Routes to BART Cycle 2 awards, July 31, 2023, revised chart
+
+**Another document says:** $1.5 million
+
+*Where:* BART Safe Routes to BART Cycle 2 fact sheet for El Cerrito del Norte, June 5, 2025, El Cerrito del Norte project entry
+
+**The difference:** BART's own documents give different amounts for the same grant. The 2023 memo corrects the $1.5 million figure.
+
+## 12. Date the first Plaza grant agreement was signed
+
+**One document says:** The Standard Agreement was entered into "on or about October 24, 2025"
+
+*Where:* AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 1
+
+**Another document says:** Signed October 31, 2025 (City and Related) and November 5, 2025 (HCD)
+
+*Where:* State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, pages 1 and 2
+
+**The difference:** The Disbursement Agreement gives a date earlier than either signature date.
+
+## 13. Which state program guidelines apply
+
+**One document says:** Guidelines "dated October 31, 2019, amended December 9, 2019"
+
+*Where:* AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 1
+
+**Another document says:** "Round 8 Program Guidelines dated December 14, 2023"; the same agreement's scoring table refers to "AHSC Round 7 Guidelines"
+
+*Where:* State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, pages 3 and 34
+
+**The difference:** The two grant documents cite different guidelines, and the Standard Agreement cites two different rounds.
+
+## 14. How a change to the state grant's bikeway list can be approved
+
+**One document says:** A revision to the transportation work "shall require an amendment"; the Disbursement Agreement may not be amended "except in writing executed by all parties"
+
+*Where:* State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025, page 6, Exhibit A section 3.C; AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025, page 24, section 31
+
+**Another document says:** "this email alone can serve as approval"
+
+*Where:* Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 1, May 20, 2026, 2:46 PM
+
+**The difference:** The agreements call for a written amendment; the state's email says an email is enough. No amendment after the email has been seen.
+
+## 15. Miles of bikeways in the state grant
+
+**One document says:** "The Awarded project had a proposed 2.22 miles of bikeways"
+
+*Where:* Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 3, May 20, 2026, 9:28 AM
+
+**Another document says:** "Current Total (A + C): 2.4 lane miles"
+
+*Where:* Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 2, May 20, 2026, 10:32 AM
+
+**The difference:** The state and the City give different totals for the same bikeways on the same day.
+
+## 16. Traffic on Richmond Street
+
+**One document says:** October 2024 sensor count: "ADT of 6,400" vehicles a day
+
+*Where:* City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 8
+
+**Another document says:** "about 8,400 vehicles daily" (same FAQ, later page); "9000 AADT" (state email)
+
+*Where:* City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026, page 20; Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages), page 1, May 20, 2026, 2:46 PM
+
+**The difference:** Three different traffic counts are used for the same street.
+
+## 17. Number of BART railcars in the Round 9 application
+
+**One document says:** "two new BART railcars"
+
+*Where:* AHSC Round 9 application narrative prompts for El Cerrito Plaza Parcel C East, footer dated March 25, 2025 (excerpt: narrative pages 3, 7, 10, 12, 14, 15), PDF page 1 (narrative page 3)
+
+**Another document says:** "three new BART railcars"
+
+*Where:* AHSC Round 9 application narrative prompts for El Cerrito Plaza Parcel C East, footer dated March 25, 2025 (excerpt: narrative pages 3, 7, 10, 12, 14, 15), PDF page 5 (narrative page 14)
+
+**The difference:** The same application narrative gives two different numbers.
 
 ## Documents and where to find them
 
@@ -67,30 +219,24 @@ Where a document is not posted online (the state agreements, the May 18, 2026 le
 - Strategic Economics, Affordable Housing and Anti-Displacement Strategy, July 7, 2026. <https://www.elcerrito.gov/DocumentCenter/View/23647/SPASP_AffordableHousingImplementation_FINAL>
 - City of El Cerrito, San Pablo Avenue Specific Plan web page (printed copy). <https://www.elcerrito.gov/396/San-Pablo-Avenue-Specific-Plan>
 - San Pablo Avenue Specific Plan Update, Chapter 1: Introduction, October 13, 2022 version. <https://www.elcerrito.gov/396/San-Pablo-Avenue-Specific-Plan>
-- San Pablo Avenue Specific Plan Update, Chapter 3: Complete Streets, October 13, 2022 version. <https://www.elcerrito.gov/396/San-Pablo-Avenue-Specific-Plan>
 - City Council Agenda Bill, Item 9.C, May 6, 2025 (AHSC application, Parcel C East). <https://elcerritoca.portal.civicclerk.com>
 - Draft resolution attached to Agenda Bill 9.C, May 6, 2025 (AHSC application, Parcel C East). <https://elcerritoca.portal.civicclerk.com>
 - City Council Agenda Bill, Item 9.B, May 6, 2025 (predevelopment loan, Parcel C East). <https://elcerritoca.portal.civicclerk.com>
 - City of El Cerrito, Housing Successor Annual Report for Fiscal Year 2024/2025, Attachment 3 to Agenda Item 6.D, March 17, 2026. <https://elcerritoca.portal.civicclerk.com>
 - City Council Agenda Bill, Item 6.D, General Plan Annual Progress Report, March 17, 2026. <https://elcerritoca.portal.civicclerk.com>
-- Housing Element Annual Progress Report 2025, Attachment 2 to Agenda Item 6.D, March 17, 2026. <https://elcerritoca.portal.civicclerk.com>
 - City Council Agenda Bill, Item 6.H, Amendment to Cooperative Agreement with the Contra Costa Transportation Authority for the Richmond Street Complete Streets Improvement Project, March 3, 2026. <https://elcerritoca.portal.civicclerk.com>
 - Resolution attached to Agenda Bill 6.H, March 3, 2026. <https://elcerritoca.portal.civicclerk.com>
 - Exhibit A (Amendment No. 1 to Cooperative Agreement No. 665), attached to Agenda Bill 6.H, March 3, 2026. <https://elcerritoca.portal.civicclerk.com>
 - City of El Cerrito, Richmond Street Complete Streets project FAQ, printed September 20, 2026. <https://sites.google.com/view/richmond-street-complete/faq>
-- City Council Study Session presentation, Active Transportation Plan and Complete Streets Policies, July 15, 2025 (Item 9.A). <https://elcerritoca.portal.civicclerk.com>
-- California Transportation Commission, August 20-21, 2026 meeting, Reference 2.5s.(3), Resolution LPP-A-2627-03, project 2 (Richmond Street). <https://catc.ca.gov/-/media/ctc-media/documents/ctc-meetings/2026/2026-08/135-2-5s3-a11y.pdf>
 - BART Board memo, Safe Routes to BART Cycle 2 awards, July 31, 2023. <https://www.bart.gov/sites/default/files/2023-08/BART%20Board%20Memo%20-%20RR%20SR2B%20Cycle%202%20Awards%202023-07-31.pdf>
 - BART Safe Routes to BART Cycle 2 fact sheet for El Cerrito del Norte, June 5, 2025. <https://www.bart.gov/sites/default/files/2025-06/20250605%20SR2B%20C2%20ECDN%20Fact%20Sheet.pdf>
 - State Standard Agreement No. 24-AHSC-18468 (AHSC Round 8, El Cerrito Plaza Parcel A South), signed October 31 and November 5, 2025. Copy from the City or HCD (not posted publicly)
 - AHSC Round 8 Disbursement Agreement, El Cerrito Plaza Parcel A South, dated for reference November 20, 2025. Copy from the City or HCD (not posted publicly)
 - Email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19-20, 2026 (4 pages). Copy from the City (email)
-- City of El Cerrito Public Works Department letter to the California Department of Housing and Community Development, May 18, 2026. Copy from the City
 - AHSC Round 9 application narrative prompts for El Cerrito Plaza Parcel C East, footer dated March 25, 2025 (excerpt: narrative pages 3, 7, 10, 12, 14, 15). Copy from the developer or City (application)
-- City of El Cerrito, Proposed FY 2026-27 and FY 2027-28 Biennial Budget. <https://www.elcerrito.gov/475/Capital-Improvement-Program>
 
 ## Download the data
 
-- [Document disagreements, all 32 entries with references (Excel, with cover sheet)](data/conflicts_log.xlsx)
+- [Document disagreements, all 17 entries with references (Excel, with cover sheet)](data/conflicts_log.xlsx)
 
 © Ira Sharenow
