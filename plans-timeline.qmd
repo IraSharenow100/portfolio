@@ -1,0 +1,78 @@
+---
+title: "Plans, Timeline and Terms"
+---
+
+*Last updated September 20, 2026.*
+
+This page explains how El Cerrito's plans connect, lists the key events in order with full dates, and defines the terms used across these pages.
+
+## How the plans connect
+
+| Plan or rule | Date | What it does |
+|---|---|---|
+| General Plan | Updated 1999; amendments 2014 and 2025 | The city's long-range plan. The 2014 amendments supersede General Plan text in order to carry out the San Pablo Avenue Specific Plan. |
+| Economic Development Action Plan | First plan 2006; update March 15, 2016 | Says the loss of redevelopment funds (2012) is the most significant change to the city's capacity for economic development. |
+| Circulation Plan for Bicyclists and Pedestrians; Active Transportation Plan; Complete Streets Policy | 2007; 2016; 2016 | Name the streets and routes the city wants to improve, including Richmond Street. |
+| San Pablo Avenue Specific Plan | Adopted September 2014; updated 2022 | Building rules and a Complete Streets plan for the avenue. See [San Pablo Specific Plan](san-pablo-specific-plan.qmd). |
+| Housing Element 2023–2031 | Adopted August 15, 2023; certified August 22, 2023 | Shows where the city's assigned 1,391 homes can go; most sites are in the Specific Plan area. |
+| Strategic Plan 2024–2029 | December 5, 2023 | The council's goals. |
+| State law AB 2923 | Signed September 30, 2018 | Lets BART's land near stations be built under BART's own zoning targets. |
+| Berkeley-El Cerrito Corridor Access Plan (BECCAP) | 2023 | BART's plan for how people reach three stations as parking lots become homes. |
+| Transit-Oriented Communities policy (MTC) | 2022 | Ties future regional grants to allowing more homes near transit. |
+| Climate Action Plan; Climate Action and Adaptation Plan | 2013; adoption year not confirmed | The city's climate plans. The Richmond Street FAQ calls the later plan both "2024" and "2023." |
+
+Source: City General Plan page; SPASP Chapter 1; Agenda Bill 6.D, March 17, 2026; PL23-0024 Approval Letter, July 3, 2024; Richmond Street FAQ.
+
+## Timeline
+
+| Date | Event |
+|---|---|
+| February 1, 2012 | California's redevelopment agencies end; El Cerrito becomes the Housing Successor |
+| September 2014 | San Pablo Avenue Specific Plan adopted |
+| March 15, 2016 | Economic Development Action Plan update |
+| September 30, 2018 | State law AB 2923 signed |
+| November 19, 2020 | BART Board selects the developer team for El Cerrito Plaza |
+| December 6, 2022 | Environmental review for the Specific Plan update adopted |
+| February 7, 2023 | Council authorizes a City loan for the first Plaza building |
+| February 2023 | Federal SS4A grant awarded to the Contra Costa Transportation Authority |
+| April 3, 2023 | First Plaza building approved without a council vote |
+| August 15, 2023 | Housing Element adopted (state certification August 22, 2023) |
+| September 19, 2023 | Council approves the Richmond Street cooperative agreement |
+| March 6, 2024 | del Norte groundbreaking |
+| July 3, 2024 | BART master plan approved (743 homes) |
+| August 23, 2024 | State award letter for the first Plaza building's AHSC grant |
+| May 6, 2025 | Council authorizes the second Plaza building's AHSC application and a $350,000 loan |
+| July 15, 2025 | Council study session on the walking and biking plans (no vote) |
+| October 31 and November 5, 2025 | First Plaza building's AHSC agreement signed |
+| November 2025 | First Plaza building construction begins |
+| December 10, 2025 | State does not recommend the second Plaza building's application |
+| March 3, 2026 | Council adopts Resolution 2026-13 (Richmond Street amendment) |
+| March 20, 2026 | State environmental notice for Richmond Street |
+| May 18–20, 2026 | City asks the state to change the AHSC bikeway list; denied, then approved |
+| June 2, 2026 | Measure C library parcel tax fails |
+| June 24, 2026 | Richmond Street right of way certified |
+| July 7, 2026 | Consultant reports on the San Pablo Avenue plan |
+| July 13, 2026 | del Norte ribbon cutting |
+| August 20–21, 2026 | Transportation commission staff recommend $800,000 for Richmond Street |
+| Late fall 2026 | Richmond Street construction planned |
+| December 2026 | State decisions expected on the next AHSC round |
+
+Source: documents cited on the individual project pages.
+
+## Glossary
+
+- **AHSC:** Affordable Housing and Sustainable Communities program. A state program that pays for affordable housing together with nearby transportation improvements. Applications are scored and funded in yearly rounds.
+- **AMI:** area median income; affordable homes are set for households at a percentage of it.
+- **Class I, II, III, IV bikeways:** Class I is a path away from streets. Class II is a painted lane (buffered lanes add extra painted space). Class III is a shared street with signs or markings. Class IV is a protected lane separated from traffic.
+- **Complete Streets:** streets designed for walking, biking and transit as well as driving.
+- **Cooperative agreement:** a contract between the City and another agency; for Richmond Street, the Contra Costa Transportation Authority (CCTA).
+- **Housing Successor:** the City's role in holding housing money left from the former redevelopment agency.
+- **Measure A, J, X:** A is El Cerrito's street-repair tax; J is a county transportation sales tax; X is a county sales tax used here for housing.
+- **Ministerial approval:** approval by staff, without a hearing or council vote, when a project meets set rules.
+- **Priority Development Area:** an area near transit that regional agencies encourage for growth.
+- **SB 1:** state law that funds road repair and improvements.
+- **SS4A:** federal Safe Streets and Roads for All grant.
+- **STI:** Sustainable Transportation Infrastructure, the transportation part of an AHSC grant.
+- **TOD:** transit-oriented development, housing and other buildings near transit stations.
+
+© Ira Sharenow

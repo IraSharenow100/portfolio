@@ -1,0 +1,220 @@
+---
+title: "Richmond Street & Complete Streets"
+---
+
+*Last updated September 20, 2026.*
+
+Richmond Street bike lanes have been funded, sought, and re-funded through at least four separate, overlapping efforts: a federal Complete Streets grant, and three rounds of a state Affordable Housing and Sustainable Communities (AHSC) grant tied to two BART-adjacent housing buildings at El Cerrito Plaza. This page documents each thread in order, with reference material on bike lane classifications and the most recent budget data at the end.
+
+::: {.callout-important}
+## The key point
+
+As of the July 15, 2025 Council study session, the Richmond Street bike lanes were **not funded**. Only sidewalks, curb ramps and traffic calming had funding, through the federal SS4A grant.
+
+The state's Round 9 application, which had proposed a Class IV protected bikeway on Richmond Street, was not recommended on December 10, 2025. On March 3, 2026 the Council raised Richmond Street's share of the AHSC Round 8 grant from $988,000 to $1,800,600. On May 18, 2026 Public Works Director Yvetteh Ortiz asked the state to change that grant's bikeway list, and on May 20, 2026 the state approved by email a **Class II bikeway on Richmond and Elm Streets (Moeser Lane to Hill Street)**, in place of the Lincoln Avenue bikeway.
+
+That letter and approval are the documents that tie state AHSC money to the Richmond Street bike lanes. The documents reviewed do not state the City's reason for the request.
+:::
+
+## Where things stand on September 20, 2026
+
+- **Cost plan:** $12,878,610 (March 3, 2026), up from $10,104,010 in 2023.
+- **Council action:** Resolution 2026-13, adopted March 3, 2026 by a 5–0 vote, amended the cooperative agreement with the Contra Costa Transportation Authority (CCTA).
+- **State bikeway approval:** May 20, 2026, by email. No formal written amendment has been seen.
+- **State road-repair money:** staff of the California Transportation Commission recommended an $800,000 allocation at its August 20–21, 2026 meeting. The vote outcome is not confirmed.
+- **Construction:** "late Fall 2026," according to the March 3, 2026 staff report.
+- **City web page:** the City's Richmond Street FAQ still shows the older $11,092,000 plan.
+
+Source: Agenda Bill 6.H, City Council, March 3, 2026 (pp. 1–7, Resolution, Exhibit A); Council minutes, March 3, 2026 (p. 5 of 7); SGC email chain, May 19–20, 2026; California Transportation Commission, August 20–21, 2026, Reference 2.5s.(3), Resolution LPP-A-2627-03, project 2; City Richmond Street FAQ (printed September 20, 2026).
+
+## Bike Lane Classifications (reference)
+
+| Class | Description |
+|---|---|
+| Class I | A separated, off-street path — fully apart from car traffic. The Ohlone Greenway is Class I. |
+| Class II | A painted lane on the road, marked with stripes. No physical barrier from car traffic. |
+| Class III | A "bike route" — signage and sometimes sharrow markings only. No dedicated lane; cyclists share the travel lane with cars. |
+| Class IV | A protected bikeway — physically separated from car traffic with curbs, posts, or parked cars. The safest on-street option short of a fully separated path. |
+
+## Thread A — SS4A / CCTA "Richmond Street Complete Streets"
+
+- **Project:** ~1.85 miles, Hill Street to Fairmount Avenue (Key Blvd/Hill St/Elm St intersection to Richmond St/Fairmount Ave/Ohlone Greenway intersection)
+- **Federal grant:** Safe Streets and Roads for All (SS4A), $8,003,010. In February 2023 the U.S. Department of Transportation awarded CCTA $28.9 million for five county projects; $8,003,010 is dedicated to Richmond Street.
+- **Cooperative agreement:** CCTA leads the project. The Council approved the agreement in September 2023 (Resolution 2023-66). The resolution for Amendment No. 1 says it was entered into on September 19, 2023; its Exhibit A says October 19, 2023.
+- **Presented to Council:** July 15, 2025 (Item 9A, study session only — no formal vote on funding). The staff report states: "No formal action is requested." Slide 26 states: "Secured $9 million from various sources between 2022 and 2024."
+- At that time, the bike lane component specifically was **not funded**; only sidewalks, curb ramps, and traffic calming on the corridor had funding, through SS4A. A Council motion (Ktsanes) to study parking-preserving alternatives failed for lack of a second.
+- Not part of any AHSC application at the time.
+
+Source: July 15, 2025 Council study session materials, Item 9A (agenda bill; presentation slide 26); Agenda Bill 6.H, March 3, 2026 (Background, p. 2; Resolution recitals; Exhibit A).
+
+### How the cost plan changed
+
+| Source | 2023 plan | 2024–25 plan (City FAQ still shows this) | March 3, 2026 plan (adopted) |
+|---|---:|---:|---:|
+| Federal SS4A | $8,003,010 | $8,003,010 | $8,003,010 |
+| State AHSC grant | $0 | $988,000 | $1,800,600 |
+| Utility money (East Bay Municipal Utility District) | $1,000,000 | $1,001,000 | $1,200,000 |
+| Measure A (city street tax) | $401,000 | $700,000 | $644,730 |
+| SB 1 Local Partnership Program | $400,000 | $0 | $800,000 |
+| SB 1 Local Streets and Roads | $200,000 | $300,000 | $250,000 |
+| Measure J | $100,000 | $100,000 | $100,000 |
+| **Total (CCTA activities)** | **$10,104,010** | **$11,092,010** | **$12,798,340** |
+
+The staff report adds $80,270 for City administration support, for a total of $12,878,610. The City's non-federal contribution is capped at $4,795,330 "without further amendment."
+
+Source: Agenda Bill 6.H, March 3, 2026, Project Cost Estimate (p. 5) and Funding Plan (pp. 5–6); Exhibit A, Attachments B and C.
+
+## AHSC Grants for El Cerrito Plaza BART Housing (Parcel A South & Parcel C East)
+
+Related California and the City have applied four times for AHSC grants covering two buildings at El Cerrito Plaza BART. Each application proposed a different bikeway package to earn scoring points.
+
+### Round 7 (submitted 2023) — Parcel A South, denied
+
+- Building: Parcel A South, 515 Richmond St. 6-story, 70 affordable apartments (1–3 bedroom).
+- Bikeway proposed: East-West package — Class IV on Central Ave, Class III on Lincoln Ave (San Pablo to Ashbury), Class III on San Diego St/Belmont Ave.
+- GHG claim: 25,533 MTCO2e reduced. HCD score: 76.
+- Result: not awarded.
+
+### Round 8 (submitted 2024) — Parcel A South, awarded — "Thread C"
+
+- Same building, same bikeway package as Round 7, resubmitted.
+- **Grant:** $39,141,077 (a $21,148,570 loan and a $17,992,507 grant to the City), Agreement No. 24-AHSC-18468. The State's award letter is dated August 23, 2024. The agreement was signed by the City on October 31, 2025 and by HCD on November 5, 2025.
+- GHG claim: 38,129 MTCO2e reduced (Standard Agreement, Exhibit E). Score: 83 (SGC email, May 20, 2026: awarded "solely on score – not a setaside").
+- **Transportation part ($12,856,000).** The Disbursement Agreement (dated for reference November 20, 2025) divides it:
+
+| Piece | Amount | What it pays for |
+|---|---:|---|
+| BART | $7,000,000 | One traction power substation at Powell station |
+| City: east-west bikeways ("STI #2") | $3,376,000 | Central Ave (Class IV), Lincoln Ave (Class III), San Diego St/Belmont Ave (Class III) |
+| City: pedestrian work ("STI #3") | $2,480,000 | Richmond Street sidewalks (2,000 linear feet), Ohlone Greenway connections, Oak Street sidewalks |
+
+The City's two pieces total $5,856,000. (The $3,376,000 and $2,480,000 are sums of the printed payment schedule, Exhibit D.) In this grant Richmond Street appears only for sidewalk work. The schedule has the bikeway payments running from August 2027 to April 2028.
+
+- This is the grant amended in May 2026 (below).
+
+**March 3, 2026:** Council Resolution 2026-13 raised Richmond Street's share of the City's $5,856,000 from $988,000 to $1,800,600, "leaving a City STI balance" of $4,055,400 for the Ohlone Greenway, sidewalks and east-west bikeways. The staff report says the City Manager has authority to allocate the money among these projects.
+
+**May 18, 2026 amendment request:** Public Works Director Yvetteh Ortiz asked the State to delete the Lincoln Ave segment (1.1 lane miles) and substitute a Class II bikeway on Richmond St and Elm St (Moeser Lane to Hill Street, 2.0 lane miles) and a Class I bikeway on Central Ave (I-80 EB off-ramp to Jacuzzi Street, 0.1 lane miles). The letter gives no reason and lists no lane miles. A City staff member submitted it by email on May 19, 2026.
+
+- **May 20, 2026, 9:28 AM:** SGC's Marc Caswell (Advisor, Community Investments and Planning) denied the request. He wrote that it "would significantly reduce the projects score," and that the City would need an alternative project of roughly the same distance. He stated the awarded project had 2.22 verified miles of bikeways, 1.1 of them on Lincoln Ave, and that removing them would leave 1 scoring point instead of 4.
+- **May 20, 2026, 10:32 AM:** the City's point of contact replied, "I think there's been a misunderstanding," and supplied lane miles: remove Lincoln 1.1; add Richmond/Elm 2.0 and Central 0.1; keep San Diego/Belmont 0.5 and Central 0.8. Current total 2.4; requested total 3.4.
+- **May 20, 2026, 2:46 PM:** Mr. Caswell reversed the denial the same day and approved it by email, writing "what a lapse in reading comprehension on my part," saying he had missed the addition component. He stated he verified that the Class II project on Richmond and Elm meets the "Context Sensitive Bikeway" definition ("9000 AADT, 25 MPH"), and that "this email alone can serve as approval."
+
+The original package included a Class IV (protected) segment on Central Ave plus two Class III segments and connected to the Ohlone Greenway, a Class I path running the length of El Cerrito. The Richmond St substitute is Class II (paint only, no physical protection) and sits about three blocks east of the Ohlone Greenway, adding limited new network connectivity.
+
+Bikeways are a small share of this grant's claimed GHG reductions (about 1.1%; a BART traction power substation upgrade drives about 91.7%), and SGC does not require GHG recalculation for bikeway changes below a 10% threshold — meaning the swap had limited effect on grant compliance even though bikeways likely drove a disproportionate share of the original application's scoring points.
+
+Source: Standard Agreement 24-AHSC-18468, Exhibit E, Provision Ex. A-E.7 (Exhibit E pp. 4–5 of 17), Exhibit A §3.C, STI Sources and Uses (Exhibit E p. 14 of 17); Disbursement Agreement, Exhibit B (Scope of Work), Exhibit D (Disbursement Schedule), §31; Agenda Bill 6.H, March 3, 2026 (Analysis, p. 7); Resolution 2026-13; City letter to HCD, May 18, 2026; email chain "AHSC Change Request Form Attachment - 24-AHSC-18468," May 19–20, 2026. HCD scoring figures for Round 7 from an internal comparison spreadsheet sourced to sgc.ca.gov — **not yet cross-checked against a primary HCD scoring document.**
+
+### Round 9 (submitted 2025) — Parcel C East, denied — "Thread B"
+
+- Building: Parcel C East, 84 affordable family units, second phase.
+- Bikeway proposed: Class IV protected bikeway on Richmond Street (Moeser Ln to Hill St, ~2 lane miles) + Class II on Pierce Street (Central Avenue to Cerrito Creek Path). The application narrative describes a "Class IV protected bikeway on Richmond Street" from Moeser Lane to Hill Street.
+- GHG claim: ~33,800 MTCO2e (applicant's own benefits calculator). Total ask: $42,362,829.
+- **Result: not recommended by SGC, December 10, 2025** (score 85).
+
+This was the funding specifically sought for Richmond St bike lanes under this application — it failed. The same Richmond St segment was then substituted into the already-awarded Round 8 grant five months later (see above). The documents reviewed do not state a connection between the two events.
+
+Source: SGC, December 10, 2025, Item 9, Attachment A (Table 2); AHSC Round 9 narrative excerpt for Parcel C East (narrative pages 3, 10, 12, 14, 15; footer dated March 25, 2025).
+
+### Round 10 (submitted 2026) — Parcel C East, resubmitted, decision pending
+
+- Same building, Parcel C East.
+- Bikeway proposed: Class III on Norvell St, Albermarle St, Lincoln Ave (2.2 lane miles) + Class IV on Pierce St (0.4 miles) — **Richmond Street dropped entirely** from this application.
+- GHG claim: 54,241 MTCO2e — self-reported in the application narrative; **not yet verified against a separate benefits calculator.**
+- NOFA released March 4, 2026; applications due May 4, 2026; state target award date December 2026.
+
+**Total ask:** $40.2 million, per the AHSC Round 10 application workbook. Separately, the City's Community Development Department FY2024-25/FY2025-26 accomplishments report describes Round 10 as seeking "approximately $3.5 million in Complete Streets improvements as part of the City's AHSC Parcel C East application" — this appears to be the transportation/Complete Streets sub-component within the larger $40.2 million total application, not a conflicting total (consistent with how Round 9's $42.4 million ask likewise broke out into separate housing and transportation components).
+
+Source: AHSC Round 10 application workbook; FY2026-27/FY2027-28 Biennial Budget, Community Development Department accomplishments section.
+
+## What the documents do not show
+
+- **The reason** the City asked to change the Round 8 bikeway list.
+- **Whether a formal amendment followed the email approval.** The grant agreement says a revision to the transportation work "shall require an amendment." The Disbursement Agreement says it may not be amended "except in writing executed by all parties." The State email says it "can serve as approval." No amendment after that email was seen.
+- **Whether the same bike lanes are paid for twice.** Richmond Street bike lanes are part of the SS4A-funded project (Thread A) and of the Round 8 bikeway list (Thread C). No document addresses whether the lane miles overlap.
+
+## Design Standard Concern
+
+The Local Road Safety Plan (Kittelson, July 2026) states that physical separation is required on corridors with speeds above 25 mph. Richmond St exceeds this threshold by the City's own data, but the project as designed uses paint-only Class II lanes, not physically separated Class IV. The LRSP explicitly excludes Richmond St from its own Backbone Bikeway analysis, deferring instead to the Complete Streets project.
+
+CEQA Notice of Exemption (signed March 19, 2026 by Ortiz, for Thread A) already used the naming "Richmond St and Elm St, Key Blvd to Fairmount Ave" — a documented geographic link between Thread A and the Thread C amendment two months later. The notice describes Class II buffered lanes. The City evaluated continuous Class IV lanes and rejected them because they would remove all on-street parking or require utility relocation beyond the budget (City FAQ).
+
+**Traffic counts differ across documents:** 6,400 vehicles a day measured north of Moeser Lane in October 2024, and 8,400 modeled (City FAQ); 9,000 AADT at 25 mph in the State's May 20, 2026 email.
+
+Source: Local Road Safety Plan (Kittelson & Associates, July 2026); CEQA Notice of Exemption, State Clearinghouse 2026030911; City Richmond Street FAQ; SGC email, May 20, 2026, 2:46 PM.
+
+## Predevelopment Loans to Related California
+
+Two separate $350,000 predevelopment loans from the City to Related California — one per building, not one loan split two ways. Confirmed from the City's agenda bills and resolutions for each item.
+
+**Loan #1 — Parcel A South**
+
+- Meeting date: February 7, 2023. Agenda item 8.A.
+- Resolution No. 2023-08 (confirmed by a later staff report — the May 6, 2025 Parcel C East agenda bill references "the loan provided in 2023 through Resolution No. 2023-08"). A companion resolution authorizing inclusion of a City-owned parcel in the same application, adopted the same meeting, is Resolution 2023-09.
+- Terms: $350,000 from the Low and Moderate Income Housing Asset Fund; 55-year term from Certificate of Occupancy; 3% annual interest; repayment equal to the City's proportionate share of residual receipts once constructed (deemed repaid if never built); disbursed in two draws — $200,000 in FY2022-23 and $150,000 in FY2023-24. Total predevelopment budget was $2.6 million; the City's loan funded about 13% of it.
+
+**Loan #2 — Parcel C East**
+
+- Meeting date: May 6, 2025. Agenda item 9.B, for 6671 Fairmount Avenue, 84 affordable units.
+- Resolution 2025-28. Ayes: Wysinger, Quinto, Ktsanes, Saltzman. Councilmember Motoyama recused and left the room due to a potential conflict of interest.
+- Terms (staff report states explicitly structured the same as Loan #1): $350,000 from the same Housing Asset Fund; 55-year term from Certificate of Occupancy; 3% annual interest; repayment solely from Parcel C East cash flow once constructed, secured by a leasehold deed of trust once the parcel is subdivided, subordinate to bank and state financing. Total predevelopment budget was $2.7 million; the City's loan funded about 13% of it.
+- Companion item 9.C — authorizing AHSC agreement execution and application submission for Parcel C East, not to exceed $50,000,000 — approved immediately after as Resolution 2025-29.
+
+Source: City of El Cerrito agenda bills and resolutions, February 7, 2023 and May 6, 2025.
+
+## Construction Timeline
+
+**Parcel A South**
+
+- September 2024: award announcement states construction "is anticipated to begin in 2025."
+- Council approvals finalized May 2025.
+- Actual construction start: November 2025 (per BART's project page).
+- Groundbreaking ceremony: March 5, 2026.
+- Expected completion: Q1 2027 per one City press release; "late 2027" per a separate developer-facing report. **Sources do not agree on the completion date — treat as unconfirmed** until stated in one place by the City or Related California.
+
+**Parcel C East**
+
+Roughly a year behind: Round 9 denied December 2025, Round 10 resubmitted 2026, state award decision not expected until December 2026 — meaning construction likely will not start until 2027 at the earliest, assuming it is funded at all.
+
+**Richmond Street**
+
+Construction is planned to begin in "late Fall 2026" (Agenda Bill 6.H, March 3, 2026). Environmental clearances: federal, March 12, 2026; state, March 20, 2026. Right of way certified June 24, 2026.
+
+## Funding Outlook — Program-Level Changes in 2026
+
+AHSC is funded entirely through California's cap-and-invest (formerly cap-and-trade) auction proceeds, not a fixed budget line. Round 10 has about $750 million available, with awards expected December 2026.
+
+Two 2026 developments could affect whether there is a Round 11:
+
+1. **AB 179** splits how AHSC is administered, effective July 1, 2026 — the Strategic Growth Council keeps the "Sustainable Communities" side, while a new Housing Development and Finance Committee takes over the housing-allocation side. How post-award scope changes (like the May 2026 amendment above) get treated under this new split is not yet clear.
+2. **CARB's cap-and-invest program vote**, late May 2026, changed the program going forward. Some housing/climate advocates have warned this could substantially reduce or eliminate the auction revenue that funds AHSC, potentially making Round 10 the last well-funded round for the foreseeable future.
+
+**Both items should be treated as evolving, not settled** — check sgc.ca.gov directly for current status before citing specifics.
+
+## Current Funding Picture (FY2026-27/FY2027-28 Biennial Budget)
+
+The City's Capital Improvement Program budget (Project C3080, "Richmond Street Complete Streets Improvement") shows the following, current as of the FY2026-27/FY2027-28 biennial budget:
+
+**Project description in this budget document:** "traffic calming features including chicanes, raised intersections, speed tables, and curb bulb-outs; pedestrian safety features…; enhanced bikeways, specifically bicycle lanes in each direction north of Moeser Lane…approximately 1.85 miles along Elm Street and Richmond Street between the Key Boulevard/Hill Street/Elm Street intersection and the Richmond Street/Fairmount Avenue/Ohlone Greenway intersection." — the same 1.85-mile corridor as Thread A.
+
+**Narrative funding description (Pertinent Issues section):** "The City entered into a Cooperative Agreement with the CCTA for CCTA to lead the project given the primary funding source is a Safe Streets for All funding for projects throughout the County." — this describes SS4A (Thread A) as the primary funding source.
+
+**Funding table (Detailed Breakdown), FY2027 requested:**
+
+| Source | Amount |
+|---|---:|
+| State Grant (secured) | $2,600,600 |
+| Capital Improvement Fund (EBMUD) | $1,155,600 |
+| Measure A Street Improvement Fund | $344,730 |
+| SB1 – Road Maintenance and Rehabilitation Account | $200,000 |
+| Miscellaneous Revenue | $44,400 |
+| **Total** | **$4,345,330** |
+
+**Reconciled with the March 3, 2026 staff report.** The "$2,600,600 State Grant" line is the $1,800,600 from AHSC plus $800,000 from SB1 LPP, as the budget itself says (per a March 2026 Council Report). No SS4A line appears in the City's table because CCTA leads that part of the project under the Cooperative Agreement; SS4A is $8,003,010 of the $12,798,340 plan, and the narrative's "primary funding source" statement is consistent with that. The budget line ($4,345,330) is $450,000 less than the City's $4,795,330 contribution. That $450,000 equals the differences between the plan and the budget for Measure A ($300,000), Measure J ($100,000) and SB 1 Local Streets and Roads ($50,000). This is arithmetic on the two documents; neither document says why the amounts differ.
+
+**One unresolved timing difference:** the staff report says construction funding "will be included as part of the Fiscal Year 2027-28 budget," while the proposed budget already shows $4,345,330 in FY2027 (the fiscal year beginning July 1, 2026).
+
+Source: FY2026-27/FY2027-28 Biennial Budget, Capital Improvement Program, Project C3080; Agenda Bill 6.H, March 3, 2026, Exhibit A Attachments B and C.
+
+© Ira Sharenow

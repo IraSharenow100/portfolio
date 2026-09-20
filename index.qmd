@@ -1,25 +1,55 @@
 ---
-title: "Ira Sharenow"
-subtitle: "Data Analysis & Applied Research"
+title: "El Cerrito Transportation Network"
 ---
 
-## About
+*Last updated September 20, 2026.*
 
-I'm a data analyst with an M.A. in Mathematics and an M.S. in Business from the University of Wisconsin-Madison. I work primarily in R, with growing experience in Python, SQL, Power BI, and Tableau.
+A sourced record of El Cerrito's major transportation, bikeway and transit-oriented housing projects, their funding structures, and documented delays. Drawn from City Council staff reports and minutes, the City's biennial capital budget, CEQA documents, agreements and correspondence with the Strategic Growth Council (SGC), and documents from state, county, regional and BART agencies.
 
-This site collects analytical projects using public data, built with reproducible tools: R, Quarto, and Git/GitHub.
+## Summary
 
-## Project Areas
+For more than a decade, the City of El Cerrito has planned for more homes, more shops and safer streets along San Pablo Avenue and around its two BART stations. Those plans are now becoming buildings and street projects. Most of the money comes from state, federal, county and regional grants, not from the City's own funds.
 
-- **[Finance](finance/index.qmd)** — El Cerrito municipal finance: credit rating, audits, borrowing, and tax collections
-- **[Library](library/index.qmd)** — El Cerrito library issue: history, Measure C, Task Force, cost disclosures, and key votes
-- **[Transportation](transportation/index.qmd)** — Richmond Street bike lanes, San Pablo Avenue, Ohlone Greenway, and parking management
-- **[Public Safety](public-safety/index.qmd)** — El Cerrito police and fire department organization, staffing, and budget
-- **[Incident Data](incident-data/index.qmd)** — police and fire incident-level analysis: activity patterns, geography, and response times
-- **[Studies](studies/index.qmd)** — the Service Delivery and Compensation studies, and the sequencing problem between them
-- **[Elections](elections/index.qmd)** — official candidate statements, November 2026 City Council race
+**Decided**
 
-## Elsewhere
+- The San Pablo Avenue Specific Plan (adopted September 2014; environmental review for the update adopted December 6, 2022) sets the building rules for the avenue.
+- On July 3, 2024 the City's Zoning Administrator approved a master plan for 743 homes on BART's parking lots at El Cerrito Plaza, under state law and without a City Council vote. 351 of the 743 homes are income-restricted.
 
-- [Tableau Public Profile](https://public.tableau.com/app/profile/ira.sharenow/viz/ElCerritoFinancesinPictures--Tableau/Introduction)
-- [GitHub](https://github.com/IraSharenow100)
+**Built or under construction**
+
+- The del Norte street project had its ribbon cutting on July 13, 2026. Its estimated cost rose from $13.25 million (September 17, 2021) to $14.92 million (BART, July 31, 2023).
+- The first Plaza housing building (70 homes) has been under construction since November 2025.
+
+**Ahead**
+
+- Richmond Street: cost plan $12,878,610 (March 3, 2026), up from $10,104,010 in 2023. Construction is planned for late fall 2026.
+- The second Plaza building (84 homes): state grant not recommended December 10, 2025. A new application (total request $40.2 million) went in for Round 10, with results expected in December 2026.
+- Measure C, the library parcel tax, failed June 2, 2026. The BART plan includes a library only if the City finds financing.
+
+**One funding change**
+
+- In 2024 the state awarded an AHSC grant for the first Plaza building, part of which pays for east-west bike routes. On March 3, 2026 the council raised Richmond Street's share of that grant from $988,000 to $1,800,600. On May 20, 2026 the state approved by email a change adding a Class II bikeway on Richmond and Elm Streets to the grant's bikeway list. The documents reviewed do not say why the City asked, and do not say whether the same bike lanes are paid for twice. See [Richmond Street](richmond-street.qmd).
+
+**Where the records disagree and what is not confirmed**
+
+- City and agency documents disagree on numbers or dates in dozens of places. See [Where City Documents Disagree](document-disagreements.qmd), which gives the documents, dates and pages for each.
+- Not confirmed: whether the state formally amended the grant after the May 20, 2026 email; whether the California Transportation Commission approved $800,000 for Richmond Street on August 20–21, 2026; and whether the council adopted the Measure C results resolution on July 21, 2026.
+
+## Pages
+
+- **[Richmond Street & Complete Streets](richmond-street.qmd)** — the multi-thread funding history for Richmond Street bike lanes, including a funded application that was denied and a separate grant that was redirected to the same corridor
+- **[El Cerrito Plaza BART Housing (TOD)](plaza-tod.qmd)** — the 743-home BART plan, its first two buildings, funding, and the library contingency
+- **[del Norte Complete Streets](del-norte.qmd)** — the built street project, its schedule and its differing cost figures
+- **[San Pablo Specific Plan](san-pablo-specific-plan.qmd)** — the 2014 plan and 2022 update, versions, results and the Midtown/Downtown street project
+- **[Ohlone Greenway](ohlone-greenway.qmd)** — the city-length Class I path and planned downtown improvements
+- **[Parking Management](parking.qmd)** — the Dixon Resources parking management contract and its delays
+- **[Measure A Origin & PCI Trends](measure-a-street-oversight.qmd)** — the tax's original purpose, how its use evolved, and pavement condition data 2008–present
+- **[Plans, Timeline and Terms](plans-timeline.qmd)** — how the plans connect, a dated timeline and a glossary
+- **[Who Pays: Funding, Consultants and Staff](funding.qmd)** — funding sources, the housing fund, consultants named in the documents
+- **[Where City Documents Disagree](document-disagreements.qmd)** — the main differences between documents, with both sources
+
+## How to read these pages
+
+Every section ends with its source: the document, its date, and the page, slide or item where available. Where funding sources appear to overlap or a claim can't be fully reconciled against a primary document, that is flagged explicitly rather than resolved by assumption. Dollar figures carry their dates. An award is money promised, not money spent. Do not add a project's total to the grants inside it.
+
+© Ira Sharenow
