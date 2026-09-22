@@ -51,12 +51,22 @@ website:
             text: Richmond Street & Complete Streets
           - href: transportation/san-pablo-specific-plan.qmd
             text: San Pablo Specific Plan
+          - href: transportation/del-norte.qmd
+            text: del Norte Complete Streets
+          - href: transportation/plaza-tod.qmd
+            text: El Cerrito Plaza BART Housing (TOD)
           - href: transportation/ohlone-greenway.qmd
             text: Ohlone Greenway
           - href: transportation/parking.qmd
             text: Parking Management
           - href: transportation/measure-a-street-oversight.qmd
             text: Measure A Origin & PCI Trends
+          - href: transportation/funding.qmd
+            text: "Who Pays: Funding, Consultants and Staff"
+          - href: transportation/plans-timeline.qmd
+            text: Plans, Timeline and Terms
+          - href: transportation/document-disagreements.qmd
+            text: Where City Documents Disagree
       - text: Public Safety
         menu:
           - href: public-safety/index.qmd

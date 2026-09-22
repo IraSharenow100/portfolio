@@ -28,25 +28,25 @@ For more than a decade, the City of El Cerrito has planned for more homes, more 
 
 **One funding change**
 
-- In 2024 the state awarded an AHSC grant for the first Plaza building, part of which pays for east-west bike routes. On March 3, 2026 the council raised Richmond Street's share of that grant from $988,000 to $1,800,600. On May 20, 2026 the state approved by email a change adding a Class II bikeway on Richmond and Elm Streets to the grant's bikeway list. The documents reviewed do not say why the City asked, and do not say whether the same bike lanes are paid for twice. See [Richmond Street](richmond-street.qmd).
+- In 2024 the state awarded an AHSC grant for the first Plaza building, part of which pays for east-west bike routes. On March 3, 2026 the council raised Richmond Street's share of that grant from $988,000 to $1,800,600. On May 20, 2026 the state approved by email a change adding a Class II bikeway on Richmond and Elm Streets to the grant's bikeway list. The documents reviewed do not say why the City asked, and do not say whether the same bike lanes are paid for twice. See [Richmond Street](transportation/richmond-street.qmd).
 
 **Where the records disagree and what is not confirmed**
 
-- City and agency documents disagree on numbers or dates in dozens of places. See [Where City Documents Disagree](document-disagreements.qmd), which gives the documents, dates and pages for each.
+- City and agency documents disagree on numbers or dates in dozens of places. See [Where City Documents Disagree](transportation/document-disagreements.qmd), which gives the documents, dates and pages for each.
 - Not confirmed: whether the state formally amended the grant after the May 20, 2026 email; whether the California Transportation Commission approved $800,000 for Richmond Street on August 20–21, 2026; and whether the council adopted the Measure C results resolution on July 21, 2026.
 
 ## Pages
 
-- **[Richmond Street & Complete Streets](richmond-street.qmd)** — the multi-thread funding history for Richmond Street bike lanes, including a funded application that was denied and a separate grant that was redirected to the same corridor
-- **[El Cerrito Plaza BART Housing (TOD)](plaza-tod.qmd)** — the 743-home BART plan, its first two buildings, funding, and the library contingency
-- **[del Norte Complete Streets](del-norte.qmd)** — the built street project, its schedule and its differing cost figures
+- **[Richmond Street & Complete Streets](transportation/richmond-street.qmd)** — the multi-thread funding history for Richmond Street bike lanes, including a funded application that was denied and a separate grant that was redirected to the same corridor
+- **[El Cerrito Plaza BART Housing (TOD)](transportation/plaza-tod.qmd)** — the 743-home BART plan, its first two buildings, funding, and the library contingency
+- **[del Norte Complete Streets](transportation/del-norte.qmd)** — the built street project, its schedule and its differing cost figures
 - **[San Pablo Specific Plan](san-pablo-specific-plan.qmd)** — the 2014 plan and 2022 update, versions, results and the Midtown/Downtown street project
-- **[Ohlone Greenway](ohlone-greenway.qmd)** — the city-length Class I path and planned downtown improvements
-- **[Parking Management](parking.qmd)** — the Dixon Resources parking management contract and its delays
-- **[Measure A Origin & PCI Trends](measure-a-street-oversight.qmd)** — the tax's original purpose, how its use evolved, and pavement condition data 2008–present
-- **[Plans, Timeline and Terms](plans-timeline.qmd)** — how the plans connect, a dated timeline and a glossary
-- **[Who Pays: Funding, Consultants and Staff](funding.qmd)** — funding sources, the housing fund, consultants named in the documents
-- **[Where City Documents Disagree](document-disagreements.qmd)** — the main differences between documents, with both sources
+- **[Ohlone Greenway](transportation/ohlone-greenway.qmd)** — the city-length Class I path and planned downtown improvements
+- **[Parking Management](transportation/parking.qmd)** — the Dixon Resources parking management contract and its delays
+- **[Measure A Origin & PCI Trends](transportation/measure-a-street-oversight.qmd)** — the tax's original purpose, how its use evolved, and pavement condition data 2008–present
+- **[Plans, Timeline and Terms](transportation/plans-timeline.qmd)** — how the plans connect, a dated timeline and a glossary
+- **[Who Pays: Funding, Consultants and Staff](transportation/funding.qmd)** — funding sources, the housing fund, consultants named in the documents
+- **[Where City Documents Disagree](transportation/document-disagreements.qmd)** — the main differences between documents, with both sources
 
 ## How to read these pages
 
