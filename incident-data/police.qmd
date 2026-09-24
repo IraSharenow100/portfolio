@@ -1,665 +1,976 @@
 ---
-title: "El Cerrito Police Incident Analysis, 2019--2025"
-subtitle: "What the Data Shows About Police Activity, Response, and Geography"
+title: "El Cerrito Police Activity, 2019-2026"
+subtitle: "Seven fiscal years of police records, July 2019 through June 2026"
 author: "Ira Sharenow"
 date: last-modified
-toc: true
-toc-depth: 2
-code-tools: true
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+    code-summary: "Show code"
+    df-print: kable
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
-                       fig.width = 7.5, fig.height = 5, fig.align = "center")
+```{r}
+#| label: setup
+#| include: false
+# The full pipeline (Parts A and B, with every verification check) lives in
+# a separate script. Sourcing it builds every object used on this page.
+PIPELINE_PATH <- "D:/Documents/Employment/2026 job search/GitHub/portfolio/Police Department 2026 Git/el_cerrito_police_pipeline.R"
+source(PIPELINE_PATH)
+library(scales)
 
-library(tidyverse)
-library(readxl)
-library(readr)
-library(stringr)
-library(lubridate)
-library(geosphere)
-library(ggplot2)
-library(ggspatial)
-library(sf)
-library(ggrepel)
-library(knitr)
-library(kableExtra)
-
-source_dir <- "D:/Documents/Employment/2026 job search/GitHub/portfolio/Police Department 2026 Git/Police Data/Year Files"
-output_dir <- "D:/Documents/Employment/2026 job search/GitHub/portfolio/Police Department 2026 Git/Police Data"
+theme_report <- theme_minimal(base_size = 12) +
+  theme(plot.title = element_text(face = "bold"),
+        panel.grid.minor = element_blank())
 ```
 
-```{r load-data}
-police <- read_excel(file.path(output_dir, "EC_police_incidents.xlsx")) %>%
-  rename_with(~ str_trim(.) %>% str_replace_all(" ", "_") %>% tolower())
+```{r}
+#| label: full-period-data
+#| include: false
+# Report period: July 1, 2019 - June 30, 2026, seven full fiscal years.
+# The PDF records start January 2019; January-June 2019 is used only in the
+# data checks, not in the analysis.
+#   PDF reports: corrected coordinates, plus the outlier fix for far-away
+#     matches
+#   Excel export (FY 2025-26): fallback and imprecise locations flagged
+geo_pdf <- police_geocoded %>%
+  transmute(call_for_service, address,
+            dt = parse_date_time(received_date, orders = "mdy HM"),
+            lat, long, BAD_LATLON_FLAG, source = "PDF reports") %>%
+  rows_update(usable_outliers, by = "address", unmatched = "ignore")
 
-police_clean <- police %>%
-  filter(!is.na(event_number)) %>%
-  distinct() %>%
-  mutate(
-    address = str_squish(str_replace_all(address, "[\r\n]+", " ")),
-    call_for_service = str_squish(call_for_service),
-    dt = parse_date_time(received_date, orders = "mdy HM")
-  )
+geo_xls <- police_fy26_geocoded %>%
+  transmute(call_for_service, address, dt, lat, long, BAD_LATLON_FLAG,
+            source = "Excel export")
 
-incident_types_path <- "D:/Documents/Employment/2025 job search/Project 2025/el-cerrito-police-report/data/combined/types of incidents filtered.csv"
+FY_START <- as.POSIXct("2019-07-01", tz = "UTC")
 
-incident_types <- read_csv(incident_types_path, show_col_types = FALSE)[[1]] %>%
-  str_trim() %>%
-  str_to_lower()
+police_geo_all <- bind_rows(geo_pdf, geo_xls) %>%
+  filter(!is.na(dt), dt >= FY_START) %>%
+  mutate(fy              = fiscal_year(dt),
+         fy_label        = fy_label(fy),
+         cfs_key         = str_to_lower(call_for_service),
+         in_crime_scope  = cfs_key %in% incident_types,
+         dist_from_ec_mi = distHaversine(cbind(long, lat), c(EC_CENTER_LONG, EC_CENTER_LAT)) / 1609.34,
+         mappable        = coalesce(!BAD_LATLON_FLAG & dist_from_ec_mi <= 5, FALSE))
 
-incident_types <- c(incident_types,
-  "451 - arson", "20001 - hit and run with injury",
-  "20002 - hit and run no injury", "23152 - drunk driving", "602l - trespassing"
-)
+crime_map_all <- police_geo_all %>% filter(mappable, in_crime_scope)
 
-df_filtered <- police_clean %>%
-  filter(str_to_lower(call_for_service) %in% incident_types)
+# Sensitive call types had no address in the PDF reports, so the same types
+# are left out of the Excel-export records for landmark counts.
+landmark_input_all <- police_geo_all %>%
+  filter(mappable,
+         !(source == "Excel export" & call_for_service %in% part_a_redacted_types))
 
-data_start <- min(police_clean$dt, na.rm = TRUE)
-data_end <- max(police_clean$dt, na.rm = TRUE)
-```
+n_all <- nrow(police_geo_all)
 
-```{r load-geocoding}
-BAY_AREA_LAT_MIN <- 37.0
-BAY_AREA_LAT_MAX <- 38.5
-BAY_AREA_LONG_MIN <- -123.0
-BAY_AREA_LONG_MAX <- -121.5
-EC_CENTER_LAT <- 37.9161
-EC_CENTER_LONG <- -122.3108
+# Comparisons of the latest year use the average of the six earlier fiscal
+# years, FY 2019-20 through FY 2024-25.
+BASE_FY <- 2020:2025
+LATEST_FY <- 2026
 
-original_geocodes <- read_csv(file.path(output_dir, "geocode_checkpoint.csv"), show_col_types = FALSE)
-fixed_geocodes <- read_csv(file.path(output_dir, "geocode_checkpoint_v2.csv"), show_col_types = FALSE)
+# Share of all records by call type: six earlier years vs. latest year
+share_by_period <- police_all %>%
+  mutate(period = if_else(fy == LATEST_FY, "latest", "base")) %>%
+  count(period, call_for_service) %>%
+  group_by(period) %>%
+  mutate(pct = 100 * n / sum(n)) %>%
+  ungroup()
+sh <- function(type, per) round(share_by_period$pct[share_by_period$call_for_service == type &
+                                                     share_by_period$period == per])
 
-final_geocodes <- original_geocodes %>%
-  anti_join(fixed_geocodes, by = "address") %>%
-  bind_rows(fixed_geocodes) %>%
-  mutate(
-    BAD_LATLON_FLAG = is.na(lat) |
-      lat < BAY_AREA_LAT_MIN | lat > BAY_AREA_LAT_MAX |
-      long < BAY_AREA_LONG_MIN | long > BAY_AREA_LONG_MAX
-  )
+# Greenway counts by fiscal year
+greenway_fy <- police_all %>%
+  filter(!is.na(address)) %>%
+  mutate(greenway = greenway_bucket(address)) %>%
+  filter(greenway != "elsewhere")
+gw_total <- greenway_fy %>% count(greenway, fy)
+gw_base   <- function(g) round(mean(gw_total$n[gw_total$greenway == g & gw_total$fy %in% BASE_FY]))
+gw_latest <- function(g) gw_total$n[gw_total$greenway == g & gw_total$fy == LATEST_FY]
+gw_change_pct <- round(100 * (gw_latest("on greenway") / gw_base("on greenway") - 1))
 
-police_geocoded <- police_clean %>%
-  left_join(final_geocodes %>% select(address, lat, long, BAD_LATLON_FLAG), by = "address") %>%
-  mutate(BAD_LATLON_FLAG = if_else(is.na(address), TRUE, BAD_LATLON_FLAG))
+# Landmark comparisons on the same fiscal-year basis
+landmark_base <- compute_landmark_counts(landmark_input_all %>% filter(fy %in% BASE_FY), "base_total") %>%
+  mutate(base_per_year = round(base_total / length(BASE_FY)))
+landmark_latest <- compute_landmark_counts(landmark_input_all %>% filter(fy == LATEST_FY), "latest")
 
-incidents_for_proximity <- police_geocoded %>% filter(!BAD_LATLON_FLAG)
-
-police_total <- incidents_for_proximity %>%
-  filter(str_to_lower(call_for_service) %in% incident_types)
-
-# Second-round outlier correction (addresses that landed in the right
-# general region but far from El Cerrito itself)
-outliers_result <- read_csv(file.path(output_dir, "geocode_outliers_v3.csv"), show_col_types = FALSE)
-
-KNOWN_DISTANT_CITIES <- "SAN FRANCISCO|PIEDMONT|OAKLAND|PINOLE|STOCKTON|PETALUMA|SAN LEANDRO|CONCORD|ANTIOCH"
-
-outliers_final <- outliers_result %>%
-  mutate(
-    dist_from_ec_mi = distHaversine(cbind(long, lat), c(EC_CENTER_LONG, EC_CENTER_LAT)) / 1609.34,
-    exclusion_reason = case_when(
-      is.na(lat) ~ "unresolved - no match",
-      dist_from_ec_mi <= 5 ~ "usable",
-      str_detect(address, KNOWN_DISTANT_CITIES) ~ "confirmed different city",
-      TRUE ~ "unresolved - shorthand matched wrong location"
-    )
-  )
-
-usable_outliers <- outliers_final %>%
-  filter(exclusion_reason == "usable") %>%
-  select(address, lat, long)
-
-police_total_corrected <- police_total %>%
-  rows_update(usable_outliers, by = "address") %>%
-  mutate(dist_from_ec_mi = distHaversine(cbind(long, lat), c(EC_CENTER_LONG, EC_CENTER_LAT)) / 1609.34) %>%
-  filter(dist_from_ec_mi <= 5)
-```
-
-```{r landmarks, results='hide'}
-bay_area_extent <- paste(BAY_AREA_LONG_MIN, BAY_AREA_LAT_MIN, BAY_AREA_LONG_MAX, BAY_AREA_LAT_MAX, sep = ",")
-
-landmarks <- tribble(
-  ~landmark, ~address,
-  "El Cerrito Plaza BART", "6699 Fairmount Avenue, El Cerrito, CA 94530",
-  "El Cerrito Del Norte BART", "6400 Cutting Blvd, El Cerrito, CA 94530",
-  "Castro Park Pickleball", "1420 Norvell St, El Cerrito, CA 94530",
-  "El Cerrito Community Center", "7007 Moeser Ln, El Cerrito, CA 94530",
-  "El Cerrito High School", "540 Ashbury Ave, El Cerrito, CA 94530",
-  "Korematsu Middle School", "7125 Donal Ave, El Cerrito, CA 94530",
-  "Harding Elementary School", "7230 Fairmount Ave, El Cerrito, CA 94530",
-  "Madera Elementary School", "8500 Madera Dr, El Cerrito, CA 94530",
-  "Current Library", "6510 Stockton Ave, El Cerrito, CA 94530"
-)
-
-landmarks_geocoded <- landmarks %>%
-  tidygeocoder::geocode(address, method = "arcgis", lat = lat, long = long,
-                        custom_query = list(searchExtent = bay_area_extent),
-                        quiet = TRUE)
-
-# Korematsu: ArcGIS matches the correct address text with full confidence,
-# but its underlying reference data still points at the school's pre-2015
-# location. Hand-corrected against a coordinate read directly off a current
-# map. See the Technical Appendix for how this was caught.
-landmarks_geocoded <- landmarks_geocoded %>%
-  mutate(
-    lat = if_else(landmark == "Korematsu Middle School", 37.9208100248211, lat),
-    long = if_else(landmark == "Korematsu Middle School", -122.30584773399178, long)
-  ) %>%
-  mutate(landmark = case_when(
-    landmark == "El Cerrito Del Norte BART"   ~ "Del Norte BART",
-    landmark == "Madera Elementary School"    ~ "Madera",
-    landmark == "Korematsu Middle School"     ~ "Korematsu",
-    landmark == "El Cerrito Community Center" ~ "EC Community Center",
-    landmark == "El Cerrito High School"      ~ "ECHS",
-    landmark == "Harding Elementary School"   ~ "Harding",
-    landmark == "El Cerrito Plaza BART"       ~ "EC Plaza BART",
-    landmark == "Castro Park Pickleball"      ~ "Castro Park",
-    landmark == "Current Library"             ~ "Library",
-    TRUE ~ landmark
-  ))
-
-RADIUS_FT <- 500
-RADIUS_M <- RADIUS_FT * 0.3048
-```
-
-
-# Introduction
-
-This report analyzes every police incident logged by the El Cerrito Police
-Department from **`r format(data_start, "%B %d, %Y")` through `r format(data_end, "%B %d, %Y")`** --
-`r format(nrow(police_clean), big.mark = ",")` records in total. It looks at
-four questions residents might reasonably ask about their local police
-department: what officers actually spend their time on, where activity is
-concentrated, how the pattern has changed over time, and how quickly the
-department responds when something happens.
-
-This is not a crime-statistics report in the traditional sense. It treats
-the department's own incident log as a dataset worth understanding on its
-own terms -- most of what gets logged isn't a crime at all, and that turns
-out to be one of the most interesting findings in the whole analysis.
-
-A detailed technical appendix at the end of this report documents exactly
-how the underlying data was assembled, cleaned, and verified, including
-several real errors that were found and fixed along the way. That level of
-detail is there for anyone who wants to check the work; the sections below
-focus on what the data actually shows.
-
-
-# What Do El Cerrito Police Actually Do?
-
-```{r workload}
-workload_summary <- police_clean %>%
-  count(call_for_service, sort = TRUE) %>%
-  mutate(
-    in_crime_scope = str_to_lower(call_for_service) %in% incident_types,
-    pct_of_total = round(100 * n / sum(n), 1)
-  )
-
-crime_scope_total <- workload_summary %>%
-  summarize(total = sum(n), crime_scope = sum(n[in_crime_scope])) %>%
-  mutate(pct = round(100 * crime_scope / total, 1))
-```
-
-Before looking at where or when incidents happen, it's worth asking a more
-basic question: what does the department actually spend its time on? The
-answer is not what most people would guess.
-
-Of the `r format(crime_scope_total$total, big.mark = ",")` incidents in this
-dataset, only **`r crime_scope_total$pct`%** fall into a category most
-people would call a crime -- theft, burglary, assault, vandalism, and
-similar. The remaining `r 100 - crime_scope_total$pct`% is patrol and
-administrative work: security checks, traffic stops, alarm responses, 911
-disconnects, welfare checks, and calls that resolve before an officer
-arrives at all.
-
-```{r workload-table}
-workload_summary %>%
-  slice_head(n = 10) %>%
-  mutate(call_for_service = str_to_title(call_for_service)) %>%
-  select(`Call Type` = call_for_service, Count = n, `% of Total` = pct_of_total) %>%
-  kable(caption = "Ten most common call types, all years combined") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
-```
-
-The single most common thing El Cerrito police respond to is a security
-check -- an officer proactively checking that a building or area is secure,
-not responding to a report of anything wrong. Traffic stops are second.
-Together with alarm calls, 911 disconnects, and follow-up visits, these
-few categories alone account for close to half of everything the
-department logs. This is worth keeping in mind throughout the rest of this
-report: a "hot" location on the maps that follow reflects concentrated
-*crime*, specifically, not general police presence.
-
-
-# Where Does Activity Happen?
-
-```{r general-heatmap, fig.cap="Density of crime-scope incidents, all categories, relative to nine community landmarks"}
-EC_MAP_LAT_MIN <- 37.885
-EC_MAP_LAT_MAX <- 37.94
-EC_MAP_LONG_MIN <- -122.325
-EC_MAP_LONG_MAX <- -122.275
-
-ggplot() +
-  annotation_map_tile(type = "osm", zoomin = 0) +
-  stat_density_2d(
-    data = police_total_corrected,
-    aes(x = long, y = lat, fill = after_stat(level)),
-    geom = "polygon", contour = TRUE, alpha = 0.5, bins = 25
-  ) +
-  scale_fill_gradient(low = "yellow", high = "red", breaks = range,
-                       labels = c("Fewer incidents", "More incidents")) +
-  geom_point(data = landmarks_geocoded, aes(x = long, y = lat),
-             color = "black", size = 2.5, shape = 17) +
-  geom_label_repel(data = landmarks_geocoded, aes(x = long, y = lat, label = landmark),
-                    size = 2.8, fontface = "bold", label.padding = 0.15,
-                    label.size = 0, fill = alpha("white", 0.75),
-                    min.segment.length = 0, max.overlaps = Inf) +
-  coord_sf(xlim = c(EC_MAP_LONG_MIN, EC_MAP_LONG_MAX),
-           ylim = c(EC_MAP_LAT_MIN, EC_MAP_LAT_MAX), crs = 4326) +
-  labs(title = "El Cerrito Crime-Scope Incident Density", fill = NULL) +
-  theme_minimal() +
-  theme(axis.title = element_blank())
-```
-
-Crime-scope incidents concentrate heavily along the San Pablo Avenue
-corridor, El Cerrito's main commercial spine, with the two clearest
-hotspots near El Cerrito Plaza BART and the cluster around the Library,
-El Cerrito High School, and Harding Elementary. Activity drops off sharply
-moving east into the hillside residential neighborhoods, where Madera and
-Korematsu sit.
-
-```{r landmark-table}
-landmark_counts <- landmarks_geocoded %>%
-  select(landmark, land_lat = lat, land_long = long) %>%
-  rowwise() %>%
-  mutate(n_within_500ft = sum(
-    distHaversine(cbind(incidents_for_proximity$long, incidents_for_proximity$lat),
-                  c(land_long, land_lat)) <= RADIUS_M
-  )) %>%
-  ungroup() %>%
-  arrange(desc(n_within_500ft))
-
-landmark_counts %>%
-  select(Landmark = landmark, `Incidents within 500 ft` = n_within_500ft) %>%
-  kable(caption = "All police activity within 500 feet of each landmark (all call types, not just crime-scope)") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
-```
-
-Table 2 counts *all* police activity, not just crime, within 500 feet of
-nine community landmarks. One entry deserves a specific caveat: El Cerrito
-Del Norte BART sits directly on the city's border with Richmond and
-includes its own dedicated BART Police substation. Incidents on BART
-property or across the Richmond city line are handled by a different
-department entirely and are not part of this dataset -- so this number
-reflects only nearby off-station activity that happened to fall on the El
-Cerrito side, not the full picture of what happens at that station.
-
-## Vehicle Crime and Dangerous Driving
-
-```{r vehicle-subsets}
-vehicle_crime_types <- c("459a - auto burglary", "10851 - motor vehicle theft",
-                          "10851r - recovered stolen vehicle", "215 - car jacking",
-                          "23110 - throwing objects at a vehicle", "10852 - vehcile parts theft")
-dangerous_driving_types <- c("20001 - hit and run with injury", "20002 - hit and run no injury",
-                              "23152 - drunk driving")
-
-police_vehicle_crime <- police_total_corrected %>%
-  filter(str_to_lower(call_for_service) %in% vehicle_crime_types)
-police_dangerous_driving <- police_total_corrected %>%
-  filter(str_to_lower(call_for_service) %in% dangerous_driving_types)
-police_other_crime <- police_total_corrected %>%
-  filter(!(str_to_lower(call_for_service) %in% c(vehicle_crime_types, dangerous_driving_types)))
-
-compute_landmark_counts <- function(incident_df, label) {
-  landmarks_geocoded %>%
-    select(landmark, land_lat = lat, land_long = long) %>%
-    rowwise() %>%
-    mutate(n_within_500ft = sum(
-      distHaversine(cbind(incident_df$long, incident_df$lat), c(land_long, land_lat)) <= RADIUS_M
-    )) %>%
-    ungroup() %>%
-    select(landmark, {{label}} := n_within_500ft)
+landmark_calls <- function(lm_name, top_n = 6) {
+  lm <- landmarks_geocoded %>% filter(landmark == lm_name)
+  landmark_input_all %>%
+    filter(fy %in% c(BASE_FY, LATEST_FY)) %>%
+    mutate(d_ft = distHaversine(cbind(long, lat), c(lm$long, lm$lat)) / 0.3048) %>%
+    filter(d_ft <= RADIUS_FT) %>%
+    mutate(period = if_else(fy == LATEST_FY, "latest", "base")) %>%
+    count(call_for_service, period) %>%
+    pivot_wider(names_from = period, values_from = n, values_fill = 0) %>%
+    mutate(base = round(base / length(BASE_FY), 1),
+           change = latest - base) %>%
+    arrange(desc(abs(change))) %>%
+    head(top_n)
 }
-
-landmark_comparison <- compute_landmark_counts(police_vehicle_crime, "vehicle_crime") %>%
-  left_join(compute_landmark_counts(police_dangerous_driving, "dangerous_driving"), by = "landmark") %>%
-  left_join(compute_landmark_counts(police_other_crime, "other_crime"), by = "landmark") %>%
-  mutate(total = vehicle_crime + dangerous_driving + other_crime) %>%
-  arrange(desc(total))
 ```
 
-Vehicle crime (auto burglary, motor vehicle theft, carjacking) and
-dangerous driving (hit and run, drunk driving) are broken out separately
-below, since they represent genuinely different kinds of risk -- property
-crime against a parked car versus danger from a car in motion.
+## Executive summary
 
-```{r landmark-comparison-table}
-landmark_comparison %>%
-  select(Landmark = landmark, `Vehicle Crime` = vehicle_crime,
-         `Dangerous Driving` = dangerous_driving, `All Other Crime` = other_crime,
-         Total = total) %>%
-  kable(caption = "Crime-scope incidents within 500 ft, by landmark and category") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) %>%
-  footnote(general = "\"All Other Crime\" is every crime-scope category not already broken out as Vehicle Crime or Dangerous Driving -- for example assault, robbery, burglary not involving a vehicle, theft, and vandalism.",
-           general_title = "Note: ", footnote_as_chunk = TRUE)
+This report analyzes `r format(n_all, big.mark = ",")` El Cerrito Police Department call records from July 1, 2019 through June 30, 2026, covering seven full fiscal years, FY 2019-20 through FY 2025-26. It looks at what officers spend their time on, how crime reports and parking enforcement have changed, where activity is concentrated, how quickly police respond, and how activity varies by season, day, and hour, with particular attention to the most recent year. All figures describe calls and reports logged by the department. They are not the same as confirmed crimes, and a change in a count can reflect a change in reporting or recording as well as a change in events.
+
+Reports in every crime category reached their lowest level of the seven fiscal years studied. Reports of crimes against persons fell from 597 in FY 2019-20 to 418 in FY 2025-26, and property crime reports fell by more than half, from 2,016 to 976. Robbery and carjacking reports dropped from 48 to 15 in a single year. Shooting and gun-related calls declined from 115 to 52 over the period.
+
+Parking tickets more than tripled between FY 2019-20 and FY 2024-25, from 702 to 2,317, then fell 17% to 1,931 in FY 2025-26. About 40% of the decline came on San Pablo Avenue. Enforcement has also shifted toward weekday business hours: in FY 2019-20 about a quarter of tickets were written on weekends, and in FY 2025-26 fewer than one in twelve were. Tickets within 1,000 feet of El Cerrito Plaza BART reached their highest count of the seven years even as the citywide total fell.
+
+Police activity on the Ohlone Greenway was `r gw_change_pct`% higher in FY 2025-26 than its average over the six earlier fiscal years, driven by pedestrian stops and foot patrol. Officer-initiated activity on the greenway had fallen sharply in January 2020, before the COVID-19 shutdown, and stayed low for five years before rising in FY 2025-26.
+
+The mix of police work changed. Traffic stops grew from `r sh("1195 - TRAFFIC STOP", "base")`% of all logged activity in FY 2019-20 through FY 2024-25 to `r sh("1195 - TRAFFIC STOP", "latest")`% in FY 2025-26, while security checks fell from `r sh("1059 - SECURITY CHECK", "base")`% to `r sh("1059 - SECURITY CHECK", "latest")`%. Changes near individual landmarks, including a large increase near Del Norte BART, came mainly from officer-initiated activity such as traffic stops and parking enforcement rather than from calls reporting crimes.
+
+Median response time for call-and-respond incidents held at 7 to 9 minutes from FY 2019-20 through FY 2024-25 and was 6 minutes in FY 2025-26. Part of that improvement reflects a change in the mix of calls, so one year is not enough to call it a trend.
+
+| Measure | FY 2019-20 | FY 2024-25 | FY 2025-26 |
+|:--|--:|--:|--:|
+| Crimes against persons (reports) | 597 | 502 | 418 |
+| Property crime (reports) | 2,016 | 1,164 | 976 |
+| Robbery and carjacking | 74 | 48 | 15 |
+| Parking tickets | 702 | 2,317 | 1,931 |
+| Parking tickets on weekends | 27.4% | 18.6% | 7.8% |
+| Median response, call-and-respond incidents (minutes) | 8 | 7 | 6 |
+
+## About the data
+
+The El Cerrito Police Department logs every call for service and every officer-initiated activity in its records system. Each record includes an event number, a call type (such as "211 - ROBBERY" or "1195 - TRAFFIC STOP"), the time the call was received, the time the first unit arrived, the time the call was cleared, and a location.
+
+Two sources are combined here. Records through June 2025 came from 13 half-year PDF reports, which were extracted to spreadsheets, checked, and corrected. Records for FY 2025-26 came directly from the department as an Excel export, which removed the extraction step entirely.
+
+The analysis uses the city's fiscal year, July 1 through June 30, so that each year compared is a complete twelve months. The period covers seven full fiscal years, FY 2019-20 through FY 2025-26, for a combined `r format(n_all, big.mark = ",")` records. Throughout the report, "the six earlier years" means FY 2019-20 through FY 2024-25, and comparisons with the most recent year use their average.
+
+| Fiscal year | Records |
+|:--|--:|
+| FY 2019-20 | 23,015 |
+| FY 2020-21 | 17,964 |
+| FY 2021-22 | 16,489 |
+| FY 2022-23 | 18,011 |
+| FY 2023-24 | 23,167 |
+| FY 2024-25 | 25,054 |
+| FY 2025-26 | 23,118 |
+
+A call record shows that something was reported or that an officer took an action. It does not show whether a crime occurred, whether anyone was charged, or when an incident actually happened. A theft discovered in the morning is logged in the morning, even if it happened overnight. For these reasons the report refers to "reports of" and "calls about" rather than to crime rates.
+
+## How police time is spent
+
+To make the data meaningful for residents, each of the 144 call types in the records was assigned to one of seven categories. The assignments are the analyst's, based on the call-type names, and are not department classifications. The full mapping is published with the code.
+
+| Category | Examples |
+|:--|:--|
+| Crimes against persons | Assault, robbery, sexual assault, shootings, threats, domestic violence |
+| Property crime | Burglary, car break-ins, petty and grand theft, vehicle theft, vandalism, fraud |
+| Dangerous driving | Hit and run, drunk driving, reckless driving, speeding, sideshows |
+| Disorder | Disturbances, unwanted persons, trespassing, drugs and alcohol, noise |
+| Parking | Parking violations |
+| Officer-initiated | Traffic, pedestrian, and bike stops; security checks; patrol; warrants |
+| Everything else | Alarms, collisions, welfare and medical calls, suspicious activity, administrative calls |
+
+| Category | FY 19-20 | FY 20-21 | FY 21-22 | FY 22-23 | FY 23-24 | FY 24-25 | FY 25-26 |
+|:--|--:|--:|--:|--:|--:|--:|--:|
+| Crimes against persons | 597 | 431 | 504 | 499 | 560 | 502 | 418 |
+| Property crime | 2,016 | 1,469 | 1,540 | 1,271 | 1,307 | 1,164 | 976 |
+| Dangerous driving | 309 | 297 | 299 | 266 | 305 | 288 | 245 |
+| Disorder | 2,352 | 1,998 | 1,901 | 2,074 | 1,878 | 1,842 | 1,667 |
+| Parking | 702 | 610 | 863 | 1,054 | 1,519 | 2,317 | 1,931 |
+| Officer-initiated | 9,190 | 6,302 | 4,241 | 5,221 | 7,530 | 8,762 | 8,289 |
+| Everything else | 7,849 | 6,857 | 7,141 | 7,626 | 10,068 | 10,179 | 9,592 |
+
+Officer-initiated activity fell by more than half between FY 2019-20 and FY 2021-22 and has since recovered to near its earlier level. The mix within it has changed. In the six earlier years, security checks were `r sh("1059 - SECURITY CHECK", "base")`% of all records and traffic stops `r sh("1195 - TRAFFIC STOP", "base")`%. In FY 2025-26, traffic stops were `r sh("1195 - TRAFFIC STOP", "latest")`% of all records and security checks `r sh("1059 - SECURITY CHECK", "latest")`%. Call transfers went from `r sh("XFER - Call Transfer", "base")`% to `r sh("XFER - Call Transfer", "latest")`%. The records show what was logged; they do not explain why the mix changed.
+
+```{r}
+#| label: tbl-top-calls
+#| tbl-cap: "Ten most common call types, FY 2019-20 through FY 2025-26."
+police_geo_all %>%
+  count(call_for_service, sort = TRUE) %>%
+  mutate(`% of all records` = round(100 * n / sum(n), 1)) %>%
+  slice_head(n = 10) %>%
+  transmute(`Call type` = str_to_title(call_for_service), Records = n, `% of all records`)
 ```
 
-```{r vehicle-heatmap, fig.cap="Density of vehicle-crime incidents specifically"}
+## Crime reports
+
+```{r}
+#| label: fig-crime-trends
+#| fig-cap: "Reports by crime category, FY 2019-20 through FY 2025-26. Each panel has its own scale."
+#| fig-height: 6
+police_all %>%
+  filter(category %in% c("Crimes against persons", "Property crime",
+                         "Dangerous driving", "Disorder")) %>%
+  count(category, fy_label) %>%
+  ggplot(aes(fy_label, n, group = 1)) +
+  geom_line(color = "steelblue", linewidth = 1) +
+  geom_point(color = "steelblue", size = 2) +
+  facet_wrap(~ category, scales = "free_y") +
+  expand_limits(y = 0) +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Crime reports by category", x = NULL, y = "Reports") +
+  theme_report +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+All four crime categories were at their lowest level of the seven years in FY 2025-26.
+
+### Crimes against persons
+
+| Type | FY 19-20 | FY 20-21 | FY 21-22 | FY 22-23 | FY 23-24 | FY 24-25 | FY 25-26 |
+|:--|--:|--:|--:|--:|--:|--:|--:|
+| Assault | 235 | 162 | 195 | 201 | 201 | 176 | 171 |
+| Robbery and carjacking | 74 | 65 | 47 | 74 | 81 | 48 | 15 |
+| Shootings and guns | 115 | 99 | 86 | 88 | 85 | 61 | 52 |
+| Threats and stalking | 43 | 33 | 39 | 43 | 61 | 90 | 58 |
+| Domestic violence | 39 | 24 | 42 | 39 | 42 | 43 | 32 |
+| Crimes against children and elders | 32 | 26 | 32 | 20 | 38 | 40 | 37 |
+| Sexual assault | 14 | 5 | 10 | 8 | 13 | 21 | 18 |
+
+Robbery and carjacking reports fell from 48 in FY 2024-25 to 15 in FY 2025-26, the largest one-year change in any category. Because a drop that size could signal a recording change, it was checked directly. The 15 robberies are spread across nine of the twelve months rather than missing from a block of time, and no robbery call type was renamed or moved. Robbery alarms, which are business alarm activations rather than confirmed robberies, are counted separately and numbered 20. The decline appears in the data as recorded; with counts this small, part of a one-year change can be chance.
+
+Shooting and gun-related calls, which include shots-fired reports, brandishing, and person-with-a-gun calls, declined in five of the six year-to-year changes. Assault reports have been roughly level for two years. Threats and stalking reports rose to 90 in FY 2024-25 before falling to 58. Sexual assault reports were somewhat higher in the last two years than earlier, though the numbers are small enough that year-to-year variation is expected.
+
+### Property crime
+
+| Type | FY 19-20 | FY 20-21 | FY 21-22 | FY 22-23 | FY 23-24 | FY 24-25 | FY 25-26 |
+|:--|--:|--:|--:|--:|--:|--:|--:|
+| Petty theft | 676 | 554 | 529 | 439 | 452 | 436 | 304 |
+| Car break-in | 416 | 152 | 135 | 126 | 144 | 70 | 107 |
+| Vandalism and arson | 244 | 197 | 190 | 146 | 162 | 145 | 132 |
+| Burglary (home, business) | 189 | 102 | 118 | 108 | 99 | 111 | 66 |
+| Vehicle theft | 189 | 187 | 256 | 221 | 242 | 141 | 127 |
+| Fraud and identity theft | 154 | 118 | 128 | 87 | 120 | 146 | 148 |
+| Grand theft | 108 | 103 | 150 | 119 | 69 | 107 | 74 |
+
+Petty theft and grand theft are shown separately because they describe very different events. Petty theft reports fell by more than half over the period. Burglary reports fell by about two-thirds. Car break-in reports dropped sharply after FY 2019-20, reached a low of 70 in FY 2024-25, and rose to 107 in FY 2025-26. Fraud and identity theft is the one property category that has not declined.
+
+### Dangerous driving and disorder
+
+Dangerous driving reports, which include hit and run, drunk driving, reckless driving, and sideshows, ranged from 266 to 309 a year before falling to 245 in FY 2025-26. Disorder reports, led by disturbances and unwanted-person calls, declined from 2,352 to 1,667 over the period.
+
+## Parking enforcement
+
+Parking tickets are the single subject residents are most likely to have direct experience with, so they are treated separately from crime throughout this report.
+
+```{r}
+#| label: fig-parking-fy
+#| fig-cap: "Parking tickets by fiscal year."
+parking_fy %>%
+  ggplot(aes(fy_label, parking_violations)) +
+  geom_col(fill = "steelblue") +
+  geom_text(aes(label = comma(parking_violations)), vjust = -0.4, size = 3.5) +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.08))) +
+  labs(title = "Parking tickets by fiscal year", x = NULL, y = "Tickets") +
+  theme_report
+```
+
+Tickets more than tripled from FY 2019-20 to FY 2024-25, with the largest increases in FY 2023-24 and FY 2024-25. FY 2025-26 was the first decline after four consecutive increases, and the total was still about 2.75 times the FY 2019-20 level.
+
+The decline was uneven across the year. The largest monthly drops compared with FY 2024-25 came in May (379 to 164), September (233 to 138), April (217 to 129), and January (169 to 89). July and June were higher than the year before. The pattern suggests enforcement that varies in intensity from month to month rather than a steady reduction.
+
+```{r}
+#| label: tbl-parking-months
+#| tbl-cap: "Parking tickets by month, FY 2024-25 and FY 2025-26."
+parking_points %>%
+  filter(fy %in% c(2025, 2026)) %>%
+  mutate(month = factor(as.character(month(dt, label = TRUE)), levels = FY_MONTHS)) %>%
+  count(fy_label, month) %>%
+  pivot_wider(names_from = fy_label, values_from = n, values_fill = 0) %>%
+  mutate(Change = `FY 2025-26` - `FY 2024-25`) %>%
+  rename(Month = month)
+```
+
+### Where tickets are written
+
+| Street | FY 19-20 | FY 20-21 | FY 21-22 | FY 22-23 | FY 23-24 | FY 24-25 | FY 25-26 |
+|:--|--:|--:|--:|--:|--:|--:|--:|
+| San Pablo Ave | 84 | 72 | 47 | 118 | 209 | 337 | 180 |
+| Liberty St | 43 | 42 | 90 | 45 | 89 | 129 | 136 |
+| Kearney St | 19 | 10 | 37 | 28 | 58 | 72 | 78 |
+| Lexington Ave | 16 | 25 | 71 | 31 | 51 | 59 | 74 |
+| Elm St | 17 | 14 | 39 | 29 | 32 | 32 | 45 |
+| Ashbury Ave | 7 | 3 | 8 | 20 | 34 | 46 | 42 |
+| Stockton Ave | 5 | 1 | 2 | 8 | 13 | 9 | 30 |
+
+San Pablo Avenue accounted for 157 of the 386-ticket decline in FY 2025-26. Tickets on several residential streets, including Liberty, Kearney, Lexington, Elm, and Stockton, rose. Enforcement is not concentrated on a handful of streets: in every year, the five busiest streets accounted for between 24% and 33% of tickets.
+
+Compared with FY 2024-25, tickets within 500 feet of Del Norte BART rose from 32 to 80 and those near the library rose from 27 to 52, while tickets near the Community Center fell from 38 to 16 and near Harding Elementary from 38 to 13.
+
+| Fiscal year | Tickets within 1,000 ft of El Cerrito Plaza BART | Share of mappable tickets |
+|:--|--:|--:|
+| FY 2019-20 | 60 | 8.5% |
+| FY 2020-21 | 49 | 8.1% |
+| FY 2021-22 | 101 | 11.7% |
+| FY 2022-23 | 60 | 5.7% |
+| FY 2023-24 | 111 | 7.3% |
+| FY 2024-25 | 183 | 7.9% |
+| FY 2025-26 | 196 | 10.3% |
+
+Through FY 2024-25, tickets near El Cerrito Plaza grew no faster than tickets citywide. In FY 2025-26, however, the number of tickets near the Plaza reached its highest level of the seven years while the citywide total fell, and the Plaza's share rose to its second-highest level.
+
+```{r}
+#| label: fig-parking-map
+#| fig-cap: "Where parking tickets were written, FY 2024-25 and FY 2025-26."
+#| fig-height: 6
 ggplot() +
   annotation_map_tile(type = "osm", zoomin = 0) +
-  stat_density_2d(
-    data = police_vehicle_crime,
-    aes(x = long, y = lat, fill = after_stat(level)),
-    geom = "polygon", contour = TRUE, alpha = 0.5, bins = 15
-  ) +
+  stat_density_2d(data = parking_usable %>% filter(fy %in% c(2025, 2026)),
+                  aes(x = long, y = lat, fill = after_stat(level)),
+                  geom = "polygon", contour = TRUE, alpha = 0.5, bins = 15) +
   scale_fill_gradient(low = "yellow", high = "red", breaks = range,
-                       labels = c("Fewer incidents", "More incidents")) +
+                      labels = c("Fewer tickets", "More tickets")) +
+  geom_point(data = landmarks_geocoded, aes(x = long, y = lat),
+             color = "black", size = 2, shape = 17) +
+  geom_label_repel(data = landmarks_geocoded, aes(x = long, y = lat, label = landmark),
+                   size = 2.3, fontface = "bold", label.padding = 0.12, label.size = 0,
+                   fill = alpha("white", 0.75), min.segment.length = 0, max.overlaps = Inf) +
+  facet_wrap(~ fy_label) +
+  coord_sf(xlim = c(EC_MAP_LONG_MIN, EC_MAP_LONG_MAX),
+           ylim = c(EC_MAP_LAT_MIN, EC_MAP_LAT_MAX), crs = 4326) +
+  labs(title = "Where parking tickets are written", fill = NULL) +
+  theme_report +
+  theme(axis.title = element_blank(), axis.text = element_blank())
+```
+
+### When tickets are written
+
+```{r}
+#| label: parking-schedule-data
+#| include: false
+parking_schedule <- parking_points %>%
+  filter(fy >= 2020) %>%
+  mutate(
+    is_weekday = wday(dt, week_start = 1) <= 5,
+    slot = case_when(
+      is_weekday & hour(dt) >= 7 & hour(dt) < 16 ~ "Weekday, 7 a.m. to 4 p.m.",
+      is_weekday                                 ~ "Weekday, other hours",
+      TRUE                                       ~ "Weekend"
+    ),
+    slot = factor(slot, levels = c("Weekend", "Weekday, other hours",
+                                   "Weekday, 7 a.m. to 4 p.m."))
+  ) %>%
+  count(fy_label, slot) %>%
+  group_by(fy_label) %>%
+  mutate(share = n / sum(n)) %>%
+  ungroup()
+
+slot_pct <- function(fy, sl) round(100 * parking_schedule$share[parking_schedule$fy_label == fy &
+                                                                  parking_schedule$slot == sl])
+```
+
+```{r}
+#| label: fig-parking-schedule
+#| fig-cap: "Parking tickets by time of week, each fiscal year. Each bar adds to 100%."
+#| fig-height: 5.5
+ggplot(parking_schedule, aes(fy_label, share, fill = slot)) +
+  geom_col(width = 0.75) +
+  geom_text(aes(label = if_else(share >= 0.04, percent(share, accuracy = 1), "")),
+            position = position_stack(vjust = 0.5), size = 3.3, color = "white",
+            fontface = "bold") +
+  scale_fill_manual(values = c("Weekend" = "#E69F00",
+                               "Weekday, other hours" = "#56B4E9",
+                               "Weekday, 7 a.m. to 4 p.m." = "#0072B2")) +
+  scale_y_continuous(labels = percent, expand = c(0, 0)) +
+  labs(title = "When parking tickets are written",
+       x = NULL, y = "Share of the year's tickets", fill = NULL) +
+  theme_report +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "top")
+```
+
+In FY 2019-20, `r slot_pct("FY 2019-20", "Weekday, 7 a.m. to 4 p.m.")`% of parking tickets were written on weekdays between 7 a.m. and 4 p.m., `r slot_pct("FY 2019-20", "Weekday, other hours")`% on weekdays at other hours, and `r slot_pct("FY 2019-20", "Weekend")`% on weekends. In FY 2025-26, the weekday 7 a.m. to 4 p.m. share was `r slot_pct("FY 2025-26", "Weekday, 7 a.m. to 4 p.m.")`%, with `r slot_pct("FY 2025-26", "Weekday, other hours")`% at other weekday hours and `r slot_pct("FY 2025-26", "Weekend")`% on weekends.
+
+```{r}
+#| label: fig-parking-weekday
+#| fig-cap: "Share of parking tickets written on each day of the week, FY 2019-20 and FY 2025-26."
+#| fig-height: 4.5
+parking_points %>%
+  filter(fy %in% c(2020, 2026)) %>%
+  mutate(weekday = wday(dt, label = TRUE, week_start = 1)) %>%
+  count(fy_label, weekday) %>%
+  group_by(fy_label) %>%
+  mutate(share = n / sum(n)) %>%
+  ungroup() %>%
+  ggplot(aes(weekday, share, fill = fy_label)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.75) +
+  geom_text(aes(label = percent(share, accuracy = 1)),
+            position = position_dodge(width = 0.8), vjust = -0.4, size = 3) +
+  scale_fill_manual(values = c("FY 2019-20" = "#E69F00", "FY 2025-26" = "#0072B2")) +
+  scale_y_continuous(labels = percent, expand = expansion(mult = c(0, 0.1))) +
+  labs(title = "Parking tickets by day of the week",
+       x = NULL, y = "Share of the year's tickets", fill = NULL) +
+  theme_report +
+  theme(legend.position = "top")
+```
+
+The weekly schedule has also varied from year to year; in FY 2022-23, for example, 31% of tickets were written on Fridays. The chart below shows the full pattern for the two most recent years, by day and hour.
+
+```{r}
+#| label: fig-parking-heatmap
+#| fig-cap: "Share of each year's parking tickets by weekday and hour, FY 2024-25 and FY 2025-26."
+#| fig-height: 6
+parking_points %>%
+  filter(fy %in% c(2025, 2026)) %>%
+  mutate(weekday = wday(dt, label = TRUE, week_start = 1),
+         hour    = hour(dt)) %>%
+  count(fy_label, weekday, hour) %>%
+  complete(fy_label, weekday, hour = 0:23, fill = list(n = 0)) %>%
+  group_by(fy_label) %>%
+  mutate(share = n / sum(n)) %>%
+  ungroup() %>%
+  ggplot(aes(hour, fct_rev(weekday), fill = share)) +
+  geom_tile(color = "white", linewidth = 0.3) +
+  facet_wrap(~ fy_label, ncol = 1) +
+  scale_fill_viridis_c(option = "plasma", labels = percent) +
+  scale_x_continuous(breaks = seq(0, 21, 3),
+                     labels = c("Midnight", "3 a.m.", "6 a.m.", "9 a.m.",
+                                "Noon", "3 p.m.", "6 p.m.", "9 p.m.")) +
+  labs(title = "When parking tickets are written", x = NULL, y = NULL,
+       fill = "Share of year") +
+  theme_report
+```
+
+## The Ohlone Greenway
+
+The Ohlone Greenway is a linear trail that runs the length of El Cerrito alongside the BART tracks. Because it is a line rather than a point, greenway activity was measured from the location text rather than from map coordinates. This matters for accuracy: 99 FY 2025-26 records are logged simply as "OHLONE GREENWAY," with no cross street, and could not be placed on a map.
+
+The department's name for the location changed during the period. Through June 2025 it was most often recorded as "BART PATH"; in FY 2025-26 it is almost always "OHLONE." Counting both names is essential. A count using only "OHLONE" would suggest that greenway activity more than doubled, when the actual increase was 25%.
+
+Records were sorted into two groups: activity on the greenway itself, where the location names the greenway, and activity at addresses next to it, where the greenway is noted as the nearest cross street. On the greenway, FY 2025-26 had `r gw_latest("on greenway")` records compared with an average of `r gw_base("on greenway")` a year over the six earlier years. Next to the greenway, FY 2025-26 had `r gw_latest("next to greenway")` records compared with an average of `r gw_base("next to greenway")`.
+
+```{r}
+#| label: fig-greenway-fy
+#| fig-cap: "Police activity on the Ohlone Greenway by fiscal year."
+police_all %>%
+  filter(!is.na(address)) %>%
+  mutate(greenway = greenway_bucket(address)) %>%
+  filter(greenway == "on greenway") %>%
+  mutate(type = if_else(call_for_service %in% officer_initiated_types,
+                        "Officer-initiated", "Other calls")) %>%
+  count(fy_label, type) %>%
+  ggplot(aes(fy_label, n, fill = type)) +
+  geom_col() +
+  scale_fill_manual(values = c("Officer-initiated" = "steelblue", "Other calls" = "grey65")) +
+  labs(title = "Activity on the Ohlone Greenway", x = NULL, y = "Records", fill = NULL) +
+  theme_report +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "top")
+```
+
+| Fiscal year | Officer-initiated | Other calls | Total |
+|:--|--:|--:|--:|
+| FY 2019-20 | 393 | 102 | 495 |
+| FY 2020-21 | 105 | 93 | 198 |
+| FY 2021-22 | 98 | 86 | 184 |
+| FY 2022-23 | 56 | 98 | 154 |
+| FY 2023-24 | 80 | 94 | 174 |
+| FY 2024-25 | 48 | 137 | 185 |
+| FY 2025-26 | 206 | 138 | 344 |
+
+For this section, officer-initiated activity means security checks, pedestrian, traffic, and bike stops, foot patrol, and parking enforcement. That activity was highest in FY 2019-20, fell sharply, stayed low for five years, and rose about fourfold in FY 2025-26 to roughly half its FY 2019-20 level. The type of activity also changed, as the table below shows: security checks on the greenway fell, while pedestrian stops and foot patrol rose. Other calls on the greenway have been about 137 a year for the past two years, up from roughly 90 in earlier years.
+
+```{r}
+#| label: tbl-greenway-types
+#| tbl-cap: "Most common call types on the greenway: average of the six earlier years vs. FY 2025-26."
+greenway_fy %>%
+  filter(greenway == "on greenway") %>%
+  mutate(period = if_else(fy == LATEST_FY, "latest", "base")) %>%
+  count(call_for_service, period) %>%
+  pivot_wider(names_from = period, values_from = n, values_fill = 0) %>%
+  mutate(base = round(base / length(BASE_FY), 1)) %>%
+  arrange(desc(latest)) %>%
+  slice_head(n = 12) %>%
+  transmute(`Call type` = str_to_title(call_for_service),
+            `Six earlier years, per year` = base, `FY 2025-26` = latest)
+```
+
+### The early-2020 decline
+
+Officer-initiated activity on the greenway declined in 2020, which coincided with the start of the COVID-19 pandemic. Monthly records show that the decline began earlier. Security checks on the greenway averaged about 40 a month from July through December 2019, fell to 11 and 13 in January and February 2020, and stayed between 2 and 14 a month through 2021.
+
+```{r}
+#| label: fig-greenway-share
+#| fig-cap: "Greenway share of all security checks, by month, July 2019 through December 2021. Dashed line: March 2020."
+police_clean_dated %>%
+  filter(call_for_service == "1059 - SECURITY CHECK",
+         dt >= FY_START, dt < as.POSIXct("2022-01-01", tz = "UTC")) %>%
+  mutate(month = floor_date(dt, "month"),
+         on_greenway = !is.na(address) & greenway_bucket(address) == "on greenway") %>%
+  group_by(month) %>%
+  summarize(citywide = n(), greenway = sum(on_greenway), .groups = "drop") %>%
+  mutate(share = greenway / citywide) %>%
+  ggplot(aes(month, share)) +
+  geom_line(color = "steelblue", linewidth = 1) +
+  geom_point(color = "steelblue", size = 1.5) +
+  geom_vline(xintercept = as.POSIXct("2020-03-01", tz = "UTC"), linetype = "dashed") +
+  scale_y_continuous(labels = percent, limits = c(0, NA)) +
+  labs(title = "Greenway share of all security checks",
+       x = NULL, y = "Share of citywide security checks") +
+  theme_report
+```
+
+The decline was specific to the greenway. Citywide security checks did not fall in early 2020, and in March 2020 they rose to 1,269, about three times their usual monthly level. The greenway's share of all security checks dropped from about 13% in July through December 2019 to between 1% and 5% from January 2020 onward. The data show when the change happened but not why.
+
+## Where activity happens
+
+```{r}
+#| label: fig-crime-map-all
+#| fig-cap: "Density of crime-related incidents, FY 2019-20 through FY 2025-26, relative to nine community landmarks."
+#| fig-height: 7
+ggplot() +
+  annotation_map_tile(type = "osm", zoomin = 0) +
+  stat_density_2d(data = crime_map_all,
+                  aes(x = long, y = lat, fill = after_stat(level)),
+                  geom = "polygon", contour = TRUE, alpha = 0.5, bins = 25) +
+  scale_fill_gradient(low = "yellow", high = "red", breaks = range,
+                      labels = c("Fewer incidents", "More incidents")) +
   geom_point(data = landmarks_geocoded, aes(x = long, y = lat),
              color = "black", size = 2.5, shape = 17) +
   geom_label_repel(data = landmarks_geocoded, aes(x = long, y = lat, label = landmark),
-                    size = 2.8, fontface = "bold", label.padding = 0.15,
-                    label.size = 0, fill = alpha("white", 0.75),
-                    min.segment.length = 0, max.overlaps = Inf) +
+                   size = 2.8, fontface = "bold", label.padding = 0.15, label.size = 0,
+                   fill = alpha("white", 0.75), min.segment.length = 0, max.overlaps = Inf) +
   coord_sf(xlim = c(EC_MAP_LONG_MIN, EC_MAP_LONG_MAX),
            ylim = c(EC_MAP_LAT_MIN, EC_MAP_LAT_MAX), crs = 4326) +
-  labs(title = "El Cerrito Vehicle Crime Density", fill = NULL) +
-  theme_minimal() +
+  labs(title = "Where crime-related incidents happen, 2019-2026", fill = NULL) +
+  theme_report +
   theme(axis.title = element_blank())
 ```
 
-EC Plaza BART and the Community Center lead in both vehicle crime and
-dangerous driving specifically, not just overall activity -- a consistent
-pattern, not an artifact of one dominant category.
+Crime-related incidents concentrate along the San Pablo Avenue corridor, El Cerrito's main commercial spine, and drop off sharply moving east into the hillside residential neighborhoods. This map and the landmark tables below use the crime-related call types described in the technical appendix, which include parking violations; the maps in the parking section show tickets on their own.
 
-
-# When Does It Happen?
-
-```{r yearly-trend, fig.cap="Crime-scope incidents by year"}
-yearly_totals <- police_clean %>%
-  filter(str_to_lower(call_for_service) %in% incident_types) %>%
-  mutate(year = year(dt)) %>%
-  count(year, name = "incidents") %>%
-  mutate(
-    year_label = if_else(year == 2025, "2025\n(partial year)", as.character(year)),
-    bar_fill = if_else(year == 2025, "2025", "full year")
-  ) %>%
-  mutate(year_label = fct_reorder(year_label, year))
-
-ggplot(yearly_totals, aes(x = year_label, y = incidents, fill = bar_fill)) +
-  geom_col() +
-  geom_text(aes(label = incidents), vjust = -0.5, size = 3) +
-  scale_fill_manual(values = c("full year" = "steelblue", "2025" = "gray60"), guide = "none") +
-  labs(x = NULL, y = "Incidents", title = "Crime-Scope Incidents by Year") +
-  theme_minimal()
+```{r}
+#| label: tbl-landmarks-all
+#| tbl-cap: "All police activity within 500 feet of each landmark, FY 2019-20 through FY 2025-26."
+compute_landmark_counts(landmark_input_all, "Records within 500 ft") %>%
+  arrange(desc(`Records within 500 ft`)) %>%
+  rename(Landmark = landmark)
 ```
 
-Incident counts dropped noticeably during 2020--2022, bottoming out in
-2022, before recovering to their highest levels of the period in 2023 and
-2024. This report does not attempt to explain *why* -- police staffing
-levels, changes in what gets reported, and actual changes in activity
-could all play a role, and disentangling them is beyond what this dataset
-can show on its own.
+The table counts all police activity, not only crime, within 500 feet of nine community landmarks. Del Norte BART sits on the city's border with Richmond and has its own BART Police substation. Incidents handled by BART Police or by Richmond police are not part of this dataset, so the count reflects El Cerrito Police Department activity only.
 
-2025 is shown through June 30 only and should not be compared directly to
-the full-year totals above. On a fair like-for-like basis -- January
-through June of every year -- 2025 is actually the **busiest first half of
-any year in this seven-year period**, continuing the recovery rather than
-reversing it.
+```{r}
+#| label: tbl-landmarks-crime
+#| tbl-cap: "Crime-related incidents within 500 feet of each landmark by type, FY 2019-20 through FY 2025-26."
+vehicle_all   <- crime_map_all %>% filter(cfs_key %in% vehicle_crime_types)
+dangerous_all <- crime_map_all %>% filter(cfs_key %in% dangerous_driving_types)
+other_all     <- crime_map_all %>% filter(!cfs_key %in% c(vehicle_crime_types, dangerous_driving_types))
 
-```{r monthly-trend, fig.cap="Average monthly pattern, 2019-2024 (2025 excluded as a partial year)"}
-monthly_totals <- police_clean %>%
-  filter(str_to_lower(call_for_service) %in% incident_types, year(dt) %in% 2019:2024) %>%
-  mutate(month = month(dt, label = TRUE)) %>%
-  count(month, name = "incidents")
-
-avg_month <- mean(monthly_totals$incidents)
-
-ggplot(monthly_totals, aes(x = month, y = incidents)) +
-  geom_col(fill = "steelblue") +
-  geom_hline(yintercept = avg_month, linetype = "dashed", color = "darkred") +
-  labs(x = NULL, y = "Incidents (2019-2024 total)",
-       title = "Crime-Scope Incidents by Month") +
-  theme_minimal()
+compute_landmark_counts(vehicle_all, "Vehicle crime") %>%
+  left_join(compute_landmark_counts(dangerous_all, "Dangerous driving"), by = "landmark") %>%
+  left_join(compute_landmark_counts(other_all, "All other"), by = "landmark") %>%
+  mutate(Total = `Vehicle crime` + `Dangerous driving` + `All other`) %>%
+  arrange(desc(Total)) %>%
+  rename(Landmark = landmark)
 ```
 
-October stands out from the rest of the year -- but not for the reason it
-might first appear. Breaking the October total down by category shows it's
-driven almost entirely by parking enforcement, not a broad rise in crime.
-Parking violations get their own section below, since they turned out to
-be one of the more striking trends in the whole dataset.
+Vehicle crime (car break-ins, vehicle theft, carjacking) and dangerous driving (hit and run, drunk driving) are shown separately because they are different kinds of risk: property crime against a parked car, and danger from a car in motion. "All other" covers every other crime-related type, such as assault, robbery, burglary, theft, and vandalism.
 
-
-# Parking Enforcement: A City on the Move
-
-```{r parking-yearly, fig.cap="Parking violations by year"}
-parking_yearly <- police_clean %>%
-  filter(call_for_service == "PARKER - PARKING VIOLATION") %>%
-  mutate(year = year(dt)) %>%
-  count(year, name = "parking_violations") %>%
-  mutate(
-    year_label = if_else(year == 2025, "2025\n(partial year)", as.character(year)),
-    bar_fill = if_else(year == 2025, "2025", "full year")
-  ) %>%
-  mutate(year_label = fct_reorder(year_label, year))
-
-ggplot(parking_yearly, aes(x = year_label, y = parking_violations, fill = bar_fill)) +
-  geom_col() +
-  geom_text(aes(label = parking_violations), vjust = -0.5, size = 3) +
-  scale_fill_manual(values = c("full year" = "darkorange", "2025" = "wheat3"), guide = "none") +
-  labs(x = NULL, y = "Parking Violations", title = "Parking Violations by Year") +
-  theme_minimal()
+```{r}
+#| label: fig-vehicle-map
+#| fig-cap: "Density of vehicle-crime incidents, FY 2019-20 through FY 2025-26."
+#| fig-height: 7
+ggplot() +
+  annotation_map_tile(type = "osm", zoomin = 0) +
+  stat_density_2d(data = vehicle_all,
+                  aes(x = long, y = lat, fill = after_stat(level)),
+                  geom = "polygon", contour = TRUE, alpha = 0.5, bins = 15) +
+  scale_fill_gradient(low = "yellow", high = "red", breaks = range,
+                      labels = c("Fewer incidents", "More incidents")) +
+  geom_point(data = landmarks_geocoded, aes(x = long, y = lat),
+             color = "black", size = 2.5, shape = 17) +
+  geom_label_repel(data = landmarks_geocoded, aes(x = long, y = lat, label = landmark),
+                   size = 2.8, fontface = "bold", label.padding = 0.15, label.size = 0,
+                   fill = alpha("white", 0.75), min.segment.length = 0, max.overlaps = Inf) +
+  coord_sf(xlim = c(EC_MAP_LONG_MIN, EC_MAP_LONG_MAX),
+           ylim = c(EC_MAP_LAT_MIN, EC_MAP_LAT_MAX), crs = 4326) +
+  labs(title = "Where vehicle crime happens, 2019-2026", fill = NULL) +
+  theme_report +
+  theme(axis.title = element_blank())
 ```
 
-Parking violations more than tripled over the period covered by this
-report, from `r parking_yearly$parking_violations[parking_yearly$year == 2019]`
-in 2019 to `r parking_yearly$parking_violations[parking_yearly$year == 2024]`
-in 2024. The growth is not gradual -- it happened in two distinct jumps
-rather than a steady climb, which points to specific operational changes
-at identifiable points in time rather than organic drift. A closer look at
-the timing of those changes is a natural next step for a future update to
-this report.
+### Changes in the most recent year
 
-```{r parking-monthly, fig.cap="Average monthly parking-violation pattern, 2019-2024"}
-parking_monthly <- police_clean %>%
-  filter(call_for_service == "PARKER - PARKING VIOLATION", year(dt) %in% 2019:2024) %>%
-  mutate(month = month(dt, label = TRUE)) %>%
-  count(month, name = "parking_violations")
+Activity within 500 feet of nine landmarks in FY 2025-26 was compared with the average of the six earlier years. To keep the periods comparable, call types whose locations were withheld in the PDF records, such as mental health and juvenile calls, are excluded from both.
 
-ggplot(parking_monthly, aes(x = month, y = parking_violations)) +
-  geom_col(fill = "darkorange") +
-  labs(x = NULL, y = "Parking Violations (2019-2024 total)",
-       title = "Parking Violations by Month") +
-  theme_minimal()
+```{r}
+#| label: tbl-landmark-change
+#| tbl-cap: "All police activity within 500 feet of each landmark: average of the six earlier years vs. FY 2025-26."
+landmark_base %>%
+  left_join(landmark_latest, by = "landmark") %>%
+  arrange(desc(latest)) %>%
+  transmute(Landmark = landmark, `Six earlier years, per year` = base_per_year,
+            `FY 2025-26` = latest)
 ```
 
-## Is Enforcement Concentrating Near El Cerrito Plaza?
+The table below shows which call types changed most near Del Norte BART, the library, and Madera. In each case, the largest changes were in officer-initiated and administrative activity, such as traffic stops, parking tickets, security checks, and call transfers, rather than in crime reports.
 
-```{r parking-plaza}
-ec_plaza_bart <- landmarks_geocoded %>% filter(landmark == "EC Plaza BART")
-
-parking_geocoded <- police_clean %>%
-  filter(call_for_service == "PARKER - PARKING VIOLATION") %>%
-  left_join(final_geocodes %>% select(address, lat, long, BAD_LATLON_FLAG), by = "address") %>%
-  filter(!BAD_LATLON_FLAG, !is.na(lat)) %>%
-  mutate(dist_to_plaza_ft = distHaversine(cbind(long, lat), c(ec_plaza_bart$long, ec_plaza_bart$lat)) / 0.3048)
-
-parking_plaza_by_year <- parking_geocoded %>%
-  mutate(year = year(dt), within_1000ft = dist_to_plaza_ft <= 1000) %>%
-  group_by(year) %>%
-  summarize(
-    total = n(),
-    near_plaza = sum(within_1000ft),
-    pct_near_plaza = round(100 * near_plaza / total, 1)
-  )
+```{r}
+#| label: tbl-landmark-calls
+#| tbl-cap: "Largest changes by call type within 500 feet: average of the six earlier years vs. FY 2025-26."
+bind_rows(
+  landmark_calls("Del Norte BART") %>% mutate(Landmark = "Del Norte BART"),
+  landmark_calls("Library")        %>% mutate(Landmark = "Library"),
+  landmark_calls("Madera")         %>% mutate(Landmark = "Madera")
+) %>%
+  transmute(Landmark, `Call type` = str_to_title(call_for_service),
+            `Six earlier years, per year` = base, `FY 2025-26` = latest,
+            Change = round(change, 1))
 ```
 
-With talk locally of a parking district near El Cerrito Plaza, it's worth
-asking directly: is a growing share of citywide parking enforcement
-actually concentrating there? To check, every geocoded parking violation
-was measured against its distance from the Plaza BART station.
+```{r}
+#| label: fig-crime-map
+#| fig-cap: "Crimes against persons and property crime reports, FY 2025-26 (parking excluded)."
+#| fig-height: 7
+fy26_crime_points <- police_fy26_geocoded %>%
+  filter(!BAD_LATLON_FLAG) %>%
+  mutate(cfs_key = str_to_lower(call_for_service)) %>%
+  left_join(call_categories, by = "cfs_key") %>%
+  filter(category %in% c("Crimes against persons", "Property crime"))
 
-```{r parking-plaza-table}
-parking_plaza_by_year %>%
-  select(Year = year, `Citywide Total` = total,
-         `Within 1,000 ft of Plaza` = near_plaza,
-         `% of Citywide Total` = pct_near_plaza) %>%
-  kable(caption = "Parking violations near El Cerrito Plaza, by year") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) %>%
-  footnote(general = "2025 reflects only January through June (a partial year). The percentage column is not affected by this, since both the citywide total and the near-Plaza count are equally partial.",
-           general_title = "Note: ", footnote_as_chunk = TRUE)
+ggplot() +
+  annotation_map_tile(type = "osm", zoomin = 0) +
+  stat_density_2d(data = fy26_crime_points,
+                  aes(x = long, y = lat, fill = after_stat(level)),
+                  geom = "polygon", contour = TRUE, alpha = 0.5, bins = 20) +
+  scale_fill_gradient(low = "yellow", high = "red", breaks = range,
+                      labels = c("Fewer reports", "More reports")) +
+  geom_point(data = landmarks_geocoded, aes(x = long, y = lat),
+             color = "black", size = 2.5, shape = 17) +
+  geom_label_repel(data = landmarks_geocoded, aes(x = long, y = lat, label = landmark),
+                   size = 2.8, fontface = "bold", label.padding = 0.15, label.size = 0,
+                   fill = alpha("white", 0.75), min.segment.length = 0, max.overlaps = Inf) +
+  coord_sf(xlim = c(EC_MAP_LONG_MIN, EC_MAP_LONG_MAX),
+           ylim = c(EC_MAP_LAT_MIN, EC_MAP_LAT_MAX), crs = 4326) +
+  labs(title = "Where crimes were reported, FY 2025-26", fill = NULL) +
+  theme_report +
+  theme(axis.title = element_blank())
 ```
 
-The answer is no -- at least not so far. The *share* of citywide parking
-tickets written within 1,000 feet of the Plaza has not risen over this
-period; if anything, it is somewhat lower in 2025 than it was in 2019.
-The raw number of tickets near the Plaza has grown, but that simply
-reflects the citywide tripling described above, not extra concentration
-in that specific area. Whatever is driving the parking-district
-conversation, this dataset does not show enforcement disproportionately
-shifting toward the Plaza.
+## Response times
 
+Response time is measured from when a call is received to when the first officer arrives. The analysis covers crime-related calls and excludes activity that officers initiate themselves, such as parking enforcement, because those records have no travel time and would make responses look faster than they are.
 
-# How Fast Do Police Respond?
-
-```{r response-time}
-response_data <- police_clean %>%
-  filter(str_to_lower(call_for_service) %in% incident_types) %>%
-  mutate(
-    arrived_dt = parse_date_time(first_unit_arrived_time, orders = "mdy HM"),
-    response_min = as.numeric(difftime(arrived_dt, dt, units = "mins"))
-  ) %>%
-  filter(!is.na(response_min), response_min >= 0, response_min < 1440)
-
-response_summary <- response_data %>%
-  summarize(
-    median_min = median(response_min),
-    p90_min = round(quantile(response_min, 0.9), 1)
-  )
-
-urgent_types <- c("245 - assault with a deadly weapon", "211 - robbery",
-                   "1071 - shooting (actual victim)", "sfrmc - shots fired",
-                   "215 - car jacking")
-
-urgent_summary <- response_data %>%
-  filter(str_to_lower(call_for_service) %in% urgent_types) %>%
-  summarize(median_min = median(response_min))
+```{r}
+#| label: response-naive
+#| include: false
+naive_fy <- response_fy %>% group_by(fy_label) %>%
+  summarize(median_min = median(response_min), .groups = "drop")
 ```
 
-The department's median response time across all in-scope incidents is
-**`r response_summary$median_min` minutes**, and 90% of responses arrive
-within `r response_summary$p90_min` minutes. For calls involving active,
-in-progress danger specifically -- shots fired, an armed assault, a
-robbery, a carjacking, a shooting with an actual victim -- the median
-response is **`r urgent_summary$median_min` minutes**, consistently fast
-across every one of those categories.
+The exclusion matters. Including officer-initiated records, the median drops from `r naive_fy$median_min[naive_fy$fy_label == "FY 2019-20"]` minutes in FY 2019-20 to `r naive_fy$median_min[naive_fy$fy_label == "FY 2025-26"]` in FY 2025-26, an apparent improvement driven largely by the growth of parking enforcement, which has no dispatch or travel time. The table below uses call-and-respond incidents only.
 
-A word of caution for anyone comparing response times across years: a
-naive year-by-year average makes it look like response times dramatically
-improved, dropping from around 7 minutes in 2019 to 2 minutes in 2025.
-That apparent improvement is misleading. It's driven almost entirely by
-the huge growth in parking enforcement described above -- writing a
-parking ticket involves no dispatch or travel time, so as parking
-violations became a larger share of everything logged, the citywide
-average mechanically dropped without response to genuine emergencies
-actually getting any faster. Looking only at incidents that involve a real
-dispatch and response, the department's response time has been
-**stable, not dramatically changing, across the entire seven-year
-period** -- a consistent, reliable finding rather than a flashy but
-misleading one.
+| Fiscal year | Median response (minutes) |
+|:--|--:|
+| FY 2019-20 | 8 |
+| FY 2020-21 | 8 |
+| FY 2021-22 | 8 |
+| FY 2022-23 | 9 |
+| FY 2023-24 | 8 |
+| FY 2024-25 | 7 |
+| FY 2025-26 | 6 |
 
+The FY 2025-26 median of 6 minutes was the lowest of the seven years. A comparison of individual call types found that the improvement is partly real and partly a change in the mix of calls. Of 14 common call types, 6 were faster in FY 2025-26 than the year before, 5 were unchanged, and 3 were slower. At the same time, there were fewer of some call types that typically have longer response times, such as theft reports, which lowers the overall median on its own. One year of improvement is not enough to establish a trend.
 
-# Conclusion
+```{r}
+#| label: tbl-response-mix
+#| tbl-cap: "Median response time (minutes) by call type, FY 2024-25 and FY 2025-26, for call-and-respond types with at least 30 cases in each year."
+response_fy %>%
+  filter(!str_to_lower(call_for_service) %in% self_initiated_types,
+         fy %in% c(2025, 2026)) %>%
+  group_by(call_for_service) %>%
+  filter(sum(fy == 2025) >= 30, sum(fy == 2026) >= 30) %>%
+  group_by(call_for_service, fy_label) %>%
+  summarize(median_min = median(response_min), n = n(), .groups = "drop") %>%
+  pivot_wider(names_from = fy_label, values_from = c(median_min, n)) %>%
+  arrange(desc(`n_FY 2025-26`)) %>%
+  transmute(`Call type` = str_to_title(call_for_service),
+            `Median, FY 2024-25` = `median_min_FY 2024-25`,
+            `Median, FY 2025-26` = `median_min_FY 2025-26`,
+            `Cases, FY 2024-25` = `n_FY 2024-25`,
+            `Cases, FY 2025-26` = `n_FY 2025-26`)
+```
 
-Four findings stand out from this analysis. First, most of what El
-Cerrito police do isn't crime response at all -- fewer than three calls in
-ten fall into a category most residents would call a crime; the rest is
-patrol, traffic enforcement, and administrative work. Second, crime-scope
-activity concentrates heavily along the San Pablo Avenue corridor, with
-the sharpest drop-off in the hillside residential areas -- and when a
-landmark's number looks surprisingly low, as with Del Norte BART, it's
-often because of a real jurisdictional boundary, not because nothing
-happens there. Third, parking enforcement has more than tripled citywide
-since 2019, but that growth is broad-based rather than concentrated near
-El Cerrito Plaza specifically, at least through the period this report
-covers. Fourth, the department's response to genuinely dangerous,
-in-progress incidents is fast and consistent, holding steady across the
-whole period studied, even as the overall mix of what gets logged has
-shifted substantially.
+For the most urgent calls, including shots fired, robbery, and assault with a deadly weapon, median response times in FY 2025-26 were between 2 and 5 minutes, consistent with earlier years. The number of these calls is small, so they are best read as a group rather than type by type.
 
-This report will be updated with a second analysis covering July 2025
-through June 2026 once that data becomes available.
+## Seasonal patterns
 
+This section asks whether police activity follows regular patterns by month of the year, day of the week, and hour of the day, and whether those patterns have changed over time. Three series are examined: crimes against persons, property crime, and parking. The methods follow Hyndman and Athanasopoulos, *Forecasting: Principles and Practice* (3rd edition), using the fpp3 packages in R. The monthly series run from July 2019 through June 2026, 84 months in all. A pattern that is not there is reported as such.
 
-# Technical Appendix
+### Month of the year
 
-This appendix summarizes how the underlying dataset was built, cleaned,
-and verified. It is intentionally more detailed than a typical report
-appendix, because several real data-quality problems were found and fixed
-during this project, and the goal here is to show that work rather than
-hide it.
+```{r}
+#| label: seasonal-data
+#| include: false
+# Rebuild the seasonal series on the fiscal-year period (July 2019 onward)
+monthly_ts <- police_series %>%
+  filter(dt >= FY_START) %>%
+  mutate(month = yearmonth(dt)) %>%
+  count(series, month) %>%
+  as_tsibble(key = series, index = month) %>%
+  fill_gaps(n = 0L, .full = TRUE)
 
-## Data Source
+monthly_stl <- monthly_ts %>%
+  model(stl = STL(n ~ trend(window = 13) + season(window = "periodic"))) %>%
+  components()
 
-Source data was 13 half-year PDF reports from the El Cerrito Police
-Department, covering `r format(data_start, "%B %d, %Y")` through
-`r format(data_end, "%B %d, %Y")`. Two extraction defects were found and
-corrected in the initial PDF-to-spreadsheet conversion: a small share of
-addresses were truncated when they wrapped across a line in the source
-PDF, and the first one or two rows on nearly every PDF page were initially
-dropped entirely. Both were caught by independently re-extracting the data
-and diffing the two versions against each other and against the raw PDF
-text directly, then verified file-by-file across all 13 source documents.
+daily_ts <- police_series %>%
+  filter(dt >= FY_START) %>%
+  mutate(date = as_date(dt)) %>%
+  count(series, date) %>%
+  as_tsibble(key = series, index = date) %>%
+  fill_gaps(n = 0L, .full = TRUE)
 
-After combining and deduplicating (including 376 rows that were genuine
-duplicates spanning a source-file boundary in mid-2020), the working
-dataset contains `r format(nrow(police_clean), big.mark = ",")` unique
-incidents.
+seasonal_summary <- monthly_stl %>%
+  as_tibble() %>%
+  mutate(month_name = month(month, label = TRUE, abbr = FALSE)) %>%
+  group_by(series, month_name) %>%
+  summarize(effect = mean(season_year), .groups = "drop") %>%
+  left_join(monthly_ts %>% as_tibble() %>% group_by(series) %>%
+              summarize(avg = mean(n), .groups = "drop"), by = "series") %>%
+  group_by(series) %>%
+  summarize(peak  = as.character(month_name[which.max(effect)]),
+            low   = as.character(month_name[which.min(effect)]),
+            swing = round(100 * max(abs(effect)) / first(avg)),
+            avg   = round(first(avg)),
+            .groups = "drop")
+ss <- function(ser, col) seasonal_summary[[col]][seasonal_summary$series == ser]
+```
 
-## Incident Categories
+The first step is simply to look at the data over time, because a long-term trend or a sudden shift can be mistaken for a seasonal pattern.
 
-This report distinguishes between the full incident log and a
-crime-scope subset of `r format(nrow(df_filtered), big.mark = ",")`
-incidents, built from a 52-category list of genuine crime types (excluding
-administrative categories like security checks and traffic stops, and
-also excluding financial crimes such as identity theft, since those are
-typically logged at the victim's home address rather than a crime scene
-and would distort a geographic analysis).
+```{r}
+#| label: fig-monthly
+#| fig-cap: "Monthly reports and tickets, July 2019 through June 2026."
+#| fig-height: 6
+monthly_ts %>%
+  autoplot(n) +
+  facet_grid(series ~ ., scales = "free_y") +
+  labs(title = "Monthly counts", x = NULL, y = "Per month") +
+  theme_report +
+  theme(legend.position = "none")
+```
 
-## Geocoding
+Property crime shows a long decline. Parking shows strong growth through 2025 with large month-to-month swings. Crimes against persons is comparatively flat, with considerable month-to-month noise at about 40 reports a month.
 
-Street addresses were converted to map coordinates using the ArcGIS
-World Geocoding Service. An initial geocoding pass revealed that,
-without a geographic constraint, the service would sometimes match an
-ambiguous address (an intersection referenced by a local abbreviation, or
-a generic place name) to a same-named location anywhere in the world,
-with full confidence -- one address matched the country of Panama, another
-matched a park in Australia. Adding an explicit geographic boundary to the
-geocoding request and re-processing the affected addresses resolved the
-large majority of these cases; a final distance-based check excluded any
-remaining addresses that could not be reliably placed. In total,
-`r format(nrow(incidents_for_proximity), big.mark = ",")` of
-`r format(nrow(police_clean), big.mark = ",")` incidents
-(`r round(100 * nrow(incidents_for_proximity) / nrow(police_clean), 1)`%)
-were successfully and reliably geocoded.
+```{r}
+#| label: fig-season
+#| fig-cap: "Seasonal plot: each calendar year drawn as its own line across the months."
+#| fig-height: 7
+monthly_ts %>%
+  gg_season(n, labels = "right") +
+  labs(title = "Each year's monthly pattern", x = NULL, y = "Per month") +
+  theme_report
+```
 
-Community landmarks used in the geographic analysis were verified by hand
-against independent sources rather than accepted on the geocoding
-service's confidence score alone. This caught one landmark (Korematsu
-Middle School) where the service returned a maximum-confidence match on
-the correct current address, but an outdated underlying coordinate that
-still pointed to the school's location prior to a relocation roughly a
-decade ago -- corrected manually after independent verification.
+The seasonal plot overlays the years. If a seasonal pattern existed, the lines would rise and fall together in the same months. For property crime the lines are stacked by year, reflecting the decline, with no consistent shape in common. For parking the years differ so much in both level and shape that no common pattern stands out.
 
-## Limitations
+```{r}
+#| label: fig-subseries
+#| fig-cap: "Subseries plot: each calendar month across the years. Blue lines show each month's average."
+#| fig-height: 6
+monthly_ts %>%
+  gg_subseries(n) +
+  labs(title = "Month-by-month comparison across years", x = NULL, y = "Per month") +
+  theme_report
+```
 
-This dataset reflects only incidents logged by the El Cerrito Police
-Department within city jurisdiction. Activity occurring on BART property,
-across the Richmond city line, or handled by a different agency is not
-captured here, which is worth keeping in mind when interpreting any single
-landmark's numbers, particularly El Cerrito Del Norte BART. Response-time
-figures are based on the subset of incidents with complete timestamp data
-(88.3% of crime-scope incidents); a small number of long-delay outliers,
-consistent with reports made well after an incident occurred rather than
-an active emergency, were identified and are described in supporting
-project documentation.
+The subseries plot groups the same month across all years, which makes it easier to see whether a month is consistently high or low. A month with a high average but widely scattered values, as with October for parking, reflects a few unusual years rather than a reliable pattern.
+
+```{r}
+#| label: fig-stl
+#| fig-cap: "STL decomposition: each series separated into trend, seasonal, and remainder components."
+#| fig-height: 8
+monthly_stl %>%
+  autoplot() +
+  labs(title = "Trend, seasonal, and remainder components") +
+  theme_report
+```
+
+STL decomposition separates each series into a smooth trend, a repeating yearly pattern, and what is left over. The scale bars on the left of each panel show relative size: when the seasonal component's range is small compared with the trend and the remainder, seasonality plays a minor role.
+
+```{r}
+#| label: fig-acf
+#| fig-cap: "Autocorrelation of monthly counts. A seasonal pattern appears as a spike at lag 12."
+#| fig-height: 6
+monthly_ts %>%
+  ACF(n, lag_max = 24) %>%
+  autoplot() +
+  labs(title = "Autocorrelation of monthly counts") +
+  theme_report
+```
+
+Autocorrelation measures how strongly each month resembles the months before it. A yearly pattern shows up as a spike at lag 12. For parking and property crime, where a strong trend is present, autocorrelation is high at every lag, which reflects the trend rather than seasonality; the STL results above are the better guide for those two series.
+
+```{r}
+#| label: tbl-seasonal-strength
+#| tbl-cap: "Seasonal and trend strength (0 = none, 1 = the series is entirely that component), with peak and low months from the STL seasonal component."
+strength <- monthly_ts %>%
+  features(n, feat_stl) %>%
+  select(series, trend_strength, seasonal_strength_year)
+
+peaks <- monthly_stl %>%
+  as_tibble() %>%
+  mutate(month_name = month(month, label = TRUE, abbr = FALSE)) %>%
+  group_by(series, month_name) %>%
+  summarize(effect = mean(season_year), .groups = "drop") %>%
+  group_by(series) %>%
+  summarize(peak = as.character(month_name[which.max(effect)]),
+            low  = as.character(month_name[which.min(effect)]),
+            .groups = "drop")
+
+strength %>%
+  left_join(peaks, by = "series") %>%
+  mutate(across(where(is.numeric), ~ round(.x, 2))) %>%
+  rename(Series = series, `Trend strength` = trend_strength,
+         `Seasonal strength` = seasonal_strength_year,
+         `Peak month` = peak, `Low month` = low)
+```
+
+Seasonal effects are modest compared with the trends. For property crime, the largest seasonal effect is about `r ss("Property crime", "swing")`% of an average month, with a peak in `r ss("Property crime", "peak")` and a low in `r ss("Property crime", "low")`; the long decline matters far more than the season. For crimes against persons, the largest seasonal effect is about `r ss("Crimes against persons", "swing")`% of an average month, with a peak in `r ss("Crimes against persons", "peak")` and a low in `r ss("Crimes against persons", "low")`, but with about `r ss("Crimes against persons", "avg")` reports a month some of that variation is chance. For parking, the peak month (`r ss("Parking", "peak")`) is an average over years that differed a great deal, so it should not be read as a reliable annual pattern; the decomposition assumes the same seasonal shape every year, which fits parking poorly.
+
+### Day of the week
+
+```{r}
+#| label: fig-weekday-subseries
+#| fig-cap: "Daily counts grouped by day of the week, July 2019 through June 2026. Blue lines show each day's average."
+#| fig-height: 6
+daily_ts %>%
+  gg_subseries(n, period = "week") +
+  labs(title = "Daily counts by day of the week", x = NULL, y = "Per day") +
+  theme_report
+```
+
+```{r}
+#| label: fig-weekday-share
+#| fig-cap: "Share of each fiscal year's records by day of the week. The dashed line is an even split (14.3% per day)."
+#| fig-height: 7
+ggplot(weekday_share, aes(weekday, pct / 100, color = fy_label, group = fy_label)) +
+  geom_line() +
+  geom_point(size = 1) +
+  geom_hline(yintercept = 1 / 7, linetype = "dashed", color = "grey50") +
+  facet_wrap(~ series, ncol = 1, scales = "free_y") +
+  scale_y_continuous(labels = percent) +
+  labs(title = "Day of the week, by fiscal year", x = NULL,
+       y = "Share of the year", color = NULL) +
+  theme_report
+```
+
+```{r}
+#| label: tbl-weekday
+#| tbl-cap: "Share of each fiscal year's records by day of the week (%)."
+weekday_share %>%
+  select(Series = series, Year = fy_label, weekday, pct) %>%
+  mutate(pct = round(pct, 1)) %>%
+  pivot_wider(names_from = weekday, values_from = pct)
+```
+
+Property crime reports are steady from year to year: each weekday takes 14% to 17% of the year's reports and weekends 9% to 12%. Because these are reporting times, the lower weekend share may reflect when thefts are reported as much as when they occur. Crimes against persons shows no stable weekly pattern; with about 500 reports a year, shifts of three to six percentage points from one year to the next are consistent with chance. Parking follows an enforcement schedule rather than a natural pattern, and the schedule has changed from year to year. In FY 2021-22 and FY 2025-26 almost no tickets were written on weekends, while in FY 2022-23, 31% were written on Fridays.
+
+### Hour of the day
+
+```{r}
+#| label: fig-hour-share
+#| fig-cap: "Share of each fiscal year's records by hour of the day."
+#| fig-height: 7
+ggplot(hour_share, aes(hour, pct / 100, color = fy_label, group = fy_label)) +
+  geom_line() +
+  facet_wrap(~ series, ncol = 1, scales = "free_y") +
+  scale_x_continuous(breaks = seq(0, 21, 3),
+                     labels = c("Midnight", "3 a.m.", "6 a.m.", "9 a.m.",
+                                "Noon", "3 p.m.", "6 p.m.", "9 p.m.")) +
+  scale_y_continuous(labels = percent) +
+  labs(title = "Hour of the day, by fiscal year", x = NULL,
+       y = "Share of the year", color = NULL) +
+  theme_report
+```
+
+```{r}
+#| label: tbl-hour
+#| tbl-cap: "Busiest and quietest hour by series and fiscal year (hour 0 = midnight to 1 a.m.)."
+hour_share %>%
+  group_by(series, fy_label) %>%
+  summarize(`Busiest hour`  = hour[which.max(pct)],
+            `Busiest share (%)` = round(max(pct), 1),
+            `Quietest hour` = hour[which.min(pct)],
+            `Quietest share (%)` = round(min(pct), 1),
+            .groups = "drop") %>%
+  rename(Series = series, Year = fy_label)
+```
+
+Crimes against persons are least often reported around 4 a.m. and most often in the mid to late afternoon, and the curves for all seven years lie nearly on top of one another. Property crime reports rise sharply at 8 a.m. and stay high until about 4 p.m.; because these are the times reports were made, this likely reflects when people discover and report thefts rather than when thefts occur. Parking tickets follow a daytime work schedule, concentrated between 7 a.m. and 4 p.m. In FY 2019-20 a noticeable share of tickets was written overnight; in recent years almost none are.
+
+## Observations on the data
+
+The following observations may be useful to the department's records management. They are offered as practical notes from working with the data closely, and several also affected how this analysis had to be done.
+
+The Excel export was a substantial improvement over PDF reports. It eliminated a time-consuming extraction step and the errors that come with it, and its dates arrive as true date-and-time values. The FY 2025-26 data also corrected spelling errors in call-type names that appeared in earlier records, such as "VEHCILE PARTS THEFT."
+
+Some locations are recorded in forms that mapping software cannot place. These include shorthand such as "SPA/BRIGHTON" for San Pablo Avenue at Brighton Avenue, typographical variants such as "JACK N BOX & CUJTTING," and named places without a street address, such as "HARDING PARK" and "ECPD." About 2.5% of FY 2025-26 records could not be placed on a map. Most of these were recorded in forms like those above; the rest were genuine locations outside El Cerrito. Recording a street address or a full intersection would make these records usable for location analysis.
+
+The Ohlone Greenway is recorded under several names, including "BART PATH" in earlier years and "OHLONE GREENWAY" and "OHLONE TRL" more recently, and 99 FY 2025-26 records name the greenway without a cross street. A standard name, together with the nearest cross street, would make greenway activity easier to measure over time.
+
+The time of first officer arrival is missing for 19.9% of FY 2025-26 records. In the earlier records, a few show response times that are not possible, such as a first arrival recorded before the call was received, or one of more than two days. Both limit response-time analysis.
+
+In the FY 2025-26 export, addresses for sensitive call types are generally shown at the block level rather than removed, which preserves their value for neighborhood-level analysis. A small number of records in these categories appear with full addresses, which may be worth reviewing.
+
+## Technical appendix: data processing and quality control
+
+This section describes how the data were processed. Every step is implemented in a single R script with explicit verification checks; each check prints a result, and the expected and actual values are recorded in the code. The code for every chart on this page can be shown with the "Show code" buttons.
+
+### Sources and structure
+
+The records through June 2025 came from 13 half-year PDF reports, which begin in January 2019, extracted to seven spreadsheets. Two extraction defects were found and corrected: some addresses were truncated where they wrapped across a line in the PDF, and the first one or two rows on nearly every page were initially dropped. Both were caught by extracting the data a second, independent way, comparing the two versions with each other and with the raw PDF text, and checking all 13 files. Combining the files produced 137,570 rows. Removing blank rows and duplicate records, most of them at the boundaries between files, left 137,194 records with unique event numbers. Line breaks inside address fields, left by the PDF extraction, were removed. Records from January through June 2019 were used in the data checks described here but are outside the report's fiscal-year period.
+
+The FY 2025-26 export contained 23,118 records in the same six columns. Integrity checks confirmed no duplicate event numbers, no records overlapping the earlier period, and no missing values except in the first-arrival time.
+
+### Harmonizing the two sources
+
+Several differences between the sources had to be reconciled before the periods could be compared.
+
+Dates in the earlier data were text recorded to the minute; the new export has true date-times with seconds. The new times were rounded down to the minute so that response times are measured the same way in both periods.
+
+Call types are matched by exact text, so a renamed category would silently drop out of any analysis. A comparison of every call-type name across the two periods found three new names. One was the corrected spelling "VEHICLE PARTS THEFT," which was mapped to its earlier misspelled form so that both periods are counted; the other two were new non-crime categories.
+
+Location text also changed format. The new export records addresses in a long form such as "SAN PABLO AVE & POTRERO AVE, SAN PABLO AVE & POTRERO AVE (SPA & POTRERO), EL CERRITO, CA, 94530." Each address was reduced to its street portion and the city was re-attached; unincorporated county addresses were given their ZIP code instead of a city; and department shorthand was expanded using the same rules applied to the PDF records. This reduced 7,234 distinct address strings to 5,185 to be geocoded.
+
+Addresses for sensitive call types were blank in the earlier data but block-level in the new export. The 17 call types that were 90% or more blank in the earlier data are excluded from the landmark comparisons in both periods so that the two are measured on the same basis. They remain in all counts that do not use location.
+
+### Geocoding
+
+Addresses were converted to coordinates with the ArcGIS geocoder through the tidygeocoder R package. An initial geocoding pass showed that the geocoder's confidence score indicates only that it found a text match, not that the match is correct: without constraints, "SAN PABLO/PANAMA" matched the country of Panama and "CREEKSIDE PARK" a park in Australia, both with perfect scores. Every request for the FY 2025-26 records was therefore restricted to a Bay Area bounding box from the start.
+
+Geocoded locations then passed through three quality rules. First, any location more than five miles from the center of El Cerrito was excluded; the 85 records excluded this way were at genuine locations in other cities, such as Martinez and San Francisco. Second, when the geocoder cannot match an address inside the bounding box, it can return a generic local point that passes a distance test. These fallback points were identified as single coordinates shared by 20 or more different address strings, and 157 records on two such points were excluded. Third, addresses with no house number and no cross street, such as "KEARNEY ST" or "HARDING PARK," can only be placed at an arbitrary point on a street. A review of shared coordinates found such records placed up to two miles from their actual location, so all 434 were excluded from maps. After these rules, 22,532 FY 2025-26 records (97.5%) had usable locations, compared with 96.9% in the earlier data.
+
+Landmark checks also found that a correct, perfect-score match can still be wrong in the reference data: Korematsu Middle School's address matched the school's former location, and its coordinate was corrected by hand from an independent source. Madera Elementary was checked against a hand-pulled coordinate and found to be within normal variance.
+
+### The cross-street correction
+
+About 19% of the PDF records give a location in the form "house number and street, followed by the nearest intersection," for example "6400 CUTTING BLVD, SAN PABLO AVE & KEARNEY ST." For most of these, the geocoder placed the record at the correct address. For 287 addresses covering 1,493 records, it placed the record at the intersection instead. The most affected location was Del Norte BART, where 95% of station records had been placed about 3,400 feet from the station.
+
+| Landmark | All activity, before correction | After correction | Crime-related, before | After |
+|:--|--:|--:|--:|--:|
+| Del Norte BART | 557 | 953 | 194 | 259 |
+| Community Center | 1,802 | 1,841 | 381 | 386 |
+| El Cerrito High School | 1,235 | 1,248 | 324 | 329 |
+| Library | 1,029 | 989 | 296 | 290 |
+
+These counts cover all of the PDF records, January 2019 through June 2025. The problem was found by comparing, for every house address that appears in both periods, the earlier coordinate with the new one. Of 16,170 matched records, the median difference was zero, but 9.2% differed by more than 500 feet. The differences were concentrated: 287 addresses accounted for all of them, and the top 10 accounted for 43%. The newer coordinates were validated against verified landmark coordinates for every address near a landmark, and against a Google Maps check for the largest remaining address, where the new coordinate was 54 feet from the actual location and the old one 1,015 feet. The comparison was limited to El Cerrito addresses, because an initial version that did not apply this limit matched a Pinole address to a street of the same name in El Cerrito. About 10,000 records in this address form have no counterpart in the new data and could not be checked; in the matched sample, 91% were within 500 feet.
+
+### Categories and fiscal years
+
+All 144 call types were assigned to the seven reader categories and to subcategories. Checks confirmed that every call type in both periods has exactly one assignment and that the mapping contains no unused entries. The maps and landmark tables in the section on where activity happens use a separate 52-type list of crime-related calls. It excludes administrative activity such as security checks and traffic stops, and financial crimes such as identity theft, which are usually logged at the victim's home rather than where a crime occurred. It includes some non-crime activity, most notably parking violations. One type is spelled differently in the two sources ("VEHCILE PARTS THEFT" and "VEHICLE PARTS THEFT"); both spellings are counted.
+
+### Seasonal analysis
+
+Monthly series were built as tsibble objects with gaps filled as zeros, and each was confirmed to contain all 84 months from July 2019 through June 2026. Seasonal and trend strength were measured with STL decomposition (feasts::feat_stl), and peak and low months were read directly from the seasonal component. Year-to-year comparisons of weekday and hourly patterns use each year's percentage distribution, so that years with different volumes can be compared on shape. A check for placeholder timestamps found only 0.02% of records at exactly midnight, well within normal.
+
+### Limitations
+
+Records reflect what was reported and logged, not verified events. Changes in reporting behavior, recording practice, or data format can affect counts. Categories are the analyst's assignments. Locations are approximate, some records could not be mapped, and the "next to the greenway" measure captures only records where the greenway was noted as a cross street. Times are when calls were received, not when incidents occurred. Several subcategories have small annual counts, where year-to-year changes may reflect chance.
+
+### Tools
+
+R 4.x with tidyverse, readxl, tidygeocoder, geosphere, sf, ggspatial, ggrepel, and fpp3 (tsibble, feasts, fable). The pipeline script contains every processing step and verification check described here.

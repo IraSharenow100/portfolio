@@ -12,17 +12,16 @@ section works directly from the underlying incident records themselves.
 ## Police
 
 A full analysis of every police incident logged from January 2019 through
-June 2025 -- what officers actually spend their time on, where activity
-concentrates geographically, how it has changed over time, and how
-quickly the department responds. Includes a detailed technical appendix
+June 2026 -- seven fiscal years of records. It covers what officers
+actually spend their time on, how crime reports and parking enforcement
+have changed, where activity concentrates geographically, activity on the
+Ohlone Greenway, how quickly the department responds, and seasonal
+patterns by month, day, and hour. Includes a detailed technical appendix
 documenting how the underlying dataset was built, cleaned, and verified,
 including several real data-quality issues that were found and corrected
 along the way.
 
 [Read the full analysis &rarr;](police.qmd)
-
-A second analysis, covering July 2025 through June 2026, will be added
-once that data is available.
 
 ## Fire
 
