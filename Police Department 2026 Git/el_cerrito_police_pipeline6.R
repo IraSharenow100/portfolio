@@ -2505,3 +2505,4 @@ parking_points %>%
        subtitle = "Share of each fiscal year's tickets, by weekday and hour",
        x = "Hour (0 = midnight)", y = NULL, fill = "% of year") +
   theme_minimal()
+

@@ -13,3 +13,5 @@
 # Raw police records and geocoding files: kept on this computer only.
 # They include addresses for some sensitive call types.
 Police Department 2026 Git/Police Data/
+
+**/*.quarto_ipynb

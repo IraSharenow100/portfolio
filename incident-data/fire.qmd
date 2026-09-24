@@ -1,14 +1,897 @@
 ---
-title: "Fire Incident Data"
-subtitle: "In Progress"
+title: "El Cerrito Fire Department Incident Data, 2017--2025"
+subtitle: "Calls, response times, mutual aid, and workload, from the department's incident records"
+author: "Ira Sharenow"
+date: last-modified
+toc: true
+toc-depth: 2
+code-tools: true
+execute:
+  freeze: auto
 ---
 
-An incident-level analysis of El Cerrito fire and EMS calls, following
-the same methodology as the [police incident analysis](police.qmd) --
-data verification, geocoding, geographic and time-trend analysis, and
-response times -- is planned but not yet complete.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 7.5, fig.height = 5, fig.align = "center")
 
-This page will be updated once that analysis is available. In the
-meantime, see the [Public Safety](../public-safety/fire/index.qmd)
-section for fire department organization, staffing, and budget
-information.
+library(knitr)
+library(kableExtra)
+options(knitr.kable.NA = "—")
+
+# The full analysis (loading, cleaning, every check, and every table)
+# lives in a separate script. Sourcing it builds the objects used here.
+fire_script_candidates <- c(
+  "D:/Documents/Employment/2026 job search/GitHub/portfolio/Fire Department 2026 Git/el_cerrito_fire_analysis.R",
+  "D:/Documents/Employment/2026 job search/GitHub/portfolio/Fire Department 2026 Git/Fire Data/el_cerrito_fire_analysis.R"
+)
+fire_script <- fire_script_candidates[file.exists(fire_script_candidates)][1]
+if (is.na(fire_script)) {
+  stop("Fire analysis script not found. Checked:\n",
+       paste(fire_script_candidates, collapse = "\n"))
+}
+
+owd <- getwd()
+invisible(capture.output(source(fire_script, echo = FALSE)))
+setwd(owd)
+
+# Display helpers
+dept_name <- c("07040" = "El Cerrito FD", "07095" = "Richmond FD", "01010" = "Albany FD")
+year_label <- function(y) if_else(y == 2025, "2025*", as.character(y))
+
+tbl <- function(df, caption, ...) {
+  kable(df, caption = caption, format.args = list(big.mark = ","), ...) |>
+    kable_styling(bootstrap_options = c("striped", "condensed", "hover"),
+                  full_width = FALSE)
+}
+```
+
+## Summary
+
+This report describes El Cerrito Fire Department incident records from January 2017 through April 2025, with short sections on the newer records for 2025 and 2026. It covers calls by station, how long it took the first fire truck to arrive, mutual aid between El Cerrito and its neighbors, and station workload. It states what the records show. Where the records are incomplete, the shortcoming is noted next to the numbers it affects. The data shows patterns; it does not show their causes.
+
+The main findings:
+
+-   **Response times rose over the period.** In El Cerrito, the median time from dispatch to the first fire truck's arrival rose from 4.58 minutes in 2017 to 5.38 minutes in 2024. In Kensington, it rose from 4.82 minutes in 2018 to 7.80 minutes in 2023 and 7.68 minutes in 2024. For January--April 2025, the medians were 5.53 minutes (El Cerrito) and 5.47 minutes (Kensington). Arrival times are recorded on only 61--66% of El Cerrito fire-unit records.
+-   **In Kensington, Station 55 was first on scene less often in 2023 and 2024.** Its share of first arrivals was 88--94% from 2017 to 2022, then 81% in 2023 and 86% in 2024.
+-   **About a quarter of El Cerrito station hours were spent outside El Cerrito and Kensington.** From 2017 to April 2025, 24.6% of the hours units from Stations 51, 52, and 55 spent on incidents were outside the two communities, most of it in Richmond.
+-   **Another department's truck rarely arrived first in El Cerrito or Kensington.** This happened in 1.0% of El Cerrito emergencies and 1.2% of Kensington emergencies. The count is limited by missing Richmond arrival times.
+-   **Some changes in the counts reflect how calls were coded.** A spike in code 900 "Special incident type, other" (575 incidents in 2023) and a shift among three codes for the same kind of medical assist call affect the call-type trends.
+
+Battalion Chief Jose Castrejon answered questions about the data in emails of September 23 and 24, 2026. His explanations are cited where they apply.
+
+## The data
+
+### Sources
+
+The analysis uses five sources:
+
+-   **Original export (main source).** A National Fire Incident Reporting System (NFIRS) export, one row per responding unit, January 2017 through March or April 2025: 163,384 rows. It includes three departments: El Cerrito (FDID 07040, which also serves Kensington), Richmond (07095), and Albany (01010).
+-   **New NFIRS file.** El Cerrito only, one row per incident, calendar years 2023--2025: 11,904 rows.
+-   **NERIS file.** El Cerrito only, from the new National Emergency Response Information System, February 1 to about September 23, 2026: 4,781 rows.
+-   **City dashboard reports** for 2025 (NFIRS) and 2026 (NERIS), generated September 23, 2026.
+-   **Emails from Battalion Chief Castrejon,** September 23 and 24, 2026.
+
+Unless a section says otherwise, the numbers come from the original export.
+
+### How the records were prepared
+
+**Stations were renumbered.** Stations 71, 72, and 65 became Stations 51, 52, and 55. The Fire Department said the change was made in the dispatch system on April 1, 2023, which matches the data. This report uses the new numbers for all years.
+
+**Ambulances are left out.** The Fire Department explained that ambulances are provided through AMR, that "M" units are ambulances, and that El Cerrito Fire does not transport patients. Ambulance and basic life support units (apparatus types 75 and 76) are removed from all counts, response times, and hours. The same rule applies to all three departments. This removed 5,078 El Cerrito rows, 1,454 Albany rows, and 2 Richmond rows.
+
+**Some records were excluded or treated as missing.**
+
+-   *Blank times.* Blank times in the old system were stored as the date December 31, 1899. These are treated as missing. The Fire Department does not know why the old system did this.
+-   *Negative response times.* Five incidents with negative response times are excluded. The Fire Department explained that some incidents do not come through 911, for example when a crew is flagged down.
+
+**Each report has its own ID.** Incident numbers repeat across years and across departments. Richmond's numbers carry no year prefix. Each report is therefore identified by its database ID, which is unique to one department's report.
+
+### Two ways to count: by station and by location
+
+Tables in this report use one of two scopes, and each table says which:
+
+-   **Station-scoped** tables count every call a station's units went to, wherever it was.
+-   **Location-scoped** tables count every call at a place (El Cerrito, Kensington, or Richmond), whichever department responded.
+
+Station 55's home area is Kensington and El Cerrito. For Stations 51 and 52, the home area is El Cerrito.
+
+### Reports and emergencies
+
+When two departments respond to the same emergency, each files its own report, under its own number. Nothing in the export links the two. For the response-time and mutual aid sections, reports at the same place within 10 minutes of each other were merged into one emergency (see [Linking reports](#linking-reports)). The "response time" of an emergency is the time from the first unit dispatched to the first fire truck arriving, from any department. A call canceled en route (code 611) does not count as an arrival.
+
+### Response time: two definitions
+
+This report measures response time from **unit dispatch to unit arrival.** The city's dashboard measures from the moment a 911 call reaches the public safety answering point (CHP, Richmond Police, or Albany Police dispatch) to arrival. The Fire Department described this clock. The city's figures start earlier, so the two cannot be compared directly. Times in the tables are in decimal minutes: 5.50 minutes is 5 minutes 30 seconds.
+
+## Calls by station
+
+```{r station-calls}
+station_calls |>
+  left_join(fire_units |> distinct(incident_key, incident_year), by = "incident_key") |>
+  count(fdid, station_code, incident_year) |>
+  mutate(incident_year = year_label(incident_year)) |>
+  pivot_wider(names_from = incident_year, values_from = n, values_fill = 0) |>
+  mutate(Department = unname(dept_name[fdid])) |>
+  select(Department, Station = station_code, everything(), -fdid) |>
+  tbl("Table 1. Incidents per station per year (station-scoped; fire units only) [script Table 2.1]")
+```
+
+\*2025 covers January--April for El Cerrito stations (Station 51 through April 30; Stations 52 and 55 through March 31) and January--March for Richmond.
+
+Station 51 answered the most calls of the three El Cerrito stations each year, 2,200 to 2,802. All three El Cerrito stations reached their highest counts in 2023. Part of the 2023 peak comes from code 900 incidents (see [Trends and seasonal patterns](#trends-and-seasonal-patterns)). Richmond stations are shown for context. Albany is not shown because its stations are outside the station analysis.
+
+## Response times
+
+All tables in this section are **location-scoped**. They show the first fire truck from any department (see [Reports and emergencies](#reports-and-emergencies)).
+
+::: callout-note
+## Data shortcomings for response times
+
+-   **Missing arrival times.** Only 61--66% of El Cerrito fire-unit rows have an arrival time, depending on the year. It is not known whether the missing rows differ from the rest.
+-   **Richmond has no arrival times** in 2018 or 2022--2025. It has partial coverage (37--65% of rows) in 2017 and 2019--2021.
+-   **Unreviewed long times.** 43 station-scoped home calls (0.10%) show response times over 30 minutes, up to 208 minutes. They were not reviewed one by one and are included. Medians are little affected by a few extreme values.
+-   **2025 is partial:** January--April only.
+:::
+
+### El Cerrito and Kensington, by year
+
+```{r rt-helper}
+rt_table <- function(df) {
+  df |>
+    filter(incident_city_clean %in% c("EL CERRITO", "KENSINGTON"),
+           !is.na(response_min), response_min >= 0) |>
+    group_by(incident_city_clean, incident_year) |>
+    summarize(n = n(),
+              med = round(median(response_min), 2),
+              p90 = round(quantile(response_min, 0.9), 2),
+              .groups = "drop") |>
+    mutate(city = if_else(incident_city_clean == "EL CERRITO", "ec", "ken"),
+           Year = year_label(incident_year)) |>
+    select(Year, city, n, med, p90) |>
+    pivot_wider(names_from = city, values_from = c(n, med, p90)) |>
+    select(Year, n_ec, med_ec, p90_ec, n_ken, med_ken, p90_ken)
+}
+
+rt_kable <- function(df, caption) {
+  df |>
+    kable(caption = caption, format.args = list(big.mark = ","),
+          col.names = c("Year", "Emergencies", "Median", "90th percentile",
+                        "Emergencies", "Median", "90th percentile")) |>
+    kable_styling(bootstrap_options = c("striped", "condensed", "hover"),
+                  full_width = FALSE) |>
+    add_header_above(c(" " = 1, "El Cerrito" = 3, "Kensington" = 3))
+}
+```
+
+```{r table-3c1}
+emergencies |>
+  rt_table() |>
+  rt_kable("Table 2. Minutes from dispatch to first truck, all calls (location-scoped; any department) [script Table 3C.1]")
+```
+
+```{r fig-rt-year}
+#| fig-cap: "Figure 1. Median minutes from dispatch to first truck, 2017–2024 (location-scoped; any department). 2025 is left out because it covers January–April only."
+emergencies |>
+  filter(incident_city_clean %in% c("EL CERRITO", "KENSINGTON"),
+         incident_year <= 2024, !is.na(response_min), response_min >= 0) |>
+  group_by(City = str_to_title(incident_city_clean), incident_year) |>
+  summarize(median_min = median(response_min), .groups = "drop") |>
+  ggplot(aes(incident_year, median_min, color = City)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  scale_x_continuous(breaks = 2017:2024) +
+  labs(x = NULL, y = "Median minutes", color = NULL) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "top")
+```
+
+In El Cerrito, the median rose every year from 2017 to 2024: from 4.58 to 5.38 minutes. Over the same period, the 90th percentile rose from 6.97 to 8.35 minutes. In Kensington, the median was 4.82 minutes in 2018, then rose each year to 7.80 minutes in 2023; it was 7.68 minutes in 2024. For January--April 2025, the Kensington median was 5.47 minutes, based on 107 emergencies.
+
+### Home medical calls
+
+```{r table-3c2}
+emergencies |>
+  filter(response_group == "Medical emergency (home)") |>
+  rt_table() |>
+  rt_kable("Table 3. Minutes from dispatch to first truck, home medical calls (code 321) only (location-scoped; any department) [script Table 3C.2]")
+```
+
+Home medical calls show the same pattern. In El Cerrito, the median rose from 4.37 minutes (2017) to 5.17 minutes (2024). In Kensington, it rose from 4.72 minutes (2018) to 7.83 minutes (2024).
+
+### Check: code 900 calls
+
+Code 900 "Special incident type, other" calls rose sharply in 2022--2024 (see [Trends and seasonal patterns](#trends-and-seasonal-patterns)). Table 4 repeats Table 2 without them.
+
+```{r table-3c4}
+emergencies |>
+  filter(coalesce(incident_type_num, 0L) != 900L) |>
+  rt_table() |>
+  rt_kable("Table 4. Table 2 without code 900 calls (location-scoped; any department) [script Table 3C.4]")
+```
+
+Leaving out code 900 calls changes the El Cerrito medians by 0.1 minute or less and the Kensington medians not at all. The rise in response times does not come from these calls.
+
+### Kensington: whose truck arrived first
+
+```{r table-4-1}
+kensington_first_station |>
+  mutate(first_unit = case_when(
+    fdid == "07040" & station_code %in% c("51", "52", "55") ~ paste("Station", station_code),
+    fdid == "07095" ~ "Richmond FD",
+    TRUE ~ "Other")) |>
+  count(incident_year, first_unit) |>
+  group_by(incident_year) |>
+  mutate(pct = round(100 * n / sum(n), 1)) |>
+  ungroup() |>
+  select(-n) |>
+  pivot_wider(names_from = first_unit, values_from = pct, values_fill = 0) |>
+  mutate(Year = year_label(incident_year)) |>
+  select(Year, any_of(c("Station 55", "Station 51", "Station 52", "Richmond FD", "Other"))) |>
+  tbl("Table 5. Kensington: first unit to arrive, percent of reports (location-scoped; fire units only) [script Table 4.1]")
+```
+
+Station 55 is in Kensington. From 2017 to 2022, its unit arrived first at 88--94% of Kensington reports. In 2023 that share was 81.4%, and Station 51's share rose to 9.8%. In 2024 the shares were 86.0% and 7.4%. These are the same years Kensington response times rose (Table 2). The records do not show why the first-arriving station changed.
+
+**Data shortcomings:**
+
+-   The Richmond column shows 0% in 2018 and 2022--2025 because Richmond arrival times are missing in those years, not necessarily because no Richmond truck arrived first.
+-   This table counts reports, not merged emergencies, and uses only reports with an arrival time.
+
+### El Cerrito, Kensington, and Richmond compared
+
+Richmond response times can be measured only in 2017, 2019, 2020, and 2021. Table 6 compares the three communities for those four years combined.
+
+```{r table-3c3}
+emergencies |>
+  filter(incident_year %in% compare_years, !is.na(response_min),
+         response_min >= 0, !is.na(response_group)) |>
+  group_by(incident_city_clean, response_group) |>
+  summarize(n = n(),
+            med = round(median(response_min), 2),
+            p90 = round(quantile(response_min, 0.9), 2),
+            .groups = "drop") |>
+  mutate(city = recode(incident_city_clean, "EL CERRITO" = "ec",
+                       "KENSINGTON" = "ken", "RICHMOND" = "ric")) |>
+  select(-incident_city_clean) |>
+  pivot_wider(names_from = city, values_from = c(n, med, p90)) |>
+  select(response_group, n_ec, med_ec, p90_ec, n_ken, med_ken, p90_ken,
+         n_ric, med_ric, p90_ric) |>
+  arrange(desc(n_ec)) |>
+  kable(caption = "Table 6. Minutes from dispatch to first truck by call type, 2017 and 2019–2021 combined (location-scoped; any department) [script Table 3C.3]",
+        format.args = list(big.mark = ","),
+        col.names = c("Call type", rep(c("n", "Median", "90th pct."), 3))) |>
+  kable_styling(bootstrap_options = c("striped", "condensed", "hover"),
+                full_width = FALSE, font_size = 13) |>
+  add_header_above(c(" " = 1, "El Cerrito" = 3, "Kensington" = 3, "Richmond" = 3))
+```
+
+For home medical calls in these four years, the median was 4.53 minutes in El Cerrito (2,984 emergencies), 5.30 minutes in Kensington (706), and 5.90 minutes in Richmond (16,319).
+
+**Data shortcomings:**
+
+-   Richmond arrival times are recorded on only 37--65% of Richmond rows in these years.
+-   Rows with fewer than about 20 emergencies are too few to compare. This includes Kensington's "Severe weather/natural disaster" row: 2 emergencies, median 0.04 minutes.
+
+## Mutual aid
+
+Neighboring fire departments help each other. **Automatic aid** is sent under a standing agreement; **mutual aid** is requested for a specific incident. This section describes what the records show about help between El Cerrito, Kensington, Richmond, and Albany. It uses the original export, January 2017 to April 2025.
+
+### How departments recorded aid
+
+Each report carries an aid code. Table 7 shows the reports located in El Cerrito and Kensington, by department and aid code.
+
+```{r table-1b-g}
+fire |>
+  filter(incident_city_clean %in% c("EL CERRITO", "KENSINGTON")) |>
+  distinct(incident_key, fdid, incident_city_clean, incident_aid_type) |>
+  mutate(aid = str_remove(incident_aid_type, "^\\S+ - "),
+         City = str_to_title(incident_city_clean),
+         Department = unname(dept_name[fdid])) |>
+  count(City, Department, aid) |>
+  pivot_wider(names_from = aid, values_from = n, values_fill = 0) |>
+  mutate(Total = rowSums(across(where(is.numeric)))) |>
+  select(City, Department, Total,
+         any_of(c("None", "Automatic Aid Given", "Automatic Aid Received",
+                  "Mutual Aid Given", "Mutual Aid Received"))) |>
+  arrange(City, desc(Total)) |>
+  tbl("Table 7. Reports located in El Cerrito and Kensington, by department and aid code (location-scoped; all units) [script Phase 1B, check g]")
+```
+
+Some notes on how these codes were used:
+
+-   **Kensington calls are coded "automatic aid given."** El Cerrito coded 3,032 of its 3,370 Kensington reports this way. The Fire Department explained that this was the old system's way of tracking how many incidents happened in Kensington, so these are not help given to another department. The city's 2025 "automatic aid given" totals also include Kensington calls.
+-   **El Cerrito marked 1,500 of its El Cerrito reports "aid received,"** meaning another department also came.
+-   **The code is sometimes "automatic aid given" at an El Cerrito address.** El Cerrito coded 661 reports located in El Cerrito this way. Of these, 588 carry El Cerrito's ZIP code, 94530, so they are not Kensington calls with El Cerrito addresses. By year: 229 (2017), 139 (2018), then 19 to 63 a year. The meaning of these records is not documented.
+
+### Linking reports {#linking-reports}
+
+Because each department files its own report, the analysis links reports by location and time. Two reports in the same city with alarm times within 10 minutes are treated as one emergency.
+
+```{r table-1b-i}
+host_recv |>
+  left_join(aid_links |> count(host_key, name = "n_matches"), by = "host_key") |>
+  mutate(n_matches = replace_na(n_matches, 0),
+         Match = case_when(n_matches == 0 ~ "No matching report",
+                           n_matches == 1 ~ "One matching report",
+                           TRUE ~ "Two or more")) |>
+  count(City = str_to_title(incident_city_clean), Match) |>
+  pivot_wider(names_from = Match, values_from = n, values_fill = 0) |>
+  tbl("Table 8. El Cerrito \"aid received\" reports: is there an \"aid given\" report from Richmond or Albany within 10 minutes? (location-scoped; all units) [script Phase 1B, check i]")
+```
+
+```{r table-1b-k}
+host_recv |>
+  inner_join(aid_given, by = "incident_city_clean", relationship = "many-to-many") |>
+  mutate(gap_min = abs(as.numeric(difftime(aid_alarm, host_alarm, units = "mins")))) |>
+  filter(gap_min <= 60) |>
+  count(`Minutes between alarm times` = cut(gap_min, c(-Inf, 1, 3, 5, 10, 20, 30, 60),
+                                            labels = c("1 or less", "1–3", "3–5", "5–10",
+                                                       "10–20", "20–30", "30–60")),
+        name = "Report pairs") |>
+  tbl("Table 9. Time between linked alarm times, up to 60 minutes [script Phase 1B, check k]")
+```
+
+For matched pairs, the median gap between alarm times was 2.9 minutes, and most gaps were 1 to 5 minutes. The count drops off after 10 minutes, which supports the 10-minute window.
+
+**Data shortcomings:**
+
+-   **Most "aid received" reports have no partner report.** 1,046 of the 1,500 El Cerrito "aid received" reports (70%) have no matching Richmond or Albany report. The helping department may have been one that is not in this export, such as Contra Costa County Fire. That has not been verified.
+-   **Chance matches are possible.** El Cerrito averages about seven calls a day, so an unrelated report can fall inside the 10-minute window by chance. A rough estimate is about 1 time in 10.
+
+### Reports versus emergencies
+
+After linking, the reports at each location reduce to a smaller number of emergencies.
+
+```{r table-3b-1to3}
+em_summary <- emergencies |>
+  group_by(incident_city_clean) |>
+  summarize(Emergencies = n(),
+            `Host dept. only` = sum(has_host & !has_other),
+            `Host and another dept.` = sum(has_host & has_other),
+            `Another dept. only` = sum(!has_host & has_other),
+            `Partner report not found` = sum(partner_missing),
+            .groups = "drop")
+
+loc_reports |>
+  count(incident_city_clean, name = "Reports") |>
+  left_join(em_summary, by = "incident_city_clean") |>
+  mutate(`Not found, %` = round(100 * `Partner report not found` / Emergencies, 1),
+         City = str_to_title(incident_city_clean)) |>
+  select(City, Reports, everything(), -incident_city_clean) |>
+  tbl("Table 10. Reports and emergencies by location, 2017–April 2025 (location-scoped; fire units only) [script Phase 3B, items 1–3]")
+```
+
+The "host" department is El Cerrito for El Cerrito and Kensington, and Richmond for Richmond.
+
+-   **El Cerrito:** 980 emergencies involved both El Cerrito and another department. 709 involved only another department's report.
+-   **Kensington:** 11 involved both, and 196 involved only another department.
+-   **"Partner report not found":** the host department marked another department as helping, but no linked report was found. This is 3.4% of El Cerrito emergencies. For these, the other department's arrival time is unknown.
+
+### Which department's truck arrived first
+
+```{r table-3b-4}
+emergencies |>
+  count(incident_city_clean, first_by) |>
+  group_by(incident_city_clean) |>
+  mutate(pct = round(100 * n / sum(n), 1)) |>
+  ungroup() |>
+  mutate(City = str_to_title(incident_city_clean),
+         first_by = str_to_sentence(first_by),
+         value = paste0(format(n, big.mark = ","), " (", pct, "%)")) |>
+  select(City, first_by, value) |>
+  pivot_wider(names_from = first_by, values_from = value) |>
+  select(City, any_of(c("Own department", "Other department", "No arrival recorded"))) |>
+  tbl("Table 11. First truck to arrive, by department, 2017–April 2025 (location-scoped; fire units only) [script Phase 3B, item 4]")
+```
+
+In El Cerrito, El Cerrito's own truck arrived first in 77.3% of emergencies and another department's truck in 1.0%. In Kensington, the figures were 84.1% and 1.2%. The remainder, 21.7% in El Cerrito and 14.7% in Kensington, have no arrival time recorded. Richmond's 72.3% with no arrival recorded reflects the missing Richmond arrival times.
+
+```{r table-3b-5}
+arrival_cov <- fire_units |>
+  filter(fdid %in% c("07040", "07095")) |>
+  group_by(fdid, incident_year) |>
+  summarize(pct = round(100 * mean(!is.na(apparatus_arrival_time)), 1), .groups = "drop") |>
+  pivot_wider(names_from = fdid, values_from = pct)
+
+emergencies |>
+  filter(incident_city_clean %in% c("EL CERRITO", "KENSINGTON"),
+         first_by != "no arrival recorded") |>
+  count(incident_city_clean, incident_year, first_by) |>
+  mutate(key = paste(if_else(incident_city_clean == "EL CERRITO", "ec", "ken"),
+                     if_else(first_by == "own department", "own", "other"), sep = "_")) |>
+  select(incident_year, key, n) |>
+  pivot_wider(names_from = key, values_from = n, values_fill = 0) |>
+  left_join(arrival_cov, by = "incident_year") |>
+  arrange(incident_year) |>
+  transmute(Year = year_label(incident_year), ec_own, ec_other, ken_own, ken_other,
+            `07040`, `07095`) |>
+  kable(caption = "Table 12. First truck to arrive, by year, with arrival-time coverage (location-scoped; fire units only) [script Phase 3B, item 5, and check o]",
+        format.args = list(big.mark = ","),
+        col.names = c("Year", "Own dept.", "Other dept.", "Own dept.", "Other dept.",
+                      "El Cerrito FD", "Richmond FD")) |>
+  kable_styling(bootstrap_options = c("striped", "condensed", "hover"),
+                full_width = FALSE) |>
+  add_header_above(c(" " = 1, "El Cerrito emergencies" = 2,
+                     "Kensington emergencies" = 2,
+                     "Rows with an arrival time (%)" = 2))
+```
+
+**Data shortcoming:** another department's truck is shown arriving first in El Cerrito in 70, 95, and 47 emergencies in 2019--2021, and 0 to 2 in other years. Kensington shows the same pattern (6, 25, and 11). The high years are years when Richmond arrival times were recorded. The low years are years when they were missing. The year-to-year differences in this column therefore cannot be read as changes in how often another department arrived first.
+
+**How much earlier?** In 34 emergencies, a Richmond truck arrived first in El Cerrito and an El Cerrito truck's arrival time was also recorded. In those cases, the El Cerrito truck arrived a median of 2.89 minutes later:
+
+-   **Mean:** 3.93 minutes
+-   **Middle half:** 0.98 to 5.22 minutes
+-   **Maximum:** 13.7 minutes
+
+The data does not allow this comparison for Kensington. None of the 42 Kensington emergencies where another department arrived first has an El Cerrito arrival time.
+
+### Richmond and Albany reports with no El Cerrito report
+
+Some Richmond and Albany "aid given" reports in El Cerrito and Kensington have no El Cerrito report within 10 minutes. These may be calls the other department handled alone.
+
+```{r table-1b-m}
+aid_check |>
+  mutate(City = str_to_title(incident_city_clean),
+         status = if_else(has_ec_report, "El Cerrito report within 10 min",
+                          "No El Cerrito report")) |>
+  count(City, status) |>
+  pivot_wider(names_from = status, values_from = n, values_fill = 0) |>
+  tbl("Table 13. Richmond and Albany \"aid given\" reports in El Cerrito and Kensington (location-scoped; all units) [script Phase 1B, check m]")
+```
+
+```{r table-1b-solo-year}
+aid_solo |>
+  count(incident_year, City = str_to_title(incident_city_clean)) |>
+  pivot_wider(names_from = City, values_from = n, values_fill = 0) |>
+  arrange(incident_year) |>
+  mutate(Year = year_label(incident_year)) |>
+  select(Year, everything(), -incident_year) |>
+  tbl("Table 14. Richmond and Albany reports with no El Cerrito report, by year [script Phase 1B]")
+```
+
+```{r table-1b-solo-type}
+aid_reports |>
+  mutate(call = if_else(has_ec_report, "With El Cerrito report", "No El Cerrito report")) |>
+  count(`Call category` = incident_category, call) |>
+  pivot_wider(names_from = call, values_from = n, values_fill = 0) |>
+  arrange(desc(`No El Cerrito report`)) |>
+  tbl("Table 15. Richmond and Albany \"aid given\" reports in El Cerrito and Kensington, by call category [script Phase 1B]")
+```
+
+There were 652 such reports: 510 in El Cerrito and 142 in Kensington. Richmond filed 638 and Albany 14.
+
+-   **Which stations:** the first-arriving Richmond truck came most often from Richmond Station 66 (405 reports) and Station 64 (216).
+-   **What kind of call:**
+    -   339 home medical calls (code 321).
+    -   139 were dispatched and canceled en route (code 611). These are not arrivals.
+    -   Smaller numbers of hazards (32), false alarms (31), outside fires (28), and service calls (26).
+    -   Five confined fires and one building fire. Of the 13 building fires in these reports, 12 also had an El Cerrito report.
+
+**Data shortcoming:** of the 142 Kensington reports, 95 carry ZIP code 94805 and 45 carry 94706. Only one carries 94707, and Kensington's usual ZIP codes are 94707 and 94708. The city label on these reports may be wrong. This has not been verified.
+
+### El Cerrito station hours outside El Cerrito and Kensington
+
+This part is **station-scoped:** it covers the hours units from Stations 51, 52, and 55 spent on incidents, wherever the incidents were. "Hours" means time from dispatch to clear for each unit. It excludes three groups of records:
+
+-   Ten records of about 24 hours. The Fire Department said one possible reason is dispatchers clearing their board at shift change; this is not confirmed.
+-   Two multi-week wildland deployments in 2018.
+-   Records with no clear time: 1.5--10% of El Cerrito rows each year.
+
+```{r table-4-outside-year}
+station_busy_hours |>
+  group_by(incident_year, location_scope) |>
+  summarize(hours = sum(time_on_task_min) / 60, .groups = "drop") |>
+  group_by(incident_year) |>
+  mutate(pct = round(100 * hours / sum(hours), 1)) |>
+  ungroup() |>
+  mutate(hours = round(hours, 1),
+         scope = if_else(location_scope == "In EC/Kensington", "in", "out")) |>
+  select(incident_year, scope, hours, pct) |>
+  pivot_wider(names_from = scope, values_from = c(hours, pct)) |>
+  arrange(incident_year) |>
+  transmute(Year = year_label(incident_year), hours_in, hours_out, pct_out) |>
+  kable(caption = "Table 16. Hours on incidents by Stations 51, 52, and 55, by location (station-scoped; fire units only) [script Phase 4, M3]",
+        format.args = list(big.mark = ","),
+        col.names = c("Year", "Hours in EC/Kensington", "Hours outside",
+                      "Outside, % of hours")) |>
+  kable_styling(bootstrap_options = c("striped", "condensed", "hover"),
+                full_width = FALSE)
+```
+
+Over the whole period, 24.6% of these hours (2,851 of 11,613) were outside El Cerrito and Kensington. By year, the share ranged from 19.4% (2023) to 31.0% (2020). Outside hours rose in 2020 and 2021, to 455 and 471 hours, from 358 in 2019. The share rose from 26.1% to 31.0% and 30.7%. The records do not show why.
+
+```{r table-4-destinations}
+station_busy_hours |>
+  filter(call_type == "mutual_aid", incident_city_clean != "KENSINGTON") |>
+  group_by(Location = str_to_title(incident_city_clean)) |>
+  summarize(`Unit responses` = n(), Hours = round(sum(time_on_task_min) / 60, 1),
+            .groups = "drop") |>
+  arrange(desc(Hours)) |>
+  head(10) |>
+  tbl("Table 17. Where the outside hours went: top 10 locations (station-scoped; fire units only) [script Phase 4]")
+```
+
+Richmond accounts for 2,160 of the 2,851 outside hours (6,587 unit responses), then San Pablo (233 hours). Location names are shown as recorded, so a few places appear under more than one spelling in the full list.
+
+```{r table-4-calltype}
+station_busy_hours |>
+  group_by(call_type, response_group) |>
+  summarize(hours = sum(time_on_task_min) / 60, .groups = "drop") |>
+  group_by(call_type) |>
+  mutate(pct = round(100 * hours / sum(hours), 1)) |>
+  ungroup() |>
+  select(-hours) |>
+  pivot_wider(names_from = call_type, values_from = pct, values_fill = 0) |>
+  arrange(desc(mutual_aid)) |>
+  rename(`Call type` = response_group, `Home area, % of hours` = home,
+         `Outside home area, % of hours` = mutual_aid) |>
+  tbl("Table 18. What the hours were spent on, home area vs. outside (station-scoped; fire units only) [script Phase 4]")
+```
+
+Table 18 uses each station's home area. For Stations 51 and 52, that area is El Cerrito, so their Kensington calls count as "outside" here. That is why the outside share is 26% here but 24.6% in Table 16. In the home area, home medical calls took the largest share of hours, 38.5%. Outside it, fires took the largest shares:
+
+-   Vegetation, vehicle, and outside fires: 22.1%
+-   Structure fires: 16.7%
+
+Of the unit responses outside the home area, 36 lasted more than four hours. The longest was about 12.7 hours, at a 2019 vegetation or outside fire recorded in Oakley.
+
+**Wildland deployments.** Two wildland incidents in 2018 lasted weeks: July 26 to August 25 (about 30.5 days) and August 1 to August 19 (about 18 days), both Station 51. They are kept in the counts but left out of the hours. Their dates coincide with the 2018 Mendocino Complex and Carr fires; that link is an inference and has not been confirmed.
+
+## Workload
+
+This section is **station-scoped** and covers the hours units from Stations 51, 52, and 55 spent on incidents, with the exclusions described above.
+
+```{r table-4-time-on-task}
+ec_time_on_task_clean |>
+  filter(!is.na(response_group)) |>
+  group_by(`Call type` = response_group) |>
+  summarize(`Unit responses` = n(),
+            `Median minutes` = round(median(time_on_task_min), 1),
+            `90th percentile` = round(quantile(time_on_task_min, 0.9), 1),
+            .groups = "drop") |>
+  arrange(desc(`Unit responses`)) |>
+  tbl("Table 19. Minutes from dispatch to clear, per unit, by call type (station-scoped; fire units only) [script Phase 4]")
+```
+
+The median home medical call kept a unit busy for 21.8 minutes. For structure fires, the median was 45.6 minutes and the 90th percentile was 162 minutes.
+
+```{r table-4-engine-busy}
+engine_hours |>
+  mutate(Year = year_label(incident_year),
+         Station = paste("Station", station_code)) |>
+  select(Year, Station, pct_busy) |>
+  pivot_wider(names_from = Station, values_from = pct_busy) |>
+  tbl("Table 20. Engine time on incidents as a percent of hours in the year (station-scoped; engines only) [script Phase 4, M4]")
+```
+
+Station 51's engine spent 7.6--9.7% of the hours in each year on incidents. For Stations 52 and 55, the range was 1.9--4.1%.
+
+**Data shortcomings:**
+
+-   **This measures incident time only.** It leaves out training, inspections, maintenance, and administrative work. A low percentage does not mean a unit was idle. The city budget reports 11,725 training hours department-wide in 2023.
+-   **2025 covers January--April only** and is not comparable with full years.
+-   **Leap years.** 2020 and 2024 are divided by 8,784 hours.
+
+```{r table-4-structure}
+station_busy_hours |>
+  filter(response_group == "Structure fire", location_scope == "In EC/Kensington") |>
+  group_by(incident_key) |>
+  summarize(minutes = max(time_on_task_min), .groups = "drop") |>
+  mutate(`Longest unit time (minutes)` =
+           cut(minutes, breaks = c(0, 5, 10, 15, 20, 30, 45, 60, 90, 120, 180, 240, Inf),
+               labels = c("0–5", "5–10", "10–15", "15–20", "20–30", "30–45", "45–60",
+                          "60–90", "90–120", "120–180", "180–240", "240+"),
+               right = TRUE, include.lowest = TRUE)) |>
+  count(`Longest unit time (minutes)`, name = "Incidents") |>
+  mutate(Percent = round(100 * Incidents / sum(Incidents), 1)) |>
+  tbl("Table 21. Structure fires in El Cerrito and Kensington, by longest unit time (location-scoped; El Cerrito units) [script Phase 4]")
+```
+
+Of the 75 structure fires in El Cerrito and Kensington with complete times, 8 (10.7%) kept an El Cerrito unit busy more than four hours.
+
+## Trends and seasonal patterns {#trends-and-seasonal-patterns}
+
+The charts and tables in this section cover January 2017 to December 2024. 2025 is left out because it is partial. Unless noted, they count incidents in El Cerrito and Kensington answered by Stations 51, 52, and 55 (fire units only).
+
+The strength scores in Tables 22--24 come from a standard method that splits a monthly series into trend, seasonal pattern, and remainder. A score of 0 means no trend (or no seasonal pattern); 1 means a very strong one.
+
+::: callout-note
+## April 2020
+
+Home medical calls in April 2020 were 38, compared with a typical 60 to 100 or more. The Bay Area shelter-in-place order, including Contra Costa County, began March 17, 2020 and was extended through May 3, 2020.
+:::
+
+```{r fig-5b1}
+#| fig-cap: "Figure 2. Incidents per month in El Cerrito and Kensington, 2017–2024 (Stations 51, 52, 55; fire units only) [script Figure 5B.1]"
+ec_total |>
+  autoplot(incidents) +
+  labs(x = NULL, y = "Incidents") +
+  theme_minimal(base_size = 12)
+```
+
+```{r fig-5b2}
+#| fig-cap: "Figure 3. Incidents per month, one line per year [script Figure 5B.2]"
+ec_total |>
+  gg_season(incidents, labels = "both") +
+  labs(x = NULL, y = "Incidents") +
+  theme_minimal(base_size = 12)
+```
+
+```{r fig-5b3}
+#| fig-cap: "Figure 4. Each month across the years; the blue line is that month's average [script Figure 5B.3]"
+ec_total |>
+  gg_subseries(incidents) +
+  labs(x = NULL, y = "Incidents") +
+  theme_minimal(base_size = 12)
+```
+
+```{r fig-5b4}
+#| fig-cap: "Figure 5. Incidents per month split into trend, seasonal pattern, and remainder [script Figure 5B.4]"
+#| fig-height: 6
+ec_total |>
+  model(STL(incidents ~ trend(window = 13) + season(window = "periodic"), robust = TRUE)) |>
+  components() |>
+  autoplot() +
+  labs(title = NULL) +
+  theme_minimal(base_size = 12)
+```
+
+```{r fig-5b5}
+#| fig-cap: "Figure 6. Incidents per month by call group [script Figure 5B.5]"
+#| fig-height: 6
+ec_by_group |>
+  autoplot(incidents) +
+  facet_wrap(vars(call_group), scales = "free_y") +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "none") +
+  labs(x = NULL, y = "Incidents")
+```
+
+```{r fig-5b6}
+#| fig-cap: "Figure 7. Home medical calls per month, one line per year [script Figure 5B.6]"
+ec_by_group |>
+  filter(call_group == "Medical (home)") |>
+  gg_season(incidents, labels = "both") +
+  labs(x = NULL, y = "Calls") +
+  theme_minimal(base_size = 12)
+```
+
+```{r table-5b1}
+bind_rows(
+  ec_total |> features(incidents, feat_stl) |> mutate(call_group = "All incidents"),
+  ec_by_group |> features(incidents, feat_stl)
+) |>
+  select(`Call group` = call_group, `Trend strength` = trend_strength,
+         `Seasonal strength` = seasonal_strength_year) |>
+  mutate(across(where(is.numeric), ~ round(.x, 2))) |>
+  tbl("Table 22. Strength of trend and yearly seasonality, by call group, 2017–2024 [script Table 5B.1]")
+```
+
+Total incidents show a fairly strong trend (0.74) and a moderate seasonal pattern (0.42). Service calls show the strongest trend (0.87), and home medical calls a moderate one (0.65). False alarms and good intent calls show little trend (0.17 and 0.12).
+
+Two call groups need care, because coding practices affect them:
+
+**Service calls.** Three codes appear to have been used for the same kind of call:
+
+-   Code 311 "Medical assist, assist EMS crew" fell from 443 (2017) and 344 (2018) to 82 (2019), and 13 to 37 a year after that.
+-   Code 500 "Service call, other" in El Cerrito rose from 6 (2017) to 447 (2019).
+-   From 2024, matched code 500 records appear in the new NFIRS file as "Assist EMS Crew-NO EMS PROVIDED."
+
+That these are the same kind of call is an inference that has not been confirmed. If it is correct, the service call trend is mostly a change in coding. The Fire Department explained that the company officer codes each incident as what best describes what they found on arrival.
+
+**"All other."** Its trend (0.73) comes largely from code 900, shown in Table 25.
+
+```{r fig-5b7}
+#| fig-cap: "Figure 8. Incidents per month by location, one line per year (location-scoped; host department's own reports, fire units only) [script Figure 5B.7]"
+#| fig-height: 7
+city_monthly |>
+  gg_season(incidents) +
+  labs(x = NULL, y = "Incidents") +
+  theme_minimal(base_size = 12)
+```
+
+```{r table-5b2}
+city_monthly |>
+  features(incidents, feat_stl) |>
+  transmute(Location = str_to_title(incident_city_clean),
+            `Trend strength` = round(trend_strength, 2),
+            `Seasonal strength` = round(seasonal_strength_year, 2)) |>
+  tbl("Table 23. Strength of trend and yearly seasonality, by location, 2017–2024 (location-scoped; host department's own reports) [script Table 5B.2]")
+```
+
+El Cerrito's incident counts show a stronger trend (0.70) than Kensington's (0.28) or Richmond's (0.21). Richmond shows the strongest seasonal pattern (0.58). Counts do not need arrival times, so all Richmond years can be used here.
+
+```{r fig-5b8}
+#| fig-cap: "Figure 9. Median minutes to first truck, by month (location-scoped; any department) [script Figure 5B.8]"
+resp_monthly |>
+  mutate(City = str_to_title(incident_city_clean)) |>
+  autoplot(median_min) +
+  aes(color = City) +
+  labs(x = NULL, y = "Minutes", color = NULL) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "top")
+```
+
+```{r fig-5b9}
+#| fig-cap: "Figure 10. El Cerrito median response time split into trend, seasonal pattern, and remainder [script Figure 5B.9]"
+#| fig-height: 6
+resp_monthly |>
+  filter(incident_city_clean == "EL CERRITO") |>
+  model(STL(median_min ~ trend(window = 13) + season(window = "periodic"), robust = TRUE)) |>
+  components() |>
+  autoplot() +
+  labs(title = NULL) +
+  theme_minimal(base_size = 12)
+```
+
+```{r table-5b3}
+resp_monthly |>
+  features(median_min, feat_stl) |>
+  transmute(Location = str_to_title(incident_city_clean),
+            `Trend strength` = round(trend_strength, 2),
+            `Seasonal strength` = round(seasonal_strength_year, 2)) |>
+  tbl("Table 24. Strength of trend and yearly seasonality, monthly median response time, 2017–2024 (location-scoped; any department) [script Table 5B.3]")
+```
+
+Monthly median response times show a strong trend in both El Cerrito (0.74) and Kensington (0.86). Kensington has about 30 calls a month, so its monthly medians vary more from month to month. El Cerrito arrival times are recorded on 61--66% of rows.
+
+```{r table-5b4}
+ec_home_incidents |>
+  add_response_group() |>
+  filter(!response_group %in% c("Medical emergency (home)", "Service call",
+                                "Good intent call", "False alarm/false call")) |>
+  distinct(incident_key, incident_year, incident_type_code_and_description) |>
+  count(incident_type_code_and_description, incident_year) |>
+  mutate(incident_year = year_label(incident_year)) |>
+  pivot_wider(names_from = incident_year, values_from = n, values_fill = 0) |>
+  arrange(desc(`2023`)) |>
+  head(10) |>
+  rename(`Incident type` = incident_type_code_and_description) |>
+  tbl("Table 25. What is in \"All other\"? Top 10 incident types by year [script Table 5B.4]")
+```
+
+\*2025 covers January--April only.
+
+**Code 900.** Code 900 "Special incident type, other" was used 0 to 4 times a year from 2017 to 2021, then:
+
+| Year | Code 900 incidents |
+|------|-------------------:|
+| 2022 | 217 |
+| 2023 | 575 |
+| 2024 | 235 |
+| 2025 (partial year) | 3 |
+
+It accounts for most of the 2022--2024 rise in "All other" and for much of the 2023 peak in total incidents. In-jurisdiction incidents with and without code 900:
+
+| Year | All incidents | Without code 900 |
+|------|--------------:|-----------------:|
+| 2022 | 3,077 | 2,860 |
+| 2023 | 3,498 | 2,923 |
+| 2024 | 2,875 | 2,640 |
+
+For comparison, 2017--2021 ranged from 2,429 to 2,715. What these calls were is not documented.
+
+## After April 2025: the new record systems
+
+The original export ends in March or April 2025. Two newer files cover El Cerrito only, at the incident level: the new NFIRS file (2023--2025) and the NERIS file (February--September 2026). The Fire Department said of the new files, "This is all of the new data available in the new system." Because they have no unit-level times, the data does not allow response times, hours, or station workload to be carried past April 2025 on the same basis as the sections above.
+
+### Old and new files for the same years
+
+The Fire Department said records for the past three years were transferred to the new system. For January 2023 to March 2025, the two files were matched by incident number.
+
+| Period | In both files | Old file only | New file only |
+|--------|--------------:|--------------:|--------------:|
+| 2023 | 3,880 | 796 | 19 |
+| 2024 | 3,212 | 804 | 19 |
+| 2025, January--March | 498 | 210 | 267 |
+
+-   **Matched incidents agree completely** on incident-type series and alarm time.
+-   **Most old-file-only incidents** are code 900 "special incident" calls (about 1,080) and service calls (about 360).
+-   **The new file's totals run about 800 a year lower** than the old export's for 2023 and 2024.
+-   **The early-2025 match is weaker;** the reason is not known.
+
+**The 2023-to-2024 drop.** El Cerrito incidents fell from 2023 to 2024 in both files:
+
+-   **Old export:** 4,676 to 4,016 (−14%).
+-   **New file:** 3,899 to 3,231 (−17%).
+
+The cause is not known. The Fire Department said emergency services have spikes from time to time for unknown reasons. Part of the drop in the new file's "Service call, other" category is a relabeling: matched records carry that label in 2023 and "Assist EMS Crew-NO EMS PROVIDED" in 2024.
+
+### Dispatch change
+
+The Fire Department said dispatch changed from sending a unit based on geographic area to sending the closest unit based on vehicle location (AVL). It gave no date. In the new file, zone codes change and the incident number format changes in May 2025, so the change appears to have come around May 2025. That timing is an inference. It falls mostly after the original export ends, so the data does not allow its effect on response times to be measured.
+
+### City dashboard figures
+
+**90th percentile response time.** The city's dashboard reports this measured from 911 call receipt to arrival, a different definition from this report's (see [Response time: two definitions](#response-time-two-definitions)).
+
+| | Station 51 | Station 52 | Station 55 | Overall |
+|---|---:|---:|---:|---:|
+| 2025, recomputed from new file | 8:20 | 10:01 | 9:55 | 9:21 |
+| 2025, dashboard | 8:12 | 10:01 | 9:58 | 9:18 |
+| 2026, recomputed from NERIS file | 8:22 | 10:29 | 10:47 | 9:30 |
+| 2026, dashboard | 8:24 | 10:30 | 11:12 | 9:39 |
+
+-   **2025 coverage is thin.** In the new file, the 911-to-arrival field is blank for every 2023 and 2024 incident. For 2025, it is filled for 790 of 3,331 incidents, almost all in October--December. The recomputed 2025 figures come from those 790 incidents. The close match suggests the dashboard's 2025 figure also rests on roughly October--December 2025 only; that is an inference.
+-   **2026 matches only approximately.** The dashboard's method is not known, and its station totals (2,294) are larger than the file's 2,084 incidents.
+
+**Station reliability.** The Fire Department defined this as the percentage of the time the engine responded from quarters rather than while out of the station. The files have no field for it, so it cannot be recomputed. The dashboard values:
+
+-   **2025:** Station 51 83.59%, Station 52 92.25%, Station 55 84.18%, overall 85.31%.
+-   **2026:** Station 51 95.77%, Station 52 91.08%, Station 55 93.81%, overall 93.77%.
+
+The two years come from different record systems and are not compared here.
+
+**2025 incident totals differ across dashboard pages:**
+
+-   3,331 (page 33)
+-   3,330 (page 12)
+-   3,628 (page 15)
+-   2,463 (page 8)
+
+The Fire Department did not know why and suggested ambulance-only responses or Richmond units running calls in El Cerrito as possibilities. This report uses 3,331, the number of distinct incident numbers in the new file.
+
+**January 2026 is missing.** The new NFIRS file ends December 31, 2025 and the NERIS file begins February 1, 2026. The Fire Department said, "This was the NFIRS NERIS change." No crosswalk between NFIRS and NERIS incident types was provided, so 2026 cannot be compared with earlier years by incident type.
+
+## What the data does not allow
+
+-   **Richmond workload.** Richmond time on task or busy hours for 2018 and 2022--2025. Cleared times are missing for every Richmond row in those years. The Fire Department did not know why and noted that only Richmond Fire could answer.
+-   **Richmond response times** for 2018 and 2022--2025. Arrival times are missing.
+-   **Unit-level measures after April 2025.** No unit-level response time, time on task, or station hours after March/April 2025.
+-   **Comparing El Cerrito with Richmond after April 2025.** The newer files are El Cerrito only.
+-   **Comparing 2026 with earlier years by incident type.** There is no NFIRS--NERIS crosswalk.
+-   **January 2026.** No records exist in either file.
+-   **Station reliability.** The files have no field for it.
+-   **The city's 911-to-arrival response times for 2023 and 2024.** The field is blank.
+-   **The first truck from any department for every El Cerrito and Kensington emergency.** Not all reports can be linked, and Richmond arrival times are missing in several years.
+-   **Street-level location.** The export has city and ZIP code only.
+-   **Causes.** The data shows patterns, such as rising response times, but not the reasons for them.
+
+## Appendix: data issues log
+
+The table lists every data issue found during the analysis. Status: **Resolved** (explained or fixed), **Partial** (partly explained), **Open** (not explained), **Not possible** (the data does not allow it).
+
+| ID | Issue | Status | How it was handled |
+|----|-------|--------|--------------------|
+| D1 | Stations 71/72/65 renumbered 51/52/55 | Resolved | FD: changed April 1, 2023; new numbers used for all years |
+| D2 | Incident numbers repeat across years and departments | Resolved | Each report identified by database ID |
+| D3 | Blank times stored as December 31, 1899 | Open | Treated as missing |
+| D4 | Five negative response times | Resolved | FD: non-911 incidents; excluded |
+| D5 | Response times over 30 minutes (43 home calls) | Open | Included; not reviewed one by one |
+| D6 | City name spelling variants (30+) | Handled | Standardized |
+| D7 | High share of El Cerrito service calls coded 500, 2019--2023 | Partial | Pattern described; see D34 |
+| D8 | Richmond cleared times missing in most years | Not possible | Richmond hours not computed |
+| D9 | Ten cleared times of about 24 hours | Partial | FD: possible shift-change board clearing; excluded from hours |
+| D10 | Two multi-week wildland incidents, 2018 | Handled | Kept in counts; left out of hours |
+| D11 | Ambulances in the data | Resolved | FD: AMR units; excluded for all departments |
+| D12 | FDID 01010 is Albany Fire | Resolved | Appears in location-scoped tables only |
+| D13 | One emergency can have two or more reports | Handled | Reports merged into emergencies |
+| D14 | Linking reports across departments | Partial | 10-minute window; unmatched reports reported |
+| D15 | 661 El Cerrito "aid given" reports located in El Cerrito | Open | Described; meaning not documented |
+| D16 | Richmond reports labeled Kensington with other ZIPs | Open | Flagged; not verified |
+| D17 | Richmond/Albany reports with no El Cerrito report | Handled | Summarized in Tables 13--15 |
+| D18 | Richmond arrival times missing 2018, 2022--2025 | Not possible | Comparison limited to 2017, 2019--2021 |
+| D19 | El Cerrito arrival times on 61--66% of rows | Flagged | Noted with every response-time table |
+| D20 | No unit-level data after April 2025 | Not possible | FD: all new data available |
+| D21 | 2023--2025 records moved to new system | Handled | Old and new files matched (D29) |
+| D22 | City's 911-to-arrival field mostly blank | Partial | 2025 figure rests on about 790 incidents |
+| D23 | Station reliability has no source field | Not possible | Dashboard values quoted |
+| D24 | Dispatch model change | Partial | About May 2025 (inference) |
+| D25 | Kensington calls coded "automatic aid given" | Partial | FD: old way of tracking Kensington calls |
+| D26 | Different 2025 totals on dashboard pages | Open | 3,331 used |
+| D27 | Drop from 2023 to 2024 | Open | Real in both files; cause unknown |
+| D28 | Old and new incident counts differ | Explained | See D29 |
+| D29 | Old vs. new file match, 2023--March 2025 | Result | New file about 800 a year lower |
+| D30 | January 2026 missing | Not possible | FD: NFIRS-to-NERIS change |
+| D31 | No NFIRS--NERIS crosswalk | Not possible | 2026 not compared by type |
+| D32 | 2026 90th percentile matches only approximately | Partial | Dashboard method unknown |
+| D33 | Code 900 spike, 2022--2024 | Open | Does not explain response-time rise |
+| D34 | One call type, three codes | Inference | Service call trend likely a coding change |
+| D35 | Kensington first-arriving station, 2023--2024 | Finding | Cause not in the data |
+
+## Sources and code
+
+-   The analysis script, `el_cerrito_fire_analysis.R` (revision 8, September 24, 2026), contains every step, check, and table in this report. Table captions give the script's table numbers.
+-   Emails from Battalion Chief Jose Castrejon, El Cerrito Fire Department, September 23 and 24, 2026.
+-   City of El Cerrito dashboard reports: "\[NFIRS\] Fire Board Report -- El Cerrito Responses" (2025) and "\[NERIS\] ... Apparatus Responses" (2026), generated September 23, 2026.
