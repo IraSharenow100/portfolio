@@ -2,6 +2,8 @@
 title: "El Cerrito Library"
 ---
 
+![El Cerrito Library](images/ec-library.jpg){width="70%" fig-align="center"}
+
 A sourced record of the El Cerrito library issue, drawn from City agenda bills, staff reports, the February 19, 2026 §9212 Impact Report, resolutions, official election materials, and contemporaneous news coverage.
 
 ## Pages

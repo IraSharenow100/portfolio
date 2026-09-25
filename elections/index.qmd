@@ -2,6 +2,8 @@
 title: "El Cerrito Elections"
 ---
 
+![](images/i-voted.jpg){width="70%" fig-align="center"}
+
 A voter service page: official candidate statements and information, reported without commentary.
 
 ## Pages
