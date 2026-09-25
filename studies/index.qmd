@@ -2,6 +2,8 @@
 title: "City Studies"
 ---
 
+![](images/studies.jpg){width="70%" fig-align="center"}
+
 A sourced record of two consultant studies the State Auditor recommended El Cerrito undertake, in a specific order — and what the City actually did.
 
 ## Pages

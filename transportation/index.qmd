@@ -2,6 +2,8 @@
 title: "El Cerrito Transportation Network"
 ---
 
+![Bikeway illustration (general stock image, not a local photo)](images/bikeway.jpg){width="35%" fig-align="center"}
+
 *Last updated September 20, 2026.*
 
 A sourced record of El Cerrito's major transportation, bikeway and transit-oriented housing projects, their funding structures, and documented delays. Drawn from City Council staff reports and minutes, the City's biennial capital budget, CEQA documents, agreements and correspondence with the Strategic Growth Council (SGC), and documents from state, county, regional and BART agencies.
