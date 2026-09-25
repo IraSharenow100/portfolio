@@ -9,6 +9,12 @@ I'm a data analyst with an M.A. in Mathematics and an M.S. in Business from the 
 
 This site collects analytical projects using public data, built with reproducible tools: R, Quarto, and Git/GitHub.
 
+::: {layout-ncol="2"}
+![Van Vleck Hall, home of the UW–Madison Department of Mathematics](images/van-vleck.jpg)
+
+![Grainger Hall, home of the Wisconsin School of Business](images/grainger.jpg)
+:::
+
 ## Project Areas
 
 - **[Finance](finance/index.qmd)** — El Cerrito municipal finance: credit rating, audits, borrowing, and tax collections
