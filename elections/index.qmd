@@ -2,9 +2,9 @@
 title: "El Cerrito Elections"
 ---
 
-![](images/ballot-box.jpg){width="30%" fig-align="center"}
-
 A voter service page: official candidate statements and information, reported without commentary.
+
+![](images/candidates-2026.png){width="90%" fig-align="center"}
 
 ## Pages
 

@@ -1563,9 +1563,16 @@
   {
     "objectID": "finance/index.html",
     "href": "finance/index.html",
-    "title": "Ira Sharenow",
+    "title": "El Cerrito Finance",
     "section": "",
-    "text": "El Cerrito Finance A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records. Pages\n\nBudget KPI Model — A three-indicator scorecard testing revenue sustainability, budget discipline, and real spending growth against thirteen years of audited data\nBudget vs. Actual — General Fund revenue vs. expenditure, original budget vs. actual, and the FY2025-26 Fourth Quarter Update\nCredit Rating History — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present\nGoing-Concern Audits — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025\nState Auditor Report — Findings from California State Auditor Report 2020-803\nTRAN Borrowing — Annual short-term borrowing, FY2012–FY2022\nTax Collections — Real Property Transfer Tax and other tax revenue\nRDA Dissolution — What the 2011–2012 state dissolution of redevelopment agencies cost El Cerrito\n\nEach page reports documented facts without attributing responsibility to any individual."
+    "text": "A sourced record of El Cerrito’s financial condition, drawn directly from primary source documents: S&P Global Ratings publications, the City’s audited annual financial reports (CAFRs/ACFRs), the California State Auditor, and the City’s own financial records."
+  },
+  {
+    "objectID": "finance/index.html#pages",
+    "href": "finance/index.html#pages",
+    "title": "El Cerrito Finance",
+    "section": "Pages",
+    "text": "Pages\n\nBudget KPI Model — A three-indicator scorecard testing revenue sustainability, budget discipline, and real spending growth against thirteen years of audited data\nBudget vs. Actual — General Fund revenue vs. expenditure, original budget vs. actual, and the FY2025-26 Fourth Quarter Update\nCredit Rating History — S&P’s underlying rating (SPUR) on the City’s certificates of participation, 2013–present\nGoing-Concern Audits — Every fiscal year the City’s audited financial statements carried a going-concern designation, 2012–2025\nState Auditor Report — Findings from California State Auditor Report 2020-803\nTRAN Borrowing — Annual short-term borrowing, FY2012–FY2022\nTax Collections — Real Property Transfer Tax and other tax revenue\nRDA Dissolution — What the 2011–2012 state dissolution of redevelopment agencies cost El Cerrito\n\nEach page reports documented facts without attributing responsibility to any individual."
   },
   {
     "objectID": "finance/state-auditor.html",
