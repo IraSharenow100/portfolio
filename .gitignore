@@ -21,4 +21,8 @@ Police Department 2026 Git/el-cerrito-police-incidents.csv
 # request) and are not restricted by this rule.
 Fire Department 2026 Git/Fire Data/
 
+# Superseded fire report draft, replaced by incident-data/fire.qmd.
+# Kept on this computer only; not part of the published site.
+Old Fire Department GitHub/
+
 **/*.quarto_ipynb
