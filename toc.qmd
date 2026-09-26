@@ -1,0 +1,78 @@
+---
+title: "Table of Contents"
+---
+
+A complete map of every page on this site, grouped by section.
+
+## About
+
+- [About](index.qmd)
+
+## Finance
+
+- [Overview](finance/index.qmd)
+- [Budget KPI Model](finance/budget-kpi-model.qmd)
+- [Budget vs. Actual](finance/budget-actual.qmd)
+- [Credit Rating](finance/credit-rating.qmd)
+- [Going-Concern Audits](finance/going-concern.qmd)
+- [State Auditor Report](finance/state-auditor.qmd)
+- [TRAN Borrowing](finance/tran.qmd)
+- [Tax Collections](finance/tax-collections.qmd)
+- [RDA Dissolution](finance/rda-dissolution.qmd)
+
+## Library
+
+- [Overview](library/index.qmd)
+- [History / Timeline](library/timeline.qmd)
+- [Measure C](library/measure-c.qmd)
+- [Library Task Force](library/task-force.qmd)
+- [Cost & Funding History](library/cost-funding.qmd)
+- [Key People and Votes](library/key-people.qmd)
+
+## Transportation
+
+- [Overview](transportation/index.qmd)
+- [Richmond Street & Complete Streets](transportation/richmond-street.qmd)
+- [San Pablo Specific Plan](transportation/san-pablo-specific-plan.qmd)
+- [del Norte Complete Streets](transportation/del-norte.qmd)
+- [El Cerrito Plaza BART Housing (TOD)](transportation/plaza-tod.qmd)
+- [Ohlone Greenway](transportation/ohlone-greenway.qmd)
+- [Parking Management](transportation/parking.qmd)
+- [Measure A Origin & PCI Trends](transportation/measure-a-street-oversight.qmd)
+- [Who Pays: Funding, Consultants and Staff](transportation/funding.qmd)
+- [Plans, Timeline and Terms](transportation/plans-timeline.qmd)
+- [Where City Documents Disagree](transportation/document-disagreements.qmd)
+
+## Public Safety
+
+- [Overview](public-safety/index.qmd)
+- [Fire: Overview](public-safety/fire/index.qmd)
+- [Fire: Organization & Staffing](public-safety/fire/organization.qmd)
+- [Fire: Budget](public-safety/fire/budget.qmd)
+- [Police: Overview](public-safety/police/index.qmd)
+- [Police: Organization & Staffing](public-safety/police/organization.qmd)
+- [Police: Budget](public-safety/police/budget.qmd)
+
+## Incident Data
+
+- [Overview](incident-data/index.qmd)
+- [Police](incident-data/police.qmd)
+- [Fire](incident-data/fire.qmd)
+
+## Studies
+
+- [Overview](studies/index.qmd)
+- [Sequencing Case Study](studies/sequencing-case-study.qmd)
+- [Service Delivery Study](studies/service-delivery-study.qmd)
+- [Compensation Study](studies/compensation-study.qmd)
+- [City Manager Compensation](studies/city-manager-compensation.qmd)
+
+## Elections
+
+- [Overview](elections/index.qmd)
+- [November 2026 Candidates](elections/candidates-2026.qmd)
+
+## Elsewhere
+
+- [Tableau Public Profile](https://public.tableau.com/app/profile/ira.sharenow/viz/ElCerritoFinancesinPictures--Tableau/Introduction)
+- [GitHub](https://github.com/IraSharenow100)

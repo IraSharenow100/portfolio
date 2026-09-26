@@ -9,6 +9,8 @@ website:
     left:
       - href: index.qmd
         text: About
+      - href: toc.qmd
+        text: Table of Contents
       - text: Finance
         menu:
           - href: finance/index.qmd
