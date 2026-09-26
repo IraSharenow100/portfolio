@@ -211,6 +211,45 @@ emergencies |>
 
 Leaving out code 900 calls changes the El Cerrito medians by 0.1 minute or less and the Kensington medians not at all. The rise in response times does not come from these calls.
 
+### Check: response time by call type
+
+Table 2 and Table 3 report response time across all calls combined. If the mix of call types changed over this period, a rise in the combined median could partly reflect that shift rather than calls themselves taking longer. Table 4B checks this directly, for the four largest call categories.
+
+```{r table-3c5}
+call_type_check <- c("Medical emergency (home)", "Service call",
+                     "False alarm/false call", "Good intent call")
+
+bind_rows(
+  emergencies |>
+    filter(incident_city_clean == "EL CERRITO", response_group %in% call_type_check,
+           incident_year %in% c(2017, 2024), !is.na(response_min), response_min >= 0) |>
+    group_by(response_group, incident_year) |>
+    summarize(med = round(median(response_min), 2), .groups = "drop") |>
+    mutate(incident_city_clean = "EL_CERRITO"),
+  emergencies |>
+    filter(incident_city_clean == "KENSINGTON", response_group %in% call_type_check,
+           incident_year %in% c(2018, 2024), !is.na(response_min), response_min >= 0) |>
+    group_by(response_group, incident_year) |>
+    summarize(med = round(median(response_min), 2), .groups = "drop") |>
+    mutate(incident_city_clean = "KENSINGTON")
+) |>
+  mutate(period = if_else(incident_year %in% c(2017, 2018), "first", "last")) |>
+  select(-incident_year) |>
+  pivot_wider(names_from = c(incident_city_clean, period), values_from = med) |>
+  mutate(`Call type` = response_group, .keep = "unused") |>
+  select(`Call type`, EL_CERRITO_first, EL_CERRITO_last,
+         KENSINGTON_first, KENSINGTON_last) |>
+  kable(caption = "Table 4B. Median minutes from dispatch to first truck, by call type, first year on record versus 2024 (location-scoped; any department)",
+        col.names = c("Call type", "El Cerrito (2017)", "El Cerrito (2024)",
+                      "Kensington (2018)", "Kensington (2024)")) |>
+  kable_styling(bootstrap_options = c("striped", "condensed", "hover"),
+                full_width = FALSE, font_size = 13)
+```
+
+Every one of the four largest call categories got slower in both cities, not just the all-call combined figure. This does not rule out every possible contribution from the changing call mix, but it means the rise is not solely, or even mainly, an effect of which kinds of calls make up the total — the slowdown shows up within categories whose share of all calls stayed roughly stable (home medical calls, for example), not only in categories that grew as a share of the total.
+
+**Data shortcomings:** some category/year cells behind this table have small counts (as few as 5 emergencies for a Kensington category in some years), so individual cells should not be read as precise figures on their own; the pattern across all four categories is the more reliable finding.
+
 ### Kensington: whose truck arrived first
 
 ```{r table-4-1}
@@ -889,6 +928,7 @@ The table lists every data issue found during the analysis. Status: **Resolved**
 | D33 | Code 900 spike, 2022--2024 | Open | Does not explain response-time rise |
 | D34 | One call type, three codes | Inference | Service call trend likely a coding change |
 | D35 | Kensington first-arriving station, 2023--2024 | Finding | Cause not in the data |
+| D36 | Response-time rise checked by call type (Simpson's paradox) | Result | All four largest call categories rose in both cities; not a call-mix effect (Table 4B) |
 
 ## Sources and code
 
