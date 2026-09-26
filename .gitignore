@@ -13,5 +13,12 @@
 # Raw police records and geocoding files: kept on this computer only.
 # They include addresses for some sensitive call types.
 Police Department 2026 Git/Police Data/
+Police Department 2026 Git/el-cerrito-police-incidents.csv
+
+# Raw fire incident records: kept on this computer only.
+# The NFIRS/NERIS exports and the original incident file may include
+# addresses. Compensation files here are public record (State PRA
+# request) and are not restricted by this rule.
+Fire Department 2026 Git/Fire Data/
 
 **/*.quarto_ipynb
