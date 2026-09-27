@@ -133,3 +133,13 @@ format:
     theme: cosmo
     css: styles.css
     toc: false
+    include-in-header:
+      text: |
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YK3D79D5L"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-0YK3D79D5L');
+        </script>
