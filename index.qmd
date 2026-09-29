@@ -25,7 +25,7 @@ This site collects analytical projects using public data, built with reproducibl
 - **[Studies](studies/index.qmd)** — the Service Delivery and Compensation studies, and the sequencing problem between them
 - **[Elections](elections/index.qmd)** — official candidate statements, November 2026 City Council race
 
-## Elsewhere
+## Contact & Links
 
+- [irasharenow100@gmail.com](mailto:irasharenow100@gmail.com)
 - [Tableau Public Profile](https://public.tableau.com/app/profile/ira.sharenow/viz/ElCerritoFinancesinPictures--Tableau/Introduction)
-- [GitHub](https://github.com/IraSharenow100)
