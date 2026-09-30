@@ -9,6 +9,7 @@ A voter service page: official candidate statements and information, reported wi
 ## Pages
 
 - **[November 2026 City Council Candidates](candidates-2026.qmd)** — official statements from all six candidates, transcribed from filings with the City Clerk
+- **[November 2026 City Council Campaign Contributions](campaign-finance-2026.qmd)** — total contributions received and total El Cerrito contributions received, as reported in candidate campaign finance filings, with the dates covered
 
 ::: {.source-note}
 This section reports candidate-submitted material as filed. It does not offer opinions, endorsements, or comparisons.

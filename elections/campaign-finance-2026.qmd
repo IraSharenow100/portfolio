@@ -1,0 +1,44 @@
+---
+title: "November 2026 City Council Campaign Contributions"
+subtitle: "Total contributions received and El Cerrito contributions received, as reported in candidate filings. Reported without commentary."
+---
+
+This page reports campaign contribution totals exactly as shown in candidate campaign finance filings (FPPC Form 460 and Form 497). It is a voter information service. No opinions, endorsements, or comparisons are offered on this page.
+
+## Summary
+
+Five of the six candidates have contribution figures in the filings reviewed for this page. Together, those five candidates reported **$53,220.34** in total contributions. Of that amount, **$27,251.00** came from contributors who listed an El Cerrito address. The filings cover different date ranges for different candidates, and each candidate's dates are shown in the tables below. Forrest Lanning is not included because no contribution figures for him were in the filings reviewed.
+
+## Table 1. Total Contributions Received
+
+| Candidate | Total Contributions | Dates Covered |
+|:---|---:|:---|
+| Carolyn Wysinger | $6,170.00 | July 1, 2026 through September 19, 2026 (Form 460, filed September 28, 2026) |
+| Gabe Quinto | $9,335.34 | July 1, 2026 through September 24, 2026 (Form 460), plus one late contribution received September 23, 2026 (Form 497) |
+| Kimberly White | $17,155.50 | January 1, 2026 through September 19, 2026 (Form 460), plus one late contribution received September 21, 2026 (Form 497) |
+| Mary Ann "MJ" Jawili | $7,989.00 | July 1, 2026 through September 19, 2026 (Form 460) |
+| Wally Nowinski | $12,570.50 | January 1, 2026 through September 19, 2026 (Form 460) |
+| **Five candidates combined** | **$53,220.34** | |
+
+## Table 2. Total El Cerrito Contributions Received
+
+| Candidate | El Cerrito Contributions | Percent of Candidate's Total | Dates Covered |
+|:---|---:|---:|:---|
+| Carolyn Wysinger | $1,000.00 | 16.2% | July 1, 2026 through September 19, 2026 |
+| Gabe Quinto | $975.00 | 10.4% | July 1, 2026 through September 24, 2026 |
+| Kimberly White | $11,218.00 | 65.4% | January 1, 2026 through September 19, 2026, plus one late contribution received September 21, 2026 |
+| Mary Ann "MJ" Jawili | $5,115.00 | 64.0% | July 1, 2026 through September 19, 2026 |
+| Wally Nowinski | $8,943.00 | 71.1% | January 1, 2026 through September 19, 2026 |
+| **Five candidates combined** | **$27,251.00** | **51.2%** | |
+
+## How to read these tables
+
+- **El Cerrito contributions** are contributions from individuals or organizations whose city is listed as El Cerrito on the filing.
+- **Contributions under $100** are not itemized on Form 460, so the filing does not show where they came from. They total **$5,445.34** across the five candidates. They are counted in Table 1 but cannot be placed in Table 2, so the El Cerrito amounts above are the itemized amounts only.
+- **Late contribution reports (Form 497)** cover contributions received shortly before the election. Two of these were not yet on a Form 460 when the tables were prepared: $3,000.00 received by Gabe Quinto on September 23, 2026, and $888.00 received by Kimberly White on September 21, 2026. Both are included in the totals above.
+- **Different date ranges.** Kimberly White's and Wally Nowinski's filings begin January 1, 2026. The filings reviewed for Carolyn Wysinger, Gabe Quinto, and Mary Ann "MJ" Jawili begin July 1, 2026. Filings for earlier periods were not among the filings reviewed for those three candidates, so this page does not report whether contributions were received earlier in 2026.
+- **Jawili unitemized amount.** The $798.00 in contributions under $100 for Mary Ann "MJ" Jawili comes from a handwritten total on her Form 460. It has not been independently verified.
+
+## Sources
+
+Totals were compiled from each candidate's FPPC Form 460 (Campaign Disclosure Statement) and, where noted, Form 497 (Late Contribution Report), using the itemized contribution schedules and the Schedule A summary line for contributions under $100. Periods covered are the reporting periods printed on each form. Figures are as reported by each committee and were last updated on September 30, 2026. Later filings may change these figures.

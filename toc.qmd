@@ -71,6 +71,7 @@ A complete map of every page on this site, grouped by section.
 
 - [Overview](elections/index.qmd)
 - [November 2026 Candidates](elections/candidates-2026.qmd)
+- [2026 Campaign Contributions](elections/campaign-finance-2026.qmd)
 
 ## Elsewhere
 
